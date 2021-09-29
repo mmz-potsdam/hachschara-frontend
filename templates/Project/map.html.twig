@@ -1,0 +1,87 @@
+{% extends 'Base/base.html.twig' %}
+
+{% import 'Shared/helper.html.twig' as helper %}
+{% import 'Shared/map-leaflet.html.twig' as map %}
+
+{% block head %}
+    {{ parent() }}
+
+    {{ map.head() }}
+    {{ map.head_markercluster() }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ 'Sites'|trans }}</h1>
+
+    <form method="get" action="{{ path(app.request.attributes.get('_route')) }}">
+        <div class="form-group">
+            {{ form_rest(form) }}
+            {#<button type="submit" class="btn btn-primary">{{ 'Search'|trans }}</button>#}
+        </div>
+    </form>
+
+    <ul class="list-inline">
+        <li class="list-inline-item"><a href="{{ path('project-map') }}">{{ 'Map'|trans }}</a></li>
+        <li class="list-inline-item"><a href="{{ path('project-index') }}">{{ 'Overview A-Z'|trans }}</a></li>
+    </ul>
+
+    <div id="map-container">
+        <div id="map" class="w-100" style="min-height: 480px"></div>
+    </div>
+    <script type="text/javascript">
+        {{ map.showMap(bounds) }}
+        showMap();
+
+        // place markers
+        var markerStyle = {% if markerStyle is defined %}{{ markerStyle|json_encode|raw }}{% else %}'regular'{% endif %};
+
+        var markers = L.markerClusterGroup({
+            iconCreateFunction: function (cluster) {
+                var markers = cluster.getAllChildMarkers();
+                var n = 0;
+                for (var i = 0; i < markers.length; i++) {
+                    n += markers[i].number;
+                }
+                var childCount = n;
+                var c = ' marker-cluster-';
+                if (childCount < 10) {
+                    c += 'small';
+                } else if (childCount < 100) {
+                    c += 'medium';
+                } else {
+                    c += 'large';
+                }
+
+                return new L.DivIcon({
+                    html: '<div><span>' + childCount + '</span></div>',
+                    className: 'marker-cluster' + c,
+                    iconSize: new L.Point(40, 40),
+                });
+            },
+            spiderfyOnMaxZoom: false,
+            disableClusteringAtZoom: {% if disableClusteringAtZoom is not empty %}{{ disableClusteringAtZoom }}{% else %}5{% endif %}
+        });
+
+        var addressPoints = {{ data|json_encode|raw }};
+        for (var i = 0; i < addressPoints.length; i++) {
+            var a = addressPoints[i];
+            var title = a[2];
+            var count = a[4] + (a.length > 5 ? a[5] : 0);
+
+            var marker = L.marker(L.latLng(a[0], a[1]),
+                                  { title: title });
+
+            // marker.number = count;
+            marker.bindPopup('<strong>' + title + '</strong><br />' + a[3]);
+
+            markers.addLayer(marker);
+        }
+
+        map.addLayer(markers);
+        {% if bounds is empty %}
+        if (addressPoints.length > 0) {
+            map.fitBounds(markers.getBounds().pad(0.5));
+        }
+        {% endif %}
+    </script>
+{% endblock %}

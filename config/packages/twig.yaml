@@ -1,0 +1,8 @@
+twig:
+    form_themes:
+        - 'bootstrap_5_layout.html.twig'
+        # - '@TetranzSelect2Entity/Form/fields.html.twig'
+    default_path: '%kernel.project_dir%/templates'
+    globals:
+        site_name: '%app.site.name%'
+        locales: "%app.supported_locales%"

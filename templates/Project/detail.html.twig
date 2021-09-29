@@ -1,0 +1,93 @@
+{% extends 'Base/base.html.twig' %}
+
+{% import 'Shared/helper.html.twig' as helper %}
+{% import 'Shared/map-leaflet.html.twig' as map %}
+
+{% block head %}
+    {{ map.head() }}
+{% endblock %}
+
+{% block body %}
+    <div class="row p-2">
+        <h1>{{ project.name }}</h1>
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8 col-md-9">
+                <div class="container-fluid">
+                <dl class="row">
+                {% if project.startDate is not empty %}
+                    <dt class="col-xs-3 col-sm-2">{{ 'Founded'|trans }}</dt>
+                    <dd class="col-xs-9 col-sm-10">
+                        {{ project.startDate|dateextended -}}
+                    </dd>
+                {% endif %}
+                {% if project.endDate is not empty %}
+                    <dt class="col-xs-3 col-sm-2">{{ 'Dissolution'|trans }}</dt>
+                    <dd class="col-xs-9 col-sm-10">
+                        {{ project.endDate|dateextended -}}
+                    </dd>
+                {% endif %}
+                {% if project.description is not empty %}
+                    <dt class="col-xs-3 col-sm-2">{{ 'Description'|trans }}</dt>
+                    <dd class="col-xs-9 col-sm-10">{{ project.descriptionLocalized(app.request.locale)|nl2br }}</dd>
+                {% endif %}
+
+                {% if project.hasInfo %}
+                    <dt class="col-xs-3 col-sm-2">{{ 'Literature'|trans }}</dt>
+                    <dd class="col-xs-9 col-sm-10">
+                        {{ helper.render_info(project.infoExpanded) }}
+                    </dd>
+                {% endif %}
+                </dl>
+                </div>
+
+                {#{ dump(project) }#}
+            </div>
+            <div class="col-sm-4 col-md-3">
+                <h3>{{ 'Address'|trans }}</h3>
+                {% if project.streetAddress is not empty %}
+                    {{ project.streetAddress }}<br />
+                {% endif %}
+                {{ project.postalCode }}
+                {% set location = project.locationInfo(app.request.locale) %}
+                {% if location is not empty %}
+                    {% if false and location.id is defined and location.id is not empty %}
+                        <a href="{% if location.tgn is not empty %}{{ path('place-by-tgn', { 'tgn' : location.tgn }) }}{% else %}{{ path('place', { 'id' : location.id }) }}{% endif %}">
+                        {{ location['name'] }}
+                        </a>
+                    {% else %}
+                        {{ location['name'] }}
+                    {% endif %}
+                {% endif %}
+                {% if project.geo is not empty %}
+                    <div id="map" class="w-100" style="width: 100%; min-height: 360px"></div>
+                    <script>
+                    function adjustMapSize() {
+                        /*
+                        $('#map').height(function(index, height) {
+                            return window.innerHeight - $(this).offset().top;
+                        });
+                        */
+                    }
+
+                    $( window ).resize(adjustMapSize);
+                    adjustMapSize();
+
+                    var map = L.map('map');
+                    L.marker([ {{ project.geo }} ]).addTo(map);
+                    map.setView([{{ project.geo }}], 12);
+
+                    {{ map.addTileLayer() }}
+                    </script>
+                {% endif %}
+
+                {% if project.url is not empty %}
+                    <h3>{{ 'External Information'|trans }}</h3>
+                    <div>
+                        {{ project.url|converturls }}
+                    </div>
+                {% endif %}
+            </div>
+        </div><!-- .row -->
+    </div><!-- .container-fluid -->
+{% endblock %}
