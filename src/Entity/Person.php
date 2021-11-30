@@ -681,7 +681,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
         return [ $route, $routeParams ];
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [
             'id' => $this->id,

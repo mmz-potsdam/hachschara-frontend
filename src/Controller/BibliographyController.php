@@ -5,45 +5,13 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  *
  */
 class BibliographyController
-extends AbstractController
+extends BaseController
 {
-    private function instantiateCiteProc($locale)
-    {
-        $projectRoot = $this->getParameter('kernel.project_dir');
-
-        $path = $projectRoot . '/data/csl/infoclio-de.csl.xml';
-
-        $wrapSpan = function ($renderedText, $class) {
-            return '<span class="citeproc-'. $class . '">' . $renderedText . '</span>';
-        };
-
-        $additionalMarkup = [];
-        foreach ([
-                'creator' => 'creator',
-                'title' => 'title',
-                'in' => 'in',
-                'volumes' => 'volumes',
-                'book-series' => 'book-series',
-                'place' => 'place',
-                'date' => 'data',
-                'URL' => 'URL',
-                'DOI' => 'DOI',
-            ] as $key => $class)
-        {
-            $additionalMarkup[$key] = function($cslItem, $renderedText) use ($wrapSpan, $class) {
-                return $wrapSpan($renderedText, $class);
-            };
-        }
-
-        return new \Seboettg\CiteProc\CiteProc(file_get_contents($path), $locale, $additionalMarkup);
-    }
-
     /**
      * @Route("/bibliography", name="bibliography-index")
      */

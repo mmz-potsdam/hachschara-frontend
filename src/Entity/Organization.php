@@ -229,7 +229,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
         return [ $route, $routeParams ];
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [
             'id' => $this->id,
@@ -247,6 +247,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
             '@type' => 'Organization',
             'name' => $this->getName(),
         ];
+
         if ($omitContext) {
             unset($ret['@context']);
         }
@@ -279,9 +280,11 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
         if (!empty($this->ulan)) {
             $sameAs[] = 'http://vocab.getty.edu/ulan/' . $this->ulan;
         }
+
         if (!empty($this->gnd)) {
             $sameAs[] = 'http://d-nb.info/gnd/' . $this->gnd;
         }
+
         if (!empty($this->wikidata)) {
             $sameAs[] = 'http://www.wikidata.org/entity/' . $this->wikidata;
         }
@@ -315,9 +318,11 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
         if (!empty($this->foundingDate)) {
             $datesOfExistence = \App\Utils\Formatter::dateIncomplete($this->foundingDate, $locale);
         }
+
         if (!empty($this->dissolutionDate)) {
             $datesOfExistence .= ' - ' . \App\Utils\Formatter::dateIncomplete($this->dissolutionDate, $locale);
         }
+
         if (!empty($datesOfExistence)) {
             $parts[] = '[' . $datesOfExistence . ']';
         }

@@ -223,7 +223,7 @@ implements \JsonSerializable /*, JsonLdSerializable */
         return $this->gnd;
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [
             'id' => $this->id,
@@ -239,6 +239,7 @@ implements \JsonSerializable /*, JsonLdSerializable */
             '@type' => 'Organization',
             'name' => $this->getNameLocalized($locale),
         ];
+
         if ($omitContext) {
             unset($ret['@context']);
         }

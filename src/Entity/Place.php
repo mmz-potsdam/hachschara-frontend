@@ -606,7 +606,7 @@ implements \JsonSerializable /*, JsonLdSerializable */
         return $this->changedAt;
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [
             'id' => $this->id,

@@ -5,13 +5,12 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  *
  */
 class GlossaryController
-extends AbstractController
+extends BaseController
 {
     /**
      * @Route("/glossary", name="glossary-index")

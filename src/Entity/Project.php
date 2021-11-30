@@ -43,7 +43,7 @@ class Project
     /**
      * @var Place The location of, for example, where an event is happening, where an organization is located, or where an action takes place. .
      *
-     * @ORM\ManyToOne(targetEntity="App\Entity\Place")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Place", inversedBy="projects")
      * @ORM\JoinColumn(name="locality_id", referencedColumnName="id")
      */
     protected $location;
