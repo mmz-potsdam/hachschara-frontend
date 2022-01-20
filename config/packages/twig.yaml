@@ -6,3 +6,7 @@ twig:
     globals:
         site_name: '%app.site.name%'
         locales: "%app.supported_locales%"
+
+when@test:
+    twig:
+        strict_variables: true
