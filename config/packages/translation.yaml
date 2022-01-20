@@ -18,4 +18,3 @@ jms_translation:
             dirs: ["%kernel.project_dir%/templates", "%kernel.project_dir%/src"]
             output_dir: "%kernel.project_dir%/translations"
             extractors: [jms_i18n_routing]
-
