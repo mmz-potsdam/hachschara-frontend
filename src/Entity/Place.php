@@ -300,7 +300,7 @@ implements \JsonSerializable /*, JsonLdSerializable */
 
         return $this->projects->filter(
             function($entity) {
-               return -1 != $entity->getStatus();
+               return 1 == $entity->getStatus();
             }
         );
     }

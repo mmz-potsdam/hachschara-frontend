@@ -17,18 +17,10 @@ class BaseController
 extends AbstractController
 {
     protected $kernel;
-    protected $doctrine;
 
-    public function __construct(KernelInterface $kernel,
-                                ManagerRegistry $doctrine)
+    public function __construct(KernelInterface $kernel)
     {
         $this->kernel = $kernel;
-        $this->doctrine = $doctrine;
-    }
-
-    protected function getDoctrine(): ManagerRegistry
-    {
-        return $this->doctrine;
     }
 
     protected function expandCountryCode($countryCode, $labelUnknown = '[unknown]')

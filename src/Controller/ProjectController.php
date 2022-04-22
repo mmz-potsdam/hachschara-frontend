@@ -7,6 +7,8 @@ use Symfony\Component\Intl\Intl;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+use Doctrine\ORM\EntityManagerInterface;
+
 use Knp\Component\Pager\PaginatorInterface;
 
 use Lexik\Bundle\FormFilterBundle\Filter\FilterBuilderUpdaterInterface;
@@ -24,14 +26,14 @@ extends BaseController
      * @Route("/sites", name="project-index")
      */
     public function indexAction(Request $request,
+                                EntityManagerInterface $entityManager,
                                 PaginatorInterface $paginator,
                                 TranslatorInterface $translator,
                                 FilterBuilderUpdaterInterface $queryBuilderUpdater)
     {
         $routeName = $request->get('_route');
 
-        $qb = $this->getDoctrine()
-                ->getManager()
+        $qb = $entityManager
                 ->createQueryBuilder();
 
         $qb->select([
@@ -46,7 +48,7 @@ extends BaseController
             ;
 
         $form = $this->createForm(\App\Filter\ProjectFilterType::class, [
-            // 'choices' => array_flip($this->buildCountries()),
+            // 'choices' => array_flip($this->buildCountries($entityManager)),
         ]);
 
         if ($request->query->has($form->getName())) {
@@ -100,22 +102,13 @@ extends BaseController
      * @Route("/sites/{id}.jsonld", name="project-jsonld", requirements={"id"="\d+"})
      * @Route("/sites/{id}", name="project", requirements={"id"="\d+"})
      */
-    public function detailAction(Request $request, $id = null, $ulan = null, $gnd = null)
+    public function detailAction(Request $request, EntityManagerInterface $entityManager, $id)
     {
-        $criteria = new \Doctrine\Common\Collections\Criteria();
-        $projectRepo = $this->getDoctrine()
+        $projectRepo = $entityManager
                 ->getRepository('App\Entity\Project');
 
-        if (!empty($id)) {
-            $criteria->where($criteria->expr()->eq('id', $id));
-        }
-        else if (!empty($ulan)) {
-            $criteria->where($criteria->expr()->eq('ulan', $ulan));
-        }
-        else if (!empty($gnd)) {
-            $criteria->where($criteria->expr()->eq('gnd', $gnd));
-        }
-
+        $criteria = new \Doctrine\Common\Collections\Criteria();
+        $criteria->where($criteria->expr()->eq('id', $id));
         $criteria->andWhere($criteria->expr()->neq('status', -1));
 
         $projects = $projectRepo->matching($criteria);
@@ -124,8 +117,10 @@ extends BaseController
             return $this->redirectToRoute('project-index');
         }
 
+        \App\Entity\Project::initTerms($entityManager);
+
         $project = $projects[0];
-        // $project->setDateModified(\App\Search\PersonListBuilder::fetchDateModified($this->getDoctrine()->getConnection(), $project->getId()));
+        // $project->setDateModified(\App\Search\PersonListBuilder::fetchDateModified($entityManager->getConnection(), $project->getId()));
 
         $locale = $request->getLocale();
         if (in_array($request->get('_route'), [ 'project-jsonld' ])) {
@@ -135,7 +130,7 @@ extends BaseController
         $citeProc = $this->instantiateCiteProc($request->getLocale());
         if ($project->hasInfo()) {
             // expand the publications
-            $project->buildInfoFull($this->getDoctrine()->getManager(), $citeProc);
+            $project->buildInfoFull($entityManager, $citeProc);
         }
 
         $routeName = 'project';

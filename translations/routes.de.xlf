@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2021-09-01T13:50:56Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
+  <file date="2022-04-22T16:52:51Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -46,6 +46,10 @@
         <source>/organization/gnd/beacon</source>
         <target>/organisation/gnd/beacon</target>
       </trans-unit>
+      <trans-unit id="962e9b7257293397ca2d65e822d153e49758bf09" resname="organization-index">
+        <source>/organization</source>
+        <target>/organisation</target>
+      </trans-unit>
       <trans-unit id="c48e699f8240a0af0a795371b70fec321d039d96" resname="organization-jsonld">
         <source>/organization/{id}.jsonld</source>
         <target>/organisation/{id}.jsonld</target>
@@ -73,6 +77,10 @@
       <trans-unit id="6007191513c806f499122915873026637df3c9b1" resname="person-gnd-beacon">
         <source>/person/gnd/beacon</source>
         <target>/person/gnd/beacon</target>
+      </trans-unit>
+      <trans-unit id="3cc9ceefcb5a007d97352c78bde75d274ff13a90" resname="person-index">
+        <source>/person</source>
+        <target>/person</target>
       </trans-unit>
       <trans-unit id="18afd51c929e5c59be7ad8e990a0abc62c8d8776" resname="person-jsonld">
         <source>/person/{id}.jsonld</source>
@@ -116,23 +124,23 @@
       </trans-unit>
       <trans-unit id="d8e94972a997e2826eb793cb0621ed4bd354d097" resname="search-select-birth_place">
         <source>/search/select/birthplace</source>
-        <target>/search/select/birthplace</target>
+        <target>/suche/auswahl/geburtsort</target>
       </trans-unit>
       <trans-unit id="a3b4e09b9c6590ee339e92566070adf1112d5220" resname="search-select-death_place">
         <source>/search/select/deathplace</source>
-        <target>/search/select/deathplace</target>
+        <target>/suche/auswahl/sterbeort</target>
       </trans-unit>
       <trans-unit id="8a1d11a54bb56a027e87d5f400375dfc97c18cb5" resname="search-select-organization">
         <source>/search/select/organization</source>
-        <target>/search/select/organization</target>
+        <target>/suche/auswahl/organisation</target>
       </trans-unit>
       <trans-unit id="442aae726ac0d70bbb2b91dde1ed0ef8d6cec1b0" resname="search-select-person">
         <source>/search/select/person</source>
-        <target>/search/select/person</target>
+        <target>/suche/auswahl/person</target>
       </trans-unit>
       <trans-unit id="5ada314b6711f480f39094638582971dc113fae1" resname="search-select-project">
         <source>/search/select/project</source>
-        <target>/search/select/project</target>
+        <target>/suche/auswahl/projekt</target>
       </trans-unit>
     </body>
   </file>

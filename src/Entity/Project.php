@@ -13,10 +13,32 @@ use Doctrine\ORM\Mapping as ORM;
 class Project
 /* implements JsonLdSerializable */
 {
+    protected static $termsById;
+
+    public static function initTerms($em)
+    {
+        $qb = $em->createQueryBuilder();
+
+        $qb->select([ 'T' ])
+            ->from('App\Entity\Term', 'T')
+            ->andWhere('T.category IN (:categories) AND T.status <> -1')
+            ->setParameter('categories', [
+                'type',
+                'roleActor',
+                'condition',
+                'education',
+            ])
+            ;
+
+        foreach ($qb->getQuery()->getResult() as $term) {
+            $termsById[$term->getId()] = $term;
+        }
+    }
+
     use InfoTrait;
 
     protected $info = [];
-    protected $extractFromNotes = ['general'];
+    protected $extractFromNotes = [ 'address', 'general' ];
 
     /**
      * @var integer
@@ -95,16 +117,16 @@ class Project
     /**
      * @var string
      *
-     * @ORM\Column(name="end_date", type="string", nullable=true)
+     * @ORM\Column(name="realized_date", type="string", nullable=true)
      */
-    private $endDate;
+    private $realizedDate;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="realized_date", type="string", nullable=true)
+     * @ORM\Column(name="end_date", type="string", nullable=true)
      */
-    private $realizedDate;
+    private $endDate;
 
     /**
      * @var string
@@ -208,6 +230,11 @@ class Project
     public function getName()
     {
         return $this->name;
+    }
+
+    public function getAlternateName()
+    {
+        return $this->alternateName;
     }
 
     public function getStatus()
@@ -316,6 +343,11 @@ class Project
     public function getStartDate()
     {
         return $this->startDate; // self::stripTime($this->startDate);
+    }
+
+    public function getRealizedDate()
+    {
+        return $this->realizedDate; // self::stripTime($this->endDate);
     }
 
     public function getEndDate()

@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2021-09-01T13:50:56Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
+  <file date="2022-04-22T16:52:51Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
     </header>
     <body>
+      <trans-unit id="a70822a8426d2e50a2c4918cd113c61976d9bf60" resname="# Localities">
+        <source># Localities</source>
+        <target state="new"># Localities</target>
+        <jms:reference-file line="28">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Place\index.html.twig\</jms:reference-file>
+      </trans-unit>
       <trans-unit id="c2e430c3930454adb321d0c82402dca6008cd3c1" resname="# Projects">
         <source># Projects</source>
-        <target># Projects</target>
+        <target># Projekte</target>
         <jms:reference-file line="163">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\OrganizationListBuilder.php\</jms:reference-file>
         <jms:reference-file line="232">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\PersonListBuilder.php\</jms:reference-file>
       </trans-unit>
       <trans-unit id="c1dcabb9ced22c5588aec31fba377eeb34279a16" resname="# of Organizations">
         <source># of Organizations</source>
-        <target># of Organizations</target>
+        <target># von Organisationen</target>
         <jms:reference-file line="171">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\ProjectListBuilder.php\</jms:reference-file>
         <jms:reference-file line="35">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\ProjectListBuilder.php\</jms:reference-file>
       </trans-unit>
       <trans-unit id="72da61b9f1dd234d8cdc30813e711536810a3a69" resname="# of Persons">
         <source># of Persons</source>
-        <target># of Persons</target>
+        <target># von Personen</target>
         <jms:reference-file line="168">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\ProjectListBuilder.php\</jms:reference-file>
         <jms:reference-file line="31">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\ProjectListBuilder.php\</jms:reference-file>
       </trans-unit>
       <trans-unit id="b696f50bdfaebc2b18efa8e37e6ad01bedcc2a39" resname="# of Projects">
         <source># of Projects</source>
-        <target># of Projects</target>
+        <target># von Projekten</target>
         <jms:reference-file line="32">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\OrganizationListBuilder.php\</jms:reference-file>
         <jms:reference-file line="43">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\PersonListBuilder.php\</jms:reference-file>
         <jms:reference-file line="105">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\PlaceListBuilder.php\</jms:reference-file>
@@ -34,17 +39,18 @@
       </trans-unit>
       <trans-unit id="0fabe760e09455bbf6b9fbfcf31ac548be71d37b" resname="- all -">
         <source>- all -</source>
-        <target>- all -</target>
+        <target>- alle -</target>
         <jms:reference-file line="55">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Form\Type\OrganizationFilterType.php\</jms:reference-file>
         <jms:reference-file line="107">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Form\Type\PersonFilterType.php\</jms:reference-file>
+        <jms:reference-file line="20">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Form\Type\PersonFilterType.php\</jms:reference-file>
         <jms:reference-file line="58">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Form\Type\PersonFilterType.php\</jms:reference-file>
         <jms:reference-file line="79">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Form\Type\PersonFilterType.php\</jms:reference-file>
         <jms:reference-file line="49">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Form\Type\ProjectFilterType.php\</jms:reference-file>
       </trans-unit>
-      <trans-unit id="cb65a0c9982b3eb8a9bb45df82633390c8a37112" resname="- all - ">
-        <source>- all - </source>
-        <target>- alle - </target>
-        <jms:reference-file line="20">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Form\Type\PersonFilterType.php\</jms:reference-file>
+      <trans-unit id="f0781750abe5ae39846a226560f92c01fbf7047b" resname="Academic Title">
+        <source>Academic Title</source>
+        <target>Akademischer Titel</target>
+        <jms:reference-file line="38">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="c897b998e078b8ed5cf061d749a365a6dc72613c" resname="Additional">
         <source>Additional</source>
@@ -54,17 +60,27 @@
       <trans-unit id="d70f93df5e8f9b55be44fbeee9d203972e3383d4" resname="Address">
         <source>Address</source>
         <target>Adresse</target>
-        <jms:reference-file line="47">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Project\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="58">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Project\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="f38d53519197909c91536558af4b561b0b38c32f" resname="Advanced Search">
         <source>Advanced Search</source>
         <target>Erweiterte Suche</target>
         <jms:reference-file line="30">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Search\Entity\person-filter.html.twig\</jms:reference-file>
       </trans-unit>
+      <trans-unit id="e2db86200aee3a7e22dca50026b63ba60b059983" resname="Alternate Name">
+        <source>Alternate Name</source>
+        <target>Alternativ-Bezeichnung</target>
+        <jms:reference-file line="19">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Project\detail.html.twig\</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d244143a5ed99de90245098c4fad5111075138c6" resname="Alternate Name(s)">
+        <source>Alternate Name(s)</source>
+        <target>Alternativ-Name(n)</target>
+        <jms:reference-file line="42">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
+      </trans-unit>
       <trans-unit id="619d65e1ae1a2704aa306451ac2a75a0cde345a8" resname="Bibliography">
         <source>Bibliography</source>
         <target>Literatur</target>
-        <jms:reference-file line="48">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Base\base.html.twig\</jms:reference-file>
+        <jms:reference-file line="49">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Base\base.html.twig\</jms:reference-file>
         <jms:reference-file line="4">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Bibliography\index.html.twig\</jms:reference-file>
         <jms:reference-file line="25">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Default\home.html.twig\</jms:reference-file>
       </trans-unit>
@@ -81,13 +97,14 @@
       <trans-unit id="b37456c4530be810dc040f50da72eda09addfb0a" resname="Contact">
         <source>Contact</source>
         <target>Kontakt</target>
-        <jms:reference-file line="84">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Base\base.html.twig\</jms:reference-file>
+        <jms:reference-file line="85">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Base\base.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="d523ebbd10146cdfd39dee077f04c9d08468d0bc" resname="Country">
         <source>Country</source>
         <target>Land</target>
         <jms:reference-file line="20">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\PlaceListBuilder.php\</jms:reference-file>
         <jms:reference-file line="93">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\PlaceListBuilder.php\</jms:reference-file>
+        <jms:reference-file line="27">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Place\index.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="5e62a7c0bfaf79bec3ed3d3bf94beae2a18c0470" resname="Country Code">
         <source>Country Code</source>
@@ -111,10 +128,16 @@
         <jms:reference-file line="142">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\OrganizationListBuilder.php\</jms:reference-file>
         <jms:reference-file line="211">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\PersonListBuilder.php\</jms:reference-file>
       </trans-unit>
+      <trans-unit id="2d946ef8e3d3cf110b51dc1d6580f03c92209f13" resname="Denomination">
+        <source>Denomination</source>
+        <target>Denomination</target>
+        <jms:reference-file line="94">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
+      </trans-unit>
       <trans-unit id="55f8ebc805e65b5b71ddafdae390e3be2bcd69af" resname="Description">
         <source>Description</source>
         <target>Beschreibung</target>
-        <jms:reference-file line="31">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Project\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="98">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="43">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Project\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="68316444b99c6ba68313bede5aa8603526904561" resname="Died">
         <source>Died</source>
@@ -130,7 +153,7 @@
         <source>Dissolution</source>
         <target>Schließung</target>
         <jms:reference-file line="46">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Organization\detail.html.twig\</jms:reference-file>
-        <jms:reference-file line="25">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Project\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="37">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Project\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="5efb188a38c8f9fbb41265b888f6a3dc11e55cab" resname="Dissolution Year">
         <source>Dissolution Year</source>
@@ -145,7 +168,7 @@
       <trans-unit id="c0598ae67e8782dfffb8b49de8fe27f445fdd088" resname="External Information">
         <source>External Information</source>
         <target>Weiterführende Informationen</target>
-        <jms:reference-file line="85">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Project\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="98">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Project\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="5b8d97f62835cae8ad5adb2bade60d98db86fa85" resname="Filter by">
         <source>Filter by</source>
@@ -156,12 +179,12 @@
         <source>Founded</source>
         <target>Gegründet</target>
         <jms:reference-file line="31">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Organization\detail.html.twig\</jms:reference-file>
-        <jms:reference-file line="19">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Project\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="25">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Project\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="0765d03a79b01914b5029a88daaba700f60db1bd" resname="Founding Location">
         <source>Founding Location</source>
         <target>Gegründet in</target>
-        <jms:reference-file line="91">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\OrganizationController.php\</jms:reference-file>
+        <jms:reference-file line="104">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\OrganizationController.php\</jms:reference-file>
         <jms:reference-file line="24">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\OrganizationListBuilder.php\</jms:reference-file>
       </trans-unit>
       <trans-unit id="5fb8b20a70f26f5214325d9971612b378497b541" resname="Founding Year">
@@ -186,12 +209,13 @@
         <jms:reference-file line="148">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\OrganizationListBuilder.php\</jms:reference-file>
         <jms:reference-file line="217">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\PersonListBuilder.php\</jms:reference-file>
         <jms:reference-file line="37">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\PersonListBuilder.php\</jms:reference-file>
+        <jms:reference-file line="34">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="7427cf697be16a4ec1d916910128a59d920125e7" resname="Glossary">
         <source>Glossary</source>
         <target>Glossar</target>
-        <jms:reference-file line="47">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\GlossaryController.php\</jms:reference-file>
-        <jms:reference-file line="45">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Base\base.html.twig\</jms:reference-file>
+        <jms:reference-file line="48">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\GlossaryController.php\</jms:reference-file>
+        <jms:reference-file line="46">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Base\base.html.twig\</jms:reference-file>
         <jms:reference-file line="21">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Default\home.html.twig\</jms:reference-file>
         <jms:reference-file line="4">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Glossary\index.html.twig\</jms:reference-file>
       </trans-unit>
@@ -205,7 +229,12 @@
       <trans-unit id="db71e0bfdd6b22014556039ac1d59c60c65b4e4e" resname="Imprint">
         <source>Imprint</source>
         <target>Impressum</target>
-        <jms:reference-file line="88">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Base\base.html.twig\</jms:reference-file>
+        <jms:reference-file line="89">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Base\base.html.twig\</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2312ce905355db60ba0a4da09a398ae54ecc79fd" resname="Integrated Authority File">
+        <source>Integrated Authority File</source>
+        <target>Gemeinsame Normdatei</target>
+        <jms:reference-file line="106">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="ced3905ec8220a51e0d47124fc2d0549ce7c8472" resname="Latitude">
         <source>Latitude</source>
@@ -215,12 +244,12 @@
       <trans-unit id="c17e5c9d2507136080093320a0436a57b3618190" resname="Literature">
         <source>Literature</source>
         <target>Literatur</target>
-        <jms:reference-file line="80">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\BibliographyController.php\</jms:reference-file>
-        <jms:reference-file line="36">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Project\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="50">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\BibliographyController.php\</jms:reference-file>
+        <jms:reference-file line="48">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Project\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="b058a9b22f579cab7ac16513a1de431a941a51e5" resname="Locality">
         <source>Locality</source>
-        <target>Locality</target>
+        <target>Ort</target>
         <jms:reference-file line="16">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\PlaceListBuilder.php\</jms:reference-file>
         <jms:reference-file line="90">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\PlaceListBuilder.php\</jms:reference-file>
         <jms:reference-file line="162">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\ProjectListBuilder.php\</jms:reference-file>
@@ -229,7 +258,7 @@
       <trans-unit id="d219c68101f532de10add2cf42fb9dbeca73d3be" resname="Location">
         <source>Location</source>
         <target>Ort</target>
-        <jms:reference-file line="166">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\ProjectController.php\</jms:reference-file>
+        <jms:reference-file line="161">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\ProjectController.php\</jms:reference-file>
       </trans-unit>
       <trans-unit id="6f9f011c5d36df6d431a68143636a75fbaa508bd" resname="Longitude">
         <source>Longitude</source>
@@ -252,6 +281,7 @@
         <jms:reference-file line="17">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\PersonListBuilder.php\</jms:reference-file>
         <jms:reference-file line="202">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\PersonListBuilder.php\</jms:reference-file>
         <jms:reference-file line="159">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\ProjectListBuilder.php\</jms:reference-file>
+        <jms:reference-file line="26">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Place\index.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="1969ead537490c3bbaf406fab393be9acbe514c1" resname="Nationality">
         <source>Nationality</source>
@@ -259,6 +289,7 @@
         <jms:reference-file line="151">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\OrganizationListBuilder.php\</jms:reference-file>
         <jms:reference-file line="220">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\PersonListBuilder.php\</jms:reference-file>
         <jms:reference-file line="40">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\PersonListBuilder.php\</jms:reference-file>
+        <jms:reference-file line="90">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="b2a35c2b4b4e06249eff799c40dd80f0a45e24b3" resname="No glossary terms were found">
         <source>No glossary terms were found</source>
@@ -274,6 +305,16 @@
         <source>No matching sites found</source>
         <target>Es wurde kein passender Ort gefunden</target>
         <jms:reference-file line="35">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Project\index.html.twig\</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="70440046a3dc2e079f23ee1c57dfa76669b732aa" resname="Notes">
+        <source>Notes</source>
+        <target>Bemerkungen</target>
+        <jms:reference-file line="86">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c4f1f5b1d49f90d5437402166829d6b471bf1593" resname="Opened">
+        <source>Opened</source>
+        <target>Eröffnung</target>
+        <jms:reference-file line="31">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Project\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="519255ae1f74ffc5ddd29979295c7572f048ad81" resname="Organization">
         <source>Organization</source>
@@ -296,13 +337,13 @@
       <trans-unit id="3e700b8d23a559a365808353b8629f929fd559f2" resname="Place of Activity">
         <source>Place of Activity</source>
         <target>Wirkungsort</target>
-        <jms:reference-file line="119">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\OrganizationController.php\</jms:reference-file>
-        <jms:reference-file line="129">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\PersonController.php\</jms:reference-file>
+        <jms:reference-file line="132">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\OrganizationController.php\</jms:reference-file>
+        <jms:reference-file line="140">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\PersonController.php\</jms:reference-file>
       </trans-unit>
       <trans-unit id="2dfd5205e0be47782320bce1af35867c023b9af0" resname="Place of Birth">
         <source>Place of Birth</source>
         <target>Geburtsort</target>
-        <jms:reference-file line="93">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\PersonController.php\</jms:reference-file>
+        <jms:reference-file line="104">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\PersonController.php\</jms:reference-file>
         <jms:reference-file line="46">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Form\Type\PersonFilterType.php\</jms:reference-file>
         <jms:reference-file line="139">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\OrganizationListBuilder.php\</jms:reference-file>
         <jms:reference-file line="208">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\PersonListBuilder.php\</jms:reference-file>
@@ -311,7 +352,7 @@
       <trans-unit id="343ece72ad3158325b77ece1ebbb1fe9090c0e26" resname="Place of Death">
         <source>Place of Death</source>
         <target>Sterbeort</target>
-        <jms:reference-file line="101">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\PersonController.php\</jms:reference-file>
+        <jms:reference-file line="112">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\PersonController.php\</jms:reference-file>
         <jms:reference-file line="67">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Form\Type\PersonFilterType.php\</jms:reference-file>
         <jms:reference-file line="145">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\OrganizationListBuilder.php\</jms:reference-file>
         <jms:reference-file line="214">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Search\PersonListBuilder.php\</jms:reference-file>
@@ -320,13 +361,13 @@
       <trans-unit id="0cd3597453ab504a3dbeec3289e21abe922d223a" resname="Places">
         <source>Places</source>
         <target>Orte</target>
-        <jms:reference-file line="95">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\PlaceController.php\</jms:reference-file>
+        <jms:reference-file line="96">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\PlaceController.php\</jms:reference-file>
         <jms:reference-file line="7">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Place\index.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="cf01481f626d5127ec7732fcbdb29504f08abefd" resname="Privacy">
         <source>Privacy</source>
         <target>Datenschutz</target>
-        <jms:reference-file line="87">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Base\base.html.twig\</jms:reference-file>
+        <jms:reference-file line="88">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Base\base.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="f6f4da8d93e88a08220e03b7810451d3ba540a34" resname="Project">
         <source>Project</source>
@@ -356,9 +397,9 @@
       <trans-unit id="5cae88ddf5336e6a23091c01317b646467eb857e" resname="Sites">
         <source>Sites</source>
         <target>Orte</target>
-        <jms:reference-file line="77">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\ProjectController.php\</jms:reference-file>
-        <jms:reference-file line="93">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\ProjectController.php\</jms:reference-file>
-        <jms:reference-file line="42">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Base\base.html.twig\</jms:reference-file>
+        <jms:reference-file line="79">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\ProjectController.php\</jms:reference-file>
+        <jms:reference-file line="95">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\ProjectController.php\</jms:reference-file>
+        <jms:reference-file line="43">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Base\base.html.twig\</jms:reference-file>
         <jms:reference-file line="17">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Default\home.html.twig\</jms:reference-file>
         <jms:reference-file line="7">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Project\index.html.twig\</jms:reference-file>
         <jms:reference-file line="14">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Project\map.html.twig\</jms:reference-file>
@@ -393,7 +434,7 @@
       <trans-unit id="1ec0b00d7e4a7ebd7e91c21e91a99ece12fa858a" resname="Toggle navigation">
         <source>Toggle navigation</source>
         <target>Navigation umschalten</target>
-        <jms:reference-file line="36">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Base\base.html.twig\</jms:reference-file>
+        <jms:reference-file line="37">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Base\base.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="3deb7456519697ecf4eefc455516c969a3681bae" resname="Type">
         <source>Type</source>
@@ -464,6 +505,11 @@
         <source>nationality</source>
         <target>Nationalität</target>
         <jms:reference-file line="291">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/src\Controller\SearchController.php\</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fae2794c18dcf1e593b2b83e4d601701fc7e3728" resname="person.oneormany">
+        <source>person.oneormany</source>
+        <target>person.oneormany</target>
+        <jms:reference-file line="55">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Place\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="bf0d361cf611d96e262358e908fbfdee53daa41b" resname="person_flags">
         <source>person_flags</source>

@@ -94,9 +94,16 @@
 
 {% macro render_info(entries) -%}
     {% for entry in entries %}
-        {#{ entry.note }#}
-        {% if entry.citation is defined and entry.citation is not empty %}{{ entry.citation|raw }}{% endif %}
-        {% if entry.url is defined and entry.url is not empty %}{{ entry.url|converturls }}{% endif %}
+        {% if entry.note is defined and entry.note is not empty %}
+            {{ entry.note|nl2br }}
+            {% if (entry.citation is defined and entry.citation is not empty) or (entry.url is defined and entry.url is not empty) %}(
+                {% if entry.citation is defined and entry.citation is not empty %}{{- entry.citation|raw }}{% endif %}
+                {% if entry.url is defined and entry.url is not empty %}{{- entry.url|converturls }}{% endif %}
+            ){% endif %}
+        {% else %}
+            {% if entry.citation is defined and entry.citation is not empty %}{{ entry.citation|raw }}{% endif %}
+            {% if entry.url is defined and entry.url is not empty %}{{ entry.url|converturls }}{% endif %}
+        {% endif %}
         {% if not loop.last %}<br />{% endif %}
     {% endfor %}
 {% endmacro %}
