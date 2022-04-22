@@ -480,7 +480,7 @@ implements \JsonSerializable /*, JsonLdSerializable */
             return null;
         }
 
-        return $em->getRepository('App:Place')
+        return $em->getRepository('App\Entity\Place')
             ->findOneBy(['tgn' => $this->parentTgn]);
     }
 
@@ -496,7 +496,7 @@ implements \JsonSerializable /*, JsonLdSerializable */
                 'P',
                 "COALESCE(P.alternateName,P.name) HIDDEN nameSort"
             ])
-            ->from('App:Place', 'P')
+            ->from('App\Entity\Place', 'P')
             ->where("P.parentTgn = :tgn")
             ->setParameter('tgn', $this->tgn)
             ->orderBy('nameSort')

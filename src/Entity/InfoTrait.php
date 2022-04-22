@@ -18,7 +18,7 @@ trait InfoTrait
     {
         if (!empty($this->extractFromNotes)) {
             foreach ($this->extractFromNotes as $key) {
-                if (array_key_exists($key, $this->notes)) {
+                if (array_key_exists($key, $this->notes) && !is_null($this->notes[$key])) {
                     foreach ($this->notes[$key] as $entry) {
                         $this->info[] = $entry;
                     }
@@ -49,7 +49,7 @@ trait InfoTrait
             $qb = $em->createQueryBuilder();
 
             $qb->select([ 'B' ])
-                ->from('App:Bibitem', 'B')
+                ->from('App\Entity\Bibitem', 'B')
                 ->andWhere('B.id IN (:ids) AND B.status <> -1')
                 ->setParameter('ids', array_keys($publicationsById))
                 ;
