@@ -38,7 +38,7 @@ extends BaseController
                 'PR',
                 "PR.name HIDDEN nameSort"
             ])
-            ->from('App:Project', 'PR')
+            ->from('App\Entity\Project', 'PR')
             ->leftJoin('PR.location', 'P')
             ->leftJoin('P.country', 'C')
             ->where("PR.status IN (0, 1)")
@@ -104,7 +104,7 @@ extends BaseController
     {
         $criteria = new \Doctrine\Common\Collections\Criteria();
         $projectRepo = $this->getDoctrine()
-                ->getRepository('App:Project');
+                ->getRepository('App\Entity\Project');
 
         if (!empty($id)) {
             $criteria->where($criteria->expr()->eq('id', $id));
