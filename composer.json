@@ -36,7 +36,7 @@
     "type": "project",
     "license": "proprietary",
     "require": {
-        "php": "^7.2.9",
+        "php": "^7.3.0",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "armin/scssphp-bundle": "^1.1",
@@ -103,7 +103,7 @@
     },
     "config": {
         "platform": {
-            "php": "7.2.9"
+            "php": "7.3.0"
         },
         "preferred-install": {
             "*": "dist"
