@@ -91,9 +91,14 @@
         {% endblock %}
 
         {% block javascripts %}
-        <!-- jQuery first, already in head, then Popper.js, then Bootstrap JS -->
-        <script src="{{ app.request.basepath }}/js/popper.min.js"></script>
-        <script src="{{ app.request.basepath }}/vendor/bootstrap-5.1.0-dist/js/bootstrap.min.js"></script>
+        <!-- jQuery first, already in head, then Bootstrap JS including Popper -->
+        <script src="{{ app.request.basepath }}/vendor/bootstrap-5.1.0-dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            });
+        </script>
         {% endblock %}
     </body>
 </html>
