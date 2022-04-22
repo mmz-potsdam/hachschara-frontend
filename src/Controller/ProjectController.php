@@ -41,7 +41,7 @@ extends BaseController
             ->from('App\Entity\Project', 'PR')
             ->leftJoin('PR.location', 'P')
             ->leftJoin('P.country', 'C')
-            ->where("PR.status IN (0, 1)")
+            ->where("PR.status IN (1)")
             ->orderBy('nameSort')
             ;
 
