@@ -1,2 +1,2 @@
 person.oneormany:                   "{count, plural, one {Person} other {Persons}}"
-project.oneormany:                   "{count, plural, one {Hakhsharah} other {Hakhsharahs}}"
+site.oneormany:                   "{count, plural, one {Hakhsharah} other {Hakhsharahs}}"

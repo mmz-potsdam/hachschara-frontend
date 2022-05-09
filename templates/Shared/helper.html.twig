@@ -57,9 +57,9 @@
     {% endif %}
 {% endmacro %}
 
-{% macro project_list_item(project) %}
-    <a href="{{ path('project', { 'id' : project.id }) }}">
-        <b>{{ project.name }}</b>
+{% macro site_list_item(site) %}
+    <a href="{{ path('site', { 'id' : site.id }) }}">
+        <b>{{ site.name }}</b>
     </a>
 {% endmacro %}
 

@@ -16,14 +16,14 @@ use Lexik\Bundle\FormFilterBundle\Filter\FilterBuilderUpdaterInterface;
 /**
  *
  */
-class ProjectController
+class SiteController
 extends BaseController
 {
     protected $pageSize = 200;
 
     /**
-     * @Route("/sites/map", name="project-map")
-     * @Route("/sites", name="project-index")
+     * @Route("/site/map", name="site-map")
+     * @Route("/site", name="site-index")
      */
     public function indexAction(Request $request,
                                 EntityManagerInterface $entityManager,
@@ -40,14 +40,14 @@ extends BaseController
                 'PR',
                 "PR.name HIDDEN nameSort"
             ])
-            ->from('App\Entity\Project', 'PR')
+            ->from('App\Entity\Site', 'PR')
             ->leftJoin('PR.location', 'P')
             ->leftJoin('P.country', 'C')
             ->where("PR.status IN (1)")
             ->orderBy('nameSort')
             ;
 
-        $form = $this->createForm(\App\Filter\ProjectFilterType::class, [
+        $form = $this->createForm(\App\Filter\SiteFilterType::class, [
             // 'choices' => array_flip($this->buildCountries($entityManager)),
         ]);
 
@@ -59,7 +59,7 @@ extends BaseController
             $queryBuilderUpdater->addFilterConditions($form, $qb);
         }
 
-        if ('project-map' == $routeName) {
+        if ('site-map' == $routeName) {
             $data = [];
             foreach ($qb->getQuery()->getResult() as $result) {
                 $geo = $result->getGeo();
@@ -67,7 +67,7 @@ extends BaseController
                     $parts = explode(',', $geo, 2);
                     $info = [ (double)$parts[0], (double)$parts[1] ];
                     $info[] = sprintf('<a href="%s">%s</a>',
-                                      $this->generateUrl('project', [ 'id' => $result->getId() ]),
+                                      $this->generateUrl('site', [ 'id' => $result->getId() ]),
                                       $result->getName());
                     $info[] = '';
                     $data[] = $info;
@@ -75,7 +75,7 @@ extends BaseController
             }
             // dd($data);
 
-            return $this->render('Project/map.html.twig', [
+            return $this->render('Site/map.html.twig', [
                 'pageTitle' => $translator->trans('Sites'),
                 // 'pagination' => $pagination,
                 'form' => $form->createView(),
@@ -91,7 +91,7 @@ extends BaseController
             // 'defaultSortFieldName' => 'nameSort', 'defaultSortDirection' => 'asc',
         ]);
 
-        return $this->render('Project/index.html.twig', [
+        return $this->render('Site/index.html.twig', [
             'pageTitle' => $translator->trans('Sites'),
             'pagination' => $pagination,
             'form' => $form->createView(),
@@ -99,51 +99,51 @@ extends BaseController
     }
 
     /**
-     * @Route("/sites/{id}.jsonld", name="project-jsonld", requirements={"id"="\d+"})
-     * @Route("/sites/{id}", name="project", requirements={"id"="\d+"})
+     * @Route("/site/{id}.jsonld", name="site-jsonld", requirements={"id"="\d+"})
+     * @Route("/site/{id}", name="site", requirements={"id"="\d+"})
      */
     public function detailAction(Request $request, EntityManagerInterface $entityManager, $id)
     {
-        $projectRepo = $entityManager
-                ->getRepository('App\Entity\Project');
+        $repo = $entityManager
+                ->getRepository('App\Entity\Site');
 
         $criteria = new \Doctrine\Common\Collections\Criteria();
         $criteria->where($criteria->expr()->eq('id', $id));
         $criteria->andWhere($criteria->expr()->neq('status', -1));
 
-        $projects = $projectRepo->matching($criteria);
+        $entities = $repo->matching($criteria);
 
-        if (0 == count($projects)) {
-            return $this->redirectToRoute('project-index');
+        if (0 == count($entities)) {
+            return $this->redirectToRoute('site-index');
         }
 
-        \App\Entity\Project::initTerms($entityManager);
+        \App\Entity\Site::initTerms($entityManager);
 
-        $project = $projects[0];
-        // $project->setDateModified(\App\Search\PersonListBuilder::fetchDateModified($entityManager->getConnection(), $project->getId()));
+        $entity = $entities[0];
+        // $entity->setDateModified(\App\Search\SiteListBuilder::fetchDateModified($entityManager->getConnection(), $entity->getId()));
 
         $locale = $request->getLocale();
-        if (in_array($request->get('_route'), [ 'project-jsonld' ])) {
-            return new JsonLdResponse($project->jsonLdSerialize($locale));
+        if (in_array($request->get('_route'), [ 'site-jsonld' ])) {
+            return new JsonLdResponse($entity->jsonLdSerialize($locale));
         }
 
         $citeProc = $this->instantiateCiteProc($request->getLocale());
-        if ($project->hasInfo()) {
+        if ($entity->hasInfo()) {
             // expand the publications
-            $project->buildInfoFull($entityManager, $citeProc);
+            $entity->buildInfoFull($entityManager, $citeProc);
         }
 
-        $routeName = 'project';
-        $routeParams = [ 'id' => $project->getId() ];
+        $routeName = 'site';
+        $routeParams = [ 'id' => $entity->getId() ];
 
-        return $this->render('Project/detail.html.twig', [
-            'pageTitle' => $project->getName(), // TODO: lifespan in brackets
-            'project' => $project,
-            'mapMarkers' => $this->buildMapMarkers($project),
+        return $this->render('Site/detail.html.twig', [
+            'pageTitle' => $entity->getName(), // TODO: lifespan in brackets
+            'site' => $entity,
+            'mapMarkers' => $this->buildMapMarkers($entity),
             'pageMeta' => [
-                'jsonLd' => $project->jsonLdSerialize($locale),
-                // 'og' => $this->buildOg($person, $routeName, $routeParams),
-                // 'twitter' => $this->buildTwitter($person, $routeName, $routeParams),
+                'jsonLd' => $entity->jsonLdSerialize($locale),
+                // 'og' => $this->buildOg($entity, $routeName, $routeParams),
+                // 'twitter' => $this->buildTwitter($entity, $routeName, $routeParams),
             ],
         ]);
     }

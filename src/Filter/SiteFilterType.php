@@ -7,7 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Lexik\Bundle\FormFilterBundle\Filter\Query\QueryInterface;
 use Lexik\Bundle\FormFilterBundle\Filter\Form\Type as Filters;
 
-class ProjectFilterType
+class SiteFilterType
 extends CrudFilterType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -40,6 +40,6 @@ extends CrudFilterType
 
     public function getBlockPrefix()
     {
-        return 'project_filter';
+        return 'site_filter';
     }
 }

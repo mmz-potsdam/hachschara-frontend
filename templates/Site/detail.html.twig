@@ -9,58 +9,58 @@
 
 {% block body %}
     <div class="row p-2">
-        <h1>{{ project.name }}</h1>
+        <h1>{{ site.name }}</h1>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-8 col-md-9">
                     <div class="container-fluid">
                         <dl class="row">
-                        {% if project.alternateName is not empty %}
+                        {% if site.alternateName is not empty %}
                             <dt class="col-xs-3 col-sm-2">{{ 'Alternate Name'|trans }}</dt>
                             <dd class="col-xs-9 col-sm-10">
-                                {{ project.alternateName|nl2br }}
+                                {{ site.alternateName|nl2br }}
                             </dd>
                         {% endif %}
-                        {% if project.startDate is not empty %}
+                        {% if site.startDate is not empty %}
                             <dt class="col-xs-3 col-sm-2">{{ 'Founded'|trans }}</dt>
                             <dd class="col-xs-9 col-sm-10">
-                                {{ project.startDate|dateextended -}}
+                                {{ site.startDate|dateextended -}}
                             </dd>
                         {% endif %}
-                        {% if project.realizedDate is not empty %}
+                        {% if site.realizedDate is not empty %}
                             <dt class="col-xs-3 col-sm-2">{{ 'Opened'|trans }}</dt>
                             <dd class="col-xs-9 col-sm-10">
-                                {{ project.realizedDate|dateextended -}}
+                                {{ site.realizedDate|dateextended -}}
                             </dd>
                         {% endif %}
-                        {% if project.endDate is not empty %}
+                        {% if site.endDate is not empty %}
                             <dt class="col-xs-3 col-sm-2">{{ 'Dissolution'|trans }}</dt>
                             <dd class="col-xs-9 col-sm-10">
-                                {{ project.endDate|dateextended -}}
+                                {{ site.endDate|dateextended -}}
                             </dd>
                         {% endif %}
-                        {% if project.description is not empty %}
+                        {% if site.description is not empty %}
                             <dt class="col-xs-3 col-sm-2">{{ 'Description'|trans }}</dt>
-                            <dd class="col-xs-9 col-sm-10">{{ project.descriptionLocalized(app.request.locale)|nl2br }}</dd>
+                            <dd class="col-xs-9 col-sm-10">{{ site.descriptionLocalized(app.request.locale)|nl2br }}</dd>
                         {% endif %}
 
-                        {% if project.hasInfo('general') %}
+                        {% if site.hasInfo('general') %}
                             <dt class="col-xs-3 col-sm-2">{{ 'Literature'|trans }}</dt>
                             <dd class="col-xs-9 col-sm-10">
-                                {{ helper.render_info(project.infoExpanded('general')) }}
+                                {{ helper.render_info(site.infoExpanded('general')) }}
                             </dd>
                         {% endif %}
                         </dl>
                     </div><!-- .container-fluid -->
-                    {#{ dump(project) }#}
+                    {#{ dump(site) }#}
                 </div>
                 <div class="col-sm-4 col-md-3">
                     <h3>{{ 'Address'|trans }}</h3>
-                    {% if project.streetAddress is not empty %}
-                        {{ project.streetAddress }}<br />
+                    {% if site.streetAddress is not empty %}
+                        {{ site.streetAddress }}<br />
                     {% endif %}
-                    {{ project.postalCode }}
-                    {% set location = project.locationInfo(app.request.locale) %}
+                    {{ site.postalCode }}
+                    {% set location = site.locationInfo(app.request.locale) %}
                     {% if location is not empty %}
                         {% if false and location.id is defined and location.id is not empty %}
                             <a href="{% if location.tgn is not empty %}{{ path('place-by-tgn', { 'tgn' : location.tgn }) }}{% else %}{{ path('place', { 'id' : location.id }) }}{% endif %}">
@@ -70,9 +70,9 @@
                             {{ location['name'] }}
                         {% endif %}
                     {% endif %}
-                    {% if project.hasInfo('address') %}<a href="#" data-bs-toggle="tooltip" data-bs-html="true" title="{{ helper.render_info(project.infoExpanded('address')) }}"><i class="fa fa-circle-info"></i></a>
+                    {% if site.hasInfo('address') %}<a href="#" data-bs-toggle="tooltip" data-bs-html="true" title="{{ helper.render_info(site.infoExpanded('address')) }}"><i class="fa fa-circle-info"></i></a>
                     {% endif %}
-                    {% if project.geo is not empty %}
+                    {% if site.geo is not empty %}
                         <div id="map" class="w-100" style="margin-top: 1rem; width: 100%; min-height: 360px"></div>
                         <script>
                         function adjustMapSize() {
@@ -87,17 +87,17 @@
                         adjustMapSize();
 
                         var map = L.map('map');
-                        L.marker([ {{ project.geo }} ]).addTo(map);
-                        map.setView([{{ project.geo }}], 10);
+                        L.marker([ {{ site.geo }} ]).addTo(map);
+                        map.setView([{{ site.geo }}], 10);
 
                         {{ map.addTileLayer() }}
                         </script>
                     {% endif %}
 
-                    {% if project.url is not empty %}
+                    {% if site.url is not empty %}
                         <h3>{{ 'External Information'|trans }}</h3>
                         <div>
-                            {{ project.url|converturls }}
+                            {{ site.url|converturls }}
                         </div>
                     {% endif %}
                 </div>

@@ -182,10 +182,10 @@ implements \JsonSerializable /*, JsonLdSerializable */
     protected $geonames;
 
     /**
-     * @ORM\OneToMany(targetEntity="Project", mappedBy="location",cascade={"all"}, fetch="EXTRA_LAZY")
+     * @ORM\OneToMany(targetEntity="Site", mappedBy="location",cascade={"all"}, fetch="EXTRA_LAZY")
      * @ORM\OrderBy({"name" = "ASC"})
      */
-    protected $projects;
+    protected $sites;
 
     /**
      * @var \DateTime
@@ -292,13 +292,13 @@ implements \JsonSerializable /*, JsonLdSerializable */
         return implode(',', [$this->latitude, $this->longitude]);
     }
 
-    public function getProjects()
+    public function getSites()
     {
-        if (is_null($this->projects)) {
+        if (is_null($this->sites)) {
             return null;
         }
 
-        return $this->projects->filter(
+        return $this->sites->filter(
             function($entity) {
                return 1 == $entity->getStatus();
             }

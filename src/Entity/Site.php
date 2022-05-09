@@ -5,12 +5,12 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Project
+ * Site
  *
  * @ORM\Table(name="Project")
  * @ORM\Entity
  */
-class Project
+class Site
 /* implements JsonLdSerializable */
 {
     protected static $termsById;
@@ -57,15 +57,14 @@ class Project
     private $status = '0';
 
     /**
-     * @ORM\ManyToOne(targetEntity="Term", cascade={"all"}, fetch="EAGER")
-     * @ORM\JoinColumn(name="type", referencedColumnName="id")
+     * @ORM\Column(name="type", type="simple_array", nullable=false)
      */
-    private $type;
+    private $types;
 
     /**
      * @var Place The location of, for example, where an event is happening, where an organization is located, or where an action takes place. .
      *
-     * @ORM\ManyToOne(targetEntity="App\Entity\Place", inversedBy="projects")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Place", inversedBy="sites")
      * @ORM\JoinColumn(name="locality_id", referencedColumnName="id")
      */
     protected $location;
@@ -206,7 +205,7 @@ class Project
     private $flags = '0';
 
     /**
-     * xORM\ManyToMany(targetEntity="Person", mappedBy="projects")
+     * xORM\ManyToMany(targetEntity="Person", mappedBy="sites")
      * xORM\OrderBy({"familyName" = "ASC", "givenName" = "ASC"})
      */
     protected $persons;

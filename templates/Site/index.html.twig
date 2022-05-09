@@ -14,8 +14,8 @@
         </form>
 
         <ul class="list-inline">
-            <li class="list-inline-item"><a href="{{ path('project-map') }}">{{ 'Map'|trans }}</a></li>
-            <li class="list-inline-item"><a href="{{ path('project-index') }}">{{ 'Overview A-Z'|trans }}</a></li>
+            <li class="list-inline-item"><a href="{{ path('site-map') }}">{{ 'Map'|trans }}</a></li>
+            <li class="list-inline-item"><a href="{{ path('site-index') }}">{{ 'Overview A-Z'|trans }}</a></li>
         </ul>
 
         {% if pagination.getTotalItemCount > 0 %}
@@ -26,7 +26,7 @@
                     <h2>{{ initial }}</h2>
                     {% set last_initial = initial %}
                 {% endif %}
-                <div><a href="{{ path('project', { 'id': row.id }) }}">{{ row.name }}</a></div>
+                <div><a href="{{ path('site', { 'id': row.id }) }}">{{ row.name }}</a></div>
             {% endfor %}
 
             {# display navigation #}
