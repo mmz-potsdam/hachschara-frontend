@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  */
 class Site
-/* implements JsonLdSerializable */
+implements JsonLdSerializable
 {
     protected static $termsById = null;
 
@@ -176,6 +176,18 @@ class Site
     private $operatingAreaDescription;
 
     /**
+     * @ORM\Column(name="educations", type="simple_array", nullable=false)
+     */
+    private $educations;
+
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="educations_description", type="json_array", length=65535, nullable=true)
+     */
+    private $educationsDescription;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="url", type="string", length=255, nullable=true)
@@ -241,54 +253,51 @@ class Site
         }
     }
 
+    /**
+     * Gets id.
+     *
+     * @return int
+     */
     public function getId()
     {
         return $this->id;
     }
 
+    /**
+     * Gets name.
+     *
+     * @return string
+     */
     public function getName()
     {
         return $this->name;
     }
 
+    /**
+     * Gets alternateName.
+     *
+     * @return string
+     */
     public function getAlternateName()
     {
         return $this->alternateName;
     }
 
+    /**
+     * Gets status.
+     *
+     * @return int
+     */
     public function getStatus()
     {
         return $this->status;
     }
 
-    private function getTypeIds()
-    {
-        if (empty($this->types)) {
-            return $this->types;
-        }
-
-        // simple_array doesn't trim space after ,
-        return array_map('trim', $this->types);
-    }
-
-    public function getTypes()
-    {
-        $terms = [];
-
-        $typeIds = $this->getTypeIds();
-        if (empty($typeIds) || is_null(self::$termsById)) {
-            return $terms;
-        }
-
-        foreach ($typeIds as $termId) {
-            if (array_key_exists($termId, self::$termsById)) {
-                $terms[] = self::$termsById[$termId];
-            }
-        }
-
-        return $terms;
-    }
-
+    /**
+     * Builds status label.
+     *
+     * @return string
+     */
     public function buildStatusLabel()
     {
         if (is_null($this->status) || !array_key_exists($this->status, \App\Search\SearchListBuilder::$STATUS_LABELS)) {
@@ -299,7 +308,102 @@ class Site
     }
 
     /**
-     * Sets foundingLocation.
+     * Gets term ids.
+     *
+     * @return array|null
+     */
+    private function getTermIds($property)
+    {
+        if (empty($this->$property)) {
+            return $this->$property;
+        }
+
+        // simple_array doesn't trim space after ,
+        return array_map('trim', $this->$property);
+    }
+
+    /**
+     * Gets terms.
+     *
+     * @return ArrayCollection<int, Term>
+     */
+    private function getTerms($property)
+    {
+        $terms = [];
+
+        $termsIds = $this->getTermIds($property);
+        if (empty($termsIds) || is_null(self::$termsById)) {
+            return $terms;
+        }
+
+        foreach ($termsIds as $termId) {
+            if (array_key_exists($termId, self::$termsById)) {
+                $terms[] = self::$termsById[$termId];
+            }
+        }
+
+        return $terms;
+    }
+
+    /**
+     * Helper to extract localized property or (German) fallback.
+     *
+     * @return string
+     */
+    private function getLocalizedProperty($property, $locale = 'de')
+    {
+        if (empty($this->$property)) {
+            return;
+        }
+
+        if (is_array($this->$property)) {
+            if (array_key_exists($locale, $this->$property)
+                && !empty($this->$property[$locale]))
+            {
+                return $this->$property[$locale];
+            }
+
+            // fallback
+            if (array_key_exists('de', $this->$property)
+                && !empty($this->$property['de']))
+            {
+                return $this->$property['de'];
+            }
+        }
+    }
+
+    /**
+     * Gets types.
+     *
+     * @return ArrayCollection<int, Term>
+     */
+    public function getTypes()
+    {
+        return $this->getTerms('types');
+    }
+
+    /**
+     * Gets educations.
+     *
+     * @return ArrayCollection<int, Term>
+     */
+    public function getEducations()
+    {
+        return $this->getTerms('educations');
+    }
+
+    /**
+     * Gets localized educations description.
+     *
+     * @return string
+     */
+    public function getEducationsDescriptionLocalized($locale = 'de')
+    {
+        return $this->getLocalizedProperty('educationsDescription', $locale);
+    }
+
+    /**
+     * Sets founding location.
      *
      * @param Place $foundingLocation
      *
@@ -333,7 +437,7 @@ class Site
     }
 
     /**
-     * Gets location info
+     * Gets location info.
      *
      */
     public function getLocationInfo($locale = 'en')
@@ -350,7 +454,7 @@ class Site
     }
 
     /**
-     * Gets streetAddress.
+     * Gets street address.
      *
      * @return string
      */
@@ -360,7 +464,7 @@ class Site
     }
 
     /**
-     * Gets postalCode.
+     * Gets postal code.
      *
      * @return string
      */
@@ -387,88 +491,81 @@ class Site
         return implode(',', [$this->latitude, $this->longitude]);
     }
 
+    /**
+     * Gets start date.
+     *
+     * @return string
+     */
     public function getStartDate()
     {
         return $this->startDate; // self::stripTime($this->startDate);
     }
 
+    /**
+     * Gets realized date.
+     *
+     * @return string
+     */
     public function getRealizedDate()
     {
         return $this->realizedDate; // self::stripTime($this->endDate);
     }
 
+    /**
+     * Gets end date.
+     *
+     * @return string
+     */
     public function getEndDate()
     {
         return $this->endDate; // self::stripTime($this->endDate);
     }
 
+    /**
+     * Gets start year.
+     *
+     * @return string
+     */
     public function getStartear()
     {
         return self::extractYear($this->startDate);
     }
 
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
+    /**
+     * Gets operating area.
+     *
+     * @return double
+     */
     public function getOperatingArea()
     {
         return $this->operatingArea;
     }
 
     /**
+     * Gets localized operating area description.
      *
+     * @return string
      */
     public function getOperatingAreaDescriptionLocalized($locale = 'de')
     {
-        if (empty($this->operatingAreaDescription)) {
-            return;
-        }
-
-        if (is_array($this->operatingAreaDescription)) {
-            if (array_key_exists($locale, $this->operatingAreaDescription)
-                && !empty($this->operatingAreaDescription[$locale]))
-            {
-                return $this->operatingAreaDescription[$locale];
-            }
-
-            // fallback
-            if (array_key_exists('de', $this->operatingAreaDescription)
-                && !empty($this->operatingAreaDescription['de']))
-            {
-                return $this->operatingAreaDescription['de'];
-            }
-        }
+        return $this->getLocalizedProperty('operatingAreaDescription', $locale);
     }
 
     /**
-     * TODO
+     * Gets localized description.
+     *
+     * @return string
      */
     public function getDescriptionLocalized($locale = 'de')
     {
-        if (empty($this->description)) {
-            return;
-        }
-
-        if (is_array($this->description)) {
-            if (array_key_exists($locale, $this->description)
-                && !empty($this->description[$locale]))
-            {
-                return $this->description[$locale];
-            }
-
-            // fallback
-            if (array_key_exists('de', $this->description)
-                && !empty($this->description['de']))
-            {
-                return $this->description['de'];
-            }
-        }
-
-        return $this->getDescription();
+        return $this->getLocalizedProperty('description', $locale);
     }
 
+    /**
+     * Gets organizations.
+     *
+     * @return ArrayCollection<int, Organization>
+     */
     public function getOrganizations()
     {
         return $this->organizations;
@@ -498,11 +595,21 @@ class Site
         return $this->url;
     }
 
+    /**
+     * Gets persons.
+     *
+     * @return ArrayCollection<int, Person>
+     */
     public function getPersons()
     {
         return $this->persons;
     }
 
+    /**
+     * Serializes entity according to Schema.org.
+     *
+     * @return array
+     */
     public function jsonLdSerialize($locale, $omitContext = false)
     {
         $ret = [

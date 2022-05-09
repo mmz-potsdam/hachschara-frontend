@@ -12,65 +12,78 @@
         <h1>{{ site.name }}</h1>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-8 col-md-9">
+                <div class="col-sm-8 col-lg-9">
                     <div class="container-fluid">
                         <dl class="row">
                         {% if site.alternateName is not empty %}
-                            <dt class="col-xs-3 col-sm-2">{{ 'Alternate Name'|trans }}</dt>
-                            <dd class="col-xs-9 col-sm-10">
+                            <dt class="col-sm-4 col-md-3">{{ 'Alternate Name'|trans }}</dt>
+                            <dd class="col-sm-8 col-md-9">
                                 {{ site.alternateName|nl2br }}
                             </dd>
                         {% endif %}
                         {% if site.types is not empty %}
-                            <dt class="col-xs-3 col-sm-2">{{ 'Type of Hakshara'|trans }}</dt>
-                            <dd class="col-xs-9 col-sm-10">
+                            <dt class="col-sm-4 col-md-3">{{ 'Type of Hakshara'|trans }}</dt>
+                            <dd class="col-sm-8 col-md-9">
                             {% for term in site.types %}
                                 {{ term.nameLocalized(app.request.locale) }}{% if not loop.last %}, {% endif %}
                             {% endfor %}
                             </dd>
                         {% endif %}
                         {% if site.startDate is not empty %}
-                            <dt class="col-xs-3 col-sm-2">{{ 'Founded'|trans }}</dt>
-                            <dd class="col-xs-9 col-sm-10">
+                            <dt class="col-sm-4 col-md-3">{{ 'Founded'|trans }}</dt>
+                            <dd class="col-sm-8 col-md-9">
                                 {{ site.startDate|dateextended -}}
                             </dd>
                         {% endif %}
                         {% if site.realizedDate is not empty %}
-                            <dt class="col-xs-3 col-sm-2">{{ 'Opened'|trans }}</dt>
-                            <dd class="col-xs-9 col-sm-10">
+                            <dt class="col-sm-4 col-md-3">{{ 'Opened'|trans }}</dt>
+                            <dd class="col-sm-8 col-md-9">
                                 {{ site.realizedDate|dateextended -}}
                             </dd>
                         {% endif %}
                         {% if site.endDate is not empty %}
-                            <dt class="col-xs-3 col-sm-2">{{ 'Dissolution'|trans }}</dt>
-                            <dd class="col-xs-9 col-sm-10">
+                            <dt class="col-sm-4 col-md-3">{{ 'Dissolution'|trans }}</dt>
+                            <dd class="col-sm-8 col-md-9">
                                 {{ site.endDate|dateextended -}}
                             </dd>
                         {% endif %}
                         {% if site.operatingArea is not empty or site.operatingAreaDescription is not empty %}
-                            <dt class="col-xs-3 col-sm-2">{{ 'Operating Area'|trans }}</dt>
-                            <dd class="col-xs-9 col-sm-10">
+                            <dt class="col-sm-4 col-md-3">{{ 'Operating Area'|trans }}</dt>
+                            <dd class="col-sm-8 col-md-9">
                                 {% if site.operatingArea is not empty %}
                                     <div>{{ site.operatingArea|format_number() }} {{ 'hectare'|trans }}</div>
                                 {% endif %}
                                 {{ site.operatingAreaDescriptionLocalized(app.request.locale)|nl2br }}
                             </dd>
                         {% endif %}
-                        {% if site.description is not empty %}
-                            <dt class="col-xs-3 col-sm-2">{{ 'Description'|trans }}</dt>
-                            <dd class="col-xs-9 col-sm-10">{{ site.descriptionLocalized(app.request.locale)|nl2br }}</dd>
+                        {% if site.educations is not empty or site.educationsDescriptionLocalized(app.request.locale) is not empty %}
+                            <dt class="col-sm-4 col-md-3">{{ 'Educational Areas'|trans }}</dt>
+                            <dd class="col-sm-8 col-md-9">
+                                {% if site.educations is not empty %}
+                                    <div>
+                                        {% for term in site.educations %}
+                                            {{ term.nameLocalized(app.request.locale) }}{% if not loop.last %}, {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                                {{ site.educationsDescriptionLocalized(app.request.locale)|nl2br }}
+                            </dd>
+                        {% endif %}
+                        {% if site.descriptionLocalized(app.request.locale) is not empty %}
+                            <dt class="col-sm-4 col-md-3">{{ 'Description'|trans }}</dt>
+                            <dd class="col-sm-8 col-md-9">{{ site.descriptionLocalized(app.request.locale)|nl2br }}</dd>
                         {% endif %}
 
                         {% if site.hasInfo('general') %}
-                            <dt class="col-xs-3 col-sm-2">{{ 'Literature'|trans }}</dt>
-                            <dd class="col-xs-9 col-sm-10">
+                            <dt class="col-sm-4 col-md-3">{{ 'Literature'|trans }}</dt>
+                            <dd class="col-sm-8 col-md-9">
                                 {{ helper.render_info(site.infoExpanded('general')) }}
                             </dd>
                         {% endif %}
                         </dl>
                     </div><!-- .container-fluid -->
                 </div>
-                <div class="col-sm-4 col-md-3">
+                <div class="col-sm-4 col-lg-3">
                     <h3>{{ 'Address'|trans }}</h3>
                     {% if site.streetAddress is not empty %}
                         {{ site.streetAddress }}<br />
