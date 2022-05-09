@@ -13,10 +13,16 @@ use Doctrine\ORM\Mapping as ORM;
 class Site
 /* implements JsonLdSerializable */
 {
-    protected static $termsById;
+    protected static $termsById = null;
 
     public static function initTerms($em)
     {
+        if (!is_null(self::$termsById)) {
+            return; // already initialized
+        }
+
+        self::$termsById = [];
+
         $qb = $em->createQueryBuilder();
 
         $qb->select([ 'T' ])
@@ -31,7 +37,7 @@ class Site
             ;
 
         foreach ($qb->getQuery()->getResult() as $term) {
-            $termsById[$term->getId()] = $term;
+            self::$termsById[$term->getId()] = $term;
         }
     }
 
@@ -156,6 +162,20 @@ class Site
     private $description;
 
     /**
+     * @var double
+     *
+     * @ORM\Column(name="operating_area", type="decimal", nullable=true)
+     */
+    private $operatingArea;
+
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="operating_area_description", type="json_array", length=65535, nullable=true)
+     */
+    private $operatingAreaDescription;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="url", type="string", length=255, nullable=true)
@@ -239,6 +259,34 @@ class Site
     public function getStatus()
     {
         return $this->status;
+    }
+
+    private function getTypeIds()
+    {
+        if (empty($this->types)) {
+            return $this->types;
+        }
+
+        // simple_array doesn't trim space after ,
+        return array_map('trim', $this->types);
+    }
+
+    public function getTypes()
+    {
+        $terms = [];
+
+        $typeIds = $this->getTypeIds();
+        if (empty($typeIds) || is_null(self::$termsById)) {
+            return $terms;
+        }
+
+        foreach ($typeIds as $termId) {
+            if (array_key_exists($termId, self::$termsById)) {
+                $terms[] = self::$termsById[$termId];
+            }
+        }
+
+        return $terms;
     }
 
     public function buildStatusLabel()
@@ -359,19 +407,39 @@ class Site
         return self::extractYear($this->startDate);
     }
 
-    /**
-     * Gets type.
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
     public function getDescription()
     {
         return $this->description;
+    }
+
+    public function getOperatingArea()
+    {
+        return $this->operatingArea;
+    }
+
+    /**
+     *
+     */
+    public function getOperatingAreaDescriptionLocalized($locale = 'de')
+    {
+        if (empty($this->operatingAreaDescription)) {
+            return;
+        }
+
+        if (is_array($this->operatingAreaDescription)) {
+            if (array_key_exists($locale, $this->operatingAreaDescription)
+                && !empty($this->operatingAreaDescription[$locale]))
+            {
+                return $this->operatingAreaDescription[$locale];
+            }
+
+            // fallback
+            if (array_key_exists('de', $this->operatingAreaDescription)
+                && !empty($this->operatingAreaDescription['de']))
+            {
+                return $this->operatingAreaDescription['de'];
+            }
+        }
     }
 
     /**

@@ -21,6 +21,14 @@
                                 {{ site.alternateName|nl2br }}
                             </dd>
                         {% endif %}
+                        {% if site.types is not empty %}
+                            <dt class="col-xs-3 col-sm-2">{{ 'Type of Hakshara'|trans }}</dt>
+                            <dd class="col-xs-9 col-sm-10">
+                            {% for term in site.types %}
+                                {{ term.nameLocalized(app.request.locale) }}{% if not loop.last %}, {% endif %}
+                            {% endfor %}
+                            </dd>
+                        {% endif %}
                         {% if site.startDate is not empty %}
                             <dt class="col-xs-3 col-sm-2">{{ 'Founded'|trans }}</dt>
                             <dd class="col-xs-9 col-sm-10">
@@ -39,6 +47,15 @@
                                 {{ site.endDate|dateextended -}}
                             </dd>
                         {% endif %}
+                        {% if site.operatingArea is not empty or site.operatingAreaDescription is not empty %}
+                            <dt class="col-xs-3 col-sm-2">{{ 'Operating Area'|trans }}</dt>
+                            <dd class="col-xs-9 col-sm-10">
+                                {% if site.operatingArea is not empty %}
+                                    <div>{{ site.operatingArea|format_number() }} {{ 'hectare'|trans }}</div>
+                                {% endif %}
+                                {{ site.operatingAreaDescriptionLocalized(app.request.locale)|nl2br }}
+                            </dd>
+                        {% endif %}
                         {% if site.description is not empty %}
                             <dt class="col-xs-3 col-sm-2">{{ 'Description'|trans }}</dt>
                             <dd class="col-xs-9 col-sm-10">{{ site.descriptionLocalized(app.request.locale)|nl2br }}</dd>
@@ -52,7 +69,6 @@
                         {% endif %}
                         </dl>
                     </div><!-- .container-fluid -->
-                    {#{ dump(site) }#}
                 </div>
                 <div class="col-sm-4 col-md-3">
                     <h3>{{ 'Address'|trans }}</h3>
