@@ -68,6 +68,13 @@ implements JsonLdSerializable
     private $types;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="condition", type="integer", nullable=true)
+     */
+    private $condition = '0';
+
+    /**
      * @var Place The location of, for example, where an event is happening, where an organization is located, or where an action takes place. .
      *
      * @ORM\ManyToOne(targetEntity="App\Entity\Place", inversedBy="sites")
@@ -327,11 +334,14 @@ implements JsonLdSerializable
      *
      * @return ArrayCollection<int, Term>
      */
-    private function getTerms($property)
+    private function getTerms($property, $termsIds = null)
     {
         $terms = [];
 
-        $termsIds = $this->getTermIds($property);
+        if (is_null($termsIds)) {
+            $termsIds = $this->getTermIds($property);
+        }
+
         if (empty($termsIds) || is_null(self::$termsById)) {
             return $terms;
         }
@@ -390,6 +400,26 @@ implements JsonLdSerializable
     public function getEducations()
     {
         return $this->getTerms('educations');
+    }
+
+    /**
+     * Gets condition.
+     *
+     * @return Term|null
+     */
+    public function getCondition()
+    {
+        if (empty($this->condition)) {
+            return;
+        }
+
+        $terms = $this->getTerms('condition', [ $this->condition ]);
+
+        if (empty($terms)) {
+            return;
+        }
+
+        return $terms[0];
     }
 
     /**
