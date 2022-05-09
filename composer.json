@@ -88,6 +88,7 @@
         "symfony/yaml": "^5.4",
         "tetranz/select2entity-bundle": "^3.1",
         "twig/extra-bundle": "^3.0",
+        "twig/intl-extra": "^3.3",
         "twig/string-extra": "^3.3",
         "twig/twig": "^3.0"
     },
