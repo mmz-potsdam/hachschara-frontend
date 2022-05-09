@@ -1622,16 +1622,16 @@
         },
         {
             "name": "doctrine/persistence",
-            "version": "2.5.2",
+            "version": "2.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/persistence.git",
-                "reference": "4276c6cbc0ca692c190f650a2678623bf04af2d2"
+                "reference": "d7edf274b6d35ad82328e223439cc2bb2f92bd9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/persistence/zipball/4276c6cbc0ca692c190f650a2678623bf04af2d2",
-                "reference": "4276c6cbc0ca692c190f650a2678623bf04af2d2",
+                "url": "https://api.github.com/repos/doctrine/persistence/zipball/d7edf274b6d35ad82328e223439cc2bb2f92bd9e",
+                "reference": "d7edf274b6d35ad82328e223439cc2bb2f92bd9e",
                 "shasum": ""
             },
             "require": {
@@ -1704,7 +1704,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/persistence/issues",
-                "source": "https://github.com/doctrine/persistence/tree/2.5.2"
+                "source": "https://github.com/doctrine/persistence/tree/2.5.3"
             },
             "funding": [
                 {
@@ -1720,7 +1720,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-02T17:29:02+00:00"
+            "time": "2022-05-03T09:16:53+00:00"
         },
         {
             "name": "doctrine/sql-formatter",
@@ -1844,16 +1844,16 @@
         },
         {
             "name": "friendsofphp/proxy-manager-lts",
-            "version": "v1.0.10",
+            "version": "v1.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/proxy-manager-lts.git",
-                "reference": "88dda72c48633326c81a01b861c8b6a923948f56"
+                "reference": "8419f0158715b30d4b99a5bd37c6a39671994ad7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/proxy-manager-lts/zipball/88dda72c48633326c81a01b861c8b6a923948f56",
-                "reference": "88dda72c48633326c81a01b861c8b6a923948f56",
+                "url": "https://api.github.com/repos/FriendsOfPHP/proxy-manager-lts/zipball/8419f0158715b30d4b99a5bd37c6a39671994ad7",
+                "reference": "8419f0158715b30d4b99a5bd37c6a39671994ad7",
                 "shasum": ""
             },
             "require": {
@@ -1910,7 +1910,7 @@
             ],
             "support": {
                 "issues": "https://github.com/FriendsOfPHP/proxy-manager-lts/issues",
-                "source": "https://github.com/FriendsOfPHP/proxy-manager-lts/tree/v1.0.10"
+                "source": "https://github.com/FriendsOfPHP/proxy-manager-lts/tree/v1.0.12"
             },
             "funding": [
                 {
@@ -1922,7 +1922,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-01T10:41:21+00:00"
+            "time": "2022-05-05T09:31:05+00:00"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -3704,32 +3704,35 @@
         },
         {
             "name": "seboettg/citeproc-php",
-            "version": "v2.2.5",
+            "version": "v2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/seboettg/citeproc-php.git",
-                "reference": "53e94194a8269adf87cbf95a2d47876baf91f5d8"
+                "reference": "b6478c9cbac7402d90e692fdb9747afefcf276a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/seboettg/citeproc-php/zipball/53e94194a8269adf87cbf95a2d47876baf91f5d8",
-                "reference": "53e94194a8269adf87cbf95a2d47876baf91f5d8",
+                "url": "https://api.github.com/repos/seboettg/citeproc-php/zipball/b6478c9cbac7402d90e692fdb9747afefcf276a7",
+                "reference": "b6478c9cbac7402d90e692fdb9747afefcf276a7",
                 "shasum": ""
             },
             "require": {
-                "ext-intl": "*",
                 "ext-json": "*",
+                "ext-mbstring": "*",
                 "ext-simplexml": "*",
-                "myclabs/php-enum": "^1.5",
-                "php": ">=7.1",
-                "seboettg/collection": "^2.1",
-                "symfony/polyfill-mbstring": "^1.10"
+                "myclabs/php-enum": "^1.8",
+                "php": ">=7.3",
+                "seboettg/collection": ">=3.0"
             },
             "require-dev": {
                 "php-coveralls/php-coveralls": "^1",
                 "phpmd/phpmd": "^2.8",
-                "phpunit/phpunit": "^7.5",
+                "phpunit/phpunit": "^8.5",
                 "squizlabs/php_codesniffer": "^3.5"
+            },
+            "suggest": {
+                "ext-intl": "*",
+                "symfony/polyfill-mbstring": "^1.10"
             },
             "type": "library",
             "autoload": {
@@ -3755,33 +3758,35 @@
             "description": "Full-featured CSL processor (https://citationstyles.org)",
             "support": {
                 "issues": "https://github.com/seboettg/citeproc-php/issues",
-                "source": "https://github.com/seboettg/citeproc-php/tree/v2.2.5"
+                "source": "https://github.com/seboettg/citeproc-php/tree/v2.4.1"
             },
-            "time": "2020-12-06T10:15:17+00:00"
+            "time": "2022-05-08T11:29:02+00:00"
         },
         {
             "name": "seboettg/collection",
-            "version": "v2.1.1",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/seboettg/Collection.git",
-                "reference": "292a342c557e9c5b970a3736d3f6f987699a49de"
+                "reference": "a081b13e93743a0519bb8f047dada47625f8a28a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/seboettg/Collection/zipball/292a342c557e9c5b970a3736d3f6f987699a49de",
-                "reference": "292a342c557e9c5b970a3736d3f6f987699a49de",
+                "url": "https://api.github.com/repos/seboettg/Collection/zipball/a081b13e93743a0519bb8f047dada47625f8a28a",
+                "reference": "a081b13e93743a0519bb8f047dada47625f8a28a",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1"
+                "php": ">=7.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "6.5.*",
-                "satooshi/php-coveralls": "2.*"
+                "phpunit/phpunit": "8.5.*"
             },
             "type": "library",
             "autoload": {
+                "files": [
+                    "src/ArrayList/Functions.php"
+                ],
                 "psr-4": {
                     "Seboettg\\Collection\\": "src/"
                 }
@@ -3815,9 +3820,9 @@
             ],
             "support": {
                 "issues": "https://github.com/seboettg/Collection/issues",
-                "source": "https://github.com/seboettg/Collection/tree/v2.1.1"
+                "source": "https://github.com/seboettg/Collection/tree/v3.0.0"
             },
-            "time": "2021-05-10T23:27:19+00:00"
+            "time": "2022-05-07T18:04:26+00:00"
         },
         {
             "name": "symfony/asset",
@@ -11038,16 +11043,16 @@
         },
         {
             "name": "symfony/maker-bundle",
-            "version": "v1.40.1",
+            "version": "v1.41.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/maker-bundle.git",
-                "reference": "adc846e4f852e3aa2cd84a433cd05ba23dd19c3f"
+                "reference": "4b994dfdd0196dcb3d333fdd6a1d72d5955a9532"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/adc846e4f852e3aa2cd84a433cd05ba23dd19c3f",
-                "reference": "adc846e4f852e3aa2cd84a433cd05ba23dd19c3f",
+                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/4b994dfdd0196dcb3d333fdd6a1d72d5955a9532",
+                "reference": "4b994dfdd0196dcb3d333fdd6a1d72d5955a9532",
                 "shasum": ""
             },
             "require": {
@@ -11063,10 +11068,13 @@
                 "symfony/framework-bundle": "^5.4.7|^6.0",
                 "symfony/http-kernel": "^5.4.7|^6.0"
             },
+            "conflict": {
+                "doctrine/orm": "<2.10"
+            },
             "require-dev": {
                 "composer/semver": "^3.0",
                 "doctrine/doctrine-bundle": "^2.4",
-                "doctrine/orm": "^2.3",
+                "doctrine/orm": "^2.10.0",
                 "symfony/http-client": "^5.4.7|^6.0",
                 "symfony/phpunit-bridge": "^5.4.7|^6.0",
                 "symfony/polyfill-php80": "^1.16.0",
@@ -11106,7 +11114,7 @@
             ],
             "support": {
                 "issues": "https://github.com/symfony/maker-bundle/issues",
-                "source": "https://github.com/symfony/maker-bundle/tree/v1.40.1"
+                "source": "https://github.com/symfony/maker-bundle/tree/v1.41.0"
             },
             "funding": [
                 {
@@ -11122,7 +11130,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-23T19:42:13+00:00"
+            "time": "2022-05-04T16:32:52+00:00"
         },
         {
             "name": "symfony/phpunit-bridge",
