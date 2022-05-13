@@ -60,7 +60,7 @@
         "liip/url-auto-converter-bundle": "dev-master",
         "phpdocumentor/reflection-docblock": "^5.3",
         "scienta/doctrine-json-functions": "4.3",
-        "seboettg/citeproc-php": "^2.2",
+        "seboettg/citeproc-php": "^2.4",
         "symfony/asset": "^5.4",
         "symfony/console": "^5.4",
         "symfony/dotenv": "^5.4",
