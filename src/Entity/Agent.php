@@ -148,6 +148,11 @@ abstract class Agent
     protected $entityfacts;
 
     /**
+     * @ORM\OneToMany(targetEntity="AgentSite", mappedBy="agent", cascade={"persist", "remove"}, orphanRemoval=TRUE)
+     */
+    protected $siteReferences;
+
+    /**
      * @var
      *
      * @ORM\Column(type="json_array", nullable=true)

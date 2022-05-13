@@ -79,6 +79,26 @@
                             <dd class="col-sm-8 col-md-9">{{ site.condition.nameLocalized(app.request.locale) }}</dd>
                         {% endif %}
 
+                        {% set orgRefs = site.organizationReferences %}
+                        {% if orgRefs is not empty %}
+                            <dt class="col-sm-4 col-md-3">{{ 'Related Organizations'|trans }}</dt>
+                            <dd class="col-sm-8 col-md-9">
+                            {% for orgRef in orgRefs %}
+                                <div>{{ orgRef.agent.name }} ({{ orgRef.role.nameLocalized(app.request.locale) }})</div>
+                            {% endfor %}
+                            </dd>
+                        {% endif %}
+
+                        {% set personRefs = site.personReferences %}
+                        {% if personRefs is not empty %}
+                            <dt class="col-sm-4 col-md-3">{{ 'Related Persons'|trans }}</dt>
+                            <dd class="col-sm-8 col-md-9">
+                            {% for personRef in personRefs %}
+                                <div>{{ personRef.agent.fullname }} ({{ personRef.role.nameLocalized(app.request.locale) }})</div>
+                            {% endfor %}
+                            </dd>
+                        {% endif %}
+
                         {% if site.hasInfo('general') %}
                             <dt class="col-sm-4 col-md-3">{{ 'Literature'|trans }}</dt>
                             <dd class="col-sm-8 col-md-9">

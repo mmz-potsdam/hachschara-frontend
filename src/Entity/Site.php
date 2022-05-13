@@ -202,6 +202,17 @@ implements JsonLdSerializable
     private $url;
 
     /**
+     * @ORM\OneToMany(
+     *   targetEntity="AgentSite",
+     *   mappedBy="site",
+     *   cascade={"persist", "remove"},
+     *   orphanRemoval=TRUE
+     * )
+     * @ORM\OrderBy({"ord" = "ASC"})
+     */
+    private $agentReferences;
+
+    /**
      * @var array|null
      *
      * @ORM\Column(name="notes", type="json_array", length=65535, nullable=true)
@@ -626,13 +637,37 @@ implements JsonLdSerializable
     }
 
     /**
-     * Gets persons.
+     * Gets agent references.
      *
-     * @return ArrayCollection<int, Person>
+     * @return ArrayCollection<int, AgentSite>
      */
-    public function getPersons()
+    public function getAgentReferences()
     {
-        return $this->persons;
+        return $this->agentReferences;
+    }
+
+    /**
+     * Gets person references.
+     *
+     * @return ArrayCollection<int, AgentSite>
+     */
+    public function getPersonReferences()
+    {
+        return $this->getAgentReferences()->filter(function(AgentSite $agentSite) {
+            return $agentSite->getAgent() instanceof Person;
+        });
+    }
+
+    /**
+     * Gets organization references.
+     *
+     * @return ArrayCollection<int, AgentSite>
+     */
+    public function getOrganizationReferences()
+    {
+        return $this->getAgentReferences()->filter(function(AgentSite $agentSite) {
+            return $agentSite->getAgent() instanceof Organization;
+        });
     }
 
     /**
