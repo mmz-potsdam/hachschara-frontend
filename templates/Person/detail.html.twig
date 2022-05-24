@@ -82,10 +82,10 @@
                     <dt class="col-sm-4 col-md-3">{{ 'Cause of Death'|trans }}</dt>
                     <dd class="col-sm-8 col-md-9">{{ person.deathCause }}</dd>
                 {% endif %}
-                {% if person.notes is not empty and person.notes['birth_death'] is not empty %}
+                {#% if person.notes is not empty and person.notes['birth_death'] is not empty %}
                     <dt class="col-sm-4 col-md-3">{{ 'Notes'|trans }}</dt>
                     <dd class="col-sm-8 col-md-9">{{ dump(person.notes['birth_death']) }}</dd>
-                {% endif %}
+                {% endif %#}
                 {% if person.nationality is not empty %}
                     <dt class="col-sm-4 col-md-3">{{ 'Nationality'|trans }}</dt>
                     <dd class="col-sm-8 col-md-9">{{ person.nationality }}</dd>
