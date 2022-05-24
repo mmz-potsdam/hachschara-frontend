@@ -1,0 +1,81 @@
+{% extends 'Base/base.html.twig' %}
+
+{% import 'Shared/helper.html.twig' as helper %}
+{% import 'Shared/map-leaflet.html.twig' as map %}
+
+{% block head %}
+    {{ map.head() }}
+
+    {{ helper.seealso_head_gnd() }}
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h1>{{ organization.name }}</h1>
+        <div class="row">
+            <div class="col-sm-9">
+                {% if organization.disambiguatingDescription is not empty %}
+                    {{ organization.disambiguatingDescription }}
+                {% endif %}
+                <dl class="row">
+                {% if organization.alternateName is not empty %}
+                    <dt class="col-sm-4 col-md-3">Alternate Name(s)</dt>
+                    <dd class="col-sm-8 col-md-9">{{ organization.alternateName|nl2br }}</dd>
+                {% endif %}
+                {% if organization.notes is not empty and organization.notes.name is not empty %}
+                    <dt class="col-sm-4 col-md-3">Notes</dt>
+                    <dd class="col-sm-8 col-md-9">{{ dump(organization.notes.name) }}</dd>
+                {% endif %}
+                {% set foundingLocation = organization.foundingLocationInfo(app.request.locale) %}
+                {% if foundingLocation is not empty or organization.foundingDate is not empty %}
+                    <dt class="col-sm-4 col-md-3">{{ 'Founded'|trans }}</dt>
+                    <dd class="col-sm-8 col-md-9">
+                        {{ organization.foundingDate|dateextended -}}
+                        {% if false and foundingLocation is not empty %}{% if organization.foundingDate is not empty %}{{- ',' }}{% endif %}
+                            {% if foundingLocation.id is defined and foundingLocation.id is not empty %}
+                                <a href="{% if foundingLocation.tgn is not empty %}{{ path('place-by-tgn', { 'tgn' : foundingLocation.tgn }) }}{% else %}{{ path('place', { 'id' : foundingLocation.id }) }}{% endif %}">
+                                {{ foundingLocation['name'] }}
+                                </a>
+                            {% else %}
+                                {{ foundingLocation['name'] }}
+                            {% endif %}
+                        {% endif %}
+                    </dd>
+                {% endif %}
+                {% if organization.dissolutionDate is not empty %}
+                    <dt class="col-sm-4 col-md-3">{{ 'Dissolution'|trans }}</dt>
+                    <dd class="col-sm-8 col-md-9">
+                        {{ organization.dissolutionDate|dateextended -}}
+                    </dd>
+                {% endif %}
+                {#% if organization.notes is not empty and organization.notes['founding_dissolution'] is not empty %}
+                    <dt class="col-sm-4 col-md-3">Notes</dt>
+                    <dd class="col-sm-8 col-md-9">{{ dump(organization.notes['founding_dissolution']) }}</dd>
+                {% endif %#}
+                {% if organization.description is not empty %}
+                    <dt class="col-sm-4 col-md-3">{{ 'Description'|trans }}</dt>
+                    <dd class="col-sm-8 col-md-9">{{ organization.description|nl2br }}</dd>
+                {% endif %}
+                {% set siteRefs = organization.siteReferences %}
+                {% if siteRefs is not empty %}
+                    <dt class="col-sm-4 col-md-3">{{ 'Related Sites'|trans }}</dt>
+                    <dd class="col-sm-8 col-md-9">
+                    {% for siteRef in siteRefs %}
+                        <div><a href="{{ path('site', { 'id': siteRef.site.id }) }}">{{ siteRef.site.name }}</a> ({{ siteRef.role.nameLocalized(app.request.locale) }})</div>
+                    {% endfor %}
+                    </dd>
+                {% endif %}
+                </dl>
+                {#{ dump(organization) }#}
+            </div>
+            <div class="col-sm-3">
+                {% if organization.gnd is not empty %}
+                    <h3>{{ 'Integrated Authority File'|trans }}
+                        <a href="https://d-nb.info/gnd/{{ organization.gnd }}" target="_blank">{{ organization.gnd }}</a>
+                    </h3>
+                    <div title="{{ organization.gnd }}" class="gndaks seealso-ul"></div>
+                {% endif %}
+            </div>
+        </div><!-- .row -->
+    </div><!-- .container-fluid -->
+{% endblock %}

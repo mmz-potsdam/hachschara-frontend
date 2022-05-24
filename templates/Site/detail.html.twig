@@ -84,7 +84,7 @@
                             <dt class="col-sm-4 col-md-3">{{ 'Related Organizations'|trans }}</dt>
                             <dd class="col-sm-8 col-md-9">
                             {% for orgRef in orgRefs %}
-                                <div>{{ orgRef.agent.name }} ({{ orgRef.role.nameLocalized(app.request.locale) }})</div>
+                                <div><a href="{{ path('organization', { 'id': orgRef.agent.id }) }}">{{ orgRef.agent.name }}</a> ({{ orgRef.role.nameLocalized(app.request.locale) }})</div>
                             {% endfor %}
                             </dd>
                         {% endif %}
