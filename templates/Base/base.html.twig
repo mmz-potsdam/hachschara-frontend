@@ -42,11 +42,27 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('site-index') }}">{{ 'Sites'|trans }}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('glossary-index') }}">{{ 'Glossary'|trans }}</a>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="dropdownLookupMenuButton" data-bs-toggle="dropdown">
+                                {{ 'Look-up'|trans }}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownLookupMenuButton">
+                                <a class="dropdown-item" href="{{ path('glossary-index') }}">{{ 'Glossary'|trans }}</a>
+                                <a class="dropdown-item" href="{{ path('bibliography-index') }}">{{ 'Literature'|trans }}</a>
+
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="{{ path('about') }}" class="nav-link dropdown-toggle" id="dropdownAboutMenuButton" data-bs-toggle="dropdown">
+                                {{ 'About'|trans }}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownAboutMenuButton">
+                                <a class="dropdown-item" href="{{ path('about') }}">{{ 'This Website'|trans }}</a>
+                                <a class="dropdown-item" href="{{ path('about') }}#imprint">{{ 'Imprint'|trans }}</a>
+                            </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('bibliography-index') }}">{{ 'Bibliography'|trans }}</a>
+
                         </li>
                     </ul>
                     {% if locales|length > 1  and app.request.attributes.get("_route") is not null %}

@@ -8,21 +8,31 @@
         {% else %}
         <p>Hakhsharah as a Place of Remembrance is a joint project of the der <a href="https://www.stiftung-denkmal.de/en/" target="_blank">Foundation Memorial to the Murdered Jews of Europe (Berlin)</a>, the <a href="https://www.mmz-potsdam.de/" target="_blank">Moses Mendelssohn Center for European-Jewish Studies (Potsdam)</a> and the <a href="https://www.juedischejugendkultur.de/" target="_blank">DFG-Project: National Jewish Youth Culture and Zionist Education in Germany and Palestine between the World Wars (Braunschweig)</a>.</p>
         {% endif %}
-        <p><a class="btn btn-primary" href="{{ path('about') }}" role="button">{{ 'Read-on'|trans }} &raquo;</a></p>
+        <p>
+            <a class="btn btn-primary" href="{{ path('about') }}" role="button">{{ 'Read-on'|trans }} &raquo;</a>
+        </p>
     </div>
 {% endblock %}
 
 {% block body %}
     <div class="col-sm-4 text-sm-center">
         <h2>{{ 'Sites'|trans }}</h2>
-        <p><a class="btn btn-secondary" href="{{ path('site-map') }}" role="button">{{ 'Map'|trans }} &raquo;</a> <a class="btn btn-secondary" href="{{ path('site-index') }}" role="button">{{ 'Overview A-Z'|trans }} &raquo;</a></p>
+        <p>
+            <a class="btn btn-secondary" href="{{ path('site-map') }}" role="button">{{ 'Map'|trans }} &raquo;</a>
+            <a class="btn btn-secondary" href="{{ path('site-index') }}" role="button">{{ 'Overview A-Z'|trans }} &raquo;</a>
+        </p>
     </div>
     <div class="col-sm-4 text-sm-center">
-        <h2>{{ 'Glossary'|trans }}</h2>
-        <p><a class="btn btn-secondary" href="{{ path('glossary-index') }}" role="button">{{ 'Show'|trans }} &raquo;</a></p>
+        <h2>{{ 'Look-up'|trans }}</h2>
+        <p>
+            <a class="btn btn-secondary" href="{{ path('glossary-index') }}" role="button">{{ 'Glossary'|trans }} &raquo;</a>
+            <a class="btn btn-secondary" href="{{ path('bibliography-index') }}" role="button">{{ 'Bibliography'|trans }} &raquo;</a>
+        </p>
     </div>
     <div class="col-sm-4 text-sm-center">
-        <h2>{{ 'Bibliography'|trans }}</h2>
-        <p><a class="btn btn-secondary" href="{{ path('bibliography-index') }}" role="button">{{ 'Show'|trans }} &raquo;</a></p>
+        <h2>{{ 'About'|trans }}</h2>
+        <p>
+            <a class="btn btn-secondary" href="{{ path('about') }}" role="button">{{ 'This Website'|trans }} &raquo;</a>
+        </p>
     </div>
 {% endblock %}
