@@ -94,7 +94,7 @@
                             <dt class="col-sm-4 col-md-3">{{ 'Related Persons'|trans }}</dt>
                             <dd class="col-sm-8 col-md-9">
                             {% for personRef in personRefs %}
-                                <div>{{ personRef.agent.fullname }} ({{ personRef.role.nameLocalized(app.request.locale) }})</div>
+                                <div><a href="{{ path('person', { 'id': personRef.agent.id }) }}">{{ personRef.agent.fullname }}</a> ({{ personRef.role.nameLocalized(app.request.locale) }})</div>
                             {% endfor %}
                             </dd>
                         {% endif %}

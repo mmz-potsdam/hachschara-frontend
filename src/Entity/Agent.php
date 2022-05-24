@@ -542,4 +542,14 @@ abstract class Agent
 
         return $this->changedAt;
     }
+
+    /**
+     * Gets site references.
+     *
+     * @return ArrayCollection<int, AgentSite>
+     */
+    public function getSiteReferences()
+    {
+        return $this->siteReferences;
+    }
 }

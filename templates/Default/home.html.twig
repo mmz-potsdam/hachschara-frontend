@@ -17,21 +17,22 @@
 {% block body %}
     <div class="col-sm-4 text-sm-center">
         <h2>{{ 'Sites'|trans }}</h2>
-        <p>
+        <p style="line-height: 2.5rem">
             <a class="btn btn-secondary" href="{{ path('site-map') }}" role="button">{{ 'Map'|trans }} &raquo;</a>
             <a class="btn btn-secondary" href="{{ path('site-index') }}" role="button">{{ 'Overview A-Z'|trans }} &raquo;</a>
         </p>
     </div>
     <div class="col-sm-4 text-sm-center">
         <h2>{{ 'Look-up'|trans }}</h2>
-        <p>
+        <p style="line-height: 2.5rem">
+            <a class="btn btn-secondary" href="{{ path('person-index') }}" role="button">{{ 'Persons'|trans }} &raquo;</a>
             <a class="btn btn-secondary" href="{{ path('glossary-index') }}" role="button">{{ 'Glossary'|trans }} &raquo;</a>
             <a class="btn btn-secondary" href="{{ path('bibliography-index') }}" role="button">{{ 'Bibliography'|trans }} &raquo;</a>
         </p>
     </div>
     <div class="col-sm-4 text-sm-center">
         <h2>{{ 'About'|trans }}</h2>
-        <p>
+        <p style="line-height: 2.5rem">
             <a class="btn btn-secondary" href="{{ path('about') }}" role="button">{{ 'This Website'|trans }} &raquo;</a>
         </p>
     </div>

@@ -334,6 +334,10 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
      */
     public function getDeathDate()
     {
+        if (is_null($this->deathDate) || '0000-00-00' == $this->deathDate) {
+            return null;
+        }
+
         return $this->deathDate;
     }
 
