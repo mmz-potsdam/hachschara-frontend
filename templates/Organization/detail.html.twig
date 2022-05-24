@@ -22,10 +22,10 @@
                     <dt class="col-sm-4 col-md-3">Alternate Name(s)</dt>
                     <dd class="col-sm-8 col-md-9">{{ organization.alternateName|nl2br }}</dd>
                 {% endif %}
-                {% if organization.notes is not empty and organization.notes.name is not empty %}
+                {#% if organization.notes is not empty and organization.notes.name is not empty %}
                     <dt class="col-sm-4 col-md-3">Notes</dt>
                     <dd class="col-sm-8 col-md-9">{{ dump(organization.notes.name) }}</dd>
-                {% endif %}
+                {% endif %#}
                 {% set foundingLocation = organization.foundingLocationInfo(app.request.locale) %}
                 {% if foundingLocation is not empty or organization.foundingDate is not empty %}
                     <dt class="col-sm-4 col-md-3">{{ 'Founded'|trans }}</dt>
