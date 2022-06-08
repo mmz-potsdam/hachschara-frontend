@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Intl\Intl;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
@@ -100,9 +100,13 @@ extends BaseController
 
     /**
      * @Route("/site/{id}.jsonld", name="site-jsonld", requirements={"id"="\d+"})
+     * @Route("/site/{id}.pdf", name="site-pdf", requirements={"id"="\d+"})
      * @Route("/site/{id}", name="site", requirements={"id"="\d+"})
      */
-    public function detailAction(Request $request, EntityManagerInterface $entityManager, $id)
+    public function detailAction(Request $request,
+                                 EntityManagerInterface $entityManager,
+                                 \App\Utils\MpdfConverter $pdfConverter,
+                                 $id)
     {
         $repo = $entityManager
                 ->getRepository('App\Entity\Site');
@@ -120,24 +124,47 @@ extends BaseController
         \App\Entity\Site::initTerms($entityManager);
 
         $entity = $entities[0];
-        // $entity->setDateModified(\App\Search\SiteListBuilder::fetchDateModified($entityManager->getConnection(), $entity->getId()));
+
+        $routeName = $request->get('_route');
+        $routeParams = [ 'id' => $entity->getId() ];
 
         $locale = $request->getLocale();
-        if (in_array($request->get('_route'), [ 'site-jsonld' ])) {
+        if (in_array($routeName, [ 'site-jsonld' ])) {
             return new JsonLdResponse($entity->jsonLdSerialize($locale));
         }
 
-        $citeProc = $this->instantiateCiteProc($request->getLocale());
         if ($entity->hasInfo()) {
+            $citeProc = $this->instantiateCiteProc($locale);
             // expand the publications
             $entity->buildInfoFull($entityManager, $citeProc);
         }
 
-        $routeName = 'site';
-        $routeParams = [ 'id' => $entity->getId() ];
+        if (in_array($routeName, [ 'site-pdf' ])) {
+            $html = $this->renderView('Site/detail.html.twig', [
+                'pageTitle' => $entity->getName(),
+                'site' => $entity,
+                'mapMarkers' => $this->buildMapMarkers($entity),
+                'printview' => true,
+                'pageMeta' => [
+                    'jsonLd' => $entity->jsonLdSerialize($locale),
+                    // 'og' => $this->buildOg($entity, $routeName, $routeParams),
+                    // 'twitter' => $this->buildTwitter($entity, $routeName, $routeParams),
+                ],
+            ]);
+
+            $htmlDoc = new \App\Utils\HtmlDocument();
+            $htmlDoc->loadString($html);
+
+            $pdfDoc = $pdfConverter->convert($htmlDoc);
+
+            return new Response((string)$pdfDoc, Response::HTTP_OK, [
+                'Content-Type' => 'application/pdf',
+                // 'Content-Disposition' => 'inline; filename="' . $filename . '"',
+            ]);
+        }
 
         return $this->render('Site/detail.html.twig', [
-            'pageTitle' => $entity->getName(), // TODO: lifespan in brackets
+            'pageTitle' => $entity->getName(),
             'site' => $entity,
             'mapMarkers' => $this->buildMapMarkers($entity),
             'pageMeta' => [

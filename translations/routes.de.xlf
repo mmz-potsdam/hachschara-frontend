@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2022-05-24T09:40:47Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
+  <file date="2022-06-08T10:38:25Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -86,46 +86,6 @@
         <source>/person/{id}.jsonld</source>
         <target>/person/{id}.jsonld</target>
       </trans-unit>
-      <trans-unit id="9da8f1fa7d3a9fd015ae3c831a765e25ae03e4d7" resname="place">
-        <source>/place/{id}</source>
-        <target>/geografikum/{id}</target>
-      </trans-unit>
-      <trans-unit id="8a2cfb1cd549187a3c92452f1dce23d3350f19ac" resname="place-by-tgn">
-        <source>/place/tgn/{tgn}</source>
-        <target>/geografikum/tgn/{tgn}</target>
-      </trans-unit>
-      <trans-unit id="a7b02de6253e9a8b8a19dee44a4264d7d8b39be8" resname="place-by-tgn-jsonld">
-        <source>/place/tgn/{tgn}.jsonld</source>
-        <target>/geografikum/tgn/{tgn}.jsonld</target>
-      </trans-unit>
-      <trans-unit id="83b1942c2302b98f5b436c64dfff0c29243382e3" resname="place-inhabited">
-        <source>/place</source>
-        <target>/geografikum</target>
-      </trans-unit>
-      <trans-unit id="d542a123eb2c2159f2c0d4ef77165bb095b8b2cf" resname="place-jsonld">
-        <source>/place/{id}.jsonld</source>
-        <target>/geografikum/{id}.jsonld</target>
-      </trans-unit>
-      <trans-unit id="d8e94972a997e2826eb793cb0621ed4bd354d097" resname="search-select-birth_place">
-        <source>/search/select/birthplace</source>
-        <target>/suche/auswahl/geburtsort</target>
-      </trans-unit>
-      <trans-unit id="a3b4e09b9c6590ee339e92566070adf1112d5220" resname="search-select-death_place">
-        <source>/search/select/deathplace</source>
-        <target>/suche/auswahl/sterbeort</target>
-      </trans-unit>
-      <trans-unit id="8a1d11a54bb56a027e87d5f400375dfc97c18cb5" resname="search-select-organization">
-        <source>/search/select/organization</source>
-        <target>/suche/auswahl/organisation</target>
-      </trans-unit>
-      <trans-unit id="442aae726ac0d70bbb2b91dde1ed0ef8d6cec1b0" resname="search-select-person">
-        <source>/search/select/person</source>
-        <target>/suche/auswahl/person</target>
-      </trans-unit>
-      <trans-unit id="25f2284500b1c020d099920c4099f084be1698dd" resname="search-select-site">
-        <source>/search/select/site</source>
-        <target>/suche/auswahl/ort</target>
-      </trans-unit>
       <trans-unit id="c099a42a5555825cdb50df0c04932bcd29613457" resname="site">
         <source>/site/{id}</source>
         <target>/ort/{id}</target>
@@ -141,6 +101,10 @@
       <trans-unit id="1f9329c336a12f668219fe1f53c8fb8bfc3fccc3" resname="site-map">
         <source>/site/map</source>
         <target>/ort/karte</target>
+      </trans-unit>
+      <trans-unit id="200d31dc25114023cf813b0bc3aab6adcc84ceaa" resname="site-pdf">
+        <source>/site/{id}.pdf</source>
+        <target state="new">/ort/{id}.pdf</target>
       </trans-unit>
     </body>
   </file>
