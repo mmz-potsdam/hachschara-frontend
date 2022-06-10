@@ -58,6 +58,8 @@
         "knplabs/knp-paginator-bundle": "^5.3",
         "lexik/form-filter-bundle": "^6.1",
         "liip/url-auto-converter-bundle": "dev-master",
+        "masterminds/html5": "^2.7",
+        "mpdf/mpdf": "^8.1",
         "phpdocumentor/reflection-docblock": "^5.3",
         "scienta/doctrine-json-functions": "4.3",
         "seboettg/citeproc-php": "2.4.1",

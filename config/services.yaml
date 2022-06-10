@@ -8,6 +8,17 @@ parameters:
     app.default_locale: 'de'
     app.site.name: "Hakhsharah as a Place of Remembrance"
 
+    app.mpdf-converter.arguments:
+        config:
+            fontDir: [ "%kernel.project_dir%/data/font" ]
+            fontdata:
+                pdffont:
+                    R: 'SourceSansPro-Regular.ttf'
+                    B: 'SourceSansPro-Bold.ttf'
+                    I: 'SourceSansPro-Italic.ttf'
+                    BI: 'SourceSansPro-BoldItalic.ttf'
+            default_font: pdffont
+
 services:
     # default configuration for services in *this* file
     _defaults:
@@ -25,3 +36,5 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    App\Utils\MpdfConverter:
+        arguments: [ '%app.mpdf-converter.arguments%' ]
