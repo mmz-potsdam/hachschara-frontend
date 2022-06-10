@@ -22,6 +22,14 @@ extends AbstractController
     }
 
     /**
+     * @Route("/about/hakhsharah ", name="about-hakhsharah", options={"sitemap" = true})
+     */
+    public function aboutTermAction(Request $request)
+    {
+        return $this->render('Default/about-hakhsharah.html.twig');
+    }
+
+    /**
      * @Route("/about", name="about", options={"sitemap" = true})
      */
     public function aboutAction(Request $request)

@@ -22,7 +22,7 @@
                             </dd>
                         {% endif %}
                         {% if site.types is not empty %}
-                            <dt class="col-sm-4 col-md-3">{{ 'Type of Hakshara'|trans }}</dt>
+                            <dt class="col-sm-4 col-md-3">{{ 'Type of Hakhshara'|trans }}</dt>
                             <dd class="col-sm-8 col-md-9">
                             {% for term in site.types %}
                                 {{ term.nameLocalized(app.request.locale) }}{% if not loop.last %}, {% endif %}
