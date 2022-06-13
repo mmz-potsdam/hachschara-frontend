@@ -80,7 +80,7 @@
       </trans-unit>
       <trans-unit id="d244143a5ed99de90245098c4fad5111075138c6" resname="Alternate Name(s)">
         <source>Alternate Name(s)</source>
-        <target>Alternativ-Name(n)</target>
+        <target>Weitere Namen</target>
         <jms:reference-file line="42">\..\..\..\..\..\..\D:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="619d65e1ae1a2704aa306451ac2a75a0cde345a8" resname="Bibliography">
