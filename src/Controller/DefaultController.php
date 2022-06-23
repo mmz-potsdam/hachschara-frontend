@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * DefaultController for home-page
+ * DefaultController for home- and about-pages
  */
 class DefaultController
 extends AbstractController
@@ -22,19 +22,19 @@ extends AbstractController
     }
 
     /**
-     * @Route("/about/hakhsharah ", name="about-hakhsharah", options={"sitemap" = true})
-     */
-    public function aboutTermAction(Request $request)
-    {
-        return $this->render('Default/about-hakhsharah.html.twig');
-    }
-
-    /**
      * @Route("/about", name="about", options={"sitemap" = true})
      */
     public function aboutAction(Request $request)
     {
         return $this->render('Default/about.' . $request->getLocale() . '.html.twig');
+    }
+
+    /**
+     * @Route("/about/hakhsharah ", name="about-hakhsharah", options={"sitemap" = true})
+     */
+    public function aboutTermAction(Request $request)
+    {
+        return $this->render('Default/about-hakhsharah.html.twig');
     }
 
     /**
