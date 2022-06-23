@@ -62,8 +62,8 @@
                                 {% if 'de' == app.request.locale %}
                                 <a class="dropdown-item" href="{{ path('about-hakhsharah') }}">{{ 'Hakhsharah'|trans }}</a>
                                 {% endif %}
-                                <a class="dropdown-item" href="{{ path('about') }}">{{ 'This Website'|trans }}</a>
-                                <a class="dropdown-item" href="{{ path('about') }}#imprint">{{ 'Imprint'|trans }}</a>
+                                <a class="dropdown-item" href="{{ path('about') }}">{{ 'The Project'|trans }}</a>
+                                <a class="dropdown-item" href="{{ path('imprint') }}#imprint">{{ 'Imprint'|trans }}</a>
                             </div>
                         </li>
                     </ul>
@@ -103,8 +103,8 @@
                         <a href="mailto:info@hachschara-als-erinnerungsort.de">{{ 'Contact'|trans }}</a>
                     </div>
                     <div class="col-sm-9 text-sm-end">
-                        <a href="{{ path('about') }}#data-protection" style="margin-right: 1rem">{{ 'Privacy'|trans }}</a>
-                        <a href="{{ path('about') }}#imprint">{{ 'Imprint'|trans }}</a>
+                        <a href="{{ path('imprint') }}#data-protection" style="margin-right: 1rem">{{ 'Privacy'|trans }}</a>
+                        <a href="{{ path('imprint') }}#imprint">{{ 'Imprint'|trans }}</a>
                     </div>
                 </div>
             </div>

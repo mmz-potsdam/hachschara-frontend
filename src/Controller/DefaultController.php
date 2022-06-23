@@ -36,4 +36,12 @@ extends AbstractController
     {
         return $this->render('Default/about.' . $request->getLocale() . '.html.twig');
     }
+
+    /**
+     * @Route("/imprint", name="imprint", options={"sitemap" = true})
+     */
+    public function imprintAction(Request $request)
+    {
+        return $this->render('Default/imprint.' . $request->getLocale() . '.html.twig');
+    }
 }
