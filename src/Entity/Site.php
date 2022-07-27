@@ -68,13 +68,6 @@ implements JsonLdSerializable
     private $types;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="condition", type="integer", nullable=true)
-     */
-    private $condition = '0';
-
-    /**
      * @var Place The location of, for example, where an event is happening, where an organization is located, or where an action takes place. .
      *
      * @ORM\ManyToOne(targetEntity="App\Entity\Place", inversedBy="sites")
@@ -193,6 +186,20 @@ implements JsonLdSerializable
      * @ORM\Column(name="educations_description", type="json_array", length=65535, nullable=true)
      */
     private $educationsDescription;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="condition", type="integer", nullable=true)
+     */
+    private $condition = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="project_history", type="text", nullable=true)
+     */
+    private $projectHistory;
 
     /**
      * @var string
@@ -431,6 +438,16 @@ implements JsonLdSerializable
         }
 
         return $terms[0];
+    }
+
+    /**
+     * Gets projectHistory.
+     *
+     * @return string
+     */
+    public function getProjectHistory()
+    {
+        return $this->projectHistory;
     }
 
     /**

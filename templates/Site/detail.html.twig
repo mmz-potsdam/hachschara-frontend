@@ -74,9 +74,16 @@
                             <dd class="col-sm-8 col-md-9">{{ site.descriptionLocalized(app.request.locale)|nl2br }}</dd>
                         {% endif %}
 
-                        {% if site.condition is not empty %}
-                            <dt class="col-sm-4 col-md-3">{{ 'Current Condition'|trans }}</dt>
-                            <dd class="col-sm-8 col-md-9">{{ site.condition.nameLocalized(app.request.locale) }}</dd>
+                        {% if site.condition is not empty or site.projectHistory is not empty %}
+                            <dt class="col-sm-4 col-md-3">{{ 'State of Conservation'|trans }}</dt>
+                            <dd class="col-sm-8 col-md-9">
+                            {% if site.condition is not empty %}
+                                {{ site.condition.nameLocalized(app.request.locale) }}
+                            {% endif %}
+                            {% if site.projectHistory is not empty %}
+                                <p>{{ site.projectHistory|nl2br }}</p>
+                            {% endif %}
+                            </dd>
                         {% endif %}
 
                         {% set orgRefs = site.organizationReferences %}
