@@ -133,6 +133,11 @@
                     {% endif %}
                     {% if site.hasInfo('address') %}<a href="#" data-bs-toggle="tooltip" data-bs-html="true" title="{{ helper.render_info(site.infoExpanded('address')) }}"><i class="fa fa-circle-info"></i></a>
                     {% endif %}
+                    {% if site.location is not empty and site.location.historicalRegion is not empty %}
+                        <h4>{{ 'Historical Region'|trans }}</h4>
+                        {{ site.location.historicalRegion.nameLocalized(app.request.locale) }}
+                    {% endif %}
+
                     {% if site.geo is not empty %}
                         <div id="map" class="w-100" style="margin-top: 1rem; width: 100%; min-height: 360px"></div>
                         <script>

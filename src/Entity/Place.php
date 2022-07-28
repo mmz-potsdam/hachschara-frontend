@@ -158,6 +158,14 @@ implements \JsonSerializable /*, JsonLdSerializable */
     protected $country;
 
     /**
+     * @var Term The role.
+     *
+     * @ORM\ManyToOne(targetEntity="App\Entity\Term")
+     * @ORM\JoinColumn(name="historical_region", referencedColumnName="id")
+     */
+    protected $historicalRegion;
+
+    /**
      * @var string
      * @ORM\Column(type="string", nullable=false)
      */
@@ -400,6 +408,16 @@ implements \JsonSerializable /*, JsonLdSerializable */
     public function getAlternateName()
     {
         return self::ensureSortByPreferredLanguages($this->alternateName, $this->name);
+    }
+
+    /**
+     * Gets normalized historical region.
+     *
+     * @return Term|null
+     */
+    public function getHistoricalRegion()
+    {
+        return $this->historicalRegion;
     }
 
     /**
