@@ -39,3 +39,8 @@ Translate messages and routes according to settings in
 `jms_translation.configs.app`
 
     ./bin/console translation:extract de --config=app
+
+TODO
+----
+Upgrade to Symfony 6 (requires PHP 8.1)
+* Switch to gjuric/i18n-routing-bundle and cvele/translation-bundle
