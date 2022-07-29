@@ -47,7 +47,7 @@
                                 {{ site.endDate|dateextended -}}
                             </dd>
                         {% endif %}
-                        {% if site.operatingArea is not empty or site.operatingAreaDescription is not empty %}
+                        {% if site.operatingArea is not empty or site.operatingAreaDescriptionLocalized(app.request.locale) is not empty %}
                             <dt class="col-sm-4 col-md-3">{{ 'Operating Area'|trans }}</dt>
                             <dd class="col-sm-8 col-md-9">
                                 {% if site.operatingArea is not empty %}
