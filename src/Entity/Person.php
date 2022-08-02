@@ -183,7 +183,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     protected $deathPlace;
 
     /**
-     * @var string Name of the deathplace.
+     * @var string Name of the deathPlace.
      *
      * @ORM\Column(nullable=true,name="death_place")
      */
@@ -208,6 +208,12 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
      *
      */
     protected $honorificSuffix;
+
+    /**
+     * @ORM\OneToMany(targetEntity="PersonMedia", mappedBy="person", fetch="EAGER")
+     * @ORM\OrderBy({"name" = "ASC", "ord" = "ASC"})
+     */
+    protected $media;
 
     /**
      * Sets additionalName.
@@ -485,7 +491,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Gets birthPlace.
      *
-     * @return Place
+     * @return string
      */
     public function getBirthPlaceLabel()
     {
@@ -667,6 +673,30 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     }
 
     /**
+     * Returns PersonMedia
+     *
+     * @return ArrayCollection|null
+     */
+    public function getMedia($name = null)
+    {
+        if (is_null($this->media)) {
+            return $this->media;
+        }
+
+        return $this->media->filter(
+            function($entry) use ($name) {
+                if ($entry->getStatus() <= 0) {
+                    return false;
+                }
+
+                return is_null($name)
+                    || strpos($entry->getName(), $name) === 0 // str_starts_with for PHP < 8.0
+                    ;
+            }
+        );
+    }
+
+    /**
      * We prefer person-by-ulan
      */
     public function getRouteInfo()
@@ -737,6 +767,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
 
             }
         }
+
         if (!empty($this->honorificPrefix)) {
             $ret['honorificPrefix'] = $this->honorificPrefix;
         }
@@ -749,9 +780,11 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
         if (!empty($this->ulan)) {
             $sameAs[] = 'http://vocab.getty.edu/ulan/' . $this->ulan;
         }
+
         if (!empty($this->gnd)) {
             $sameAs[] = 'https://d-nb.info/gnd/' . $this->gnd;
         }
+
         if (!empty($this->wikidata)) {
             $sameAs[] = 'http://www.wikidata.org/entity/' . $this->wikidata;
         }
@@ -785,9 +818,11 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
         if (!empty($this->birthDate)) {
             $datesOfLiving = \App\Utils\Formatter::dateIncomplete($this->birthDate, $locale);
         }
+
         if (!empty($this->deathDate)) {
             $datesOfLiving .= ' - ' . \App\Utils\Formatter::dateIncomplete($this->deathDate, $locale);
         }
+
         if (!empty($datesOfLiving)) {
             $parts[] = '[' . $datesOfLiving . ']';
         }

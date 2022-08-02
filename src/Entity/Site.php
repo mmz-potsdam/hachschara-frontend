@@ -267,6 +267,12 @@ implements JsonLdSerializable
      */
     protected $persons;
 
+    /**
+     * @ORM\OneToMany(targetEntity="SiteMedia", mappedBy="site", fetch="EAGER")
+     * @ORM\OrderBy({"name" = "ASC", "ord" = "ASC"})
+     */
+    protected $media;
+
     public static function extractYear($datetime)
     {
         if (is_null($datetime)) {
@@ -685,6 +691,30 @@ implements JsonLdSerializable
         return $this->getAgentReferences()->filter(function(AgentSite $agentSite) {
             return $agentSite->getAgent() instanceof Organization;
         });
+    }
+
+    /**
+     * Returns SiteMedia
+     *
+     * @return ArrayCollection|null
+     */
+    public function getMedia($name = null)
+    {
+        if (is_null($this->media)) {
+            return $this->media;
+        }
+
+        return $this->media->filter(
+            function($entry) use ($name) {
+                if ($entry->getStatus() <= 0) {
+                    return false;
+                }
+
+                return is_null($name)
+                    || strpos($entry->getName(), $name) === 0 // str_starts_with for PHP < 8.0
+                    ;
+            }
+        );
     }
 
     /**

@@ -99,6 +99,28 @@ main {
 
         margin-bottom: 0.25rem;
     }
+
+    figure {
+        display: table;
+
+        img {
+            display: block;
+            max-height: 240px;
+            max-width: 100%;
+            width: auto;
+        }
+
+        figcaption {
+            display: table-caption;
+            caption-side: bottom;
+            /* text-align: center; */
+            a {
+                /* break long commons urls */
+                word-break: break-all; /* for Safari */
+                overflow-wrap: anywhere;
+            }
+        }
+    }
 }
 
 footer {
