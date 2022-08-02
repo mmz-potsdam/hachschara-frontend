@@ -5,169 +5,195 @@
 
 {% block head %}
     {{ map.head() }}
+    <!-- https://simplelightbox.com/ -->
+    <link rel="stylesheet" href="{{ app.request.basepath }}/vendor/simple-lightbox/simple-lightbox.min.css">
+    <script src="{{ app.request.basepath }}/vendor/simple-lightbox/simple-lightbox.jquery.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+            $.each([ 'object', 'additional' ], function (index, value) {
+                var selector = 'figure.figure-' + value + ' a';
+                var lightbox = $(selector).simpleLightbox({
+                    nav: true,
+                    showCounter: true,
+                    alertError: false,
+                    overlayOpacity: 1
+                });
+            });
+        });
+    </script>
 {% endblock %}
 
 {% block body %}
-    <div class="row p-2">
-        <h1>{{ site.name }}</h1>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-8 col-lg-9">
-                    <div class="container-fluid p-0">
-                        <dl class="row">
-                        {% if site.alternateName is not empty %}
-                            <dt class="col-sm-4 col-md-3">{{ 'Alternate Name'|trans }}</dt>
-                            <dd class="col-sm-8 col-md-9">
-                                {{ site.alternateName|nl2br }}
-                            </dd>
-                        {% endif %}
-                        {% if site.types is not empty %}
-                            <dt class="col-sm-4 col-md-3">{{ 'Type of Hakhshara'|trans }}</dt>
-                            <dd class="col-sm-8 col-md-9">
-                            {% for term in site.types %}
+    <h1>{{ site.name }}</h1>
+
+    <div class="col-sm-8 col-lg-9">
+        <div class="container-fluid p-0">
+            <dl class="row">
+            {% if site.alternateName is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'Alternate Name'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">
+                    {{ site.alternateName|nl2br }}
+                </dd>
+            {% endif %}
+            {% if site.types is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'Type of Hakhshara'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">
+                {% for term in site.types %}
+                    {{ term.nameLocalized(app.request.locale) }}{% if not loop.last %}, {% endif %}
+                {% endfor %}
+                </dd>
+            {% endif %}
+            {% if site.startDate is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'Founded'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">
+                    {{ site.startDate|dateextended -}}
+                </dd>
+            {% endif %}
+            {% if site.realizedDate is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'Opened'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">
+                    {{ site.realizedDate|dateextended -}}
+                </dd>
+            {% endif %}
+            {% if site.endDate is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'Closed'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">
+                    {{ site.endDate|dateextended -}}
+                </dd>
+            {% endif %}
+            {% if site.operatingArea is not empty or site.operatingAreaDescriptionLocalized(app.request.locale) is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'Operating Area'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">
+                    {% if site.operatingArea is not empty %}
+                        <div>{{ site.operatingArea|format_number() }} {{ 'hectare'|trans }}</div>
+                    {% endif %}
+                    {{ site.operatingAreaDescriptionLocalized(app.request.locale)|nl2br }}
+                </dd>
+            {% endif %}
+            {% if site.educations is not empty or site.educationsDescriptionLocalized(app.request.locale) is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'Educational Areas'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">
+                    {% if site.educations is not empty %}
+                        <div>
+                            {% for term in site.educations %}
                                 {{ term.nameLocalized(app.request.locale) }}{% if not loop.last %}, {% endif %}
                             {% endfor %}
-                            </dd>
-                        {% endif %}
-                        {% if site.startDate is not empty %}
-                            <dt class="col-sm-4 col-md-3">{{ 'Founded'|trans }}</dt>
-                            <dd class="col-sm-8 col-md-9">
-                                {{ site.startDate|dateextended -}}
-                            </dd>
-                        {% endif %}
-                        {% if site.realizedDate is not empty %}
-                            <dt class="col-sm-4 col-md-3">{{ 'Opened'|trans }}</dt>
-                            <dd class="col-sm-8 col-md-9">
-                                {{ site.realizedDate|dateextended -}}
-                            </dd>
-                        {% endif %}
-                        {% if site.endDate is not empty %}
-                            <dt class="col-sm-4 col-md-3">{{ 'Closed'|trans }}</dt>
-                            <dd class="col-sm-8 col-md-9">
-                                {{ site.endDate|dateextended -}}
-                            </dd>
-                        {% endif %}
-                        {% if site.operatingArea is not empty or site.operatingAreaDescriptionLocalized(app.request.locale) is not empty %}
-                            <dt class="col-sm-4 col-md-3">{{ 'Operating Area'|trans }}</dt>
-                            <dd class="col-sm-8 col-md-9">
-                                {% if site.operatingArea is not empty %}
-                                    <div>{{ site.operatingArea|format_number() }} {{ 'hectare'|trans }}</div>
-                                {% endif %}
-                                {{ site.operatingAreaDescriptionLocalized(app.request.locale)|nl2br }}
-                            </dd>
-                        {% endif %}
-                        {% if site.educations is not empty or site.educationsDescriptionLocalized(app.request.locale) is not empty %}
-                            <dt class="col-sm-4 col-md-3">{{ 'Educational Areas'|trans }}</dt>
-                            <dd class="col-sm-8 col-md-9">
-                                {% if site.educations is not empty %}
-                                    <div>
-                                        {% for term in site.educations %}
-                                            {{ term.nameLocalized(app.request.locale) }}{% if not loop.last %}, {% endif %}
-                                        {% endfor %}
-                                    </div>
-                                {% endif %}
-                                {{ site.educationsDescriptionLocalized(app.request.locale)|nl2br }}
-                            </dd>
-                        {% endif %}
-                        {% if site.descriptionLocalized(app.request.locale) is not empty %}
-                            <dt class="col-sm-4 col-md-3">{{ 'Description'|trans }}</dt>
-                            <dd class="col-sm-8 col-md-9">{{ site.descriptionLocalized(app.request.locale)|nl2br }}</dd>
-                        {% endif %}
-
-                        {% if site.condition is not empty or site.projectHistory is not empty %}
-                            <dt class="col-sm-4 col-md-3">{{ 'State of Conservation'|trans }}</dt>
-                            <dd class="col-sm-8 col-md-9">
-                            {% if site.condition is not empty %}
-                                {{ site.condition.nameLocalized(app.request.locale) }}
-                            {% endif %}
-                            {% if site.projectHistory is not empty %}
-                                <p>{{ site.projectHistory|nl2br }}</p>
-                            {% endif %}
-                            </dd>
-                        {% endif %}
-
-                        {% set orgRefs = site.organizationReferences %}
-                        {% if orgRefs is not empty %}
-                            <dt class="col-sm-4 col-md-3">{{ 'Related Organizations'|trans }}</dt>
-                            <dd class="col-sm-8 col-md-9">
-                            {% for orgRef in orgRefs %}
-                                <div><a href="{{ path('organization', { 'id': orgRef.agent.id }) }}">{{ orgRef.agent.name }}</a> ({{ orgRef.role.nameLocalized(app.request.locale) }})</div>
-                            {% endfor %}
-                            </dd>
-                        {% endif %}
-
-                        {% set personRefs = site.personReferences %}
-                        {% if personRefs is not empty %}
-                            <dt class="col-sm-4 col-md-3">{{ 'Related Persons'|trans }}</dt>
-                            <dd class="col-sm-8 col-md-9">
-                            {% for personRef in personRefs %}
-                                <div><a href="{{ path('person', { 'id': personRef.agent.id }) }}">{{ personRef.agent.fullname }}</a> ({{ personRef.role.nameLocalized(app.request.locale) }})</div>
-                            {% endfor %}
-                            </dd>
-                        {% endif %}
-
-                        {% if site.hasInfo('general') %}
-                            <dt class="col-sm-4 col-md-3">{{ 'Literature'|trans }}</dt>
-                            <dd class="col-sm-8 col-md-9">
-                                {{ helper.render_info(site.infoExpanded('general')) }}
-                            </dd>
-                        {% endif %}
-                        </dl>
-                    </div><!-- .container-fluid -->
-                </div>
-                <div class="col-sm-4 col-lg-3">
-                    <h3>{{ 'Address'|trans }}</h3>
-                    {% if site.streetAddress is not empty %}
-                        {{ site.streetAddress }}<br />
-                    {% endif %}
-                    {{ site.postalCode }}
-                    {% set location = site.locationInfo(app.request.locale) %}
-                    {% if location is not empty %}
-                        {% if false and location.id is defined and location.id is not empty %}
-                            <a href="{% if location.tgn is not empty %}{{ path('place-by-tgn', { 'tgn' : location.tgn }) }}{% else %}{{ path('place', { 'id' : location.id }) }}{% endif %}">
-                            {{ location['name'] }}
-                            </a>
-                        {% else %}
-                            {{ location['name'] }}
-                        {% endif %}
-                    {% endif %}
-                    {% if site.hasInfo('address') %}<a href="#" data-bs-toggle="tooltip" data-bs-html="true" title="{{ helper.render_info(site.infoExpanded('address')) }}"><i class="fa fa-circle-info"></i></a>
-                    {% endif %}
-                    {% if site.location is not empty and site.location.historicalRegion is not empty %}
-                        <h4>{{ 'Historical Region'|trans }}</h4>
-                        {{ site.location.historicalRegion.nameLocalized(app.request.locale) }}
-                    {% endif %}
-
-                    {% if site.geo is not empty %}
-                        <div id="map" class="w-100" style="margin-top: 1rem; width: 100%; min-height: 360px"></div>
-                        <script>
-                        function adjustMapSize() {
-                            /*
-                            $('#map').height(function(index, height) {
-                                return window.innerHeight - $(this).offset().top;
-                            });
-                            */
-                        }
-
-                        $( window ).resize(adjustMapSize);
-                        adjustMapSize();
-
-                        var map = L.map('map');
-                        L.marker([ {{ site.geo }} ]).addTo(map);
-                        map.setView([{{ site.geo }}], 10);
-
-                        {{ map.addTileLayer() }}
-                        </script>
-                    {% endif %}
-
-                    {% if site.url is not empty %}
-                        <h3>{{ 'External Information'|trans }}</h3>
-                        <div>
-                            {{ site.url|converturls }}
                         </div>
                     {% endif %}
-                </div>
-            </div><!-- .row -->
+                    {{ site.educationsDescriptionLocalized(app.request.locale)|nl2br }}
+                </dd>
+            {% endif %}
+            {% if site.descriptionLocalized(app.request.locale) is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'Description'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">{{ site.descriptionLocalized(app.request.locale)|nl2br }}</dd>
+            {% endif %}
+
+            {% if site.condition is not empty or site.projectHistory is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'State of Conservation'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">
+                {% if site.condition is not empty %}
+                    {{ site.condition.nameLocalized(app.request.locale) }}
+                {% endif %}
+                {% if site.projectHistory is not empty %}
+                    <p>{{ site.projectHistory|nl2br }}</p>
+                {% endif %}
+                </dd>
+            {% endif %}
+
+            {% set orgRefs = site.organizationReferences %}
+            {% if orgRefs is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'Related Organizations'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">
+                {% for orgRef in orgRefs %}
+                    <div><a href="{{ path('organization', { 'id': orgRef.agent.id }) }}">{{ orgRef.agent.name }}</a> ({{ orgRef.role.nameLocalized(app.request.locale) }})</div>
+                {% endfor %}
+                </dd>
+            {% endif %}
+
+            {% set personRefs = site.personReferences %}
+            {% if personRefs is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'Related Persons'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">
+                {% for personRef in personRefs %}
+                    <div><a href="{{ path('person', { 'id': personRef.agent.id }) }}">{{ personRef.agent.fullname }}</a> ({{ personRef.role.nameLocalized(app.request.locale) }})</div>
+                {% endfor %}
+                </dd>
+            {% endif %}
+
+            {% if site.hasInfo('general') %}
+                <dt class="col-sm-4 col-md-3">{{ 'Literature'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">
+                    {{ helper.render_info(site.infoExpanded('general')) }}
+                </dd>
+            {% endif %}
+            </dl>
         </div><!-- .container-fluid -->
-    </div><!-- .row -->
+
+        {% set objectMedia = site.media('object')|merge(site.media('additional')) %}
+        {% if objectMedia is not empty %}
+        <div class="d-flex flex-row flex-wrap">
+            {% for img in objectMedia %}
+            <figure class="figure-object p-2">
+                <a href="{{ helper.build_media_url(app, img) }}" data-toggle="lightbox">
+                    <img src="{{ helper.build_media_url(app, img) }}" />
+                </a>
+                <figcaption class="p-2">{{ img.caption|converturls }}</figcaption>
+            </figure>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="col-sm-4 col-lg-3">
+        <h3>{{ 'Address'|trans }}</h3>
+        {% if site.streetAddress is not empty %}
+            {{ site.streetAddress }}<br />
+        {% endif %}
+        {{ site.postalCode }}
+        {% set location = site.locationInfo(app.request.locale) %}
+        {% if location is not empty %}
+            {% if false and location.id is defined and location.id is not empty %}
+                <a href="{% if location.tgn is not empty %}{{ path('place-by-tgn', { 'tgn' : location.tgn }) }}{% else %}{{ path('place', { 'id' : location.id }) }}{% endif %}">
+                {{ location['name'] }}
+                </a>
+            {% else %}
+                {{ location['name'] }}
+            {% endif %}
+        {% endif %}
+        {% if site.hasInfo('address') %}<a href="#" data-bs-toggle="tooltip" data-bs-html="true" title="{{ helper.render_info(site.infoExpanded('address')) }}"><i class="fa fa-circle-info"></i></a>
+        {% endif %}
+        {% if site.location is not empty and site.location.historicalRegion is not empty %}
+            <h4>{{ 'Historical Region'|trans }}</h4>
+            {{ site.location.historicalRegion.nameLocalized(app.request.locale) }}
+        {% endif %}
+
+        {% if site.geo is not empty %}
+            <div id="map" class="w-100" style="margin-top: 1rem; width: 100%; min-height: 360px"></div>
+            <script>
+            function adjustMapSize() {
+                /*
+                $('#map').height(function(index, height) {
+                    return window.innerHeight - $(this).offset().top;
+                });
+                */
+            }
+
+            $( window ).resize(adjustMapSize);
+            adjustMapSize();
+
+            var map = L.map('map');
+            L.marker([ {{ site.geo }} ]).addTo(map);
+            map.setView([{{ site.geo }}], 10);
+
+            {{ map.addTileLayer() }}
+            </script>
+        {% endif %}
+
+        {% if site.url is not empty %}
+            <h3>{{ 'External Information'|trans }}</h3>
+            <div>
+                {{ site.url|converturls }}
+            </div>
+        {% endif %}
+    </div>
 {% endblock %}

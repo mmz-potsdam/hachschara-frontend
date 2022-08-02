@@ -5,6 +5,8 @@
 
 {% block head %}
     {{ map.head() }}
+
+    <!-- https://verbundwiki.gbv.de/display/VZG/SeeAlso -->
     <script src="{{ app.request.basepath }}/js/seealso.js"></script>
     <script>
         var service = new SeeAlsoCollection();
@@ -19,105 +21,155 @@
         };
         service.replaceTagsOnLoad();
     </script>
+
+    <!-- https://simplelightbox.com/ -->
+    <link rel="stylesheet" href="{{ app.request.basepath }}/vendor/simple-lightbox/simple-lightbox.min.css">
+    <script src="{{ app.request.basepath }}/vendor/simple-lightbox/simple-lightbox.jquery.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+            $.each([ 'portrait', 'additional' ], function (index, value) {
+                var selector = 'figure.figure-' + value + ' a';
+                var lightbox = $(selector).simpleLightbox({
+                    nav: true,
+                    showCounter: true,
+                    alertError: false,
+                    overlayOpacity: 1
+                });
+            });
+        });
+    </script>
 {% endblock %}
 
 {% block body %}
-    <div class="container-fluid">
-        <h1>{{ person.fullname(true) }}</h1>
-        <div class="row">
-            <div class="col-sm-9">
-                {% if person.disambiguatingDescription is not empty %}
-                    {{ person.disambiguatingDescription }}
-                {% endif %}
-                <dl class="row">
-                {% if person.gender is not empty %}
-                    <dt class="col-sm-4 col-md-3">{{ 'Gender'|trans }}</dt>
-                    <dd class="col-sm-8 col-md-9">{{ person.genderLabel|trans }}</dd>
-                {% endif %}
-                {% if person.honorificPrefix is not empty %}
-                    <dt class="col-sm-4 col-md-3">{{ 'Academic Title'|trans }}</dt>
-                    <dd class="col-sm-8 col-md-9">{{ person.honorificPrefix }}</dd>
-                {% endif %}
-                {% if person.alternateName is not empty %}
-                    <dt class="col-sm-4 col-md-3">{{ 'Alternate Name(s)'|trans }}</dt>
-                    <dd class="col-sm-8 col-md-9">{{ person.alternateName|nl2br }}</dd>
-                {% endif %}
-                {#% if person.notes is not empty and person.notes.name is not empty %}
-                    <dt class="col-sm-4 col-md-3">Notes</dt>
-                    <dd class="col-sm-8 col-md-9">{{ dump(person.notes.name) }}</dd>
-                {% endif %#}
-                {% set birthPlace = person.birthPlaceInfo(app.request.locale) %}
-                {% if birthPlace is not empty or person.birthDate is not empty %}
-                    <dt class="col-sm-4 col-md-3">{{ 'Born'|trans }}</dt>
-                    <dd class="col-sm-8 col-md-9">
-                        {{ person.birthDate|dateextended -}}
-                        {% if birthPlace is not empty %}{% if person.birthDate is not empty %}{{- ',' }}{% endif %}
-                            {% if false and birthPlace.id is defined and birthPlace.id is not empty %}
-                                <a href="{% if birthPlace.tgn is not empty %}{{ path('place-by-tgn', { 'tgn' : birthPlace.tgn }) }}{% else %}{{ path('place', { 'id' : birthPlace.id }) }}{% endif %}">
-                                {{ birthPlace['name'] }}
-                                </a>
-                            {% else %}
-                                {{ birthPlace['name'] }}
-                            {% endif %}
+    <h1>{{ person.fullname(true) }}</h1>
+    {% if person.disambiguatingDescription is not empty %}
+        {{ person.disambiguatingDescription }}
+    {% endif %}
+
+    <div class="col-sm-8 col-lg-9">
+        <div class="container-fluid p-0">
+            <dl class="row">
+            {% if person.gender is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'Gender'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">{{ person.genderLabel|trans }}</dd>
+            {% endif %}
+            {% if person.honorificPrefix is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'Academic Title'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">{{ person.honorificPrefix }}</dd>
+            {% endif %}
+            {% if person.alternateName is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'Alternate Name(s)'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">{{ person.alternateName|nl2br }}</dd>
+            {% endif %}
+            {#% if person.notes is not empty and person.notes.name is not empty %}
+                <dt class="col-sm-4 col-md-3">Notes</dt>
+                <dd class="col-sm-8 col-md-9">{{ dump(person.notes.name) }}</dd>
+            {% endif %#}
+            {% set birthPlace = person.birthPlaceInfo(app.request.locale) %}
+            {% if birthPlace is not empty or person.birthDate is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'Born'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">
+                    {{ person.birthDate|dateextended -}}
+                    {% if birthPlace is not empty %}{% if person.birthDate is not empty %}{{- ',' }}{% endif %}
+                        {% if false and birthPlace.id is defined and birthPlace.id is not empty %}
+                            <a href="{% if birthPlace.tgn is not empty %}{{ path('place-by-tgn', { 'tgn' : birthPlace.tgn }) }}{% else %}{{ path('place', { 'id' : birthPlace.id }) }}{% endif %}">
+                            {{ birthPlace['name'] }}
+                            </a>
+                        {% else %}
+                            {{ birthPlace['name'] }}
                         {% endif %}
-                    </dd>
-                {% endif %}
-                {% set deathPlace = person.deathPlaceInfo(app.request.locale) %}
-                {% if deathPlace is not empty or person.deathDate is not empty %}
-                    <dt class="col-sm-4 col-md-3">{{ 'Died'|trans }}:</dt>
-                    <dd class="col-sm-8 col-md-9">
-                        {{ person.deathDate|dateextended -}}
-                        {% if deathPlace is not empty %}{% if person.deathDate is not empty %}{{- ',' }}{% endif %}
-                            {% if false and deathPlace.id is defined and deathPlace.id is not empty %}
-                                <a href="{% if deathPlace.tgn is not empty %}{{ path('place-by-tgn', { 'tgn' : deathPlace.tgn }) }}{% else %}{{ path('place', { 'id' : deathPlace.id }) }}{% endif %}">
-                                {{ deathPlace['name'] }}
-                                </a>
-                            {% else %}
-                                {{ deathPlace['name'] }}
-                            {% endif %}
+                    {% endif %}
+                </dd>
+            {% endif %}
+            {% set deathPlace = person.deathPlaceInfo(app.request.locale) %}
+            {% if deathPlace is not empty or person.deathDate is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'Died'|trans }}:</dt>
+                <dd class="col-sm-8 col-md-9">
+                    {{ person.deathDate|dateextended -}}
+                    {% if deathPlace is not empty %}{% if person.deathDate is not empty %}{{- ',' }}{% endif %}
+                        {% if false and deathPlace.id is defined and deathPlace.id is not empty %}
+                            <a href="{% if deathPlace.tgn is not empty %}{{ path('place-by-tgn', { 'tgn' : deathPlace.tgn }) }}{% else %}{{ path('place', { 'id' : deathPlace.id }) }}{% endif %}">
+                            {{ deathPlace['name'] }}
+                            </a>
+                        {% else %}
+                            {{ deathPlace['name'] }}
                         {% endif %}
-                    </dd>
-                {% endif %}
-                {% if person.deathCause is not empty %}
-                    <dt class="col-sm-4 col-md-3">{{ 'Cause of Death'|trans }}</dt>
-                    <dd class="col-sm-8 col-md-9">{{ person.deathCause }}</dd>
-                {% endif %}
-                {#% if person.notes is not empty and person.notes['birth_death'] is not empty %}
-                    <dt class="col-sm-4 col-md-3">{{ 'Notes'|trans }}</dt>
-                    <dd class="col-sm-8 col-md-9">{{ dump(person.notes['birth_death']) }}</dd>
-                {% endif %#}
-                {% if person.nationality is not empty %}
-                    <dt class="col-sm-4 col-md-3">{{ 'Nationality'|trans }}</dt>
-                    <dd class="col-sm-8 col-md-9">{{ person.nationality }}</dd>
-                {% endif %}
-                {% if person.denomination is not empty %}
-                    <dt class="col-sm-4 col-md-3">{{ 'Denomination'|trans }}</dt>
-                    <dd class="col-sm-8 col-md-9">{{ person.denominationExpanded|nl2br }}</dd>
-                {% endif %}
-                {% if person.description is not empty %}
-                    <dt class="col-sm-4 col-md-3">{{ 'Description'|trans }}</dt>
-                    <dd class="col-sm-8 col-md-9">{{ person.description|nl2br }}</dd>
-                {% endif %}
-                {% set siteRefs = person.siteReferences %}
-                {% if siteRefs is not empty %}
-                    <dt class="col-sm-4 col-md-3">{{ 'Related Sites'|trans }}</dt>
-                    <dd class="col-sm-8 col-md-9">
-                    {% for siteRef in siteRefs %}
-                        <div><a href="{{ path('site', { 'id': siteRef.site.id }) }}">{{ siteRef.site.name }}</a> ({{ siteRef.role.nameLocalized(app.request.locale) }})</div>
-                    {% endfor %}
-                    </dd>
-                {% endif %}
-                </dl>
-                {#{ dump(person) }#}
-            </div>
-            <div class="col-sm-3">
-                {% if person.gnd is not empty %}
-                    <h3>{{ 'Integrated Authority File'|trans }}
-                        <a href="https://d-nb.info/gnd/{{ person.gnd }}" target="_blank">{{ person.gnd }}</a>
-                    </h3>
-                    <div title="{{ person.gnd }}" class="pndaks seealso-ul"></div>
-                {% endif %}
-            </div>
-        </div><!-- .row -->
-    </div><!-- .container-fluid -->
+                    {% endif %}
+                </dd>
+            {% endif %}
+            {% if person.deathCause is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'Cause of Death'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">{{ person.deathCause }}</dd>
+            {% endif %}
+            {#% if person.notes is not empty and person.notes['birth_death'] is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'Notes'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">{{ dump(person.notes['birth_death']) }}</dd>
+            {% endif %#}
+            {% if person.nationality is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'Nationality'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">{{ person.nationality }}</dd>
+            {% endif %}
+            {% if person.denomination is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'Denomination'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">{{ person.denominationExpanded|nl2br }}</dd>
+            {% endif %}
+            {% if person.description is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'Description'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">{{ person.description|nl2br }}</dd>
+            {% endif %}
+            {% set siteRefs = person.siteReferences %}
+            {% if siteRefs is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'Related Sites'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">
+                {% for siteRef in siteRefs %}
+                    <div><a href="{{ path('site', { 'id': siteRef.site.id }) }}">{{ siteRef.site.name }}</a> ({{ siteRef.role.nameLocalized(app.request.locale) }})</div>
+                {% endfor %}
+                </dd>
+            {% endif %}
+            </dl>
+        </div>
+
+        {% set portraitMedia = person.media('portrait') %}
+        {% set additionalMedia = person.media('additional') %}
+        {% if portraitMedia|length > 1 or additionalMedia is not empty %}
+        <div class="d-flex flex-row flex-wrap">
+            {% for img in portraitMedia[1:] %}
+            <figure class="figure-portrait p-2">
+                <a href="{{ helper.build_media_url(app, img) }}" data-toggle="lightbox">
+                    <img src="{{ helper.build_media_url(app, img) }}" />
+                </a>
+                <figcaption class="p-2">{{ img.caption|converturls }}</figcaption>
+            </figure>
+            {% endfor %}
+            {% for img in additionalMedia %}
+            <figure class="figure-additional p-2">
+                <a href="{{ helper.build_media_url(app, img) }}" data-toggle="lightbox">
+                    <img src="{{ helper.build_media_url(app, img) }}" />
+                </a>
+                <figcaption class="p-2">{{ img.caption|converturls }}</figcaption>
+            </figure>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {#{ dump(person) }#}
+    </div>
+
+    <div class="col-sm-4 col-lg-3">
+        {% if portraitMedia is not empty %}
+            {% set img = portraitMedia.first %}
+            <figure class="figure-portrait">
+                <a href="{{ helper.build_media_url(app, img) }}" data-toggle="lightbox">
+                    <img src="{{ helper.build_media_url(app, img) }}" />
+                </a>
+                <figcaption>{{ img.caption|converturls }}</figcaption>
+            </figure>
+        {% endif %}
+        {% if person.gnd is not empty %}
+            <h3>{{ 'Integrated Authority File'|trans }}
+                <a href="https://d-nb.info/gnd/{{ person.gnd }}" target="_blank">{{ person.gnd }}</a>
+            </h3>
+            <div title="{{ person.gnd }}" class="pndaks seealso-ul"></div>
+        {% endif %}
+    </div>
 {% endblock %}
