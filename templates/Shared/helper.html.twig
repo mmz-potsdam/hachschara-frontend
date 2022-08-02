@@ -20,6 +20,8 @@
     {{ knp_pagination_sortable(pagination, title, key, {}, { 'direction': sortDirection }) }}
 {% endmacro %}
 
+{% macro build_media_url(app, media) %}{{ app.request.basepath }}/admin/uploads/{{ media.imgUrl }}{% endmacro %}
+
 {% macro person_list_item(person) %}
     <a href="{% if person.ulan is not empty %}{{ path('person-by-ulan', { 'ulan' : person.ulan }) }}{% elseif person.gnd is not empty %}{{ path('person-by-gnd', { 'gnd' : person.gnd }) }}{% else %}{{ path('person', { 'id' : person.id }) }}{% endif %}">
         <b>{{ person.fullname }}</b>
