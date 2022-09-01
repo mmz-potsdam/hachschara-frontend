@@ -67,12 +67,12 @@
         for (var i = 0; i < addressPoints.length; i++) {
             var a = addressPoints[i];
             var title = a[2];
-            var count = a[4] + (a.length > 5 ? a[5] : 0);
 
             var marker = L.marker(L.latLng(a[0], a[1]),
                                   { title: title });
 
-            // marker.number = count;
+            var count = 1; // currently just one site per address
+            marker.number = count;
             marker.bindPopup('<strong>' + title + '</strong><br />' + a[3]);
 
             markers.addLayer(marker);
