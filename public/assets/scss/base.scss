@@ -32,6 +32,10 @@ $screen-lg-max:              ($screen-xl-min - 1) !default;
     a[href]:after {
         content: none;
     }
+
+    img {
+        max-height: 360;
+    }
 }
 
 main {
