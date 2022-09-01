@@ -30,11 +30,27 @@
     </div>
 
     <script type="text/javascript">
+        function isTouchDevice ()
+        {
+            return (('ontouchstart' in window)
+                    || (navigator.MaxTouchPoints > 0)
+                    || (navigator.msMaxTouchPoints > 0));
+        }
+
         {{ map.showMap(bounds) }}
         showMap();
 
         // place markers
         var markerStyle = {% if markerStyle is defined %}{{ markerStyle|json_encode|raw }}{% else %}'regular'{% endif %};
+        var tooltipProperties = {
+            /*
+            permanent: false,
+            direction: 'center',
+            opacity: 1,
+            offset: [0, 0],
+            className: "my-label"
+            */
+        };
 
         var markers = L.markerClusterGroup({
             iconCreateFunction: function (cluster) {
@@ -68,12 +84,27 @@
             var a = addressPoints[i];
             var title = a[2];
 
-            var marker = L.marker(L.latLng(a[0], a[1]),
-                                  { title: title });
+            var marker = L.marker(L.latLng(a[0], a[1]), {
+                // title: title // removed in favor of bindTooltip below
+            });
 
             var count = 1; // currently just one site per address
             marker.number = count;
-            marker.bindPopup('<strong>' + title + '</strong><br />' + a[3]);
+
+            if (!isTouchDevice()) {
+                marker.bindTooltip($(title).text(), tooltipProperties);
+                marker.on('click', function () {
+                    // open link
+                    var href = $(title).attr('href')
+                    if (typeof href != 'undefind' && href.length > 0) {
+                        window.location.href = href;
+                    }
+                })
+            }
+            else {
+                marker.bindPopup('<strong>' + title + '</strong><br />'
+                                 + a[3]);
+            }
 
             markers.addLayer(marker);
         }
