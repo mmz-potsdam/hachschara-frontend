@@ -183,9 +183,6 @@
     "phpdocumentor/type-resolver": {
         "version": "1.4.0"
     },
-    "phpspec/prophecy": {
-        "version": "1.13.0"
-    },
     "phpunit/php-code-coverage": {
         "version": "7.0.14"
     },
