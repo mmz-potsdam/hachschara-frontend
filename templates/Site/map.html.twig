@@ -93,13 +93,16 @@
 
             if (!isTouchDevice()) {
                 marker.bindTooltip($(title).text(), tooltipProperties);
-                marker.on('click', function () {
+
+                var href = $(title).attr('href');
+                // closure, https://stackoverflow.com/a/19323214
+                var callback = function (href) {
                     // open link
-                    var href = $(title).attr('href')
-                    if (typeof href != 'undefind' && href.length > 0) {
+                    if (typeof href != 'undefined' && href.length > 0) {
                         window.location.href = href;
                     }
-                })
+                }.bind(this, href);
+                marker.on('click', callback);
             }
             else {
                 marker.bindPopup('<strong>' + title + '</strong><br />'
