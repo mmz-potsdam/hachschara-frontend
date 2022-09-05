@@ -41,6 +41,8 @@ implements JsonLdSerializable
         }
     }
 
+    use ContributorTrait;
+
     use InfoTrait;
 
     protected $info = [];
@@ -155,7 +157,7 @@ implements JsonLdSerializable
     private $alternateName;
 
     /**
-     * @var string
+     * @var array
      *
      * @ORM\Column(name="description", type="json_array", length=65535, nullable=true)
      */

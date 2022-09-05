@@ -5,80 +5,13 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * An agent, such as a person or an organization.
+ * A user.
  *
  * @ORM\Entity
- * @ORM\Table(name="Agent")
- * @ORM\InheritanceType("SINGLE_TABLE")
- * @ORM\DiscriminatorColumn(name="type", type="string")
- * @ORM\DiscriminatorMap({"person" = "Person", "organization" = "Organization"})
+ * @ORM\Table(name="User")
  */
-abstract class Agent
+class User
 {
-    protected static $entityfactsLocales = [ 'en' ]; // enabled locales in preferred order
-
-    /**
-     * appends -00-00 or -00 to dates without month / day
-     */
-    protected static function formatDateIncomplete($dateStr)
-    {
-        if (preg_match('/^\d{4}$/', $dateStr)) {
-            $dateStr .= '-00-00';
-        }
-        else if (preg_match('/^\d{4}\-\d{2}$/', $dateStr)) {
-            $dateStr .= '-00';
-        }
-
-        return $dateStr;
-    }
-
-    public static function buildPlaceInfo($place, $locale)
-    {
-        $placeInfo = [
-            'name' => $place->getNameLocalized($locale),
-            'id' => $place->getId(),
-            'tgn' => $place->getTgn(),
-            'geo' => $place->getGeo(),
-        ];
-
-        return $placeInfo;
-    }
-
-    protected static function buildPlaceInfoFromEntityfacts($entityfacts, $key)
-    {
-        if (is_null($entityfacts) || !array_key_exists($key, $entityfacts)) {
-            return;
-        }
-
-        $place = $entityfacts[$key][0];
-        if (empty($place)) {
-            return;
-        }
-
-        $placeInfo = [ 'name' => $place['preferredName'] ];
-
-        if (!empty($place['@id'])) {
-            $uri = $place['@id'];
-            if (preg_match('/^'
-                           . preg_quote('http://d-nb.info/gnd/', '/')
-                           . '(\d+\-?[\dxX]?)$/', $uri, $matches))
-            {
-                $placeInfo['gnd'] = $matches[1];
-            }
-        }
-
-        return $placeInfo;
-    }
-
-    protected static function buildPlaceInfoFromWikidata($wikidata, $key)
-    {
-        if (is_null($wikidata) || !array_key_exists($key, $wikidata)) {
-            return;
-        }
-
-        return [ 'name' => $wikidata[$key] ];
-    }
-
     /**
      * @var int
      *
@@ -96,9 +29,30 @@ abstract class Agent
     protected $status = 0;
 
     /**
+     * @var string Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.
+     *
+     * @ORM\Column(name="family_name", nullable=true)
+     */
+    protected $familyName;
+
+    /**
+     * @var string Gender of the person.
+     *
+     * @ORM\Column(name="gender", nullable=true)
+     */
+    protected $gender;
+
+    /**
+     * @var string Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.
+     *
+     * @ORM\Column(name="given_name", nullable=true)
+     */
+    protected $givenName;
+
+    /**
      * @var string Additional name forms.
      *
-     * @ORM\Column(name="alternate_name", nullable=true)
+     * xORM\Column(name="alternate_name", nullable=true)
      */
     protected $alternateName;
 
@@ -113,14 +67,14 @@ abstract class Agent
     /**
      * @var string A description of the item.
      *
-     * @ORM\Column(name="disambiguating_description", type="string", nullable=true)
+     * xORM\Column(name="disambiguating_description", type="string", nullable=true)
      *
      */
     protected $disambiguatingDescription;
 
     /**
      * @var string
-     * @ORM\Column(type="string", nullable=true)
+     * xORM\Column(type="string", nullable=true)
      */
     protected $ulan;
 
@@ -132,13 +86,13 @@ abstract class Agent
 
     /**
      * @var string
-     * @ORM\Column(type="string", nullable=true)
+     * xORM\Column(type="string", nullable=true)
      */
     protected $viaf;
 
     /**
      * @var string
-     * @ORM\Column(type="string", nullable=true)
+     * xORM\Column(type="string", nullable=true)
      */
     protected $wikidata;
 
@@ -146,18 +100,6 @@ abstract class Agent
     * xORM\Column(type="json_array", nullable=true)
     */
     protected $entityfacts;
-
-    /**
-     * @ORM\OneToMany(targetEntity="AgentSite", mappedBy="agent", cascade={"persist", "remove"}, orphanRemoval=TRUE)
-     */
-    protected $siteReferences;
-
-    /**
-     * @var
-     *
-     * @ORM\Column(type="json_array", nullable=true)
-     */
-    protected $notes;
 
     /**
      * @var \DateTime
@@ -420,54 +362,6 @@ abstract class Agent
     }
 
     /**
-     * Sets entityfacts.
-     *
-     * @param array $entityfacts
-     *
-     * @return $this
-     */
-    public function setEntityfacts($entityfacts, $locale = 'en')
-    {
-        if (in_array($locale, self::$entityfactsLocales)) {
-            if (is_null($this->entityfacts)) {
-                $this->entityfacts = [];
-            }
-
-            $this->entityfacts[$locale] = $entityfacts;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Gets entityfacts.
-     *
-     * @return array
-     */
-    public function getEntityfacts($locale = 'en', $forceLocale = false)
-    {
-        if (is_null($this->entityfacts)) {
-            return null;
-        }
-
-        // preferred locale
-        if (array_key_exists($locale, $this->entityfacts)) {
-            return $this->entityfacts[$locale];
-        }
-
-        if (!$forceLocale) {
-            // try to use fallback
-            foreach (self::$entityfactsLocales as $locale) {
-                if (array_key_exists($locale, $this->entityfacts)) {
-                    return $this->entityfacts[$locale];
-                }
-            }
-        }
-
-        return null;
-    }
-
-    /**
      * Sets notes.
      *
      * @param array $notes
@@ -544,12 +438,29 @@ abstract class Agent
     }
 
     /**
-     * Gets site references.
+     * Returns
+     *  familyName, givenName
+     * or
+     *  givenName familyName
+     * depending on $givenNameFirst
      *
-     * @return ArrayCollection<int, AgentSite>
+     * @return string
      */
-    public function getSiteReferences()
+    public function getFullname($givenNameFirst = false)
     {
-        return $this->siteReferences;
+        $parts = [];
+        foreach ([ 'familyName', 'givenName' ] as $key) {
+            if (!empty($this->$key)) {
+                $parts[] = $this->$key;
+            }
+        }
+
+        if (empty($parts)) {
+            return '';
+        }
+
+        return $givenNameFirst
+            ? implode(' ', array_reverse($parts))
+            : implode(', ', $parts);
     }
 }

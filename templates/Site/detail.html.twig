@@ -3,6 +3,14 @@
 {% import 'Shared/helper.html.twig' as helper %}
 {% import 'Shared/map-leaflet.html.twig' as map %}
 
+{% macro source_footer(site) %}
+    <h3 id="citation">{{ 'Recommended Citation'|trans }}</h3>
+    <p>
+    {% for author in site.authors %}{{ author.fullname(true) }}, {% endfor %}
+    {{ site.name }}{% if false and site.translator is not empty %} ({{ 'translated by'|trans }} {{ article.translator.fullname(true) }}){% endif %}, {{ 'in'|trans }}: {{ site_name|trans({}, 'additional') }},
+    &lt;{% if site.doi is defined and site.doi is not empty and not ('10.5072' in site.doi) %}<a href="https://dx.doi.org/{{ site.doi }}">https://dx.doi.org/{{ article.doi }}</a>{% else %}{{ url(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) }}{% endif %}&gt; [{{ 'now'|date('F d, Y'|trans) }}].</p>
+{% endmacro %}
+
 {% block head %}
     {{ map.head() }}
     <!-- https://simplelightbox.com/ -->
@@ -142,6 +150,8 @@
             {% endfor %}
         </div>
         {% endif %}
+
+        {{ _self.source_footer(site) }}
     </div>
 
     <div class="col-sm-4 col-lg-3">

@@ -139,6 +139,10 @@ extends BaseController
             $entity->buildInfoFull($entityManager, $citeProc);
         }
 
+        if ($entity->hasContributor()) {
+            $entity->buildContributorFull($entityManager);
+        }
+
         if (in_array($routeName, [ 'site-pdf' ])) {
             $html = $this->renderView('Site/detail.html.twig', [
                 'pageTitle' => $entity->getName(),
