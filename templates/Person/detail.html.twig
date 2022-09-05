@@ -42,12 +42,12 @@
 
 {% block body %}
     <h1>{{ person.fullname(true) }}</h1>
-    {% if person.disambiguatingDescription is not empty %}
-        {{ person.disambiguatingDescription }}
-    {% endif %}
 
     <div class="col-sm-8 col-lg-9">
         <div class="container-fluid p-0">
+            {% if person.disambiguatingDescription is not empty %}
+                <p>{{ person.disambiguatingDescription }}</p>
+            {% endif %}
             <dl class="row">
             {% if person.gender is not empty %}
                 <dt class="col-sm-4 col-md-3">{{ 'Gender'|trans }}</dt>

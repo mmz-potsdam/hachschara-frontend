@@ -15,7 +15,7 @@
     <div class="col-sm-8 col-lg-9">
         <div class="container-fluid p-0">
             {% if organization.disambiguatingDescription is not empty %}
-                {{ organization.disambiguatingDescription }}
+                <p>{{ organization.disambiguatingDescription }}</p>
             {% endif %}
             <dl class="row">
             {% if organization.alternateName is not empty %}
