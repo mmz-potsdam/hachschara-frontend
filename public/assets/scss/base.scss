@@ -120,6 +120,20 @@ main {
         }
     }
 
+    h3 {
+        a {
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    h2.initial {
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+
     h4 {
         font-size: calc(1.0rem + .3vw);
 

@@ -23,10 +23,12 @@
         {% for row in pagination %}
             {% set initial = row.familyName|slug|first|upper %}
             {% if initial != last_initial %}
-                <h2>{{ initial }}</h2>
+                <h2 class="initial">{{ initial }}</h2>
                 {% set last_initial = initial %}
+            {% else %}
+                <br />
             {% endif %}
-            <div><a href="{{ path('person', { 'id': row.id }) }}">{{ row.fullName }}</a></div>
+            <a href="{{ path('person', { 'id': row.id }) }}">{{ row.fullName }}</a>
         {% endfor %}
 
         {# display navigation #}
