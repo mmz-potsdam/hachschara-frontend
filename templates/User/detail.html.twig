@@ -119,6 +119,10 @@
                 <dt class="col-sm-4 col-md-3">{{ 'Description'|trans }}</dt>
                 <dd class="col-sm-8 col-md-9">{{ person.description|nl2br }}</dd>
             {% endif %}
+            {% if person.url is not empty %}
+                <dt class="col-sm-4 col-md-3">{{ 'Homepage'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">{{ person.url|converturls }}</dd>
+            {% endif %}
             {% if sites is not empty %}
                 <dt class="col-sm-4 col-md-3">{{ 'Related Sites'|trans }}</dt>
                 <dd class="col-sm-8 col-md-9">
