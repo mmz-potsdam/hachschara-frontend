@@ -67,7 +67,7 @@
                             </div>
                         </li>
                     </ul>
-                    {% if locales|length > 1  and app.request.attributes.get("_route") is not null %}
+                    {% if false and locales|length > 1 and app.request.attributes.get("_route") is not null %}
                     <ul id="locale-switch" class="navbar-nav ms-auto flex-nowrap">
                         {% for locale in locales %}
                         <li class="nav-item{% if locale == app.request.locale %} active{% endif %}">
