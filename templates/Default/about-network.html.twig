@@ -1,0 +1,15 @@
+{% extends 'Base/base.html.twig' %}
+
+{% block body %}
+<h1>{{ 'The Network'|trans }}</h1>
+<p>Das Netzwerk von Hachschara als Erinnerungsort dient dem gegenseitigen Kennenlernen wie auch dem Wissens-Transfer der häufig lokal verankerten Forschung zu den einzelnen Hachschara-Stätten. Das Netzwerk ermöglicht einen Erfahrungsaustausch, den Aufbau von überregionalen Perspektiven sowie die Unterstützung neuer lokaler Initiativen.
+
+{% if users is not empty %}
+Innerhalb des Netzwerks haben folgende Autor:innen bereits Beiträge veröffentlicht:</p>
+
+<h2>{{ 'Authors'|trans }}</h2>
+    {% for row in users %}
+        <a href="{{ path('user', { 'id': row.id }) }}">{{ row.fullName(true) }}</a><br />
+    {% endfor %}
+{% endif %}
+{% endblock %}
