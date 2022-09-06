@@ -145,6 +145,14 @@ main {
         margin-bottom: 0.25rem;
     }
 
+    ol {
+        list-style: decimal inside;
+    }
+
+    ul.bullet-inside {
+        list-style: inside;
+    }
+
     figure {
         display: table;
 
