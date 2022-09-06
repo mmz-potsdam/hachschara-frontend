@@ -59,14 +59,14 @@ class Term
     /**
      * @var array|null A localized title of the item.
      *
-     * @ORM\Column(type="json_array", nullable=true)
+     * @ORM\Column(type="json", nullable=true)
      */
     protected $title;
 
     /**
      * @var array|null A short description of the item.
      *
-     * @ORM\Column(type="json_array", nullable=true)
+     * @ORM\Column(type="json", nullable=true)
      */
     protected $description;
 

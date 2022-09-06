@@ -192,7 +192,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * @var
      *
-     * xORM\Column(name="actionplace", type="json_array", nullable=true)
+     * xORM\Column(name="actionplace", type="json", nullable=true)
      */
     protected $addresses;
 

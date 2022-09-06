@@ -97,7 +97,7 @@ class User
     protected $wikidata;
 
     /**
-    * xORM\Column(type="json_array", nullable=true)
+    * xORM\Column(type="json", nullable=true)
     */
     protected $entityfacts;
 

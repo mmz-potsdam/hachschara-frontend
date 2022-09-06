@@ -14,7 +14,7 @@ trait ContributorTrait
     /**
      * @var array
      *
-     * @ORM\Column(name="contributor", type="json_array", length=65535, nullable=true)
+     * @ORM\Column(name="contributor", type="json", length=65535, nullable=true)
      */
     private $contributor;
 

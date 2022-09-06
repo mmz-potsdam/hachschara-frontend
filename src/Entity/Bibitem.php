@@ -160,7 +160,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * @var array The author/contributor/editor of this CreativeWork.
      *
-     * xORM\Column(type="json_array", nullable=true)
+     * xORM\Column(type="json", nullable=true)
      */
     protected $creators;
 

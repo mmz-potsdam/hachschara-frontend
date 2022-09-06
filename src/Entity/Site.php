@@ -159,7 +159,7 @@ implements JsonLdSerializable
     /**
      * @var array
      *
-     * @ORM\Column(name="description", type="json_array", length=65535, nullable=true)
+     * @ORM\Column(name="description", type="json", length=65535, nullable=true)
      */
     private $description;
 
@@ -173,7 +173,7 @@ implements JsonLdSerializable
     /**
      * @var array
      *
-     * @ORM\Column(name="operating_area_description", type="json_array", length=65535, nullable=true)
+     * @ORM\Column(name="operating_area_description", type="json", length=65535, nullable=true)
      */
     private $operatingAreaDescription;
 
@@ -185,7 +185,7 @@ implements JsonLdSerializable
     /**
      * @var array
      *
-     * @ORM\Column(name="educations_description", type="json_array", length=65535, nullable=true)
+     * @ORM\Column(name="educations_description", type="json", length=65535, nullable=true)
      */
     private $educationsDescription;
 
@@ -224,7 +224,7 @@ implements JsonLdSerializable
     /**
      * @var array|null
      *
-     * @ORM\Column(name="notes", type="json_array", length=65535, nullable=true)
+     * @ORM\Column(name="notes", type="json", length=65535, nullable=true)
      */
     private $notes;
 

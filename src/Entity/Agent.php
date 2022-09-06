@@ -143,7 +143,7 @@ abstract class Agent
     protected $wikidata;
 
     /**
-    * xORM\Column(type="json_array", nullable=true)
+    * xORM\Column(type="json", nullable=true)
     */
     protected $entityfacts;
 
@@ -155,7 +155,7 @@ abstract class Agent
     /**
      * @var
      *
-     * @ORM\Column(type="json_array", nullable=true)
+     * @ORM\Column(type="json", nullable=true)
      */
     protected $notes;
 
