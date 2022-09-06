@@ -10,10 +10,13 @@
 {% endblock %}
 
 {% block body %}
+    {{ helper.breadcrumb([ { label: 'Look-up' }, { route: app.request.attributes.get('_route'), label: 'Organizations'} ]) }}
+
     <h1>{{ organization.name }}</h1>
 
     <div class="col-sm-8 col-lg-9">
         <div class="container-fluid p-0">
+
             {% if organization.disambiguatingDescription is not empty %}
                 <p>{{ organization.disambiguatingDescription }}</p>
             {% endif %}

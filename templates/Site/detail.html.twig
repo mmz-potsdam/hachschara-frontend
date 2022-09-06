@@ -32,6 +32,8 @@
 {% endblock %}
 
 {% block body %}
+    {{ helper.breadcrumb([ { route: 'site-index', label: 'Sites'}, { route: 'site-map', label: 'Map'} ]) }}
+
     <h1>{{ site.name }}</h1>
 
     <div class="col-sm-8 col-lg-9">

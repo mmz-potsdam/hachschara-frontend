@@ -1,3 +1,22 @@
+{% macro breadcrumb(path, prepend_home = false) %}
+    <nav aria-label="breadcrumb" style="border-bottom: none">
+    <ol class="breadcrumb">
+        {% if prepend_home %}
+        <li class="breadcrumb-item"><a href="{{ path('home') }}">{{ 'Home'|trans }}</a></li>
+        {% endif %}
+        {% for entry in path %}
+        <li class="breadcrumb-item{% if loop.last %} active{% endif %}">
+            {% if entry.route is defined and entry.route is not empty %}
+                <a href="{{ path(entry.route) }}">{{ entry.label|trans }}</a>
+            {% else %}
+                {{ entry.label|trans }}
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ol>
+    </nav>
+{% endmacro %}
+
 {% macro pagination_count(pagination) %}
     {# total items count #}
     <div class="count">
