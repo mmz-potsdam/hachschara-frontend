@@ -36,6 +36,10 @@ $screen-lg-max:              ($screen-xl-min - 1) !default;
     img {
         max-height: 360;
     }
+
+    nav .breadcrumb {
+        display: none;
+    }
 }
 
 main {
@@ -51,7 +55,7 @@ body {
     }
 }
 
-nav {
+body > nav {
     border-bottom: 2px solid $color-gray-dark;
 
     .navbar-brand {
@@ -90,7 +94,22 @@ nav {
 
 main {
     h1 {
+        position: relative;
+        width: 100%;
         margin-top: 30px !important;
+    }
+
+    #print-icon {
+        position: absolute;
+        right: 16px;
+        top: 12px;
+        font-size: 24px;
+        a {
+            color: #999;
+            &:hover {
+                color: inherit;
+            }
+        }
     }
 
     nav[aria-label="breadcrumb"] {

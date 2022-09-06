@@ -1,5 +1,5 @@
 {% macro breadcrumb(path, prepend_home = false) %}
-    <nav aria-label="breadcrumb" style="border-bottom: none">
+    <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         {% if prepend_home %}
         <li class="breadcrumb-item"><a href="{{ path('home') }}">{{ 'Home'|trans }}</a></li>
