@@ -544,12 +544,20 @@ abstract class Agent
     }
 
     /**
-     * Gets site references.
+     * Gets references to (published) sites.
      *
      * @return ArrayCollection<int, AgentSite>
      */
     public function getSiteReferences()
     {
-        return $this->siteReferences;
+        if (is_null($this->siteReferences)) {
+            return $this->siteReferences;
+        }
+
+        return $this->siteReferences->filter(
+            function ($entry) {
+                return $entry->getSite()->getStatus() == 1;
+            }
+        );
     }
 }

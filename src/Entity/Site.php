@@ -707,7 +707,7 @@ implements JsonLdSerializable
         }
 
         return $this->media->filter(
-            function($entry) use ($name) {
+            function ($entry) use ($name) {
                 if ($entry->getStatus() <= 0) {
                     return false;
                 }

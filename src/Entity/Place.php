@@ -69,7 +69,7 @@ implements \JsonSerializable /*, JsonLdSerializable */
         }
 
         // make sure order is as in $language_preferred_ordered
-        uksort($assoc, function($langA, $langB) use ($language_preferred_ordered) {
+        uksort($assoc, function ($langA, $langB) use ($language_preferred_ordered) {
             if ($langA == $langB) {
                 return 0;
             }
@@ -553,12 +553,14 @@ implements \JsonSerializable /*, JsonLdSerializable */
             'archipelagos' => 20,
         ];
 
-        uksort($ret, function($typeA, $typeB) use ($typeWeights) {
+        uksort($ret, function ($typeA, $typeB) use ($typeWeights) {
             if ($typeA == $typeB) {
                 return 0;
             }
+
             $typeOrderA = array_key_exists($typeA, $typeWeights) ? $typeWeights[$typeA] : 99;
             $typeOrderB = array_key_exists($typeB, $typeWeights) ? $typeWeights[$typeB] : 99;
+
             return ($typeOrderA < $typeOrderB) ? -1 : 1;
         });
 
