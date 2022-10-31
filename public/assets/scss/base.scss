@@ -12,10 +12,10 @@ $color-gray-dark: #616161;
 /*
  * instead of the remote version
  *  @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap&subset=latin-ext');
- * we use the hinted version from
- *  https://github.com/google/roboto/tree/master/src/hinted
+ * we use the downloaded version from
+ *  https://google-webfonts-helper.herokuapp.com/fonts/roboto?subsets=latin,latin-ext
  */
-@import 'font/RobotoCondensed';
+@import 'font/Roboto';
 
 $font-stack-sans: 'Roboto', Arial, "Arial Unicode MS", sans-serif;
 $font-stack-sans-combining: Arial, "Arial Unicode MS", sans-serif;
