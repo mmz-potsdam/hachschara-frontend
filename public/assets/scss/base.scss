@@ -8,7 +8,14 @@ $color-gray-dark: #616161;
 /*
  * Roboto
  */
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap&subset=latin-ext');
+
+/*
+ * instead of the remote version
+ *  @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap&subset=latin-ext');
+ * we use the hinted version from
+ *  https://github.com/google/roboto/tree/master/src/hinted
+ */
+@import 'font/RobotoCondensed';
 
 $font-stack-sans: 'Roboto', Arial, "Arial Unicode MS", sans-serif;
 $font-stack-sans-combining: Arial, "Arial Unicode MS", sans-serif;
