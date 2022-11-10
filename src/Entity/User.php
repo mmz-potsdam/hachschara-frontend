@@ -59,7 +59,7 @@ class User
     /**
      * @var string A short description of the item.
      *
-     * @ORM\Column(name="description", type="string", nullable=true)
+     * @ORM\Column(name="description", type="string", length="4096", nullable=true)
      *
      */
     protected $description;

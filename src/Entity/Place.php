@@ -150,7 +150,7 @@ implements \JsonSerializable /*, JsonLdSerializable */
     protected $countryCode;
 
     /**
-     * @var Country|null
+     * xvar Country|null
      *
      * @ORM\ManyToOne(targetEntity="Country", fetch="EAGER")
      * @ORM\JoinColumn(name="country_code", referencedColumnName="cc", nullable=true)
@@ -167,7 +167,7 @@ implements \JsonSerializable /*, JsonLdSerializable */
 
     /**
      * @var string
-     * @ORM\Column(type="string", nullable=false)
+     * @ORM\Column(type="string", nullable=true)
      */
     protected $tgn;
 

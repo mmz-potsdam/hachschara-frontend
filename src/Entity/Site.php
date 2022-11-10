@@ -178,7 +178,7 @@ implements JsonLdSerializable
     private $operatingAreaDescription;
 
     /**
-     * @ORM\Column(name="educations", type="simple_array", nullable=false)
+     * @ORM\Column(name="educations", type="simple_array", length=4096, nullable=true)
      */
     private $educations;
 
