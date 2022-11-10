@@ -35,28 +35,26 @@ class DateFormatter
         return $datePartsReduced;
     }
 
-
-    protected function formatDateparts($year, $month, $day, $datetime_style, $incomplete = false) {
+    protected function formatDateparts($year, $month, $day, $datetimeStyle, $incomplete = false) {
         if (intval($month) == 0 && intval($day) == 0 && intval($year) == 0) {
             return '';
         }
 
-        $value = $datetime_style;
         if ($incomplete) {
             if ($day == 0) {
-                $value = preg_replace('/D+[\.\/]*/i', '', $value);
+                $datetimeStyle = trim(preg_replace('/D+[\.\/,]*/i', '', $datetimeStyle));
             }
 
             if ($month == 0) {
-                $value = preg_replace('/M+[\.\/]*/i', '', $value);
+                $datetimeStyle = trim(preg_replace('/[FM]+[\.\/,]*/i', '', $datetimeStyle));
             }
         }
 
-        $value = preg_replace([ '/(M+)/i', '/(D+)/i', '/(Y+)/i' ],
-                              [ sprintf('%02d', $month), sprintf('%02d', $day), sprintf('%d', $year) ],
-                              $value);
 
-        return $value;
+        $date = new \DateTime();
+        $date->setDate($year, $month > 0 ? $month : 1, $day > 0 ? $day : 1);
+
+        return $date->format($datetimeStyle);
     }
 
     protected function parseEdtfDate($date)
@@ -84,8 +82,10 @@ class DateFormatter
 
     public function formatDateExtended($datestr)
     {
-        // todo: use translator to make this local-dependent
-        $datetimeStyle = 'DD.MM.YYYY';
+        // TODO: use translator for localization
+        $datetimeStyle = 'en' == $this->translator->getLocale()
+            ? 'F d, Y'
+            : 'd.m.Y';
 
         $parts = explode('/', $datestr, 2);
 
@@ -95,10 +95,12 @@ class DateFormatter
             // range
             $valueInternal['modifier'] = '/';
             $valueInternalEnd = $this->parseEdtfDate($parts[1]);
-            $valueAppend = $valueInternal['modifier'] . $this->formatDateparts($valueInternalEnd['year'], $valueInternalEnd['month'], $valueInternalEnd['day'], $datetimeStyle, true);
+            $valueAppend = $valueInternal['modifier'] . $this->formatDateparts($valueInternalEnd['year'], $valueInternalEnd['month'], $valueInternalEnd['day'],
+                                                                               $datetimeStyle, true);
         }
 
-        $fieldValue = $this->formatDateparts($valueInternal['year'], $valueInternal['month'], $valueInternal['day'], $datetimeStyle, true);
+        $fieldValue = $this->formatDateparts($valueInternal['year'], $valueInternal['month'], $valueInternal['day'],
+                                             $datetimeStyle, true);
 
         if (!empty($valueInternal['modifier'])) {
             switch ($valueInternal['modifier']) {
