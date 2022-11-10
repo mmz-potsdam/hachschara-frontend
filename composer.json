@@ -25,18 +25,18 @@
             }
         },
         {
-            "url": "https://github.com/burki/hidden-entity-type-bundle.git",
-            "type": "vcs"
+            "type": "vcs",
+            "url": "https://github.com/burki/hidden-entity-type-bundle.git"
         },
         {
-            "url": "https://github.com/burki/LiipUrlAutoConverterBundle.git",
-            "type": "vcs"
+            "type": "vcs",
+            "url": "https://github.com/burki/LiipUrlAutoConverterBundle.git"
         }
     ],
     "type": "project",
     "license": "proprietary",
     "require": {
-        "php": "^7.3.0",
+        "php": "^7.3.0|^8.1",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "armin/scssphp-bundle": "^1.2",

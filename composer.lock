@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "464ffa98edf0d8cdd20c8141a50bde6e",
+    "content-hash": "4f9895dd702156a313905c0a96cb4b0e",
     "packages": [
         {
             "name": "armin/scssphp-bundle",
@@ -11693,7 +11693,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.3.0",
+        "php": "^7.3.0|^8.1",
         "ext-ctype": "*",
         "ext-iconv": "*"
     },
