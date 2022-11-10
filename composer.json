@@ -79,7 +79,7 @@
         "symfony/property-access": "^5.4",
         "symfony/property-info": "^5.4",
         "symfony/proxy-manager-bridge": "^5.4",
-        "symfony/runtime": "5.4.*",
+        "symfony/runtime": "^5.4",
         "symfony/security-bundle": "^5.4",
         "symfony/serializer": "^5.4",
         "symfony/string": "^5.4",
@@ -89,10 +89,10 @@
         "symfony/web-link": "^5.4",
         "symfony/yaml": "^5.4",
         "tetranz/select2entity-bundle": "^3.1",
-        "twig/extra-bundle": "^3.0",
+        "twig/extra-bundle": "^3.3",
         "twig/intl-extra": "^3.3",
         "twig/string-extra": "^3.3",
-        "twig/twig": "^3.0"
+        "twig/twig": "^3.3"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.5",
