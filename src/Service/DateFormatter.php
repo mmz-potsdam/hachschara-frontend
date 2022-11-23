@@ -5,7 +5,8 @@ namespace App\Service;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
- *
+ * Initial attempt to format extended date format strings
+ * depending on the current locale
  */
 class DateFormatter
 {
@@ -16,7 +17,7 @@ class DateFormatter
         $this->translator = $translator;
     }
 
-    /*
+    /**
      * Split YYYY-MM-DD and remove the ones that are equal to 0
      */
     protected function buildDatePartsReduced($datestr)
@@ -50,24 +51,28 @@ class DateFormatter
             }
         }
 
-
         $date = new \DateTime();
         $date->setDate($year, $month > 0 ? $month : 1, $day > 0 ? $day : 1);
 
         return $date->format($datetimeStyle);
     }
 
-    protected function parseEdtfDate($date)
+    /**
+     * parse and extended $datestr
+     * into an associative array
+     * with keys 'year', 'month', 'day' and 'modifier'
+     */
+    protected function parseEdtfDate($datestr)
     {
         $ret = [];
 
         $match_modifier = '/([\?~<>])$/';
-        if (preg_match($match_modifier, $date, $matches)) {
+        if (preg_match($match_modifier, $datestr, $matches)) {
             $ret['modifier'] = $matches[1];
-            $date = preg_replace($match_modifier, '', $date);
+            $datestr = preg_replace($match_modifier, '', $datestr);
         }
 
-        $parts = explode('-', $date);
+        $parts = explode('-', $datestr);
         $fill_zero = false;
         foreach ([ 'year', 'month', 'day' ] as $i => $key) {
             if ($i >= count($parts) || !preg_match('/^\d+$/', $parts[$i])) {
@@ -80,6 +85,11 @@ class DateFormatter
         return $ret;
     }
 
+    /**
+     * Take an extended $datestr and format it
+     * according to a locale-dependent (hard-wired)
+     * format
+     */
     public function formatDateExtended($datestr)
     {
         // TODO: use translator for localization
@@ -126,72 +136,5 @@ class DateFormatter
         }
 
         return $fieldValue . $valueAppend;
-    }
-
-    public static function formatDateIncomplete($datestr, $locale = 'en', $ommit = '')
-    {
-        $datePartsReduced = $this->buildDatePartsReduced($datestr);
-
-        if (empty($datePartsReduced)) {
-            return '';
-        }
-
-        $separator = '.';
-        if ('en' == $locale && count($datePartsReduced) > 1) {
-            $ret = [];
-            if ('month' !== $ommit) {
-                $dateObj = \DateTime::createFromFormat('!m', $datePartsReduced[1]);
-                $monthName = $dateObj->format('M'); // M: Mar F: March
-                $ret[] = $monthName;
-            }
-
-            if (count($datePartsReduced) > 2) {
-                $ret[] = intval($datePartsReduced[2])  // day
-                    . ('year' !== $ommit ? ',' : '')
-                    ;
-            }
-
-            if ('year' !== $ommit) {
-                $ret[] = $datePartsReduced[0]; // year
-            }
-
-            return join(' ', $ret);
-        }
-
-        $datePartsReduced = array_reverse($datePartsReduced);
-
-        return implode($separator, $datePartsReduced);
-    }
-
-    public function formatDaterangeIncomplete($datestrFrom, $datestrUntil, $locale = 'en')
-    {
-        if (empty($datestrUntil) || $datestrFrom === $datestrUntil) {
-            return $this->dateIncomplete($datestrFrom, $locale);
-        }
-
-        // from is shortened if check if year or year and month are the same
-        $ommit = '';
-        $fromReduced = $this->buildDatePartsReduced($datestrFrom);
-        $untilReduced = $this->buildDatePartsReduced($datestrUntil);
-        if (count($fromReduced) > 1 && count($untilReduced) > 1
-            && $fromReduced[0] == $untilReduced[0])
-        {
-            // year is equal
-            $ommit = 'year';
-            if (count($fromReduced) > 2 && count($untilReduced) > 2
-                && $fromReduced[1] == $untilReduced[1])
-            {
-                // year and month are equal
-                $ommit = 'month';
-            }
-        }
-
-        $from = $this->formatDateIncomplete($datestrFrom, $locale, !empty($ommit) ? 'year' : '');
-        $until = $this->formatDateIncomplete($datestrUntil, $locale, 'month' === $ommit ? $ommit : '');
-
-        return $from
-            // . "\u{2012}" // PHP >= 7
-            . hex2bin('e28092')
-            . $until;
     }
 }
