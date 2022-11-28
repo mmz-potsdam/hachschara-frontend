@@ -1,24 +1,23 @@
-$color-color-spot: #0F256E;
-$color-color-link: #0038b8;
-$color-body-text: #212529; // currently same as default in reboot
+$color-color-spot: #EDB83A;
+$color-color-link: inherit; // currently same as default in reboot
+$color-body-text: #3E8FA5;
+$color-body-inverse: #fff;
 
 $color-gray-light: #F4F4F4;
 $color-gray-dark: #616161;
 
 /*
  * Roboto
- */
-
-/*
+ *
  * instead of the remote version
  *  @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap&subset=latin-ext');
+ *
  * we use the downloaded version from
  *  https://google-webfonts-helper.herokuapp.com/fonts/roboto?subsets=latin,latin-ext
  */
 @import 'font/Roboto';
 
 $font-stack-sans: 'Roboto', Arial, "Arial Unicode MS", sans-serif;
-$font-stack-sans-combining: Arial, "Arial Unicode MS", sans-serif;
 
 /* == $grid-breakpoints
  * see https://github.com/twbs/bootstrap/blob/master/scss/_variables.scss
@@ -57,17 +56,22 @@ main {
 body {
     font-family: $font-stack-sans;
 
+    .breadcrumb-item.active {
+        color: $color-body-text !important;
+    }
+
     a, a:hover {
         color: $color-color-link;
     }
 }
 
-body > nav {
-    border-bottom: 2px solid $color-gray-dark;
-
-    .navbar-brand {
-        padding-right: 20px !important;
-        border-right: 2px solid $color-gray-dark;
+nav {
+    .navbar-brand, .navbar-brand:visited, .navbar-brand:focus {
+        font-size: 24px;
+        line-height: 30px;
+        font-weight: bold;
+        /* padding-right: 10px !important; */
+        color: $color-color-spot;
     }
 
     .nav-fill {
@@ -87,6 +91,22 @@ body > nav {
         }
     }
 
+    #navigation-top {
+        a.nav-link {
+            color: $color-body-text;
+        }
+
+        li.active {
+            a.nav-link {
+                font-weight: bold;
+            }
+        }
+
+        a.divider::after {
+            content: "\00a0\00a0\00a0|";
+        }
+    }
+
     #menu-main {
         li {
             font-size: 1.25rem; /* same as .navbar-brand */
@@ -94,12 +114,26 @@ body > nav {
     }
 
     #locale-switch {
-        border-left: 2px solid $color-gray-dark;
         padding-left: 20px !important;
     }
 }
 
+@media (min-width: $screen-md-min) {
+    #navigation-main-wrapper {
+        background-color: $color-body-text;
+        color: $color-body-inverse;
+        a, a:visited {
+            color: $color-body-inverse;
+        }
+        .dropdown-menu {
+            background-color: $color-body-text;
+        }
+    }
+}
+
 main {
+    color: $color-body-text;
+
     h1 {
         position: relative;
         width: 100%;
@@ -184,20 +218,27 @@ main {
 }
 
 footer {
+    background-color: #8FC7CF;
+
     & > div {
-        border-top: 2px solid $color-gray-dark;
         margin-top: 1rem;
     }
 
     a {
-        color: $color-gray-dark;
+        color: white;
         text-decoration: none;
+
+        &:hover {
+            color: $color-body-text;
+        }
     }
 }
 
 #banner {
-    border-bottom: 1px solid $color-gray-dark;
+    margin-top: 30px;
     margin-bottom: 30px;
+    background-color: $color-color-spot;
+    color: $color-body-inverse;
 }
 
 /* override bootstrap settings */

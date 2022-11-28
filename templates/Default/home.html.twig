@@ -1,42 +1,61 @@
 {% extends 'Base/base.html.twig' %}
 
 {% block banner %}
-    <div id="banner" class="bg-light p-2 p-sm-4 rounded-lg">
-        <h1 class="display-3">{{ 'Welcome'|trans }}</h1>
-        {% if 'de' == app.request.locale %}
-        <p>Hachschara als Erinnerungsort ist ein gemeinsames Projekt der <a href="https://www.stiftung-denkmal.de/" target="_blank">Stiftung Denkmal für die ermordeten Juden Europas (Berlin)</a>, dem <a href="https://www.mmz-potsdam.de/" target="_blank">Moses Mendelssohn Zentrum für Europäisch-Jüdische Studien (Potsdam)</a> und dem <!--<a href="https://www.juedischejugendkultur.de/" target="_blank">-->DFG-Projekt: Zwischen Alija und Flucht. Jüdische Jugendbünde und zionistische Erziehung unter dem NS-Regime und im vorstaatlichen Israel 1933–1945 (Braunschweig)<!--</a>-->.</p>
-        {% else %}
-        <p>Hakhsharah as a Place of Remembrance is a joint project of the der <a href="https://www.stiftung-denkmal.de/en/" target="_blank">Foundation Memorial to the Murdered Jews of Europe (Berlin)</a>, the <a href="https://www.mmz-potsdam.de/" target="_blank">Moses Mendelssohn Center for European-Jewish Studies (Potsdam)</a> and the <!--<a href="https://www.juedischejugendkultur.de/" target="_blank">-->DFG-Project: Between Aliyah and Escape. Jewish Youth Movement and Zionist Education under the Nazi Regime and in pre-State Israel 1933–1945 (Braunschweig)<!--</a>-->.</p>
-        {% endif %}
-        <p>
-            <a class="btn btn-primary" href="{{ path('about') }}" role="button">{{ 'Read-on'|trans }} &raquo;</a>
-        </p>
+    <div class="container">
+        <div id="banner" class="row p-2 p-sm-4 rounded-lg">
+            <h1>{{ 'Welcome'|trans }}</h1>
+            {% if 'de' == app.request.locale %}
+            <p>
+                Hachschara als Erinnerungsort ist ein gemeinsames Projekt des <a href="https://www.mmz-potsdam.de/" target="_blank">Moses Mendelssohn Zentrums für Europäisch-Jüdische Studien (Potsdam)</a> und dem <!--<a href="https://www.juedischejugendkultur.de/" target="_blank">-->DFG-Projekt: Zwischen Alija und Flucht. Jüdische Jugendbünde und zionistische Erziehung unter dem NS-Regime und im vorstaatlichen Israel 1933–1945 (Braunschweig)<!--</a>--> zusammen mit der <a href="https://www.stiftung-denkmal.de/" target="_blank">Stiftung Denkmal für die ermordeten Juden Europas (Berlin)</a>.
+            </p>
+            <p>
+                Mit dem Projekt soll an die Aktivitäten zur Berufsbildung und Berufsumschichtung junger Juden und Jüdinnen erinnert werden, die zur Vorbereitung auf ihre Alija (Auswanderung) dienten.
+            </p>
+            {% else %}
+            <p>
+                Hakhshara as a Place of Remembrance is a joint project of the <a href="https://www.mmz-potsdam.de/en/" target="_blank">Moses Mendelssohn Center for European-Jewish Studies</a> (Potsdam) and the DFG project “Between Aliyah and Escape: Jewish Youth Organizations and Zionist Education under the Nazi Regime and in pre-State Israel from 1933-1945” (Braunschweig), together with the <a href="https://www.stiftung-denkmal.de/en/" target="_blank">Foundation Memorial to the Murdered Jews of Europe</a> (Berlin).
+            </p>
+            <p>
+                The project intends to commemorate the vocational training and re-training activities developed to prepare young Jews for emigration and Aliyah.
+            </p>
+            {% endif %}
+            <p>
+                <a class="btn btn-primary" href="{{ path('about') }}" role="button">{{ 'Read-on'|trans }} &raquo;</a>
+            </p>
+        </div>
     </div>
 {% endblock %}
 
-{% block body %}
-    <div class="col-sm-4 text-sm-center">
-        <h2>{{ 'Sites'|trans }}</h2>
-        <p style="line-height: 2.5rem">
-            <a class="btn btn-secondary" href="{{ path('site-map') }}" role="button">{{ 'Map'|trans }} &raquo;</a>
-            <a class="btn btn-secondary" href="{{ path('site-index') }}" role="button">{{ 'Overview A-Z'|trans }} &raquo;</a>
-        </p>
+{% block wrapper %}
+    <div class="row">
+        <h2 class="p-sm-0" style="border-bottom: 1px solid #3E8FA5;">{{ 'Hakhsharah'|trans }}</h1>
+    {% block body %}
+    <div class="col-lg-6 p-sm-0 mb-3">
+    {% if 'de' == app.request.locale %}
+        „Hachschara“ bezeichnet die selbstorganisierte landwirtschaftliche, gärtnerische, handwerkliche und hauswirtschaftliche Berufsausbildung von Jugendlichen und jungen Erwachsenen als Voraussetzung zur Einwanderung ins Britische Mandatsgebiet Palästina. Der Begriff selbst stammt aus dem Hebräischen und wird allgemein mit „Tauglichmachung“ oder „Vorbereitung“ übersetzt.
+    {% else %}
+        “Hakhsharah” (hebr. preparation) designates the self-organized agricultural, horticultural, craft and home economics vocational training of adolescents and young adults as a prerequisite for immigration to the British Mandate territory of Palestine.
+    {% endif %}
+        <a href="{{ path('about-hakhsharah') }}" role="button">{{ 'Read-on'|trans }} &raquo;</a>
     </div>
-    <div class="col-sm-4 text-sm-center">
-        <h2>{{ 'Look-up'|trans }}</h2>
-        <p style="line-height: 2.5rem">
-            <a class="btn btn-secondary" href="{{ path('person-index') }}" role="button">{{ 'Persons'|trans }} &raquo;</a>
-            <a class="btn btn-secondary" href="{{ path('organization-index') }}" role="button">{{ 'Organizations'|trans }} &raquo;</a>
-            <a class="btn btn-secondary" href="{{ path('glossary-index') }}" role="button">{{ 'Glossary'|trans }} &raquo;</a>
-            <a class="btn btn-secondary" href="{{ path('bibliography-index') }}" role="button">{{ 'Bibliography'|trans }} &raquo;</a>
-        </p>
+    <div class="col-sm-4 col-lg-2 mb-3 text-sm-center">
+        <h3>{{ 'Sites'|trans }}</h3>
+        <a href="{{ path('site-map') }}" role="button">{{ 'Map'|trans }}&nbsp;&raquo;</a><br />
+        <a href="{{ path('site-index') }}" role="button">{{ 'Overview A-Z'|trans }}&nbsp;&raquo;</a>
     </div>
-    <div class="col-sm-4 text-sm-center">
-        <h2>{{ 'About'|trans }}</h2>
-        <p style="line-height: 2.5rem">
-            <a class="btn btn-secondary" href="{{ path('about-hakhsharah') }}" role="button">{{ 'Hakhsharah'|trans }} &raquo;</a>
-            <a class="btn btn-secondary" href="{{ path('about') }}" role="button">{{ 'The Project'|trans }} &raquo;</a>
-            <a class="btn btn-secondary" href="{{ path('about-network') }}" role="button">{{ 'The Network'|trans }} &raquo;</a>
-        </p>
+    <div class="col-sm-4 col-lg-2 mb-3 text-sm-center">
+        <h3>{{ 'Look-up'|trans }}</h3>
+            <a href="{{ path('person-index') }}" role="button">{{ 'Persons'|trans }}&nbsp;&raquo;</a><br />
+            <a href="{{ path('organization-index') }}" role="button">{{ 'Organizations'|trans }}&nbsp;&raquo;</a><br />
+            <a href="{{ path('glossary-index') }}" role="button">{{ 'Glossary'|trans }}&nbsp;&raquo;</a><br />
+            <a href="{{ path('bibliography-index') }}" role="button">{{ 'Bibliography'|trans }}&nbsp;&raquo;</a>
     </div>
+    <div class="col-sm-4 col-lg-2 text-sm-center">
+        <h3>{{ 'About'|trans }}</h3>
+            <a href="{{ path('about-hakhsharah') }}" role="button">{{ 'Hakhsharah'|trans }}&nbsp;&raquo;</a><br />
+            <a href="{{ path('about') }}" role="button">{{ 'The Project'|trans }}&nbsp;&raquo;</a><br />
+            <a href="{{ path('about-network') }}" role="button">{{ 'The Network'|trans }}&nbsp;&raquo;</a>
+    </div>
+    {% endblock %}
+    </div><!-- .row -->
 {% endblock %}
