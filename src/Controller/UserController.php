@@ -19,23 +19,18 @@ class UserController
 extends BaseController
 {
     /**
-     * @Route("/about/network/ulan/{ulan}.jsonld", requirements={"ulan"="[0-9]+"}, name="user-by-ulan-jsonld")
-     * @Route("/about/network/ulan/{ulan}", requirements={"ulan"="[0-9]+"}, name="user-by-ulan")
      * @Route("/about/network/gnd/{gnd}.jsonld", requirements={"gnd"="[0-9xX]+"}, name="user-by-gnd-jsonld")
      * @Route("/about/network/gnd/{gnd}", requirements={"gnd"="[0-9xX]+"}, name="user-by-gnd")
      * @Route("/about/network/{id}.jsonld", name="user-jsonld", requirements={"id"="\d+"})
      * @Route("/about/network/{id}", name="user", requirements={"id"="\d+"})
      */
     public function detailAction(Request $request, EntityManagerInterface $entityManager,
-                                 $id = null, $ulan = null, $gnd = null)
+                                 $id = null, $gnd = null)
     {
         $criteria = new \Doctrine\Common\Collections\Criteria();
 
         if (!empty($id)) {
             $criteria->where($criteria->expr()->eq('id', $id));
-        }
-        else if (!empty($ulan)) {
-            $criteria->where($criteria->expr()->eq('ulan', $ulan));
         }
         else if (!empty($gnd)) {
             $criteria->where($criteria->expr()->eq('gnd', $gnd));
@@ -58,17 +53,13 @@ extends BaseController
         // $user->setDateModified(\App\Search\UserListBuilder::fetchDateModified($entityManager->getConnection(), $user->getId()));
 
         $locale = $request->getLocale();
-        if (in_array($request->get('_route'), [ 'user-jsonld', 'user-by-ulan-json', 'user-by-gnd-jsonld' ])) {
+        if (in_array($request->get('_route'), [ 'user-jsonld', 'user-by-gnd-jsonld' ])) {
             return new JsonLdResponse($user->jsonLdSerialize($locale));
         }
 
         $routeName = 'user';
         $routeParams = [ 'id' => $user->getId() ];
-        if (!empty($user->getUlan())) {
-            $routeName = 'user-by-ulan';
-            $routeParams = [ 'ulan' => $user->getUlan() ];
-        }
-        else if (!empty($user->getGnd())) {
+        if (!empty($user->getGnd())) {
             $routeName = 'user-by-gnd';
             $routeParams = [ 'gnd' => $user->getGnd() ];
         }

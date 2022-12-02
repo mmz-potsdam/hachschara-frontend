@@ -57,23 +57,18 @@ extends BaseController
     }
 
     /**
-     * @Route("/organization/ulan/{ulan}.jsonld", requirements={"ulan"="[0-9]+"}, name="organization-by-ulan-jsonld")
-     * @Route("/organization/ulan/{ulan}", requirements={"ulan"="[0-9]+"}, name="organization-by-ulan")
      * @Route("/organization/gnd/{gnd}.jsonld", requirements={"gnd"="[0-9xX]+"}, name="organization-by-gnd-jsonld")
      * @Route("/organization/gnd/{gnd}", requirements={"gnd"="[0-9xX]+"}, name="organization-by-gnd")
      * @Route("/organization/{id}.jsonld", name="organization-jsonld", requirements={"id"="\d+"})
      * @Route("/organization/{id}", name="organization", requirements={"id"="\d+"})
      */
     public function detailAction(Request $request, EntityManagerInterface $entityManager,
-                                 $id = null, $ulan = null, $gnd = null)
+                                 $id = null, $gnd = null)
     {
         $criteria = new \Doctrine\Common\Collections\Criteria();
 
         if (!empty($id)) {
             $criteria->where($criteria->expr()->eq('id', $id));
-        }
-        else if (!empty($ulan)) {
-            $criteria->where($criteria->expr()->eq('ulan', $ulan));
         }
         else if (!empty($gnd)) {
             $criteria->where($criteria->expr()->eq('gnd', $gnd));
@@ -96,17 +91,13 @@ extends BaseController
         // $organization->setDateModified(\App\Search\PersonListBuilder::fetchDateModified($entityManager->getConnection(), $organization->getId()));
 
         $locale = $request->getLocale();
-        if (in_array($request->get('_route'), [ 'organization-jsonld', 'organization-by-ulan-json', 'organization-by-gnd-jsonld' ])) {
+        if (in_array($request->get('_route'), [ 'organization-jsonld', 'organization-by-gnd-jsonld' ])) {
             return new JsonLdResponse($organization->jsonLdSerialize($locale));
         }
 
         $routeName = 'organization';
         $routeParams = [ 'id' => $organization->getId() ];
-        if (!empty($organization->getUlan())) {
-            $routeName = 'organization-by-ulan';
-            $routeParams = [ 'ulan' => $organization->getUlan() ];
-        }
-        else if (!empty($organization->getGnd())) {
+        if (!empty($organization->getGnd())) {
             $routeName = 'organization-by-gnd';
             $routeParams = [ 'gnd' => $organization->getGnd() ];
         }

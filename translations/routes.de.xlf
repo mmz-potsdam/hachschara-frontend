@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2022-09-06T14:13:18Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
+  <file date="2022-12-02T15:30:19Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -46,14 +46,6 @@
         <source>/organization/gnd/{gnd}.jsonld</source>
         <target>/organisation/gnd/{gnd}.jsonld</target>
       </trans-unit>
-      <trans-unit id="9a5525170f69d21906b8f0efe3c743e7acca9323" resname="organization-by-ulan">
-        <source>/organization/ulan/{ulan}</source>
-        <target>/organisation/ulan/{ulan}</target>
-      </trans-unit>
-      <trans-unit id="f7e6d3c26f2fda5f747460838459e1bfcc5d4885" resname="organization-by-ulan-jsonld">
-        <source>/organization/ulan/{ulan}.jsonld</source>
-        <target>/organisation/ulan/{ulan}.jsonld</target>
-      </trans-unit>
       <trans-unit id="3dd0557da5c0c1443d8ddd42a7bd8c91ca13e4be" resname="organization-gnd-beacon">
         <source>/organization/gnd/beacon</source>
         <target>/organisation/gnd/beacon</target>
@@ -77,14 +69,6 @@
       <trans-unit id="37ae3a2b975d5f1e9aea11650a1dac45326a65af" resname="person-by-gnd-jsonld">
         <source>/person/gnd/{gnd}.jsonld</source>
         <target>/person/gnd/{gnd}.jsonld</target>
-      </trans-unit>
-      <trans-unit id="ad767d2c2c3b0a534480b3bb2863e62ee39e56b6" resname="person-by-ulan">
-        <source>/person/ulan/{ulan}</source>
-        <target>/person/ulan/{ulan}</target>
-      </trans-unit>
-      <trans-unit id="3a0490f7025863c296922bb6eccf4a0c03de110e" resname="person-by-ulan-jsonld">
-        <source>/person/ulan/{ulan}.jsonld</source>
-        <target>/person/ulan/{ulan}.jsonld</target>
       </trans-unit>
       <trans-unit id="6007191513c806f499122915873026637df3c9b1" resname="person-gnd-beacon">
         <source>/person/gnd/beacon</source>
@@ -169,14 +153,6 @@
       <trans-unit id="d777503dbe0e951dc0b458e67748368d1e83c479" resname="user-by-gnd-jsonld">
         <source>/about/network/gnd/{gnd}.jsonld</source>
         <target>/ueber/netzwerk/gnd/{gnd}.jsonld</target>
-      </trans-unit>
-      <trans-unit id="8ad2362da0f3a665fec22f34de89f58a4939b002" resname="user-by-ulan">
-        <source>/about/network/ulan/{ulan}</source>
-        <target>/ueber/netzwerk/ulan/{ulan}</target>
-      </trans-unit>
-      <trans-unit id="42dd9ae203555aba6aa874af6490efec332c524c" resname="user-by-ulan-jsonld">
-        <source>/about/network/ulan/{ulan}.jsonld</source>
-        <target>/ueber/netzwerk/ulan/{ulan}.jsonld</target>
       </trans-unit>
       <trans-unit id="51ac38410e2ef7c87f7680db7588f683adea792d" resname="user-jsonld">
         <source>/about/network/{id}.jsonld</source>
