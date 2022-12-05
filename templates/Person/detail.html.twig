@@ -47,8 +47,8 @@
 
     <div class="col-sm-8 col-lg-9">
         <div class="container-fluid p-0">
-            {% if person.disambiguatingDescription is not empty %}
-                <p>{{ person.disambiguatingDescription }}</p>
+            {% if person.disambiguatingDescription(app.request.locale) is not empty %}
+                <p>{{ person.disambiguatingDescription(app.request.locale) }}</p>
             {% endif %}
             <dl class="row">
             {% if person.gender is not empty %}
@@ -115,9 +115,9 @@
                 <dt class="col-sm-4 col-md-3">{{ 'Denomination'|trans }}</dt>
                 <dd class="col-sm-8 col-md-9">{{ person.denominationExpanded|nl2br }}</dd>
             {% endif %}
-            {% if person.description is not empty %}
+            {% if person.description(app.request.locale) is not empty %}
                 <dt class="col-sm-4 col-md-3">{{ 'Description'|trans }}</dt>
-                <dd class="col-sm-8 col-md-9">{{ person.description|nl2br }}</dd>
+                <dd class="col-sm-8 col-md-9">{{ person.description(app.request.locale)|nl2br }}</dd>
             {% endif %}
             {% set siteRefs = person.siteReferences %}
             {% if siteRefs is not empty %}

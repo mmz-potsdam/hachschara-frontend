@@ -21,6 +21,7 @@ doctrine:
         dql:
             string_functions:
                 # https://packagist.org/packages/beberlei/doctrineextensions
+                CONCAT_WS: DoctrineExtensions\Query\Mysql\ConcatWs
                 REGEXP: DoctrineExtensions\Query\Mysql\Regexp
                 # https://packagist.org/packages/scienta/doctrine-json-functions
                 JSON_EXTRACT: Scienta\DoctrineJsonFunctions\Query\AST\Functions\Mysql\JsonExtract

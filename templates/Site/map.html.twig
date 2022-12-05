@@ -13,7 +13,7 @@
 {% block body %}
     <h1>{{ 'Sites'|trans }}</h1>
 
-    {{ helper.breadcrumb([ { route: 'site-map', label: 'Map'}, { route: 'site-index', label: 'Overview A-Z' } ]) }}
+    {{ helper.breadcrumb([ { route: 'site-map', label: 'Map' }, { route: 'site-index', label: 'Overview A-Z' } ]) }}
 
     <form method="get" action="{{ path(app.request.attributes.get('_route')) }}">
         <div class="form-group">

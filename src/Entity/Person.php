@@ -756,7 +756,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
             }
         }
 
-        $description = $this->getDescriptionLocalized($locale);
+        $description = $this->getDescription($locale);
         if (!empty($description)) {
             $ret['description'] = $description;
         }

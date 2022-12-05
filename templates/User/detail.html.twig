@@ -115,9 +115,9 @@
                 <dt class="col-sm-4 col-md-3">{{ 'Denomination'|trans }}</dt>
                 <dd class="col-sm-8 col-md-9">{{ person.denominationExpanded|nl2br }}</dd>
             {% endif %#}
-            {% if person.description is not empty %}
+            {% if person.description(app.request.locale) is not empty %}
                 <dt class="col-sm-4 col-md-3">{{ 'Description'|trans }}</dt>
-                <dd class="col-sm-8 col-md-9">{{ person.description|nl2br }}</dd>
+                <dd class="col-sm-8 col-md-9">{{ person.description(app.request.locale)|nl2br }}</dd>
             {% endif %}
             {% if person.url is not empty %}
                 <dt class="col-sm-4 col-md-3">{{ 'Homepage'|trans }}</dt>

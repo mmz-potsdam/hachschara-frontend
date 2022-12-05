@@ -669,7 +669,7 @@ implements \JsonSerializable /*, JsonLdSerializable */
             $sameAs[] = 'http://vocab.getty.edu/tgn/' . $this->tgn;
         }
         if (!empty($this->gnd)) {
-            $sameAs[] = 'http://d-nb.info/gnd/' . $this->gnd;
+            $sameAs[] = 'https://d-nb.info/gnd/' . $this->gnd;
         }
         if (count($sameAs) > 0) {
             $ret['sameAs'] = (1 == count($sameAs)) ? $sameAs[0] : $sameAs;

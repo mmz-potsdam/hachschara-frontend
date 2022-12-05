@@ -1,5 +1,5 @@
 <?php
-// PlaceFilterType.php
+// SiteFilterType.php
 namespace App\Filter;
 
 use Symfony\Component\Form\FormBuilderInterface;
@@ -13,7 +13,9 @@ extends CrudFilterType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $this->addSearchFilter($builder, [
-            'PR.name', 'PR.alternateName',
+            'PR.name',
+            "JSON_EXTRACT(PR.translations ,'$.en.name')", // TODO: pass locale
+            'PR.alternateName',
         ]);
 
         /*

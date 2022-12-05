@@ -32,13 +32,20 @@ extends BaseController
                                 FilterBuilderUpdaterInterface $queryBuilderUpdater)
     {
         $routeName = $request->get('_route');
+        $locale = $request->getLocale();
 
         $qb = $entityManager
                 ->createQueryBuilder();
 
+        $nameSort = 'PR.name';
+        if ($locale != \App\Entity\Site::$defaultLocale) {
+            $nameSort = sprintf("CONCAT_WS('', JSON_UNQUOTE(JSON_EXTRACT(PR.translations ,'$.%s.name')), %s)",
+                                $locale, $nameSort);
+        }
+
         $qb->select([
                 'PR',
-                "PR.name HIDDEN nameSort"
+                $nameSort . " HIDDEN nameSort"
             ])
             ->from('App\Entity\Site', 'PR')
             ->leftJoin('PR.location', 'P')
@@ -68,7 +75,7 @@ extends BaseController
                     $info = [ (double)$parts[0], (double)$parts[1] ];
                     $info[] = sprintf('<a href="%s">%s</a>',
                                       $this->generateUrl('site', [ 'id' => $result->getId() ]),
-                                      $result->getName());
+                                      $result->getName($locale));
                     $info[] = '';
                     $data[] = $info;
                 }
@@ -143,9 +150,11 @@ extends BaseController
             $entity->buildContributorFull($entityManager);
         }
 
+        $locale = $request->getLocale();
+
         if (in_array($routeName, [ 'site-pdf' ])) {
             $html = $this->renderView('Site/detail.html.twig', [
-                'pageTitle' => $entity->getName(),
+                'pageTitle' => $entity->getName($locale),
                 'site' => $entity,
                 'mapMarkers' => $this->buildMapMarkers($entity),
                 'printview' => true,
@@ -168,9 +177,9 @@ extends BaseController
         }
 
         return $this->render('Site/detail.html.twig', [
-            'pageTitle' => $entity->getName(),
+            'pageTitle' => $entity->getName($locale),
             'site' => $entity,
-            'mapMarkers' => $this->buildMapMarkers($entity),
+            'mapMarkers' => $this->buildMapMarkers($entity, $locale),
             'pageMeta' => [
                 'jsonLd' => $entity->jsonLdSerialize($locale),
                 // 'og' => $this->buildOg($entity, $routeName, $routeParams),
@@ -179,7 +188,7 @@ extends BaseController
         ]);
     }
 
-    protected function buildMapMarkers($entity)
+    protected function buildMapMarkers($entity, $locale = null)
     {
         $markers = [];
 

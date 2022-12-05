@@ -252,7 +252,7 @@ implements \JsonSerializable /*, JsonLdSerializable */
         }
 
         if (!empty($this->gnd)) {
-            $ret['sameAs'] = 'http://d-nb.info/gnd/' . $this->gnd;
+            $ret['sameAs'] = 'https://d-nb.info/gnd/' . $this->gnd;
         }
 
         return $ret;

@@ -12,6 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User
 {
+    use HasTranslationsTrait;
+
     /**
      * @var int
      *
@@ -208,27 +210,11 @@ class User
     /**
      * Gets description.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription()
+    public function getDescription($locale = null)
     {
-        return $this->description;
-    }
-
-    public function getDescriptionLocalized($locale)
-    {
-        if (empty($this->description)) {
-            return;
-        }
-
-        if (is_array($this->description)) {
-            if (array_key_exists($locale, $this->description)) {
-                return $this->description[$locale];
-            }
-        }
-        else {
-            return $this->description;
-        }
+        return $this->getTranslatedProperty('description', $locale);
     }
 
     /**

@@ -13,6 +13,8 @@ use Doctrine\ORM\Mapping as ORM;
 class Site
 implements JsonLdSerializable
 {
+    use HasTranslationsTrait;
+
     protected static $termsById = null;
 
     public static function initTerms($em)
@@ -301,9 +303,9 @@ implements JsonLdSerializable
      *
      * @return string
      */
-    public function getName()
+    public function getName($locale = null)
     {
-        return $this->name;
+        return $this->getTranslatedProperty('name', $locale);
     }
 
     /**
@@ -384,7 +386,7 @@ implements JsonLdSerializable
     /**
      * Helper to extract localized property or (German) fallback.
      *
-     * @return string
+     * @return string|null
      */
     private function getLocalizedProperty($property, $locale = 'de')
     {
@@ -620,7 +622,7 @@ implements JsonLdSerializable
     /**
      * Gets localized description.
      *
-     * @return string
+     * @return string|null
      */
     public function getDescriptionLocalized($locale = 'de')
     {

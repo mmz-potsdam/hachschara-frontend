@@ -264,7 +264,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
             }
         }
 
-        $description = $this->getDescriptionLocalized($locale);
+        $description = $this->getDescription($locale);
         if (!empty($description)) {
             $ret['description'] = $description;
         }
@@ -282,7 +282,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
         }
 
         if (!empty($this->gnd)) {
-            $sameAs[] = 'http://d-nb.info/gnd/' . $this->gnd;
+            $sameAs[] = 'https://d-nb.info/gnd/' . $this->gnd;
         }
 
         if (!empty($this->wikidata)) {

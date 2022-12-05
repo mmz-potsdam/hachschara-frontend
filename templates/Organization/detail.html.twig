@@ -17,8 +17,8 @@
     <div class="col-sm-8 col-lg-9">
         <div class="container-fluid p-0">
 
-            {% if organization.disambiguatingDescription is not empty %}
-                <p>{{ organization.disambiguatingDescription }}</p>
+            {% if organization.disambiguatingDescription(app.request.locale) is not empty %}
+                <p>{{ organization.disambiguatingDescription(app.request.locale) }}</p>
             {% endif %}
             <dl class="row">
             {% if organization.alternateName is not empty %}
@@ -55,9 +55,9 @@
                 <dt class="col-sm-4 col-md-3">Notes</dt>
                 <dd class="col-sm-8 col-md-9">{{ dump(organization.notes['founding_dissolution']) }}</dd>
             {% endif %#}
-            {% if organization.description is not empty %}
+            {% if organization.description(app.request.locale) is not empty %}
                 <dt class="col-sm-4 col-md-3">{{ 'Description'|trans }}</dt>
-                <dd class="col-sm-8 col-md-9">{{ organization.description|nl2br }}</dd>
+                <dd class="col-sm-8 col-md-9">{{ organization.description(app.request.locale)|nl2br }}</dd>
             {% endif %}
             {% set siteRefs = organization.siteReferences %}
             {% if siteRefs is not empty %}
