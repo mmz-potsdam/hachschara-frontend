@@ -40,21 +40,26 @@
     </div>
     <div class="col-sm-4 col-lg-2 mb-3 text-sm-center">
         <h3>{{ 'Sites'|trans }}</h3>
-        <a href="{{ path('site-map') }}" role="button">{{ 'Map'|trans }}&nbsp;&raquo;</a><br />
-        <a href="{{ path('site-index') }}" role="button">{{ 'Overview A-Z'|trans }}&nbsp;&raquo;</a>
+        <ul class="list-unstyled inverse text-sm-center">
+            <li><a href="{{ path('site-map') }}" role="button">{{ 'Map'|trans }}&nbsp;&raquo;</a></li>
+            <li><a href="{{ path('site-index') }}" role="button">{{ 'Overview A-Z'|trans }}&nbsp;&raquo;</a></li>
+        </ul>
     </div>
-    <div class="col-sm-4 col-lg-2 mb-3 text-sm-center">
+    <div class="col-sm-4 col-lg-2 mb-3">
         <h3>{{ 'Look-up'|trans }}</h3>
-            <a href="{{ path('person-index') }}" role="button">{{ 'Persons'|trans }}&nbsp;&raquo;</a><br />
-            <a href="{{ path('organization-index') }}" role="button">{{ 'Organizations'|trans }}&nbsp;&raquo;</a><br />
-            <a href="{{ path('glossary-index') }}" role="button">{{ 'Glossary'|trans }}&nbsp;&raquo;</a><br />
-            <a href="{{ path('bibliography-index') }}" role="button">{{ 'Bibliography'|trans }}&nbsp;&raquo;</a>
+        <ul class="list-unstyled inverse text-sm-center">
+            <li><a href="{{ path('person-index') }}" role="button">{{ 'Persons'|trans }}&nbsp;&raquo;</a></li>
+            <li><a href="{{ path('organization-index') }}" role="button">{{ 'Organizations'|trans }}&nbsp;&raquo;</a></li>
+            <li><a href="{{ path('glossary-index') }}" role="button">{{ 'Glossary'|trans }}&nbsp;&raquo;</a></li>
+            <li><a href="{{ path('bibliography-index') }}" role="button">{{ 'Bibliography'|trans }}&nbsp;&raquo;</a></li>
+        </ul>
     </div>
     <div class="col-sm-4 col-lg-2 text-sm-center">
         <h3>{{ 'About'|trans }}</h3>
-            <a href="{{ path('about-hakhsharah') }}" role="button">{{ 'Hakhsharah'|trans }}&nbsp;&raquo;</a><br />
-            <a href="{{ path('about') }}" role="button">{{ 'The Project'|trans }}&nbsp;&raquo;</a><br />
-            <a href="{{ path('about-network') }}" role="button">{{ 'The Network'|trans }}&nbsp;&raquo;</a>
+        <ul class="list-unstyled inverse text-sm-center">
+            <li><a href="{{ path('about-hakhsharah') }}" role="button">{{ 'Hakhsharah'|trans }}&nbsp;&raquo;</a></li>
+            <li><a href="{{ path('about') }}" role="button">{{ 'The Project'|trans }}&nbsp;&raquo;</a></li>
+            <li><a href="{{ path('about-network') }}" role="button">{{ 'The Network'|trans }}&nbsp;&raquo;</a></li>
     </div>
     {% endblock %}
     </div><!-- .row -->
