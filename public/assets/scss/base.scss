@@ -124,8 +124,24 @@ nav {
         a, a:visited {
             color: $color-body-inverse;
         }
+
         .dropdown-menu {
             background-color: $color-body-text;
+
+            &.dropdown-menu-center {
+                /* see https://stackoverflow.com/a/56931140 */
+                right: auto !important;
+                left: 50% !important;
+                top: 100% !important;
+                -webkit-transform: translate(-50%, 0) !important;
+                -o-transform: translate(-50%, 0) !important;
+                transform: translate(-50%, 0) !important;
+            }
+
+            .dropdown-item:hover {
+                color: $color-body-text;
+                background-color: $color-body-inverse;
+            }
         }
     }
 }

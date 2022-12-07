@@ -76,7 +76,7 @@
                         <a href="#" class="nav-link dropdown-toggle" id="dropdownLookupMenuButton" data-bs-toggle="dropdown">
                             {{ 'Look-up'|trans }}
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownLookupMenuButton">
+                        <div class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownLookupMenuButton">
                             <a class="dropdown-item" href="{{ path('person-index') }}">{{ 'Persons'|trans }}</a>
                             <a class="dropdown-item" href="{{ path('organization-index') }}">{{ 'Organizations'|trans }}</a>
                             <a class="dropdown-item" href="{{ path('glossary-index') }}">{{ 'Glossary'|trans }}</a>
@@ -87,7 +87,7 @@
                         <a href="{{ path('about') }}" class="nav-link dropdown-toggle" id="dropdownAboutMenuButton" data-bs-toggle="dropdown">
                             {{ 'About'|trans }}
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownAboutMenuButton">
+                        <div class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownAboutMenuButton">
                             {% if 'de' == app.request.locale %}
                             <a class="dropdown-item" href="{{ path('about-hakhsharah') }}">{{ 'Hakhsharah'|trans }}</a>
                             {% endif %}
