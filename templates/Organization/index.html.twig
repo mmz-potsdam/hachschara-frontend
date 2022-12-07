@@ -3,40 +3,40 @@
 {% import 'Shared/helper.html.twig' as helper %}
 
 {% block body %}
-    <div class="row p-2">
-        <h1>{{ 'Organizations'|trans }}</h1>
+    <h1>{{ 'Organizations'|trans }}</h1>
 
-        {#
-        <form method="get" action="{{ path(app.request.attributes.get('_route')) }}">
-            <div class="form-group">
-                {{ form_rest(form) }}
-                <!--<button type="submit" class="btn btn-primary">{{ 'Search'|trans }}</button>-->
-            </div>
-        </form>
+    {#
+    <form method="get" action="{{ path(app.request.attributes.get('_route')) }}">
+        <div class="form-group">
+            {{ form_rest(form) }}
+            <!--<button type="submit" class="btn btn-primary">{{ 'Search'|trans }}</button>-->
+        </div>
+    </form>
 
-        <ul class="list-inline">
-            <li class="list-inline-item"><a href="{{ path('site-map') }}">{{ 'Map'|trans }}</a></li>
-            <li class="list-inline-item"><a href="{{ path('site-index') }}">{{ 'Overview A-Z'|trans }}</a></li>
-        </ul>
-        #}
+    <ul class="list-inline">
+        <li class="list-inline-item"><a href="{{ path('site-map') }}">{{ 'Map'|trans }}</a></li>
+        <li class="list-inline-item"><a href="{{ path('site-index') }}">{{ 'Overview A-Z'|trans }}</a></li>
+    </ul>
+    #}
 
-        {% if pagination.getTotalItemCount > 0 %}
-            {% set last_initial = '' %}
-            {% for row in pagination %}
-                {% set initial = row.name|slug|first|upper %}
-                {% if initial != last_initial %}
-                    <h2 class="initial">{{ initial }}</h2>
-                    {% set last_initial = initial %}
-                {% else %}
-                    <br />
-                {% endif %}
-                <a href="{{ path('organization', { 'id': row.id }) }}">{{ row.name }}</a>
-            {% endfor %}
+    {% if pagination.getTotalItemCount > 0 %}
+        <div class="multi-col">
+        {% set last_initial = '' %}
+        {% for row in pagination %}
+            {% set initial = row.name|slug|first|upper %}
+            {% if initial != last_initial %}
+                <h2 class="initial">{{ initial }}</h2>
+                {% set last_initial = initial %}
+            {% else %}
+                <br />
+            {% endif %}
+            <a href="{{ path('organization', { 'id': row.id }) }}">{{ row.name }}</a>
+        {% endfor %}
+        </div>
 
-            {# display navigation #}
-            {{ knp_pagination_render(pagination) }}
-        {% else %}
-            {{ 'No matching organizations found'|trans }}
-        {% endif %}
-    </div>
+        {# display navigation #}
+        {{ knp_pagination_render(pagination) }}
+    {% else %}
+        {{ 'No matching organizations found'|trans }}
+    {% endif %}
 {% endblock %}

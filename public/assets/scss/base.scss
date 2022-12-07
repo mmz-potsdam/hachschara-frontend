@@ -137,6 +137,26 @@ ul.inverse {
     }
 }
 
+.multi-col {
+    @media (min-width: $screen-md-min) {
+        -webkit-column-count: 2; /* Chrome, Safari, Opera */
+        -moz-column-count: 2; /* Firefox */
+        column-count: 2;
+    }
+
+    @media (min-width: $screen-lg-min) {
+        -webkit-column-count: 3; /* Chrome, Safari, Opera */
+        -moz-column-count: 3; /* Firefox */
+        column-count: 3;
+    }
+
+    @media (min-width: $screen-xl-min) {
+        -webkit-column-count: 4; /* Chrome, Safari, Opera */
+        -moz-column-count: 4; /* Firefox */
+        column-count: 4;
+    }
+}
+
 @media (min-width: $screen-md-min) {
     #navigation-main-wrapper {
         background-color: $color-body-text;
@@ -207,6 +227,10 @@ main {
 
     h2.initial {
         margin-top: 1rem;
+        &:first-child {
+            margin-top: 0;
+        }
+
         margin-bottom: 0;
     }
 
