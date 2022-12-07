@@ -15,17 +15,21 @@
     </form>
 
     {% if pagination.getTotalItemCount > 0 %}
+        <div class="multi-col">
         {% set last_initial = '' %}
         {% for row in pagination %}
             {% set initial = row.name(app.request.locale)|slug|first|upper %}
             {% if initial != last_initial %}
+                <div class="avoid-break">
                 <h2 class="initial">{{ initial }}</h2>
                 {% set last_initial = initial %}
             {% else %}
-                <br />
+                <div>
             {% endif %}
             <a href="{{ path('site', { 'id': row.id }) }}">{{ row.name(app.request.locale) }}</a>
+                </div>
         {% endfor %}
+        </div>
 
         {# display navigation #}
         {{ knp_pagination_render(pagination) }}

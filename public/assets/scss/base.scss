@@ -227,11 +227,22 @@ main {
 
     h2.initial {
         margin-top: 1rem;
+
         &:first-child {
             margin-top: 0;
         }
 
         margin-bottom: 0;
+    }
+
+    div.avoid-break {
+        break-inside: avoid-column;
+
+        margin-top: 1rem;
+
+        &:first-child {
+            margin-top: 0;
+        }
     }
 
     h4 {
