@@ -36,13 +36,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
                 <a class="navbar-brand" href="{{ path('home') }}">
-                    {% if 'de' == app.request.locale %}
-                        <b>Hachschara</b> als<br />
-                        Erinnerungsort
-                    {% else %}
-                        <b>Hakhsharah</b> as a<br />
-                        Place of Remembrence
-                    {% endif %}
+                    <img src="{{ app.request.basepath }}/img/logo.{{ app.request.locale }}.svg" alt="{{ site_name|trans({}, 'additional') }}" style="height: 60px; width: auto" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="{{ 'Toggle navigation'|trans }}">
                     <span class="navbar-toggler-icon"></span>
@@ -115,14 +109,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4">
-                        <a href="{{ path('home') }}" style="font-size: 1.15em;">
-                        {% if 'de' == app.request.locale %}
-                            <b>Hachschara</b> als<br />
-                            Erinnerungsort
-                        {% else %}
-                            <b>Hakhsharah</b> as a<br />
-                            Place of Remembrence
-                        {% endif %}
+                        <a href="{{ path('home') }}">
+                            <img src="{{ app.request.basepath }}/img/logo_inverse.{{ app.request.locale }}.svg" alt="{{ site_name|trans({}, 'additional') }}" style="height: 40px; width: auto" />
                         </a>
                     </div>
                     <div class="col-sm-6">
