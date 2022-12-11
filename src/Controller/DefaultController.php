@@ -32,11 +32,11 @@ extends AbstractController
     }
 
     /**
-     * @Route("/about/hakhsharah", name="about-hakhsharah")
+     * @Route("/about/hakhshara", name="about-hakhshara")
      */
     public function aboutTermAction(Request $request)
     {
-        return $this->render('Default/about-hakhsharah.' .  $request->getLocale() .  '.html.twig');
+        return $this->render('Default/about-hakhshara.' .  $request->getLocale() .  '.html.twig');
     }
 
     /**

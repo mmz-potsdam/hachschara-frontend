@@ -28,15 +28,15 @@
 
 {% block wrapper %}
     <div class="row">
-        <h2 class="p-sm-0" style="border-bottom: 1px solid #3E8FA5;">{{ 'Hakhsharah'|trans }}</h1>
+        <h2 class="p-sm-0" style="border-bottom: 1px solid #3E8FA5;">{{ 'Hakhshara'|trans }}</h1>
     {% block body %}
     <div class="col-lg-6 p-sm-0 mb-3">
     {% if 'de' == app.request.locale %}
         „Hachschara“ bezeichnet die selbstorganisierte landwirtschaftliche, gärtnerische, handwerkliche und hauswirtschaftliche Berufsausbildung von Jugendlichen und jungen Erwachsenen als Voraussetzung zur Einwanderung ins Britische Mandatsgebiet Palästina. Der Begriff selbst stammt aus dem Hebräischen und wird allgemein mit „Tauglichmachung“ oder „Vorbereitung“ übersetzt.
     {% else %}
-        “Hakhsharah” (hebr. preparation) designates the self-organized agricultural, horticultural, craft and home economics vocational training of adolescents and young adults as a prerequisite for immigration to the British Mandate territory of Palestine.
+        “Hakhshara” (hebr. preparation) designates the self-organized agricultural, horticultural, craft and home economics vocational training of adolescents and young adults as a prerequisite for immigration to the British Mandate territory of Palestine.
     {% endif %}
-        <a href="{{ path('about-hakhsharah') }}" role="button">{{ 'Read-on'|trans }} &raquo;</a>
+        <a href="{{ path('about-hakhshara') }}" role="button">{{ 'Read-on'|trans }} &raquo;</a>
     </div>
     <div class="col-sm-4 col-lg-2 mb-3 text-sm-center">
         <h3>{{ 'Sites'|trans }}</h3>
@@ -57,7 +57,7 @@
     <div class="col-sm-4 col-lg-2 text-sm-center">
         <h3>{{ 'About'|trans }}</h3>
         <ul class="list-unstyled inverse text-sm-center">
-            <li><a href="{{ path('about-hakhsharah') }}" role="button">{{ 'Hakhsharah'|trans }}&nbsp;&raquo;</a></li>
+            <li><a href="{{ path('about-hakhshara') }}" role="button">{{ 'Hakhshara'|trans }}&nbsp;&raquo;</a></li>
             <li><a href="{{ path('about') }}" role="button">{{ 'The Project'|trans }}&nbsp;&raquo;</a></li>
             <li><a href="{{ path('about-network') }}" role="button">{{ 'The Network'|trans }}&nbsp;&raquo;</a></li>
     </div>

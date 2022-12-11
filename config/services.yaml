@@ -6,7 +6,7 @@
 parameters:
     app.supported_locales: ['de', 'en']
     app.default_locale: 'de'
-    app.site.name: "Hakhsharah as a Place of Remembrance"
+    app.site.name: "Hakhshara as a Place of Remembrance"
 
     app.mpdf-converter.arguments:
         config:
