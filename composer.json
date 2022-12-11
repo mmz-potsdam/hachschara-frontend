@@ -61,6 +61,7 @@
         "masterminds/html5": "^2.7",
         "mpdf/mpdf": "^8.1",
         "phpdocumentor/reflection-docblock": "^5.3",
+        "presta/sitemap-bundle": "^3.3",
         "scienta/doctrine-json-functions": "^5.1",
         "seboettg/citeproc-php": "2.4.1",
         "symfony/asset": "^5.4",

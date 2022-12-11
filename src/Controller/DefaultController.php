@@ -16,7 +16,7 @@ class DefaultController
 extends AbstractController
 {
     /**
-     * @Route("/", name="home", options={"sitemap" = true})
+     * @Route("/", name="home")
      */
     public function homeAction()
     {
@@ -24,7 +24,7 @@ extends AbstractController
     }
 
     /**
-     * @Route("/about", name="about", options={"sitemap" = true})
+     * @Route("/about", name="about")
      */
     public function aboutAction(Request $request)
     {
@@ -32,7 +32,7 @@ extends AbstractController
     }
 
     /**
-     * @Route("/about/hakhsharah ", name="about-hakhsharah", options={"sitemap" = true})
+     * @Route("/about/hakhsharah", name="about-hakhsharah")
      */
     public function aboutTermAction(Request $request)
     {
@@ -40,7 +40,7 @@ extends AbstractController
     }
 
     /**
-     * @Route("/about/network ", name="about-network", options={"sitemap" = true})
+     * @Route("/about/network ", name="about-network")
      */
     public function aboutNetworkAction(Request $request, EntityManagerInterface $entityManager)
     {
@@ -84,7 +84,7 @@ extends AbstractController
     }
 
     /**
-     * @Route("/imprint", name="imprint", options={"sitemap" = true})
+     * @Route("/imprint", name="imprint")
      */
     public function imprintAction(Request $request)
     {
