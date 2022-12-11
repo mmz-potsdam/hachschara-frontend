@@ -36,44 +36,44 @@
 
     <h1>{{ site.name(app.request.locale) }}{% if 'site-pdf' != app.request.attributes.get('_route') %}<div id="print-icon"><a href="{{ path(app.request.attributes.get('_route') ~ '-pdf', app.request.attributes.get('_route_params')) }}" title="{{ 'Print Version'|trans }}"><i class="fa-solid fa-file-pdf"></i></a></div>{% endif %}</h1>
 
-    <div class="col-sm-8 col-lg-9">
+    <div class="col-md-9">
         <div class="container-fluid p-0">
             <dl class="row">
             {% if site.alternateName is not empty %}
-                <dt class="col-sm-4 col-md-3">{{ 'Alternate Name'|trans }}</dt>
-                <dd class="col-sm-8 col-md-9">
+                <dt class="col-md-4 col-lg-3">{{ 'Alternate Name'|trans }}</dt>
+                <dd class="col-md-8 col-lg-9">
                     {{ site.alternateName|nl2br }}
                 </dd>
             {% endif %}
             {% if site.types is not empty %}
-                <dt class="col-sm-4 col-md-3">{{ 'Type of Hakhshara'|trans }}</dt>
-                <dd class="col-sm-8 col-md-9">
+                <dt class="col-md-4 col-lg-3">{{ 'Type of Hakhshara'|trans }}</dt>
+                <dd class="col-md-8 col-lg-9">
                 {% for term in site.types %}
                     {{ term.nameLocalized(app.request.locale) }}{% if not loop.last %}, {% endif %}
                 {% endfor %}
                 </dd>
             {% endif %}
             {% if site.startDate is not empty %}
-                <dt class="col-sm-4 col-md-3">{{ 'Founded'|trans }}</dt>
-                <dd class="col-sm-8 col-md-9">
+                <dt class="col-md-4 col-lg-3">{{ 'Founded'|trans }}</dt>
+                <dd class="col-md-8 col-lg-9">
                     {{ site.startDate|dateextended -}}
                 </dd>
             {% endif %}
             {% if site.realizedDate is not empty %}
-                <dt class="col-sm-4 col-md-3">{{ 'Opened'|trans }}</dt>
-                <dd class="col-sm-8 col-md-9">
+                <dt class="col-md-4 col-lg-3">{{ 'Opened'|trans }}</dt>
+                <dd class="col-md-8 col-lg-9">
                     {{ site.realizedDate|dateextended -}}
                 </dd>
             {% endif %}
             {% if site.endDate is not empty %}
-                <dt class="col-sm-4 col-md-3">{{ 'Closed'|trans }}</dt>
-                <dd class="col-sm-8 col-md-9">
+                <dt class="col-md-4 col-lg-3">{{ 'Closed'|trans }}</dt>
+                <dd class="col-md-8 col-lg-9">
                     {{ site.endDate|dateextended -}}
                 </dd>
             {% endif %}
             {% if site.operatingArea is not empty or site.operatingAreaDescriptionLocalized(app.request.locale) is not empty %}
-                <dt class="col-sm-4 col-md-3">{{ 'Operating Area'|trans }}</dt>
-                <dd class="col-sm-8 col-md-9">
+                <dt class="col-md-4 col-lg-3">{{ 'Operating Area'|trans }}</dt>
+                <dd class="col-md-8 col-lg-9">
                     {% if site.operatingArea is not empty %}
                         <div>{{ site.operatingArea|format_number() }} {{ 'hectare'|trans }}</div>
                     {% endif %}
@@ -81,8 +81,8 @@
                 </dd>
             {% endif %}
             {% if site.educations is not empty or site.educationsDescriptionLocalized(app.request.locale) is not empty %}
-                <dt class="col-sm-4 col-md-3">{{ 'Educational Areas'|trans }}</dt>
-                <dd class="col-sm-8 col-md-9">
+                <dt class="col-md-4 col-lg-3">{{ 'Educational Areas'|trans }}</dt>
+                <dd class="col-md-8 col-lg-9">
                     {% if site.educations is not empty %}
                         <div>
                             {% for term in site.educations %}
@@ -94,13 +94,13 @@
                 </dd>
             {% endif %}
             {% if site.descriptionLocalized(app.request.locale) is not empty %}
-                <dt class="col-sm-4 col-md-3">{{ 'Description'|trans }}</dt>
-                <dd class="col-sm-8 col-md-9">{{ site.descriptionLocalized(app.request.locale)|nl2br }}</dd>
+                <dt class="col-md-4 col-lg-3">{{ 'Description'|trans }}</dt>
+                <dd class="col-md-8 col-lg-9">{{ site.descriptionLocalized(app.request.locale)|nl2br }}</dd>
             {% endif %}
 
             {% if site.condition is not empty or site.projectHistory is not empty %}
-                <dt class="col-sm-4 col-md-3">{{ 'State of Conservation'|trans }}</dt>
-                <dd class="col-sm-8 col-md-9">
+                <dt class="col-md-4 col-lg-3">{{ 'State of Conservation'|trans }}</dt>
+                <dd class="col-md-8 col-lg-9">
                 {% if site.condition is not empty %}
                     {{ site.condition.nameLocalized(app.request.locale) }}
                 {% endif %}
@@ -112,8 +112,8 @@
 
             {% set orgRefs = site.organizationReferences %}
             {% if orgRefs is not empty %}
-                <dt class="col-sm-4 col-md-3">{{ 'Related Organizations'|trans }}</dt>
-                <dd class="col-sm-8 col-md-9">
+                <dt class="col-md-4 col-lg-3">{{ 'Related Organizations'|trans }}</dt>
+                <dd class="col-md-8 col-lg-9">
                 {% for orgRef in orgRefs %}
                     <div><a href="{{ path('organization', { 'id': orgRef.agent.id }) }}">{{ orgRef.agent.name }}</a> ({{ orgRef.role.nameLocalized(app.request.locale) }})</div>
                 {% endfor %}
@@ -122,8 +122,8 @@
 
             {% set personRefs = site.personReferences %}
             {% if personRefs is not empty %}
-                <dt class="col-sm-4 col-md-3">{{ 'Related Persons'|trans }}</dt>
-                <dd class="col-sm-8 col-md-9">
+                <dt class="col-md-4 col-lg-3">{{ 'Related Persons'|trans }}</dt>
+                <dd class="col-md-8 col-lg-9">
                 {% for personRef in personRefs %}
                     <div><a href="{{ path('person', { 'id': personRef.agent.id }) }}">{{ personRef.agent.fullname }}</a> ({{ personRef.role.nameLocalized(app.request.locale) }})</div>
                 {% endfor %}
@@ -131,8 +131,8 @@
             {% endif %}
 
             {% if site.hasInfo('general') %}
-                <dt class="col-sm-4 col-md-3">{{ 'Literature'|trans }}</dt>
-                <dd class="col-sm-8 col-md-9">
+                <dt class="col-md-4 col-lg-3">{{ 'Literature'|trans }}</dt>
+                <dd class="col-md-8 col-lg-9">
                     {{ helper.render_info(site.infoExpanded('general')) }}
                 </dd>
             {% endif %}
@@ -156,7 +156,7 @@
         {{ _self.source_footer(site) }}
     </div>
 
-    <div class="col-sm-4 col-lg-3">
+    <div class="col-md-3">
         <h3>{{ 'Address'|trans }}</h3>
         {% if site.streetAddress is not empty %}
             {{ site.streetAddress }}<br />

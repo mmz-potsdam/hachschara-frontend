@@ -14,7 +14,7 @@
 
     <h1>{{ organization.name }}</h1>
 
-    <div class="col-sm-8 col-lg-9">
+    <div class="col-md-8 col-lg-9">
         <div class="container-fluid p-0">
 
             {% if organization.disambiguatingDescription(app.request.locale) is not empty %}
@@ -73,7 +73,7 @@
         </div>
     </div>
 
-    <div class="col-sm-4 col-lg-3">
+    <div class="col-md-4 col-lg-3">
         {% if organization.gnd is not empty %}
             <h3>{{ 'Integrated Authority File'|trans }}
                 <a href="https://d-nb.info/gnd/{{ organization.gnd }}" target="_blank">{{ organization.gnd }}</a>
