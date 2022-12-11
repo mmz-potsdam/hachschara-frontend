@@ -36,7 +36,7 @@ extends AbstractController
      */
     public function aboutTermAction(Request $request)
     {
-        return $this->render('Default/about-hakhsharah.html.twig');
+        return $this->render('Default/about-hakhsharah.' .  $request->getLocale() .  '.html.twig');
     }
 
     /**

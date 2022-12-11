@@ -88,9 +88,7 @@
                             {{ 'About'|trans }}
                         </a>
                         <div class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownAboutMenuButton">
-                            {% if 'de' == app.request.locale %}
                             <a class="dropdown-item" href="{{ path('about-hakhsharah') }}">{{ 'Hakhsharah'|trans }}</a>
-                            {% endif %}
                             <a class="dropdown-item" href="{{ path('about') }}">{{ 'The Project'|trans }}</a>
                             <a class="dropdown-item" href="{{ path('about-network') }}">{{ 'The Network'|trans }}</a>
                             <a class="dropdown-item" href="{{ path('imprint') }}#imprint">{{ 'Imprint'|trans }}</a>
