@@ -43,6 +43,11 @@ extends BaseController
                                 $locale, $nameSort);
         }
 
+        $statusCondition = 'site-map' == $routeName
+            ? 'PR.status <> -1'
+            : 'PR.status IN (1)'
+            ;
+
         $qb->select([
                 'PR',
                 $nameSort . " HIDDEN nameSort"
@@ -50,7 +55,7 @@ extends BaseController
             ->from('App\Entity\Site', 'PR')
             ->leftJoin('PR.location', 'P')
             ->leftJoin('P.country', 'C')
-            ->where("PR.status IN (1)")
+            ->where($statusCondition)
             ->orderBy('nameSort')
             ;
 
@@ -71,12 +76,22 @@ extends BaseController
             foreach ($qb->getQuery()->getResult() as $result) {
                 $geo = $result->getGeo();
                 if (!empty($geo)) {
+                    $name = htmlspecialchars($result->getName($locale), ENT_COMPAT, 'utf-8');
+
                     $parts = explode(',', $geo, 2);
                     $info = [ (double)$parts[0], (double)$parts[1] ];
-                    $info[] = sprintf('<a href="%s">%s</a>',
-                                      $this->generateUrl('site', [ 'id' => $result->getId() ]),
-                                      $result->getName($locale));
-                    $info[] = '';
+
+                    if ($result->getStatus() == 1) {
+                        $info[] = sprintf('<a href="%s">%s</a>',
+                                          $this->generateUrl('site', [ 'id' => $result->getId() ]),
+                                          $name);
+                    }
+                    else {
+                        $info[] = $name;
+                    }
+
+                    $info[] = $result->getStatus() == 1;
+
                     $data[] = $info;
                 }
             }

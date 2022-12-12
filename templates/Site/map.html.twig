@@ -7,6 +7,7 @@
     {{ parent() }}
 
     {{ map.head() }}
+    {{ map.head_colormarkers() }}
     {{ map.head_markercluster() }}
 {% endblock %}
 
@@ -80,30 +81,38 @@
         for (var i = 0; i < addressPoints.length; i++) {
             var a = addressPoints[i];
             var title = a[2];
+            var linked = a[3];
 
-            var marker = L.marker(L.latLng(a[0], a[1]), {
+            var markerOptions = {
                 // title: title // removed in favor of bindTooltip below
-            });
+            };
+
+            if (!linked) {
+                markerOptions.icon = grayIcon;
+            }
+
+            var marker = L.marker(L.latLng(a[0], a[1]), markerOptions);
 
             var count = 1; // currently just one site per address
             marker.number = count;
 
             if (!isTouchDevice()) {
-                marker.bindTooltip($(title).text(), tooltipProperties);
+                marker.bindTooltip(linked ? $(title).text() : title, tooltipProperties);
 
-                var href = $(title).attr('href');
-                // closure, https://stackoverflow.com/a/19323214
-                var callback = function (href) {
-                    // open link
-                    if (typeof href != 'undefined' && href.length > 0) {
-                        window.location.href = href;
-                    }
-                }.bind(this, href);
-                marker.on('click', callback);
+                if (linked) {
+                    var href = $(title).attr('href');
+                    // closure, https://stackoverflow.com/a/19323214
+                    var callback = function (href) {
+                        // open link
+                        if (typeof href != 'undefined' && href.length > 0) {
+                            window.location.href = href;
+                        }
+                    }.bind(this, href);
+                    marker.on('click', callback);
+                }
             }
             else {
-                marker.bindPopup('<strong>' + title + '</strong><br />'
-                                 + a[3]);
+                marker.bindPopup('<strong>' + title + '</strong>');
             }
 
             markers.addLayer(marker);
