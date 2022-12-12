@@ -236,6 +236,14 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     protected $publisher;
 
     /**
+     * @var Journal The journal.
+     *
+     * @ORM\ManyToOne(targetEntity="App\Entity\Journal")
+     * @ORM\JoinColumn(name="journal_id", referencedColumnName="id")
+     */
+    protected $journal;
+
+    /**
      * @var string Date of first broadcast/publication.
      *
      * @ORM\Column(name="publication_date", type="string", nullable=true)
@@ -303,7 +311,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * @var string The title of the book or journal for bookSection / journalArticle.
      *
-     * @ORM\Column(name="booktitle", length=512,nullable=true)
+     * @ORM\Column(name="booktitle", length=512, nullable=true)
      */
     protected $containerName;
 
@@ -925,6 +933,12 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
      */
     public function getContainerName()
     {
+        if (is_null($this->containerName)) {
+            if (!is_null($this->journal)) {
+                return $this->journal->getName();
+            }
+        }
+
         return $this->containerName;
     }
 
@@ -1127,10 +1141,11 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
             'type' => array_key_exists($this->itemType, $typeMap)
                 ? $typeMap[$this->itemType] : $this->itemType,
             'title' => self::adjustTitle($this->getName()),
-            'container-title' => self::adjustTitle($this->containerName),
+            'container-title' => self::adjustTitle($this->getContainerName()),
             'collection-title' => $this->series,
             'collection-number' => null, // $this->seriesNumber,
             'volume' => $this->volume,
+            'issue' => $this->issue,
             'number-of-volumes' => null, // $this->numberOfVolumes,
             'edition' => !is_null($this->bookEdition) && $this->bookEdition != 1
                 ? $this->bookEdition : null,
@@ -1149,7 +1164,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
             // 'language' => $this->language,
         ];
 
-        foreach (['author', 'editor'] as $key) {
+        foreach ([ 'author', 'editor' ] as $key) {
             if (!empty($this->$key)) {
                 $creators = preg_split('/\s*;\s*/', $this->$key);
                 foreach ($creators as $creator) {
@@ -1367,7 +1382,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
         if (!is_null($this->datePublished)
             && !in_array($type, [ 'ScholarlyArticle', 'Chapter', 'Periodical' ]))
         {
-            $ret['datePublished'] = \AppBundle\Utils\JsonLd::formatDate8601($this->datePublished);
+            $ret['datePublished'] = \App\Utils\JsonLd::formatDate8601($this->datePublished);
         }
 
         if (!empty($this->oclc)) {

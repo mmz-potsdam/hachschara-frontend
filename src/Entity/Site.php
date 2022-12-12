@@ -48,7 +48,7 @@ implements JsonLdSerializable
     use InfoTrait;
 
     protected $info = [];
-    protected $extractFromNotes = [ 'address', 'general' ];
+    protected $extractFromNotes = [ 'address', 'general', 'publication' ];
 
     /**
      * @var integer

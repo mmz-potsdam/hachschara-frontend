@@ -72,22 +72,6 @@ trait InfoTrait
             }
         }
 
-        if (!empty($journalsById)) {
-            $qb = $em->createQueryBuilder();
-
-            $qb->select([ 'B' ])
-                ->from('AppBundle:Journal', 'B')
-                ->andWhere('B.id IN (:ids) AND B.status <> -1')
-                ->setParameter('ids', array_keys($journalsById))
-                ;
-
-            $results = $qb->getQuery()
-                ->getResult();
-            foreach ($results as $journal) {
-                $publicationsById['journal:' . $journal->getId()] = $journal;
-            }
-        }
-
         $this->infoExpanded = [];
         foreach ($this->info as $key => $entries) {
             foreach ($entries as $entry) {
