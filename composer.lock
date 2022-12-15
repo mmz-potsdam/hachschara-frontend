@@ -406,16 +406,16 @@
         },
         {
             "name": "doctrine/annotations",
-            "version": "1.14.0",
+            "version": "1.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "3587ab58646bc515b2e03bbd3cfcd3682e8df5bf"
+                "reference": "9e034d7a70032d422169f27d8759e8d84abb4f51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/3587ab58646bc515b2e03bbd3cfcd3682e8df5bf",
-                "reference": "3587ab58646bc515b2e03bbd3cfcd3682e8df5bf",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/9e034d7a70032d422169f27d8759e8d84abb4f51",
+                "reference": "9e034d7a70032d422169f27d8759e8d84abb4f51",
                 "shasum": ""
             },
             "require": {
@@ -476,9 +476,9 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/annotations/issues",
-                "source": "https://github.com/doctrine/annotations/tree/1.14.0"
+                "source": "https://github.com/doctrine/annotations/tree/1.14.1"
             },
-            "time": "2022-12-11T18:25:48+00:00"
+            "time": "2022-12-12T12:46:12+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -1624,16 +1624,16 @@
         },
         {
             "name": "doctrine/persistence",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/persistence.git",
-                "reference": "2a9c70a5e21f8968c5a46b79f819ea52f322080b"
+                "reference": "d87426f07dd66f97cfdcf5210925e483b6c993b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/persistence/zipball/2a9c70a5e21f8968c5a46b79f819ea52f322080b",
-                "reference": "2a9c70a5e21f8968c5a46b79f819ea52f322080b",
+                "url": "https://api.github.com/repos/doctrine/persistence/zipball/d87426f07dd66f97cfdcf5210925e483b6c993b5",
+                "reference": "d87426f07dd66f97cfdcf5210925e483b6c993b5",
                 "shasum": ""
             },
             "require": {
@@ -1704,7 +1704,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/persistence/issues",
-                "source": "https://github.com/doctrine/persistence/tree/3.1.0"
+                "source": "https://github.com/doctrine/persistence/tree/3.1.1"
             },
             "funding": [
                 {
@@ -1720,7 +1720,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-18T14:10:19+00:00"
+            "time": "2022-12-13T21:21:05+00:00"
         },
         {
             "name": "doctrine/sql-formatter",
@@ -2144,20 +2144,20 @@
         },
         {
             "name": "jms/translation-bundle",
-            "version": "1.6.2",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/JMSTranslationBundle.git",
-                "reference": "abb7df81fc5066368bbd50b2a80c12901e84561d"
+                "reference": "153f4c9892bd6481eebd42c5da56666c8d0fa7ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/JMSTranslationBundle/zipball/abb7df81fc5066368bbd50b2a80c12901e84561d",
-                "reference": "abb7df81fc5066368bbd50b2a80c12901e84561d",
+                "url": "https://api.github.com/repos/schmittjoh/JMSTranslationBundle/zipball/153f4c9892bd6481eebd42c5da56666c8d0fa7ce",
+                "reference": "153f4c9892bd6481eebd42c5da56666c8d0fa7ce",
                 "shasum": ""
             },
             "require": {
-                "nikic/php-parser": "^1.4 || ^2.0 || ^3.0 || ^4.0",
+                "nikic/php-parser": "^4.9",
                 "php": "^7.2 || ^8.0",
                 "symfony/console": "^3.4 || ^4.3 || ^5.0",
                 "symfony/expression-language": "^3.4 || ^4.3 || ^5.0",
@@ -2219,9 +2219,9 @@
             ],
             "support": {
                 "issues": "https://github.com/schmittjoh/JMSTranslationBundle/issues",
-                "source": "https://github.com/schmittjoh/JMSTranslationBundle/tree/1.6.2"
+                "source": "https://github.com/schmittjoh/JMSTranslationBundle/tree/1.7.0"
             },
-            "time": "2022-02-15T08:17:38+00:00"
+            "time": "2022-12-14T13:44:59+00:00"
         },
         {
             "name": "knplabs/knp-components",
