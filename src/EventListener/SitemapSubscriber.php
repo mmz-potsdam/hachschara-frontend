@@ -151,7 +151,9 @@ implements EventSubscriberInterface
             $parts = explode('__', $name);
             $routeName = $parts[count($parts) - 1];
 
-            if (in_array($routeName, [ ])) {
+            if (in_array($routeName, [ 'place-inhabited' ])
+                || preg_match('/^search\-select\-/', $routeName))
+            {
                 // omit certain routes from sitemap
                 continue;
             }
