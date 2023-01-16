@@ -6,6 +6,7 @@ twig:
     globals:
         site_name: '%app.site.name%'
         locales: "%app.supported_locales%"
+        site_matomo_id: '%app.site.matomo.id%'
 
 when@test:
     twig:
