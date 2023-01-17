@@ -85,6 +85,14 @@ implements JsonLdSerializable
     private $dateModified;
 
     /**
+     * @var string A license document that applies to this content, typically indicated by URL.
+     *
+     * @Assert\Type(type="string")
+     * @ORM\Column(name="license", nullable=true)
+     */
+    protected $license;
+
+    /**
      * @ORM\Column(name="type", type="simple_array", nullable=false)
      */
     private $types;
@@ -378,6 +386,37 @@ implements JsonLdSerializable
     public function getDateModified()
     {
         return $this->dateModified;
+    }
+
+    /**
+     * Gets license.
+     *
+     * @return array|null
+     */
+    public function getLicense()
+    {
+        if (is_null($this->license)) {
+            return null;
+        }
+
+        $license = [];
+        switch ($this->license) {
+            case 'CC BY-NC-ND':
+                $license['url'] = 'https://creativecommons.org/licenses/by-nc-nd/4.0/';
+                $license['rights'] = 'license.by-nc-nd';
+                break;
+
+            case 'CC BY-SA':
+                $license['url'] = 'https://creativecommons.org/licenses/by-sa/4.0/';
+                $license['rights'] = 'license.by-sa';
+                break;
+
+            case 'restricted':
+                $license['rights'] = 'license.restricted';
+                break;
+        }
+
+        return $license;
     }
 
     /**

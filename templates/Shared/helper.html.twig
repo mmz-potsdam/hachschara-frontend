@@ -84,6 +84,25 @@
     </a>
 {% endmacro %}
 
+{% macro site_license(license) %}
+    {% if license is not empty %}
+    <div>
+        {% if license.url is defined %}
+            {% if license.url == "https://creativecommons.org/licenses/by-nc-nd/4.0/" %}
+            <a href="{{ license.url }}" target="_blank">
+                <img src="{{ app.request.basepath }}/img/license/by-nc-nd.eu.svg" height="30" style="float: left; margin-top: 4px; padding-right: 6px;" />
+            </a>
+            {% elseif license.url == "https://creativecommons.org/licenses/by-sa/4.0/" %}
+            <a href="{{ license.url }}" target="_blank">
+                <img src="{{ app.request.basepath }}/img/license/by-sa.svg" height="30" style="float: left; margin-top: 4px; padding-right: 6px;" />
+            </a>
+            {% endif %}
+        {% endif %}
+        {% if license.rights is defined %}{{ license.rights|trans({}, 'additional') }}{% endif %}
+    </div>
+    {% endif %}
+{% endmacro %}
+
 {% macro place_linked(place) -%}
     <a href="{% if place.tgn is not empty %}{{ path('place-by-tgn', { 'tgn' : place.tgn }) }}{% else %}{{ path('place', { 'id' : place.id }) }}{% endif %}">{{ place.nameLocalized(app.request.locale) }}</a>
 {%- endmacro %}

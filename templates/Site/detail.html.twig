@@ -11,6 +11,7 @@
     {%- if site.datePublished is defined and site.datePublished is not empty %}, {{ site.datePublished|date('F d, Y'|trans) }}{% if site.dateModified is defined and site.dateModified is not empty and site.dateModified != site.datePublished %} ({{'as of'|trans }} {{ site.dateModified|date('F d, Y'|trans) }}){% endif %}{% endif %}.
 
     &lt;{% if site.doi is defined and site.doi is not empty and not ('10.5072' in site.doi) %}<a href="https://dx.doi.org/{{ site.doi }}">https://dx.doi.org/{{ site.doi }}</a>{% else %}{{ url(app.request.attributes.get('_route')|u.replace('-pdf', ''), app.request.attributes.get('_route_params')) }}{% endif %}&gt; [{{ 'now'|date('F d, Y'|trans) }}].</p>
+    {{ helper.site_license(site.license) }}
 {% endmacro %}
 
 {% block head %}
