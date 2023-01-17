@@ -121,7 +121,7 @@
         map.addLayer(markers);
         {% if bounds is empty %}
         if (addressPoints.length > 0) {
-            map.fitBounds(markers.getBounds().pad(0.5));
+            map.fitBounds(markers.getBounds().pad(0.1));
         }
         {% endif %}
     </script>
