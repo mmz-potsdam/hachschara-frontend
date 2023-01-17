@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * Site
  *
@@ -65,6 +67,22 @@ implements JsonLdSerializable
      * @ORM\Column(name="status", type="integer", nullable=false)
      */
     private $status = '0';
+
+    /**
+     * @var \DateTime Date of first broadcast/publication.
+     *
+     * @Assert\Date
+     * @ORM\Column(name="published", type="datetime", nullable=true)
+     */
+    private $datePublished;
+
+    /**
+     * @var \DateTime The date on which the CreativeWork was most recently modified or when the item's entry was modified .
+     *
+     * @Assert\Date
+     * @ORM\Column(name="modified", type="datetime", nullable=true)
+     */
+    private $dateModified;
 
     /**
      * @ORM\Column(name="type", type="simple_array", nullable=false)
@@ -340,6 +358,26 @@ implements JsonLdSerializable
         }
 
         return \App\Search\SearchListBuilder::$STATUS_LABELS[$this->status];
+    }
+
+    /**
+     * Gets datePublished.
+     *
+     * @return \DateTime|null
+     */
+    public function getDatePublished()
+    {
+        return $this->datePublished;
+    }
+
+    /**
+     * Gets dateModified.
+     *
+     * @return \DateTime|null
+     */
+    public function getDateModified()
+    {
+        return $this->dateModified;
     }
 
     /**
