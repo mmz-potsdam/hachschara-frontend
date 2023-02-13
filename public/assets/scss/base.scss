@@ -289,6 +289,10 @@ main {
     #map {
         min-height: 480px;
         height: 80vh;
+
+        .circle:before {
+            content: ' \25CF';
+        }
     }
 }
 

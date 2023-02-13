@@ -101,6 +101,7 @@
 
                 if (linked) {
                     var href = $(title).attr('href');
+
                     // closure, https://stackoverflow.com/a/19323214
                     var callback = function (href) {
                         // open link
@@ -108,6 +109,7 @@
                             window.location.href = href;
                         }
                     }.bind(this, href);
+
                     marker.on('click', callback);
                 }
             }
@@ -124,5 +126,20 @@
             map.fitBounds(markers.getBounds().pad(0.1));
         }
         {% endif %}
+
+        /* Legend specific */
+        var legend = L.control({ position: 'bottomleft' });
+
+        legend.onAdd = function(map) {
+            var div = L.DomUtil.create('div', 'legend');
+            L.DomUtil.addClass(div, 'leaflet-control-attribution');
+
+            div.innerHTML += '<span class="circle" style="color: #2A82CB"></span> {{ 'Published Entries'|trans }}';
+            div.innerHTML += ' <span class="circle" style="color: #7B7B7B"></span> {{ 'Additional Sites'|trans }}';
+
+            return div;
+        };
+
+        legend.addTo(map);
     </script>
 {% endblock %}
