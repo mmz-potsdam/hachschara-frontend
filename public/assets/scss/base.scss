@@ -120,20 +120,17 @@ nav {
 
 ul.inverse {
     width: 100%;
+
     li {
         background-color: $color-body-text;
-        margin-bottom: 4px;
-        border: 2px solid $color-body-text;
+
         a {
-            color: white;
+            color: $color-body-inverse;
             text-decoration: none;
         }
 
         &:hover {
-            background-color: $color-body-inverse;
-            a {
-                color: $color-body-text;
-            }
+            background-color: $color-background-inverse;
         }
     }
 }

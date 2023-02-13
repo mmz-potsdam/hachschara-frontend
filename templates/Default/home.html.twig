@@ -30,7 +30,7 @@
     <div class="row">
         <h2 class="p-sm-0" style="border-bottom: 1px solid #3E8FA5;">{{ 'Hakhshara'|trans }}</h1>
     {% block body %}
-    <div class="col-lg-6 p-sm-0 mb-3">
+    <div class="col-lg-5 p-sm-0 mb-3">
     {% if 'de' == app.request.locale %}
         „Hachschara“ bezeichnet die selbstorganisierte landwirtschaftliche, gärtnerische, handwerkliche und hauswirtschaftliche Berufsausbildung von Jugendlichen und jungen Erwachsenen als Voraussetzung zur Einwanderung ins Britische Mandatsgebiet Palästina. Der Begriff selbst stammt aus dem Hebräischen und wird allgemein mit „Tauglichmachung“ oder „Vorbereitung“ übersetzt.
     {% else %}
@@ -38,28 +38,28 @@
     {% endif %}
         <a href="{{ path('about-hakhshara') }}" role="button">{{ 'Read-on'|trans }} &raquo;</a>
     </div>
-    <div class="col-sm-4 col-lg-2 mb-3 text-sm-center">
+    <div class="col-sm-4 col-lg-2 offset-lg-1 mb-3 text-sm-center">
         <h3>{{ 'Sites'|trans }}</h3>
         <ul class="list-unstyled inverse text-sm-center">
-            <li><a href="{{ path('site-map') }}" role="button">{{ 'Map'|trans }}&nbsp;&raquo;</a></li>
-            <li><a href="{{ path('site-index') }}" role="button">{{ 'Overview A-Z'|trans }}&nbsp;&raquo;</a></li>
+            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('site-map') }}" role="button">{{ 'Map'|trans }}&nbsp;&raquo;</a></li>
+            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('site-index') }}" role="button">{{ 'Overview A-Z'|trans }}&nbsp;&raquo;</a></li>
         </ul>
     </div>
     <div class="col-sm-4 col-lg-2 mb-3">
         <h3>{{ 'Look-up'|trans }}</h3>
         <ul class="list-unstyled inverse text-sm-center">
-            <li><a href="{{ path('person-index') }}" role="button">{{ 'Persons'|trans }}&nbsp;&raquo;</a></li>
-            <li><a href="{{ path('organization-index') }}" role="button">{{ 'Organizations'|trans }}&nbsp;&raquo;</a></li>
-            <li><a href="{{ path('glossary-index') }}" role="button">{{ 'Glossary'|trans }}&nbsp;&raquo;</a></li>
-            <li><a href="{{ path('bibliography-index') }}" role="button">{{ 'Bibliography'|trans }}&nbsp;&raquo;</a></li>
+            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2 p"><a href="{{ path('person-index') }}" role="button">{{ 'Persons'|trans }}&nbsp;&raquo;</a></li>
+            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('organization-index') }}" role="button">{{ 'Organizations'|trans }}&nbsp;&raquo;</a></li>
+            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('glossary-index') }}" role="button">{{ 'Glossary'|trans }}&nbsp;&raquo;</a></li>
+            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('bibliography-index') }}" role="button">{{ 'Bibliography'|trans }}&nbsp;&raquo;</a></li>
         </ul>
     </div>
     <div class="col-sm-4 col-lg-2 text-sm-center">
         <h3>{{ 'About'|trans }}</h3>
         <ul class="list-unstyled inverse text-sm-center">
-            <li><a href="{{ path('about-hakhshara') }}" role="button">{{ 'Hakhshara'|trans }}&nbsp;&raquo;</a></li>
-            <li><a href="{{ path('about') }}" role="button">{{ 'The Project'|trans }}&nbsp;&raquo;</a></li>
-            <li><a href="{{ path('about-network') }}" role="button">{{ 'The Network'|trans }}&nbsp;&raquo;</a></li>
+            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('about-hakhshara') }}" role="button">{{ 'Hakhshara'|trans }}&nbsp;&raquo;</a></li>
+            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('about') }}" role="button">{{ 'The Project'|trans }}&nbsp;&raquo;</a></li>
+            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('about-network') }}" role="button">{{ 'The Network'|trans }}&nbsp;&raquo;</a></li>
     </div>
     {% endblock %}
     </div><!-- .row -->
