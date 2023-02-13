@@ -11,13 +11,13 @@ parameters:
 
     app.mpdf-converter.arguments:
         config:
-            fontDir: [ "%kernel.project_dir%/data/font" ]
+            fontDir: [ "%kernel.project_dir%/public/css/fonts" ]
             fontdata:
                 pdffont:
-                    R: 'SourceSansPro-Regular.ttf'
-                    B: 'SourceSansPro-Bold.ttf'
-                    I: 'SourceSansPro-Italic.ttf'
-                    BI: 'SourceSansPro-BoldItalic.ttf'
+                    R: 'roboto-v30-latin-ext_latin-regular.ttf'
+                    B: 'roboto-v30-latin-ext_latin-700.ttf'
+                    I: 'roboto-v30-latin-ext_latin-italic.ttf'
+                    BI: 'roboto-v30-latin-ext_latin-700italic.ttf'
             default_font: pdffont
 
 services:
