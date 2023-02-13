@@ -159,6 +159,7 @@ ul.inverse {
     #navigation-main-wrapper {
         background-color: $color-body-text;
         color: $color-body-inverse;
+
         a, a:visited {
             color: $color-body-inverse;
         }
@@ -177,8 +178,8 @@ ul.inverse {
             }
 
             .dropdown-item:hover {
-                color: $color-body-text;
-                background-color: $color-body-inverse;
+                background-color: $color-background-inverse;
+                color: $color-body-inverse;
             }
         }
     }
