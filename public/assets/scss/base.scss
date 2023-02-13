@@ -1,7 +1,8 @@
-$color-color-spot: #EDB83A;
+$color-color-spot: #e6bb33;
 $color-color-link: inherit; // currently same as default in reboot
-$color-body-text: #3E8FA5;
+$color-body-text: #478aa9;
 $color-body-inverse: #fff;
+$color-background-inverse: #9ec3cf;
 
 $color-gray-light: #F4F4F4;
 $color-gray-dark: #616161;
@@ -297,7 +298,7 @@ main {
 }
 
 footer {
-    background-color: #8FC7CF;
+    background-color: $color-background-inverse;
 
     & > div {
         margin-top: 1rem;
