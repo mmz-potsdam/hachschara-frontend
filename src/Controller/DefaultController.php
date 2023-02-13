@@ -40,7 +40,7 @@ extends AbstractController
     }
 
     /**
-     * @Route("/about/network ", name="about-network")
+     * @Route("/about/network", name="about-network")
      */
     public function aboutNetworkAction(Request $request, EntityManagerInterface $entityManager)
     {
