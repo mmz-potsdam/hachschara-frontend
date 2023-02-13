@@ -8,20 +8,23 @@
             <p>
                 Hachschara als Erinnerungsort ist ein gemeinsames Projekt des <a href="https://www.mmz-potsdam.de/" target="_blank">Moses Mendelssohn Zentrums für Europäisch-Jüdische Studien (Potsdam)</a> und dem <a href="https://www.juedischejugendkultur.de/" target="_blank">DFG-Projekt: Zwischen Alija und Flucht. Jüdische Jugendbünde und zionistische Erziehung unter dem NS-Regime und im vorstaatlichen Israel 1933–1945 (Braunschweig)</a> zusammen mit der <a href="https://www.stiftung-denkmal.de/" target="_blank">Stiftung Denkmal für die ermordeten Juden Europas (Berlin)</a>.
             </p>
-            <p>
-                Mit dem Projekt soll an die Aktivitäten zur Berufsbildung und Berufsumschichtung junger Juden und Jüdinnen erinnert werden, die zur Vorbereitung auf ihre Alija (Auswanderung) dienten.
-            </p>
+            <div style="display: flex;">
+                <div class="box">
+                    <div style="float: right; height: 100%; display: flex; align-items: flex-end; shape-outside: inset(calc(100% - 48px) 0 0);"><a href="{{ path('about') }}" class="btn btn-primary" role="button">{{ 'Read-on'|trans }} &raquo;</a></div>
+                    Mit dem Projekt soll an die Aktivitäten zur Berufsbildung und Berufsumschichtung junger Juden und Jüdinnen erinnert werden, die zur Vorbereitung auf ihre Alija (Auswanderung) dienten.
+                </div>
+            </div>
             {% else %}
             <p>
                 Hakhshara as a Place of Remembrance is a joint project of the <a href="https://www.mmz-potsdam.de/en/" target="_blank">Moses Mendelssohn Center for European-Jewish Studies</a> (Potsdam) and the <a href="https://www.juedischejugendkultur.de/" target="_blank">DFG project “Between Aliyah and Escape: Jewish Youth Organizations and Zionist Education under the Nazi Regime and in pre-State Israel from 1933-1945”</a> (Braunschweig), together with the <a href="https://www.stiftung-denkmal.de/en/" target="_blank">Foundation Memorial to the Murdered Jews of Europe</a> (Berlin).
             </p>
-            <p>
-                The project intends to commemorate the vocational training and re-training activities developed to prepare young Jewish men and women for emigration and Aliyah.
-            </p>
+            <div style="display: flex;">
+                <div class="box">
+                    <div style="float: right; height: 100%; display: flex; align-items: flex-end; shape-outside: inset(calc(100% - 48px) 0 0);"><a href="{{ path('about') }}" class="btn btn-primary" role="button">{{ 'Read-on'|trans }} &raquo;</a></div>
+                    The project intends to commemorate the vocational training and re-training activities developed to prepare young Jewish men and women for emigration and Aliyah.
+                </div>
+            </div>
             {% endif %}
-            <p>
-                <a class="btn btn-primary" href="{{ path('about') }}" role="button">{{ 'Read-on'|trans }} &raquo;</a>
-            </p>
         </div>
     </div>
 {% endblock %}
