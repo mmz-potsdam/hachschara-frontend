@@ -157,6 +157,9 @@ ul.inverse {
 
 @media (min-width: $screen-md-min) {
     #navigation-main-wrapper {
+        padding-top: 0;
+        padding-bottom: 0;
+
         background-color: $color-body-text;
         color: $color-body-inverse;
 
@@ -164,8 +167,20 @@ ul.inverse {
             color: $color-body-inverse;
         }
 
+        .nav-item {
+            &:hover {
+                background-color: $color-background-inverse;
+            }
+        }
+
         .dropdown-menu {
             background-color: $color-body-text;
+            width: 100%;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: 6px;
+            border: 0;
+            border-radius: 0;
 
             &.dropdown-menu-center {
                 /* see https://stackoverflow.com/a/56931140 */
