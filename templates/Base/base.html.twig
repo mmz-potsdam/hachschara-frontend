@@ -63,6 +63,22 @@
         <nav id="navigation-main-wrapper" class="navbar navbar-expand-md navbar-light">
             <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbarToggler">
                 <ul id="menu-main" class="container navbar-nav nav-fill w-100 ms-auto flex-nowrap">
+                {% if locales|length > 1 and app.request.attributes.get("_route") is not null %}
+                    <li class="nav-item d-md-none">
+                        <ul class="text-end list-inline">
+                    {% for locale in locales %}
+                    <li class="list-inline-item{% if locale == app.request.locale %} active{% endif %}">
+                        {% if route_params_locale_switch is defined and route_params_locale_switch is not empty and route_params_locale_switch[locale] is defined %}
+                            {% set route_params = route_params_locale_switch[locale] %}
+                        {% else %}
+                            {% set route_params = app.request.attributes.get('_route_params')|merge(app.request.query.all) %}
+                        {% endif %}
+                        <a class="nav-link{% if not loop.last %} divider{% endif %}" href="{{ path(app.request.attributes.get('_route'), route_params|merge({"_locale": locale})) }}">{{ locale|upper }}</a>
+                    </li>
+                {% endfor %}
+                        </ul>
+                    </li>
+                {% endif %}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('site-map') }}">{{ 'Sites'|trans }}</a>
                     </li>
