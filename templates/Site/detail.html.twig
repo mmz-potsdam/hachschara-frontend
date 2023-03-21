@@ -32,6 +32,17 @@
             });
         });
     </script>
+
+    <script src="{{ app.request.basepath }}/js/jquery.collapser.min.js"></script>
+    <style>
+        #description.hidden > a[data-ctrl] {
+            display: block;
+            margin-top: 0px;
+            text-align: right;
+            border-top: 1px solid #EDEDE5; /* $color-gray-light */
+            padding-top: 4px;
+        }
+    </style>
 {% endblock %}
 
 {% block body %}
@@ -97,8 +108,24 @@
                 </dd>
             {% endif %}
             {% if site.descriptionLocalized(app.request.locale) is not empty %}
-                <dt class="col-md-4 col-lg-3">{{ 'Description'|trans }}</dt>
-                <dd class="col-md-8 col-lg-9">{{ site.descriptionLocalized(app.request.locale)|nl2br }}</dd>
+                <dt class="col-lg-3">{{ 'Description'|trans }}</dt>
+                <dd class="col-lg-9">
+                    <div id="description">
+                    {{ site.descriptionLocalized(app.request.locale)|nl2br }}
+                    </div>
+                </dd>
+                <script>
+                if ($(window).width() < 768) {
+                    // https://www.aakashweb.com/docs/jquery-collapser/
+                    $('#description').collapser({
+                        mode: 'lines',
+                        truncate: 20,
+                        showText: '{{ 'Show all'|trans }} &#x2335;',
+                        hideText: '',
+                        hideClass: 'hidden',
+                    });
+                }
+                </script>
             {% endif %}
 
             {% if site.condition is not empty or site.projectHistory is not empty %}
