@@ -10,8 +10,8 @@
             </p>
             <div style="display: flex;">
                 <div class="box">
-                    <div style="float: right; height: 100%; display: flex; align-items: flex-end; shape-outside: inset(calc(100% - 48px) 0 0);"><a href="{{ path('about') }}" class="btn btn-primary" role="button">{{ 'Read-on'|trans }} &raquo;</a></div>
-                    Mit dem Projekt soll an die Aktivitäten zur Berufsbildung und Berufsumschichtung junger Juden und Jüdinnen erinnert werden, die zur Vorbereitung auf ihre Alija (Auswanderung) dienten.
+                    {#<div style="float: right; height: 100%; display: flex; align-items: flex-end; shape-outside: inset(calc(100% - 48px) 0 0);"><a href="{{ path('about') }}" class="btn btn-primary" role="button">{{ 'Read-on'|trans }} &raquo;</a></div>#}
+                    Mit dem Projekt soll an die Aktivitäten zur Berufsbildung und Berufsumschichtung junger Juden und Jüdinnen erinnert werden, die zur Vorbereitung auf ihre Alija (Auswanderung) dienten. <a href="{{ path('about') }}">{{ 'Read-on'|trans }} &raquo;</a>
                 </div>
             </div>
             {% else %}
@@ -20,8 +20,8 @@
             </p>
             <div style="display: flex;">
                 <div class="box">
-                    <div style="float: right; height: 100%; display: flex; align-items: flex-end; shape-outside: inset(calc(100% - 48px) 0 0);"><a href="{{ path('about') }}" class="btn btn-primary" role="button">{{ 'Read-on'|trans }} &raquo;</a></div>
-                    The project intends to commemorate the vocational training and re-training activities developed to prepare young Jewish men and women for emigration and Aliyah.
+                    {#<div style="float: right; height: 100%; display: flex; align-items: flex-end; shape-outside: inset(calc(100% - 48px) 0 0);"><a href="{{ path('about') }}" class="btn btn-primary" role="button">{{ 'Read-on'|trans }} &raquo;</a></div>#}
+                    The project intends to commemorate the vocational training and re-training activities developed to prepare young Jewish men and women for emigration and Aliyah. <a href="{{ path('about') }}">{{ 'Read-on'|trans }} &raquo;</a>
                 </div>
             </div>
             {% endif %}
@@ -44,25 +44,25 @@
     <div class="col-sm-4 col-lg-2 offset-lg-1 mb-3 text-sm-center">
         <h3>{{ 'Sites'|trans }}</h3>
         <ul class="list-unstyled inverse text-sm-center">
-            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('site-map') }}" role="button">{{ 'Map'|trans }}&nbsp;&raquo;</a></li>
-            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('site-index') }}" role="button">{{ 'Overview A-Z'|trans }}&nbsp;&raquo;</a></li>
+            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('site-map') }}" role="button">{{ 'Map'|trans }}</a></li>
+            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('site-index') }}" role="button">{{ 'Overview A-Z'|trans }}</a></li>
         </ul>
     </div>
     <div class="col-sm-4 col-lg-2 mb-3">
         <h3>{{ 'Look-up'|trans }}</h3>
         <ul class="list-unstyled inverse text-sm-center">
-            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2 p"><a href="{{ path('person-index') }}" role="button">{{ 'Persons'|trans }}&nbsp;&raquo;</a></li>
-            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('organization-index') }}" role="button">{{ 'Organizations'|trans }}&nbsp;&raquo;</a></li>
-            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('glossary-index') }}" role="button">{{ 'Glossary'|trans }}&nbsp;&raquo;</a></li>
-            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('bibliography-index') }}" role="button">{{ 'Bibliography'|trans }}&nbsp;&raquo;</a></li>
+            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2 p"><a href="{{ path('person-index') }}" role="button">{{ 'Persons'|trans }}</a></li>
+            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('organization-index') }}" role="button">{{ 'Organizations'|trans }}</a></li>
+            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('glossary-index') }}" role="button">{{ 'Glossary'|trans }}</a></li>
+            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('bibliography-index') }}" role="button">{{ 'Bibliography'|trans }}</a></li>
         </ul>
     </div>
     <div class="col-sm-4 col-lg-2 text-sm-center">
         <h3>{{ 'About'|trans }}</h3>
         <ul class="list-unstyled inverse text-sm-center">
-            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('about-hakhshara') }}" role="button">{{ 'Hakhshara'|trans }}&nbsp;&raquo;</a></li>
-            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('about') }}" role="button">{{ 'The Project'|trans }}&nbsp;&raquo;</a></li>
-            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('about-network') }}" role="button">{{ 'The Network'|trans }}&nbsp;&raquo;</a></li>
+            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('about-hakhshara') }}" role="button">{{ 'Hakhshara'|trans }}</a></li>
+            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('about') }}" role="button">{{ 'The Project'|trans }}</a></li>
+            <li class="pt-3 pb-3 ps-3 ps-sm-0 mb-2"><a href="{{ path('about-network') }}" role="button">{{ 'The Network'|trans }}</a></li>
     </div>
     {% endblock %}
     </div><!-- .row -->

@@ -312,17 +312,18 @@ main {
 
 footer {
     background-color: $color-background-inverse;
+    color: $color-body-text;
 
     & > div {
         margin-top: 1rem;
     }
 
     a {
-        color: white;
+        color: $color-body-text;
         text-decoration: none;
 
         &:hover {
-            color: $color-body-text;
+            color: white;
         }
     }
 }
