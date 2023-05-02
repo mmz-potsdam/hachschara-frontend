@@ -39,6 +39,7 @@
         "php": "^7.3.0|^8.1",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "ext-intl": "*",
         "armin/scssphp-bundle": "^1.2",
         "babdev/pagerfanta-bundle": "^2.10",
         "beberlei/doctrineextensions": "@stable",
