@@ -19,6 +19,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  */
 class Journal
+extends CreativeWork
 implements \JsonSerializable, JsonLdSerializable /*, OgSerializable, TwitterSerializable */
 {
     use InfoTrait;
@@ -118,6 +119,30 @@ implements \JsonSerializable, JsonLdSerializable /*, OgSerializable, TwitterSeri
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Sets ISSN.
+     *
+     * @param string $issn
+     *
+     * @return $this
+     */
+    public function setIssn($issn = null)
+    {
+        $this->issn = $issn;
+
+        return $this;
+    }
+
+    /**
+     * Gets ISSN.
+     *
+     * @return string
+     */
+    public function getIssn()
+    {
+        return $this->issn;
     }
 
     /**
@@ -308,7 +333,7 @@ implements \JsonSerializable, JsonLdSerializable /*, OgSerializable, TwitterSeri
      * We transfer to Citeproc JSON
      * see https://github.com/citation-style-language/schema/blob/master/csl-data.json
      */
-    public function jsonSerialize()
+    public function jsonSerialize($locale = 'de_DE')
     {
         // see http://aurimasv.github.io/z2csl/typeMap.xml
         static $typeMap = [

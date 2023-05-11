@@ -32,6 +32,11 @@ extends AbstractController
         return Countries::getName($countryCode);
     }
 
+    protected function getDataDir()
+    {
+        return $this->kernel->getProjectDir() . '/data';
+    }
+
     protected function buildPagination(Request $request,
                                        PaginatorInterface $paginator,
                                        $query, $options = [])
@@ -49,15 +54,21 @@ extends AbstractController
         );
     }
 
-    protected function instantiateCiteProc($locale)
+    protected function instantiateCiteProc($cslLocale)
     {
-        $path = $this->kernel->getProjectDir() . '/data/csl/infoclio-de.csl.xml';
+        $cslPath = $this->getDataDir() . '/csl/infoclio-de.csl.xml';
 
         $wrapSpan = function ($renderedText, $class) {
             return '<span class="citeproc-'. $class . '">' . $renderedText . '</span>';
         };
 
-        $additionalMarkup = [];
+        $additionalMarkup = [
+            'URL' => function ($cslItem, $renderedText)  {
+                return sprintf('<a href="%s" target="_blank">%s</a>',
+                               $renderedText, $renderedText);
+            },
+        ];
+
         foreach ([
                 'creator' => 'creator',
                 'title' => 'title',
@@ -66,15 +77,14 @@ extends AbstractController
                 'book-series' => 'book-series',
                 'place' => 'place',
                 'date' => 'data',
-                'URL' => 'URL',
                 'DOI' => 'DOI',
             ] as $key => $class)
         {
-            $additionalMarkup[$key] = function($cslItem, $renderedText) use ($wrapSpan, $class) {
+            $additionalMarkup[$key] = function ($cslItem, $renderedText) use ($wrapSpan, $class) {
                 return $wrapSpan($renderedText, $class);
             };
         }
 
-        return new \Seboettg\CiteProc\CiteProc(file_get_contents($path), $locale);
+        return new \Seboettg\CiteProc\CiteProc(file_get_contents($cslPath), $cslLocale, $additionalMarkup);
     }
 }

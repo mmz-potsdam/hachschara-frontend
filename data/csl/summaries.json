@@ -1,0 +1,1314 @@
+{
+    "group-id": 4432580,
+    "key": "U7ITQKWL",
+    "data": [
+        {
+            "id": "J8YB3WJ7",
+            "citation-label": "albersmeier_2020",
+            "type": "chapter",
+            "title": "Ahlem as the Example of a Memorial Museum at the Site of a Former Jewish Horticultural School",
+            "container-title": "Jewish horticultural schools and training centers in Germany and their impact on horticulture and landscape architecture in Palestine/Israel",
+            "collection-title": "CGL-studies",
+            "collection-number": "27",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "München",
+            "publisher": "Akademische Verlagsgemeinschaft München",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "155-172",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-95477-092-2",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "eng",
+            "author": [
+                {
+                    "given": "Sabine",
+                    "family": "Albersmeier"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Tal",
+                    "family": "Alon Mozes"
+                },
+                {
+                    "given": "Irene",
+                    "family": "Aue-Ben-David"
+                },
+                {
+                    "given": "Joachim",
+                    "family": "Wolschke-Bulmahn"
+                }
+            ]
+        },
+        {
+            "id": "BLUL6UHG",
+            "citation-label": "alon-mozes-et-al_2020",
+            "type": "book",
+            "title": "Jewish horticultural schools and training centers in Germany and their impact on horticulture and landscape architecture in Palestine/Israel",
+            "container-title": null,
+            "collection-title": "CGL-studies",
+            "collection-number": "27",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "München",
+            "publisher": "Akademische Verlagsgemeinschaft München",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": null,
+            "number-of-pages": "185",
+            "DOI": null,
+            "ISBN": "978-3-95477-092-2",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "eng",
+            "editor": [
+                {
+                    "given": "Tal",
+                    "family": "Alon Mozes"
+                },
+                {
+                    "given": "Irene",
+                    "family": "Aue-Ben-David"
+                },
+                {
+                    "given": "Joachim",
+                    "family": "Wolschke-Bulmahn"
+                }
+            ]
+        },
+        {
+            "id": "APIIQ5S2",
+            "citation-label": "alon-mozes_2020",
+            "type": "chapter",
+            "title": "Perceptions of Landscapes among Hachschara Members",
+            "container-title": "Jewish horticultural schools and training centers in Germany and their impact on horticulture and landscape architecture in Palestine/Israel",
+            "collection-title": "CGL-studies",
+            "collection-number": "27",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "München",
+            "publisher": "Akademische Verlagsgemeinschaft München",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "69–80",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-95477-092-2",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "eng",
+            "author": [
+                {
+                    "given": "Tal",
+                    "family": "Alon-Mozes"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Tal",
+                    "family": "Alon Mozes"
+                },
+                {
+                    "given": "Irene",
+                    "family": "Aue-Ben-David"
+                },
+                {
+                    "given": "Joachim",
+                    "family": "Wolschke-Bulmahn"
+                }
+            ]
+        },
+        {
+            "id": "EWAG4866",
+            "citation-label": "aloni-borinski_1970",
+            "type": "book",
+            "title": "Erinnerungen 1940–1943",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Nördlingen",
+            "publisher": "Wagner",
+            "issued": {
+                "date-parts": [
+                    [
+                        1970
+                    ]
+                ],
+                "literal": "1970"
+            },
+            "page": null,
+            "number-of-pages": "",
+            "DOI": null,
+            "ISBN": "",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Anneliese-Ora",
+                    "family": "Aloni-Borinski"
+                }
+            ]
+        },
+        {
+            "id": "29QTQG9F",
+            "citation-label": "angress_1985",
+            "type": "book",
+            "title": "Generation zwischen Furcht und Hoffnung. Jüdische Jugend im Dritten Reich",
+            "container-title": null,
+            "collection-title": "Hamburger Beiträge zur Sozial- und Zeitgeschichte",
+            "collection-number": "2",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Hamburg",
+            "publisher": "Christians",
+            "issued": {
+                "date-parts": [
+                    [
+                        1985
+                    ]
+                ],
+                "literal": "1985"
+            },
+            "page": null,
+            "number-of-pages": "180",
+            "DOI": null,
+            "ISBN": "978-3-7672-0886-5",
+            "ISSN": null,
+            "URL": "https://www.zeitgeschichte-hamburg.de/contao/files/fzh/Digitalisate/Werner%20T%20Angress%20Generation%20zwischen%20Furcht%20und%20Hoffnung.pdf",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Werner T.",
+                    "family": "Angress"
+                }
+            ]
+        },
+        {
+            "id": "PW2Z7H3H",
+            "citation-label": "bergbauer_2020",
+            "type": "chapter",
+            "title": "„Auf eigener Scholle“. Frühe Hachschara und jüdische Jugendbewegung in Deutschland",
+            "container-title": "Hachschara und Jugend-Alija. Wege jüdischer Jugend nach Palästina 1918-1941",
+            "collection-title": "Steinhorster Beiträge zur Geschichte von Schule, Kindheit und Jugend",
+            "collection-number": "1",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Gifhorn",
+            "publisher": "Gemeinnützige Bildungs- und Kultur GmbH des Landkreises Gifhorn",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "23-53",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-929632-99-6",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "author": [
+                {
+                    "given": "Knut",
+                    "family": "Bergbauer"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Ulrike",
+                    "family": "Pilarczyk"
+                },
+                {
+                    "given": "Arne",
+                    "family": "Homann"
+                },
+                {
+                    "given": "Ofer",
+                    "family": "Ashkenazi"
+                }
+            ]
+        },
+        {
+            "id": "DNMRHHHT",
+            "citation-label": "buser_2017",
+            "type": "chapter",
+            "title": "Hachscharah unter NS-Herrschaft. Jugendfürsorge und Auswanderungsvorbereitung",
+            "container-title": "Jüdische Jugendbewegung und soziale Praxis",
+            "collection-title": "Schriftenreihe des Arbeitskreises Geschichte der jüdischen Wohlfahrt in Deutschland",
+            "collection-number": "Band 6",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": null,
+            "publisher-place": "Frankfurt am Main",
+            "publisher": "Fachhochschulverlag, Der Verlag für angewandte Wissenschaften",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ],
+                "literal": "2017"
+            },
+            "page": "293–307",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-943787-77-1",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "author": [
+                {
+                    "given": "Verena",
+                    "family": "Buser"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Sabine",
+                    "family": "Hering"
+                },
+                {
+                    "given": "Harald",
+                    "family": "Lordick"
+                },
+                {
+                    "given": "Gerd",
+                    "family": "Stecklina"
+                }
+            ]
+        },
+        {
+            "id": "5B5QXIIB",
+            "citation-label": "buser_2020",
+            "type": "chapter",
+            "title": "Hachscharoth after 1933 – Welfare, Child Care and Educational Aspects",
+            "container-title": "Jewish horticultural schools and training centers in Germany and their impact on horticulture and landscape architecture in Palestine/Israel",
+            "collection-title": "CGL-studies",
+            "collection-number": "27",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "München",
+            "publisher": "Akademische Verlagsgemeinschaft München",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "23–36",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-95477-092-2",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "eng",
+            "author": [
+                {
+                    "given": "Verena",
+                    "family": "Buser"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Tal",
+                    "family": "Alon Mozes"
+                },
+                {
+                    "given": "Irene",
+                    "family": "Aue-Ben-David"
+                },
+                {
+                    "given": "Joachim",
+                    "family": "Wolschke-Bulmahn"
+                }
+            ]
+        },
+        {
+            "id": "VCFQQR5N",
+            "citation-label": "cossart-and-pilarczyk_2007",
+            "type": "chapter",
+            "title": "Hachschara",
+            "container-title": "Gut Winkel – die schützende Insel. Hachschara 1933–1941",
+            "collection-title": "Deutsch-Israelische Bibliothek",
+            "collection-number": "",
+            "volume": "3",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Berlin",
+            "publisher": "LIT",
+            "issued": {
+                "date-parts": [
+                    [
+                        2007
+                    ]
+                ],
+                "literal": "2007"
+            },
+            "page": "223–248",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Ilka von",
+                    "family": "Cossart"
+                },
+                {
+                    "given": "Ulrike",
+                    "family": "Pilarczyk"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Ilana",
+                    "family": "Michaeli"
+                },
+                {
+                    "given": "Irmgard",
+                    "family": "Klönne"
+                }
+            ]
+        },
+        {
+            "id": "CJTCFISP",
+            "citation-label": "fischer-and-wolschke-bulmahn_2020",
+            "type": "chapter",
+            "title": "The Jewish Youth Movement Caught between a Romantic Perception of Nature and Agriculture and Hachshara",
+            "container-title": "Jewish horticultural schools and training centers in Germany and their impact on horticulture and landscape architecture in Palestine/Israel",
+            "collection-title": "CGL-studies",
+            "collection-number": "27",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "München",
+            "publisher": "Akademische Verlagsgemeinschaft München",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "39–68",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-95477-092-2",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "eng",
+            "editor": [
+                {
+                    "given": "Tal",
+                    "family": "Alon Mozes"
+                },
+                {
+                    "given": "Irene",
+                    "family": "Aue-Ben-David"
+                },
+                {
+                    "given": "Joachim",
+                    "family": "Wolschke-Bulmahn"
+                }
+            ],
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                },
+                {
+                    "given": "Joachim",
+                    "family": "Wolschke-Bulmahn"
+                }
+            ]
+        },
+        {
+            "id": "QQBTFPLK",
+            "citation-label": "glueck_2016",
+            "type": "book",
+            "title": "Hachshara and Youth Aliyah in Sweden 1933-1948",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "London",
+            "publisher": "lulu.com",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ],
+                "literal": "2016"
+            },
+            "page": null,
+            "number-of-pages": "",
+            "DOI": null,
+            "ISBN": "978-1-326-77991-7",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "In English; translated from Swedish",
+            "author": [
+                {
+                    "given": "Emil",
+                    "family": "Glück"
+                }
+            ]
+        },
+        {
+            "id": "MAVCWPRW",
+            "citation-label": "haestrup_1983",
+            "type": "book",
+            "title": "Passage to Palestine. Young Jews in Denmark 1932–1945",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Odense",
+            "publisher": "University Press",
+            "issued": {
+                "date-parts": [
+                    [
+                        1983
+                    ]
+                ],
+                "literal": "1983"
+            },
+            "page": null,
+            "number-of-pages": "244",
+            "DOI": null,
+            "ISBN": "",
+            "ISSN": null,
+            "URL": "http://ipac.ub.tu-berlin.de/cgi-bin/katalog-link?t5670343",
+            "accessed": {
+                "date-parts": [
+                    [
+                        21,
+                        12,
+                        11
+                    ]
+                ],
+                "literal": "2022-06-16T07:50:22Z"
+            },
+            "language": "eng",
+            "author": [
+                {
+                    "given": "Jørgen",
+                    "family": "Hæstrup"
+                }
+            ]
+        },
+        {
+            "id": "2JLW9D54",
+            "citation-label": "kissling_2020",
+            "type": "chapter",
+            "title": "Die Anfänge der religiösen Hachschara in Deutschland",
+            "container-title": "Hachschara und Jugend-Alija. Wege jüdischer Jugend nach Palästina 1918-1941",
+            "collection-title": "Steinhorster Beiträge zur Geschichte von Schule, Kindheit und Jugend",
+            "collection-number": "Band 1",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Gifhorn",
+            "publisher": "Gemeinnützige Bildungs- und Kultur GmbH des Landkreises Gifhorn",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "55–81",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-929632-99-6",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "author": [
+                {
+                    "given": "Marco",
+                    "family": "Kissling"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Ulrike",
+                    "family": "Pilarczyk"
+                },
+                {
+                    "given": "Arne",
+                    "family": "Homann"
+                },
+                {
+                    "given": "Ofer",
+                    "family": "Ashkenazi"
+                }
+            ]
+        },
+        {
+            "id": "T4QPR56M",
+            "citation-label": "lavsky_2020",
+            "type": "chapter",
+            "title": "Jewish Agricultural Training in Germany. Its Context and Changing Role",
+            "container-title": "Jewish horticultural schools and training centers in Germany and their impact on horticulture and landscape architecture in Palestine/Israel",
+            "collection-title": "CGL-studies",
+            "collection-number": "27",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "München",
+            "publisher": "Akademische Verlagsgemeinschaft München",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "13–22",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-95477-092-2",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "eng",
+            "author": [
+                {
+                    "given": "Hagit",
+                    "family": "Lavsky"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Tal",
+                    "family": "Alon Mozes"
+                },
+                {
+                    "given": "Irene",
+                    "family": "Aue-Ben-David"
+                },
+                {
+                    "given": "Joachim",
+                    "family": "Wolschke-Bulmahn"
+                }
+            ]
+        },
+        {
+            "id": "AXW5XJKH",
+            "citation-label": "leshem_1973",
+            "type": "book",
+            "title": "Straße zur Rettung 1933–1939. Aus Deutschland vertrieben – bereitet sich jüdische Jugend auf Palästina vor",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Tel-Aviv",
+            "publisher": "Verband der Freunde d. Histadrut",
+            "issued": {
+                "date-parts": [
+                    [
+                        1973
+                    ]
+                ],
+                "literal": "1973"
+            },
+            "page": null,
+            "number-of-pages": "",
+            "DOI": null,
+            "ISBN": "",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Perez",
+                    "family": "Leshem"
+                }
+            ]
+        },
+        {
+            "id": "R4YWB9Q5",
+            "citation-label": "meier-cronemeyer_1969",
+            "type": "article-journal",
+            "title": "Jüdische Jugendbewegung",
+            "container-title": "Germania Judaica",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "Erster Teil: Neue Folge 27/28, Jg. VIII, H. 1/2, Zweiter Teil: Neue Folge 29/30, Jg.VIII, H. 3/4",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        1969
+                    ]
+                ],
+                "literal": "1969"
+            },
+            "page": "1–123",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Hermann",
+                    "family": "Meier-Cronemeyer"
+                }
+            ]
+        },
+        {
+            "id": "F3H39J5C",
+            "citation-label": "nicosia_2012",
+            "type": "book",
+            "title": "Zionismus und Antisemitismus im Dritten Reich",
+            "container-title": null,
+            "collection-title": "Hamburger Beiträge zur Geschichte der deutschen Juden",
+            "collection-number": "40",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Göttingen",
+            "publisher": "Wallstein-Verlag",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ],
+                "literal": "2012"
+            },
+            "page": null,
+            "number-of-pages": "400",
+            "DOI": null,
+            "ISBN": "978-3-8353-1057-5",
+            "ISSN": null,
+            "URL": "http://www.igdj-hh.de/files/IGDJ/pdf/hamburger-beitraege/francis-nicosia_zionismus-und-antisemitismus.pdf",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "author": [
+                {
+                    "given": "Francis R.",
+                    "family": "Nicosia"
+                }
+            ]
+        },
+        {
+            "id": "CNA5GSX4",
+            "citation-label": "paetz-and-weiss_1999",
+            "type": "book",
+            "title": "„Hachschara“. Die Vorbereitung junger Juden auf die Auswanderung nach Palästina",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Potsdam",
+            "publisher": "Verlag für Berlin-Brandenburg",
+            "issued": {
+                "date-parts": [
+                    [
+                        1999
+                    ]
+                ],
+                "literal": "1999"
+            },
+            "page": null,
+            "number-of-pages": "94",
+            "DOI": null,
+            "ISBN": "978-3-932981-50-0",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "editor": [
+                {
+                    "given": "Andreas",
+                    "family": "Paetz"
+                },
+                {
+                    "given": "Karin",
+                    "family": "Weiss"
+                }
+            ]
+        },
+        {
+            "id": "KNZTYAEG",
+            "citation-label": "pilarczyk_2009",
+            "type": "book",
+            "title": "Gemeinschaft in Bildern. Jüdische Jugendbewegung und zionistische Erziehungspraxis in Deutschland und Palästina/Israel",
+            "container-title": null,
+            "collection-title": "Hamburger Beiträge zur Geschichte der deutschen Juden",
+            "collection-number": "35",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Göttingen",
+            "publisher": "Wallstein",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009
+                    ]
+                ],
+                "literal": "2009"
+            },
+            "page": null,
+            "number-of-pages": "",
+            "DOI": null,
+            "ISBN": "978-3-8353-0439-0",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "author": [
+                {
+                    "given": "Ulrike",
+                    "family": "Pilarczyk"
+                }
+            ],
+            "contributor": [
+                {
+                    "given": "Ilka von",
+                    "family": "Cossart"
+                },
+                {
+                    "given": "Juliane",
+                    "family": "Jacobi"
+                },
+                {
+                    "given": "Ulrike",
+                    "family": "Mietzner"
+                }
+            ]
+        },
+        {
+            "id": "U2HSDEEQ",
+            "citation-label": "pilarczyk-et-al_2020",
+            "type": "book",
+            "title": "Hachschara und Jugend-Alija. Wege jüdischer Jugend nach Palästina 1918-1941",
+            "container-title": null,
+            "collection-title": "Steinhorster Beiträge zur Geschichte von Schule, Kindheit und Jugend",
+            "collection-number": "Band 1",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Gifhorn",
+            "publisher": "Gemeinnützige Bildungs- und Kultur GmbH des Landkreises Gifhorn",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": null,
+            "number-of-pages": "228",
+            "DOI": null,
+            "ISBN": "978-3-929632-99-6",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "editor": [
+                {
+                    "given": "Ulrike",
+                    "family": "Pilarczyk"
+                },
+                {
+                    "given": "Arne",
+                    "family": "Homann"
+                },
+                {
+                    "given": "Ofer",
+                    "family": "Ashkenazi"
+                }
+            ]
+        },
+        {
+            "id": "QUZ8IAZX",
+            "citation-label": "rinott_1977",
+            "type": "article-journal",
+            "title": "Jüdische Jugendbewegung in Deutschland",
+            "container-title": "Neue Sammlung, Göttinger Zeitschrift für Erziehung",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        1977
+                    ]
+                ],
+                "literal": "1977"
+            },
+            "page": "75–94",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Chanoch",
+                    "family": "Rinott"
+                }
+            ]
+        },
+        {
+            "id": "WSGF9R73",
+            "citation-label": "salinger_1998",
+            "type": "book",
+            "title": "„Nächstes Jahr im Kibbuz“. Die jüdisch-chaluzische Jugendbewegung in Deutschland zwischen 1933 und 1943",
+            "container-title": null,
+            "collection-title": "Paderborner Beiträge zur politischen, wirtschaftlichen und kulturellen Weiterbildung. Neue Reihe",
+            "collection-number": "14",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Paderborn",
+            "publisher": "KoWAG Universität Paderborn",
+            "issued": {
+                "date-parts": [
+                    [
+                        1998
+                    ]
+                ],
+                "literal": "1998"
+            },
+            "page": null,
+            "number-of-pages": "232",
+            "DOI": null,
+            "ISBN": "978-3-933577-01-6",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Eliyahu Kutti",
+                    "family": "Salinger"
+                }
+            ]
+        },
+        {
+            "id": "VJQH49YJ",
+            "citation-label": "schatzker_1987",
+            "type": "article-journal",
+            "title": "The Jewish Youth Movement in Germany in the Holocaust Period (I). Youth in Confrontation with a New Reality",
+            "container-title": "The Leo Baeck Institute Yearbook",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "32",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        1987
+                    ]
+                ],
+                "literal": "1987"
+            },
+            "page": "157–181",
+            "number-of-pages": null,
+            "DOI": "10.1093/leobaeck/32.1.157",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "https://academic.oup.com/leobaeck/article-lookup/doi/10.1093/leobaeck/32.1.157",
+            "accessed": {
+                "date-parts": [
+                    [
+                        21,
+                        12,
+                        11
+                    ]
+                ],
+                "literal": "2022-06-16T09:29:17Z"
+            },
+            "language": "en",
+            "author": [
+                {
+                    "given": "Chaim",
+                    "family": "Schatzker"
+                }
+            ]
+        },
+        {
+            "id": "8WY4KWME",
+            "citation-label": "schatzker_1988",
+            "type": "article-journal",
+            "title": "The Jewish Youth Movement in Germany in the Holocaust Period (II). The Relations between the Youth Movement and Hechaluz",
+            "container-title": "The Leo Baeck Institute Yearbook",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "33",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        1988
+                    ]
+                ],
+                "literal": "1988"
+            },
+            "page": "301–325",
+            "number-of-pages": null,
+            "DOI": "10.1093/leobaeck/33.1.301",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "https://academic.oup.com/leobaeck/article-lookup/doi/10.1093/leobaeck/33.1.301",
+            "accessed": {
+                "date-parts": [
+                    [
+                        21,
+                        12,
+                        11
+                    ]
+                ],
+                "literal": "2022-06-16T09:30:32Z"
+            },
+            "language": "en",
+            "author": [
+                {
+                    "given": "Ch",
+                    "family": "Schatzker"
+                }
+            ]
+        },
+        {
+            "id": "GW4BI2PW",
+            "citation-label": "wiehn-et-al_2010",
+            "type": "book",
+            "title": "Wer hätte das geglaubt? Erinnerungen im Kibbuz Buchenwald – Netzer Sereni an Hachschara und Konzentrationslager 1939–1945–1985",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Konstanz",
+            "publisher": "Hartung-Gorre",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010
+                    ]
+                ],
+                "literal": "2010"
+            },
+            "page": null,
+            "number-of-pages": "172",
+            "DOI": null,
+            "ISBN": "978-3-86628-298-8",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "editor": [
+                {
+                    "given": "Erhard R.",
+                    "family": "Wiehn"
+                },
+                {
+                    "given": "Ruth",
+                    "family": "Fiedler"
+                },
+                {
+                    "given": "Herbert",
+                    "family": "Fiedler"
+                }
+            ]
+        },
+        {
+            "id": "NZRDZC2P",
+            "citation-label": "wolschke-bulmahn-and-henning_2016",
+            "type": "chapter",
+            "title": "Forschungsprojekt „Jüdische gärtnerische und landwirtschaftliche Ausbildungsstätten in Deutschland im Kontext von Berufsumschichtung und Auswanderung und ihre Bedeutung in Palästina/Israel“",
+            "container-title": "Tätigkeitsbericht – CGL 2012-2016",
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Hannover",
+            "publisher": "",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ],
+                "literal": "2016"
+            },
+            "page": "86–96",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "",
+            "ISSN": null,
+            "URL": "http://blha-bibliothek.brandenburg.de/de-de/Mediensuche/Einfache-Suche?&top=y&id=3014864",
+            "accessed": {
+                "date-parts": [
+                    [
+                        21,
+                        12,
+                        11
+                    ]
+                ],
+                "literal": "2022-06-16T09:33:41Z"
+            },
+            "language": "de-DE",
+            "author": [
+                {
+                    "given": "Joachim",
+                    "family": "Wolschke-Bulmahn"
+                },
+                {
+                    "given": "Janina",
+                    "family": "Henning"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "",
+                    "family": "Zentrum für Gartenbaukunst und Landschaftsarchitektur Hannover"
+                }
+            ]
+        }
+    ]
+}

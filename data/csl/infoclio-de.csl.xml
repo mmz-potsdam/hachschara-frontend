@@ -76,10 +76,12 @@
     </layout>
   </citation>
   <bibliography entry-spacing="0" hanging-indent="true">
+    <!--
     <sort>
       <key macro="creator" names-min="3" names-use-first="3"/>
       <key variable="issued" sort="descending"/>
     </sort>
+    -->
     <layout suffix=".">
       <text macro="complete-reference"/>
     </layout>

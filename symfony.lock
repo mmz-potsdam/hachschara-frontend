@@ -24,9 +24,6 @@
     "box/spout": {
         "version": "v3.1.0"
     },
-    "citation-style-language/locales": {
-        "version": "1.0.0"
-    },
     "composer/package-versions-deprecated": {
         "version": "1.11.99"
     },

@@ -350,3 +350,13 @@ footer {
 .select2-search__field {
     min-width: 360px;
 }
+
+/* route-specific styles */
+.route-bibliography-index {
+    .csl-bib-body {
+        .csl-entry {
+            padding-left: 1.5em;
+            text-indent: -1.5em;
+        }
+    }
+}

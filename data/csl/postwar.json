@@ -1,0 +1,92 @@
+{
+    "group-id": 4432580,
+    "key": "59MF7CAV",
+    "data": [
+        {
+            "id": "X4XFSPDT",
+            "citation-label": "tobias_1997",
+            "type": "book",
+            "title": "Der Kibbuz auf dem Streicher-Hof. Die vergessene Geschichte der jüdischen Kollektivfarmen 1945–1948",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Nürnberg",
+            "publisher": "Antogo-Verlag",
+            "issued": {
+                "date-parts": [
+                    [
+                        1997
+                    ]
+                ],
+                "literal": "1997"
+            },
+            "page": null,
+            "number-of-pages": "95",
+            "DOI": null,
+            "ISBN": "978-3-9806636-1-8",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "editor": [
+                {
+                    "given": "Jim G.",
+                    "family": "Tobias"
+                }
+            ]
+        },
+        {
+            "id": "PEB6AT22",
+            "citation-label": "tydor-baumel_1997",
+            "type": "book",
+            "title": "Kibbuz Buchenwald. Survivors and Pioneers",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "New Brunswick, N.J",
+            "publisher": "Rutgers University Press",
+            "issued": {
+                "date-parts": [
+                    [
+                        1997
+                    ]
+                ],
+                "literal": "1997"
+            },
+            "page": null,
+            "number-of-pages": "194",
+            "DOI": null,
+            "ISBN": "978-0-8135-2336-1 978-0-8135-2337-8",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "eng",
+            "author": [
+                {
+                    "given": "Judith",
+                    "family": "Tydor Baumel"
+                }
+            ]
+        }
+    ]
+}

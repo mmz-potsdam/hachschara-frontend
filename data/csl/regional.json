@@ -1,0 +1,2286 @@
+{
+    "group-id": 4432580,
+    "key": "E2JNCKZH",
+    "data": [
+        {
+            "id": "29QTQG9F",
+            "citation-label": "angress_1985",
+            "type": "book",
+            "title": "Generation zwischen Furcht und Hoffnung. Jüdische Jugend im Dritten Reich",
+            "container-title": null,
+            "collection-title": "Hamburger Beiträge zur Sozial- und Zeitgeschichte",
+            "collection-number": "2",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Hamburg",
+            "publisher": "Christians",
+            "issued": {
+                "date-parts": [
+                    [
+                        1985
+                    ]
+                ],
+                "literal": "1985"
+            },
+            "page": null,
+            "number-of-pages": "180",
+            "DOI": null,
+            "ISBN": "978-3-7672-0886-5",
+            "ISSN": null,
+            "URL": "https://www.zeitgeschichte-hamburg.de/contao/files/fzh/Digitalisate/Werner%20T%20Angress%20Generation%20zwischen%20Furcht%20und%20Hoffnung.pdf",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Werner T.",
+                    "family": "Angress"
+                }
+            ]
+        },
+        {
+            "id": "WQ6CNKMU",
+            "citation-label": "bergbauer_2020",
+            "type": "chapter",
+            "title": "Pioniere in der Provinz. Hachschara, Alija und jüdische Jugendbewegung in Schlesien",
+            "container-title": "Hachschara und Jugend-Alija. Wege jüdischer Jugend nach Palästina 1918-1941",
+            "collection-title": "Steinhorster Beiträge zur Geschichte von Schule, Kindheit und Jugend",
+            "collection-number": "1",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Gifhorn",
+            "publisher": "Gemeinnützige Bildungs- und Kultur GmbH des Landkreises Gifhorn",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "107–133",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-929632-99-6",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "author": [
+                {
+                    "given": "Knut",
+                    "family": "Bergbauer"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Ulrike",
+                    "family": "Pilarczyk"
+                },
+                {
+                    "given": "Arne",
+                    "family": "Homann"
+                },
+                {
+                    "given": "Ofer",
+                    "family": "Ashkenazi"
+                }
+            ]
+        },
+        {
+            "id": "RI7S4N8L",
+            "citation-label": "boecker_2020",
+            "type": "chapter",
+            "title": "Zionismus auf dem Markenhof (1919–1925)",
+            "container-title": "„Auf! Hedad, Hedad! Unsere Bahn ist frei.“ Zionistische Lebenswelten in der Stadt Freiburg 1897–1933",
+            "collection-title": "Stadt und Geschichte",
+            "collection-number": "Heft 23",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Freiburg",
+            "publisher": "Stadtarchiv Freiburg im Breisgau",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-923272-43-3",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "author": [
+                {
+                    "given": "Julia",
+                    "family": "Böcker"
+                }
+            ]
+        },
+        {
+            "id": "TVQPK44I",
+            "citation-label": "brandt_1979",
+            "type": "article-journal",
+            "title": "Der Kibbuz Hagschamah in Grüsen 1934",
+            "container-title": "Hessische Blätter für Volks- und Kulturforschung N.F.",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "9",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        1979
+                    ]
+                ],
+                "literal": "1979"
+            },
+            "page": "70-81",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Heinz",
+                    "family": "Brandt"
+                }
+            ]
+        },
+        {
+            "id": "NEKIWUR4",
+            "citation-label": "buchholz-et-al_2008",
+            "type": "book",
+            "title": "Ahlem – Die Geschichte einer jüdischen Gartenbauschule und ihres Einflusses auf Gartenbau und Landschaftsarchitektur in Deutschland und Israel",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": null,
+            "publisher-place": "Bremen",
+            "publisher": "Edition Temmen",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008
+                    ]
+                ],
+                "literal": "2008"
+            },
+            "page": null,
+            "number-of-pages": "409",
+            "DOI": null,
+            "ISBN": "978-3-86108-039-8",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "editor": [
+                {
+                    "given": "Marlis",
+                    "family": "Buchholz"
+                },
+                {
+                    "family": "Burmil, Shmuel"
+                },
+                {
+                    "family": "Enis, Ruth"
+                },
+                {
+                    "family": "Füllberg-Stolberg, Claus"
+                },
+                {
+                    "given": "Hans-Dieter",
+                    "family": "Schmid"
+                },
+                {
+                    "family": "Wolschke-Bulmahn, Joachim"
+                }
+            ]
+        },
+        {
+            "id": "SXLYV4J6",
+            "citation-label": "burger_2015",
+            "type": "chapter",
+            "title": "„Unterricht unter Pflaumenbäumen“ Der Winkelhof von Lili und Julius Ehrlich bei Untersiggingen",
+            "container-title": "Schicksale jüdischer Landwirte am Bodensee 1930-1960",
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Konstanz",
+            "publisher": "",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ],
+                "literal": "2015"
+            },
+            "page": "193-217",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Oswald",
+                    "family": "Burger"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Manfred",
+                    "family": "Bosch"
+                },
+                {
+                    "given": "Oswald",
+                    "family": "Burger"
+                }
+            ]
+        },
+        {
+            "id": "S874NF5R",
+            "citation-label": "bussenius_1999",
+            "type": "chapter",
+            "title": "Zionistische Erzeihung im Norddeutschen Moor - Die Ausbildungsstätte des Hechaluz auf dem Brüderhof Harksheide",
+            "container-title": "\"Hachschara\". Die Vorbereitung junger Juden auf die Auswanderung nach Palästina",
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Potsdam",
+            "publisher": "Verlag für Berlin-Brandenburg GmbH",
+            "issued": {
+                "date-parts": [
+                    [
+                        1999
+                    ]
+                ],
+                "literal": "1999"
+            },
+            "page": "S. 29-40",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Sieghard",
+                    "family": "Bußenius"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Andreas",
+                    "family": "Paetz"
+                },
+                {
+                    "given": "Karin",
+                    "family": "Weiss"
+                }
+            ]
+        },
+        {
+            "id": "FN76WYY7",
+            "citation-label": "bussenius_1998",
+            "type": "chapter",
+            "title": "Zionistische Erziehung im norddeutschen Moor. Die Ausbildungsstätte des Hechaluz auf dem „Brüderhof“ bei Harksheide",
+            "container-title": "Menora und Hakenkreuz. Zur Geschichte der Juden in und aus Schleswig-Holstein, Lübeck und Altona (1918-1998)",
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Neumünster",
+            "publisher": "Wachholtz Verlag",
+            "issued": {
+                "date-parts": [
+                    [
+                        1998
+                    ]
+                ],
+                "literal": "1998"
+            },
+            "page": "425–443",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-529-06149-3",
+            "ISSN": null,
+            "URL": "http://www.schoah.org/schoah/bruederhof.htm",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Sieghard",
+                    "family": "Bußenius"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Gerhard",
+                    "family": "Paul"
+                },
+                {
+                    "given": "Miriam",
+                    "family": "Gillis-Carlebach"
+                }
+            ]
+        },
+        {
+            "id": "LQ4FARIZ",
+            "citation-label": "fiedler-and-fiedler_2004",
+            "type": "book",
+            "title": "Hachschara. Vorbereitung auf Palästina. Schicksalswege",
+            "container-title": null,
+            "collection-title": "Schriftenreihe des Centrum Judaicum",
+            "collection-number": "3",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Teetz",
+            "publisher": "Hentrich und Hentrich",
+            "issued": {
+                "date-parts": [
+                    [
+                        2004
+                    ]
+                ],
+                "literal": "2004"
+            },
+            "page": null,
+            "number-of-pages": "264",
+            "DOI": null,
+            "ISBN": "978-3-933471-78-9",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "author": [
+                {
+                    "given": "Herbert",
+                    "family": "Fiedler"
+                },
+                {
+                    "given": "Ruth",
+                    "family": "Fiedler"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Hermann",
+                    "family": "Simon"
+                }
+            ]
+        },
+        {
+            "id": "7ETG5I3B",
+            "citation-label": "fischer_2018",
+            "type": "chapter",
+            "title": "„Umschulungslager“ Eichow. Jüdische Jugend zwischen Auswanderungsvorbereitung und Deportation. Mit einem lokalgeschichtlichen Rückblick",
+            "container-title": "Jahrbuch für brandenburgische Landesgeschichte",
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "69",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "",
+            "publisher": "",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ],
+                "literal": "2018"
+            },
+            "page": "165",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "",
+            "ISSN": null,
+            "URL": "http://blha-bibliothek.brandenburg.de/de-de/Mediensuche/Einfache-Suche?searchhash=OCLC_9b361156f36904097a55f999e6854004a4f91ec6&top=y&detail=7",
+            "accessed": {
+                "date-parts": [
+                    [
+                        18,
+                        5,
+                        12
+                    ]
+                ],
+                "literal": "2021-11-12T10:53:21Z"
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "HLIMA39A",
+            "citation-label": "fischer_2018",
+            "type": "article-journal",
+            "title": "Das jüdische Umschulungslager Belzig. Hechaluz-Ausbildungsstätte zwischen Neuanfang und Verdrängung 1932–1934",
+            "container-title": "Forschungen zur brandenburgischen und preußischen Geschichte",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "28",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ],
+                "literal": "2018"
+            },
+            "page": "99–123",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "EM57LMKQ",
+            "citation-label": "fischer_2018",
+            "type": "article-journal",
+            "title": "Das Lehrgut Ellguth bei Steinau (1937–1941) und die Hachschara in Oberschlesien",
+            "container-title": "Jahrbuch für die Geschichte Mittel- und Ostdeutschlands",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "64",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        7,
+                        4,
+                        8
+                    ]
+                ],
+                "literal": "2018-10-01"
+            },
+            "page": "61-110",
+            "number-of-pages": null,
+            "DOI": "10.1515/jgod-2018-0002",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "https://www.degruyter.com/document/doi/10.1515/jgod-2018-0002/html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        18,
+                        5,
+                        12
+                    ]
+                ],
+                "literal": "2021-11-12T11:01:07Z"
+            },
+            "language": "en",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "67ENTZZ6",
+            "citation-label": "fischer_2019",
+            "type": "article-journal",
+            "title": "Von der „blauen Vogelfarm“ zur „Mittelstandshachscharah“. Der Valentinenhof bei Oranienburg in den 1930er Jahren",
+            "container-title": "Mitteilungsblatt der Landesgeschichtlichen Vereinigung für die Mark Brandenburg e.V.",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "120",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ],
+                "literal": "2019"
+            },
+            "page": "15–31",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "http://blha-bibliothek.brandenburg.de/de-de/Mediensuche/Einfache-Suche?search=marienkirche&top=y&page=31&id=3015489",
+            "accessed": {
+                "date-parts": [
+                    [
+                        18,
+                        5,
+                        12
+                    ]
+                ],
+                "literal": "2021-11-12T15:08:09Z"
+            },
+            "language": "de-DE",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "YUVVVEIK",
+            "citation-label": "fischer_2020",
+            "type": "article-journal",
+            "title": "Lobitten. Ein „freies“ jüdisches Lehrgut in Ostpreußen während der NS-Zeit (1934–1939)",
+            "container-title": "Preußenland, Jahrbuch der Historischen Kommission für ost- und westpreußische Landesforschung und der Copernicus-Vereinigung für Geschichte und Landeskunde Westpreußens",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "10",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "123–150",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "German",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "4UB6M48Y",
+            "citation-label": "fischer_2020",
+            "type": "article-journal",
+            "title": "„Quenzsee“ und „Trockenfeld“. Unbekannte Hachschara-Zentren in Brandenburg und Schlesien während der NS-Zeit",
+            "container-title": "Landesgeschichtliche Vereinigung für die Mark Brandenburg e.V., Mitteilungsblatt",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "121",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "84–101",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "http://blha-bibliothek.brandenburg.de/de-de/Mediensuche/Einfache-Suche?id=3022969",
+            "accessed": {
+                "date-parts": [
+                    [
+                        21,
+                        12,
+                        11
+                    ]
+                ],
+                "literal": "2022-06-16T10:34:06Z"
+            },
+            "language": "de-DE",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "QSRATDSL",
+            "citation-label": "fischer_2020",
+            "type": "article-journal",
+            "title": "Polenzwerder – Wohnplatz mit ungewöhnlicher Geschichte. Ein jüdisches Lehrgut in Brandenburg, seine Wandlungen und Praktikanten 1937 bis 1941/42",
+            "container-title": "Jahrbuch für Brandenburgische Landesgeschichte",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "71",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "181–231",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Dr. Peter",
+                    "family": "Bahl u.a."
+                }
+            ]
+        },
+        {
+            "id": "LEKMQFYA",
+            "citation-label": "foelling-and-melzer_1989",
+            "type": "book",
+            "title": "Gelebte Jugendträume. Jugendbewegung und Kibbutz",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Witzenhausen [Stuttgart]",
+            "publisher": "Südmarkverlag",
+            "issued": {
+                "date-parts": [
+                    [
+                        1989
+                    ]
+                ],
+                "literal": "1989"
+            },
+            "page": null,
+            "number-of-pages": "194",
+            "DOI": null,
+            "ISBN": "978-3-88258-112-6",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "author": [
+                {
+                    "given": "Werner",
+                    "family": "Fölling"
+                },
+                {
+                    "given": "Wolfgang",
+                    "family": "Melzer"
+                }
+            ]
+        },
+        {
+            "id": "HQ82SEP9",
+            "citation-label": "foerderverein-fuer-eine-internationale-begegnungsstaette-hachschara-landwerk-ahrensdorf-e-v_2001",
+            "type": "book",
+            "title": "„Träume und Hoffnungen“ – Berichte, Erzählungen und Dokumente zur Hachschara-Stätte Landwerk Ahrensdorf",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "1-7",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Luckenwalde",
+            "publisher": "",
+            "issued": {
+                "date-parts": [
+                    [
+                        2001
+                    ]
+                ],
+                "literal": "2001"
+            },
+            "page": null,
+            "number-of-pages": "",
+            "DOI": null,
+            "ISBN": "",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "editor": [
+                {
+                    "given": "",
+                    "family": "Förderverein für eine Internationale Begegnungsstätte HACHSCHARA, Landwerk Ahrensdorf e.V."
+                }
+            ]
+        },
+        {
+            "id": "Y783GEDK",
+            "citation-label": "frankenstein_2001",
+            "type": "chapter",
+            "title": "Hachschara im Markenhof bei Freiburg. Eine Spurensuche",
+            "container-title": "Alemannisches Judentum. Spuren einer verlorenen Kultur",
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Eggingen",
+            "publisher": "Edition Isele",
+            "issued": {
+                "date-parts": [
+                    [
+                        2001
+                    ]
+                ],
+                "literal": "2001"
+            },
+            "page": "",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-86142-146-7",
+            "ISSN": null,
+            "URL": "http://www.stegen-dreisamtal.de/Markenhof_Frankenstein.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Ruben",
+                    "family": "Frankenstein"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Manfred",
+                    "family": "Bosch"
+                }
+            ]
+        },
+        {
+            "id": "5V9LW8NW",
+            "citation-label": "gazit_2020",
+            "type": "chapter",
+            "title": "Gross – Gaglow. A Cooperative Jewish Settlement and Hachshara Site in Germany",
+            "container-title": "Jewish horticultural schools and training centers in Germany and their impact on horticulture and landscape architecture in Palestine/Israel",
+            "collection-title": "CGL-studies",
+            "collection-number": "27",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "München",
+            "publisher": "Akademische Verlagsgemeinschaft München",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "99–113",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-95477-092-2",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "eng",
+            "author": [
+                {
+                    "given": "Tamar",
+                    "family": "Gazit"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Tal",
+                    "family": "Alon Mozes"
+                },
+                {
+                    "given": "Irene",
+                    "family": "Aue-Ben-David"
+                },
+                {
+                    "given": "Joachim",
+                    "family": "Wolschke-Bulmahn"
+                }
+            ]
+        },
+        {
+            "id": "V5V3RXSR",
+            "citation-label": "gelderblom_2005",
+            "type": "chapter",
+            "title": "Der Kibbuz Cheruth",
+            "container-title": "Historisches Handbuch der jüdischen Gemeinden in Niedersachsen und Bremen",
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "1",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Göttingen",
+            "publisher": "Wallstein Verlag",
+            "issued": {
+                "date-parts": [
+                    [
+                        2005
+                    ]
+                ],
+                "literal": "2005"
+            },
+            "page": "710–712",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-89244-753-5",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "editor": [
+                {
+                    "given": "Herbert",
+                    "family": "Obenaus"
+                }
+            ],
+            "author": [
+                {
+                    "given": "Bernhard",
+                    "family": "Gelderblom"
+                }
+            ]
+        },
+        {
+            "id": "EILQW8CT",
+            "citation-label": "gelderblom_2011",
+            "type": "book",
+            "title": "Die Juden von Hameln von ihren Anfängen im 13. Jahrhundert bis zu ihrer Vernichtung durch das NS-Regime. Anhang. Dokumentation der Grabsteine des jüdischen Friedhofs erstellt von Berndt Schaller zusammen mit Bernhard Gelderblom",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Holzminden",
+            "publisher": "Mitzkat",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011
+                    ]
+                ],
+                "literal": "2011"
+            },
+            "page": null,
+            "number-of-pages": "335",
+            "DOI": null,
+            "ISBN": "978-3-940751-39-3",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "author": [
+                {
+                    "given": "Bernhard",
+                    "family": "Gelderblom"
+                }
+            ],
+            "contributor": [
+                {
+                    "given": "Berndt",
+                    "family": "Schaller"
+                }
+            ]
+        },
+        {
+            "id": "VYTEZU9N",
+            "citation-label": "gelderblom_2020",
+            "type": "chapter",
+            "title": "„Ich kann schon nicht mehr die Zeit der Alijah erwarten“. Der Kibbuz Cherut in den Dörfern um Hameln 1926–1930",
+            "container-title": "Hachschara und Jugend-Alija. Wege jüdischer Jugend nach Palästina 1918-1941",
+            "collection-title": "Steinhorster Beiträge zur Geschichte von Schule, Kindheit und Jugend",
+            "collection-number": "1",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Gifhorn",
+            "publisher": "Gemeinnützige Bildungs- und Kultur GmbH des Landkreises Gifhorn",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "83–105",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-929632-99-6",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "author": [
+                {
+                    "given": "Bernhard",
+                    "family": "Gelderblom"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Ulrike",
+                    "family": "Pilarczyk"
+                },
+                {
+                    "given": "Arne",
+                    "family": "Homann"
+                },
+                {
+                    "given": "Ofer",
+                    "family": "Ashkenazi"
+                }
+            ]
+        },
+        {
+            "id": "LER8T34F",
+            "citation-label": "goetze_2008",
+            "type": "article-journal",
+            "title": "Das  Hachschara-Lager in Steckelsdorf",
+            "container-title": "",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2008
+                    ]
+                ],
+                "literal": "2008"
+            },
+            "page": "42–45",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "http://www.museumsverband-brandenburg.de/fileadmin/pdfs/Museumsblaetter/Heft_13/k_13_Goetze.pdf",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Bettina",
+                    "family": "Götze"
+                }
+            ]
+        },
+        {
+            "id": "6AEKR2AI",
+            "citation-label": "henning_2020",
+            "type": "chapter",
+            "title": "“A Bridge to Life” – Exemples of Jewish Agricultural and Horticultural Training Centers in the Region of Hannover and Berlin/ Brandenburg",
+            "container-title": "Jewish horticultural schools and training centers in Germany and their impact on horticulture and landscape architecture in Palestine/Israel",
+            "collection-title": "CGL-studies",
+            "collection-number": "27",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "München",
+            "publisher": "Akademische Verlagsgemeinschaft München",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "83–97",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-95477-092-2",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "eng",
+            "author": [
+                {
+                    "given": "Janina",
+                    "family": "Henning"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Tal",
+                    "family": "Alon Mozes"
+                },
+                {
+                    "given": "Irene",
+                    "family": "Aue-Ben-David"
+                },
+                {
+                    "given": "Joachim",
+                    "family": "Wolschke-Bulmahn"
+                }
+            ]
+        },
+        {
+            "id": "Q8YTRMT9",
+            "citation-label": "hoba_2007",
+            "type": "chapter",
+            "title": "Das Gut Winkel – Spreenhagen in der Mark",
+            "container-title": "Gut Winkel – die schützende Insel. Hachschara 1933–1941",
+            "collection-title": "Deutsch-Israelische Bibliothek",
+            "collection-number": "",
+            "volume": "3",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Berlin",
+            "publisher": "LIT",
+            "issued": {
+                "date-parts": [
+                    [
+                        2007
+                    ]
+                ],
+                "literal": "2007"
+            },
+            "page": "249–274",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Katharina",
+                    "family": "Hoba"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Ilana",
+                    "family": "Michaeli"
+                },
+                {
+                    "given": "Irmgard",
+                    "family": "Klönne"
+                }
+            ]
+        },
+        {
+            "id": "U4G78CJW",
+            "citation-label": "kaestner-et-al_2019",
+            "type": "book",
+            "title": "Jüdisches Leben im ländlichen Raum. Spurensuche in der Region Bad Belzig 1933-1945",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Berlin",
+            "publisher": "Treibgut Verlag",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ],
+                "literal": "2019"
+            },
+            "page": null,
+            "number-of-pages": "144",
+            "DOI": null,
+            "ISBN": "978-3-947674-02-2",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "editor": [
+                {
+                    "given": "Helga",
+                    "family": "Kästner"
+                },
+                {
+                    "given": "Benjamin",
+                    "family": "Stamer"
+                },
+                {
+                    "given": "",
+                    "family": "Belziger Forum"
+                }
+            ]
+        },
+        {
+            "id": "MVS2CJ32",
+            "citation-label": "klose_2013",
+            "type": "article-journal",
+            "title": "Haschschara in Klein-Silsterwitz. Ein jüdisches Auswandererlehrgut am Zobten",
+            "container-title": "Schlesische Geschichtsblätter",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "41",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ],
+                "literal": "2013"
+            },
+            "page": "64–70",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Andreas",
+                    "family": "Klose"
+                }
+            ]
+        },
+        {
+            "id": "HYI6WT3G",
+            "citation-label": "klostermann-and-pilarczyk_2018",
+            "type": "article-journal",
+            "title": "Das jüdische Auswanderungsprojekt ‚Kibbuz Cherut‘ bei Hameln 1925–1930",
+            "container-title": "Medaon – Magazin für jüdisches Leben in Forschung und Bildung",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "12",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ],
+                "literal": "2018"
+            },
+            "page": "1–13",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "https://www.medaon.de/de/artikel/das-juedische-auswanderungsprojekt-kibbuz-cherut-bei-hameln-1925-1930/",
+            "accessed": {
+                "date-parts": [
+                    [
+                        21,
+                        12,
+                        11
+                    ]
+                ],
+                "literal": "2022-06-16T11:02:08Z"
+            },
+            "language": "de-DE",
+            "author": [
+                {
+                    "given": "Beate",
+                    "family": "Klostermann"
+                },
+                {
+                    "given": "Ulrike",
+                    "family": "Pilarczyk"
+                }
+            ]
+        },
+        {
+            "id": "7JP8GMG8",
+            "citation-label": "koenig_1967",
+            "type": "book",
+            "title": "Den Netzen entronnen",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Göttingen",
+            "publisher": "Vandenhoeck u. Ruprecht",
+            "issued": {
+                "date-parts": [
+                    [
+                        1967
+                    ]
+                ],
+                "literal": "1967"
+            },
+            "page": null,
+            "number-of-pages": "",
+            "DOI": null,
+            "ISBN": "",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Joel",
+                    "family": "König"
+                }
+            ]
+        },
+        {
+            "id": "55R68K99",
+            "citation-label": "linse_1983",
+            "type": "chapter",
+            "title": "Jüdisches Siedeln. Kibbuz Cheruth",
+            "container-title": "Zurück, o Mensch, zur Mutter Erde. Landkommunen in Deutschland 1890 - 1933",
+            "collection-title": "Dtv dtv-dokumente",
+            "collection-number": "2934",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "Orig.-Ausg",
+            "publisher-place": "München",
+            "publisher": "Dt. Taschenbuch-Verl",
+            "issued": {
+                "date-parts": [
+                    [
+                        1983
+                    ]
+                ],
+                "literal": "1983"
+            },
+            "page": "293–311",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-423-02934-6",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "author": [
+                {
+                    "given": "Ulrich",
+                    "family": "Linse"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Ulrich",
+                    "family": "Linse"
+                }
+            ]
+        },
+        {
+            "id": "M5HHYTEJ",
+            "citation-label": "lordick_2020",
+            "type": "chapter",
+            "title": "Das Landwerk Neuendorf. Berufsumschichtung – Hachschara – Zwangsarbeit",
+            "container-title": "Hachschara und Jugend-Alija. Wege jüdischer Jugend nach Palästina 1918-1941",
+            "collection-title": "Steinhorster Beiträge zur Geschichte von Schule, Kindheit und Jugend",
+            "collection-number": "1",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Gifhorn",
+            "publisher": "Gemeinnützige Bildungs- und Kultur GmbH des Landkreises Gifhorn",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "135–163",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-929632-99-6",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "author": [
+                {
+                    "given": "Harald",
+                    "family": "Lordick"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Ulrike",
+                    "family": "Pilarczyk"
+                },
+                {
+                    "given": "Arne",
+                    "family": "Homann"
+                },
+                {
+                    "given": "Ofer",
+                    "family": "Ashkenazi"
+                }
+            ]
+        },
+        {
+            "id": "RYKVPR9E",
+            "citation-label": "lordick_2017",
+            "type": "article-journal",
+            "title": "Landwerk Neuendorf in Brandenburg. Jüdische Ausbildungsstätte, Hachschara-Camp, NS-Zwangslager – Gedenkort?",
+            "container-title": "Kalonymos",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "20. Jahrgang",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ],
+                "literal": "2017"
+            },
+            "page": "S. 7-12",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "http://www.steinheim-institut.de/edocs/kalonymos/kalonymos_2017_2.pdf#page=7",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Harald",
+                    "family": "Lordick"
+                }
+            ]
+        },
+        {
+            "id": "PDVA23JR",
+            "citation-label": "lorenz_1997",
+            "type": "article-journal",
+            "title": "„Seefahrts-Hachshara in Hamburg (1935–1938). Lucy Borchardt. ‚Die einzige jüdische Reederin der Welt‘“",
+            "container-title": "Zeitschrift des Vereins für Hamburgische Geschichte",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "Bewahren und Berichten: Festschrift für Hans-Dieter Loose zum 60. Geburtstag",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        1997
+                    ]
+                ],
+                "literal": "1997"
+            },
+            "page": "445–472",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "http://agora.sub.uni-hamburg.de/subhh/cntmng;jsessionid=DE20E3BE9302AFA9EF27621B7CA8E255.jvm1?type=pdf&did=c1:2531",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Ina",
+                    "family": "Lorenz"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Hans Wilhelm",
+                    "family": "Eckardt"
+                }
+            ]
+        },
+        {
+            "id": "8TWUSR3L",
+            "citation-label": "melzer-and-foelling_1989",
+            "type": "book",
+            "title": "Biographien jüdischer Palästina-Pioniere aus Deutschland. Über den Zusammenhang von Jugend- und Kibbutzbewegung",
+            "container-title": null,
+            "collection-title": "Forschungsberichte des Landes Nordrhein-Westfalen Fachgruppe Geisteswissenschaften",
+            "collection-number": "3241",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Opladen",
+            "publisher": "Westdeutscher Verlag",
+            "issued": {
+                "date-parts": [
+                    [
+                        1989
+                    ]
+                ],
+                "literal": "1989"
+            },
+            "page": null,
+            "number-of-pages": "268",
+            "DOI": null,
+            "ISBN": "978-3-531-03241-2",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "author": [
+                {
+                    "given": "Wolfgang",
+                    "family": "Melzer"
+                },
+                {
+                    "given": "Werner",
+                    "family": "Fölling"
+                }
+            ]
+        },
+        {
+            "id": "JE2H68BU",
+            "citation-label": "michaeli-and-kloenne_2007",
+            "type": "book",
+            "title": "Gut Winkel – die schützende Insel. Hachschara 1933–1941",
+            "container-title": null,
+            "collection-title": "Deutsch-Israelische Bibliothek",
+            "collection-number": "",
+            "volume": "3",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Berlin",
+            "publisher": "LIT",
+            "issued": {
+                "date-parts": [
+                    [
+                        2007
+                    ]
+                ],
+                "literal": "2007"
+            },
+            "page": null,
+            "number-of-pages": "",
+            "DOI": null,
+            "ISBN": "",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "editor": [
+                {
+                    "given": "Ilana",
+                    "family": "Michaeli"
+                },
+                {
+                    "given": "Irmgard",
+                    "family": "Klönne"
+                }
+            ],
+            "contributor": [
+                {
+                    "given": "Ilka von",
+                    "family": "Cossart"
+                },
+                {
+                    "given": "Katharina",
+                    "family": "Hoba"
+                },
+                {
+                    "given": "Ulrike",
+                    "family": "Pilarczyk"
+                }
+            ]
+        },
+        {
+            "id": "U4BBJ4AE",
+            "citation-label": "museumsverbund-pankow_2020",
+            "type": "book",
+            "title": "„Am Gelände von Herrn Latte fing ein reges Leben an“. Die Flaschenfabrik Latte und die Ausbildung jüdischer Auswanderer in Berlin- Niederschönhausen",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Leipzig",
+            "publisher": "Hentrich & Hentrich",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": null,
+            "number-of-pages": "125",
+            "DOI": null,
+            "ISBN": "978-3-95565-377-4",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "editor": [
+                {
+                    "given": "",
+                    "family": "Museumsverbund Pankow"
+                }
+            ]
+        },
+        {
+            "id": "7ETA87J7",
+            "citation-label": "paetz_1998",
+            "type": "chapter",
+            "title": "Hachschara in Havelberg",
+            "container-title": "Havelberg - kleine Stadt mit großer Vergangenheit",
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Halle",
+            "publisher": "mdv, Mitteldt. Verl",
+            "issued": {
+                "date-parts": [
+                    [
+                        1998
+                    ]
+                ],
+                "literal": "1998"
+            },
+            "page": "",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-932776-11-3",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "author": [
+                {
+                    "given": "Andreas",
+                    "family": "Paetz"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "",
+                    "family": "Havelberg"
+                }
+            ]
+        },
+        {
+            "id": "4QVHVI5Q",
+            "citation-label": "paetz-and-weiss_1999",
+            "type": "chapter",
+            "title": "Auf Hachschara in Brandenburg – Stätten jüdischer Berufsausbildung in der früheren Provinz Brandenburg",
+            "container-title": "\"Hachschara\". Die Vorbereitung junger Juden auf die Auswanderung nach Palästina",
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Potsdam",
+            "publisher": "Verlag für Berlin-Brandenburg GmbH",
+            "issued": {
+                "date-parts": [
+                    [
+                        1999
+                    ]
+                ],
+                "literal": "1999"
+            },
+            "page": "S. 52–53",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-932981-50-0",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Andreas",
+                    "family": "Paetz"
+                },
+                {
+                    "given": "Karin",
+                    "family": "Weiss"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Andreas",
+                    "family": "Paetz"
+                },
+                {
+                    "given": "Karin",
+                    "family": "Weiss"
+                }
+            ]
+        },
+        {
+            "id": "XEDTFNI5",
+            "citation-label": "philipsen_2016",
+            "type": "chapter",
+            "title": "„Dat Judennest hebbt wi utrökert“. Vom gewaltsamen Ende des Auswanderer-Lehrguts Jägerslust bei Flensburg",
+            "container-title": "Die „Reichskristallnacht“ in Schleswig-Holstein. Der Novemberpogrom im historischen Kontext",
+            "collection-title": "Veröffentlichungen aus dem Staatsarchiv der Freien und Hansestadt Hamburg",
+            "collection-number": "109",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Hamburg",
+            "publisher": "Hamburg University Press",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ],
+                "literal": "2016"
+            },
+            "page": "231–253",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-943423-30-3",
+            "ISSN": null,
+            "URL": "http://hup.sub.uni-hamburg.de/purl/HamburgUP_LASH109_Pogromnacht_Philipsen-162-13",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Bernd",
+                    "family": "Philipsen"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Rainer",
+                    "family": "Hering"
+                }
+            ]
+        },
+        {
+            "id": "Z5GUW7ZD",
+            "citation-label": "schmid_2016",
+            "type": "chapter",
+            "title": "Jüdische Mustersiedlung und Landerziehungsheim Halbe (1919–1926) und Hachschara-Lager Landwerk Halbe (1934–1938)",
+            "container-title": "Tätigkeitsbericht – CGL 2012-2016",
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Hannover",
+            "publisher": "",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ],
+                "literal": "2016"
+            },
+            "page": "105–109",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "",
+            "ISSN": null,
+            "URL": "http://blha-bibliothek.brandenburg.de/de-de/Mediensuche/Einfache-Suche?&top=y&id=3014864",
+            "accessed": {
+                "date-parts": [
+                    [
+                        21,
+                        12,
+                        11
+                    ]
+                ],
+                "literal": "2022-06-16T09:33:41Z"
+            },
+            "language": "de-DE",
+            "author": [
+                {
+                    "given": "Hans-Dieter",
+                    "family": "Schmid"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "",
+                    "family": "Zentrum für Gartenbaukunst und Landschaftsarchitektur Hannover"
+                }
+            ]
+        },
+        {
+            "id": "IJIXJJ94",
+            "citation-label": "schoppmann_2005",
+            "type": "chapter",
+            "title": "„Glückliche Inseln“? „Auf Hachschara“ in Schniebinchen und Jessen in der Niederlausitz",
+            "container-title": "„Gestern sind wir gut hier angekommen.“, Beiträge zur jüdischen Geschichte in der Niederlausitz",
+            "collection-title": "Der Speicher - Jahresschrift des Kreismuseums Finsterwalde und des Vereins der Freunde und Förderer des Kreismuseums Finsterwalde e.V.",
+            "collection-number": "9",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Zittau und Görlitz",
+            "publisher": "Gunter Oettel",
+            "issued": {
+                "date-parts": [
+                    [
+                        2005
+                    ]
+                ],
+                "literal": "2005"
+            },
+            "page": "152-169",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Claudia",
+                    "family": "Schoppmann"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Rainer",
+                    "family": "Ernst"
+                },
+                {
+                    "given": "",
+                    "family": "Kreismuseum Finsterwalde"
+                },
+                {
+                    "given": "",
+                    "family": "Verein der Freunde und Förderer des Kreismuseums Finsterwalde e.V."
+                }
+            ]
+        },
+        {
+            "id": "8ZYRZZK5",
+            "citation-label": "strotdrees_2015",
+            "type": "article-newspaper",
+            "title": "Ein Kibbuz in Westfalen",
+            "container-title": "Jüdische Allgemeine",
+            "collection-title": null,
+            "collection-number": null,
+            "volume": null,
+            "number-of-volumes": null,
+            "edition": "",
+            "publisher-place": "",
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2015,
+                        1,
+                        22
+                    ]
+                ],
+                "literal": "22.01.2015"
+            },
+            "page": "3",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "https://www.juedische-allgemeine.de/kultur/ein-kibbuz-in-westfalen/",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Gisbert",
+                    "family": "Strotdrees"
+                }
+            ]
+        },
+        {
+            "id": "Z3BZKBVY",
+            "citation-label": "tiusanen_1999",
+            "type": "chapter",
+            "title": "Die Auslandshachschara in Dänemark",
+            "container-title": "\"Hachschara\". Die Vorbereitung junger Juden auf die Auswanderung nach Palästina",
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Potsdam",
+            "publisher": "Verlag für Berlin-Brandenburg GmbH",
+            "issued": {
+                "date-parts": [
+                    [
+                        1999
+                    ]
+                ],
+                "literal": "1999"
+            },
+            "page": "S. 89-94",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-932981-50-0",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Juha",
+                    "family": "Tiusanen"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Andreas",
+                    "family": "Paetz"
+                },
+                {
+                    "given": "Karin",
+                    "family": "Weiss"
+                }
+            ]
+        },
+        {
+            "id": "IICYCSA2",
+            "citation-label": "tromm_1999",
+            "type": "chapter",
+            "title": "Der Markenhof als zionistisches Auswanderungslehrgut",
+            "container-title": "„Hachschara“. Die Vorbereitung junger Juden auf die Auswanderung nach Palästina",
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Potsdam",
+            "publisher": "Verlag für Berlin-Brandenburg",
+            "issued": {
+                "date-parts": [
+                    [
+                        1999
+                    ]
+                ],
+                "literal": "1999"
+            },
+            "page": "9–27",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-932981-50-0",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "editor": [
+                {
+                    "given": "Andreas",
+                    "family": "Paetz"
+                },
+                {
+                    "given": "Karin",
+                    "family": "Weiss"
+                }
+            ],
+            "author": [
+                {
+                    "given": "Ulrich",
+                    "family": "Tromm"
+                }
+            ]
+        },
+        {
+            "id": "E9G33M7R",
+            "citation-label": "winkelmann_1996",
+            "type": "chapter",
+            "title": "Die Hachscharah in Külte",
+            "container-title": "Verfolgung und Widerstand in Hessen 1933-1945",
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Frankfurt",
+            "publisher": "Eichborn",
+            "issued": {
+                "date-parts": [
+                    [
+                        1996
+                    ]
+                ],
+                "literal": "1996"
+            },
+            "page": "",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-8218-1735-4",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "editor": [
+                {
+                    "given": "Renate",
+                    "family": "Knigge-Tesche"
+                },
+                {
+                    "given": "Axel",
+                    "family": "Ulrich"
+                }
+            ],
+            "author": [
+                {
+                    "given": "Michael",
+                    "family": "Winkelmann"
+                }
+            ]
+        }
+    ]
+}

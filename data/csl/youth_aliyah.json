@@ -1,0 +1,457 @@
+{
+    "group-id": 4432580,
+    "key": "KBQT8I7D",
+    "data": [
+        {
+            "id": "KBX7EGHE",
+            "citation-label": "amkraut_2006",
+            "type": "book",
+            "title": "Home and Homeland. Youth Aliyah from Nazi Germany",
+            "container-title": null,
+            "collection-title": "Judaic studies series",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Tuscaloosa",
+            "publisher": "University of Alabama Press",
+            "issued": {
+                "date-parts": [
+                    [
+                        2006
+                    ]
+                ],
+                "literal": "2006"
+            },
+            "page": null,
+            "number-of-pages": "232",
+            "DOI": null,
+            "ISBN": "978-0-8173-1513-9",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Brian",
+                    "family": "Amkraut"
+                }
+            ]
+        },
+        {
+            "id": "PLXPWDI4",
+            "citation-label": "bentwich_1944",
+            "type": "book",
+            "title": "Jewish Youth comes home. The story of the Youth Aliyah 1933–1943",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "London",
+            "publisher": "Gollancz",
+            "issued": {
+                "date-parts": [
+                    [
+                        1944
+                    ]
+                ],
+                "literal": "1944"
+            },
+            "page": null,
+            "number-of-pages": "159",
+            "DOI": null,
+            "ISBN": "",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "author": [
+                {
+                    "given": "Norman",
+                    "family": "Bentwich"
+                }
+            ]
+        },
+        {
+            "id": "ZEIGICAG",
+            "citation-label": "lehmann_2020",
+            "type": "chapter",
+            "title": "Die Jugend-Alija als Herausforderung für das Kinder- und Jugenddorf Ben Schemen",
+            "container-title": "Hachschara und Jugend-Alija. Wege jüdischer Jugend nach Palästina 1918-1941",
+            "collection-title": "Steinhorster Beiträge zur Geschichte von Schule, Kindheit und Jugend",
+            "collection-number": "1",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Gifhorn",
+            "publisher": "Gemeinnützige Bildungs- und Kultur GmbH des Landkreises Gifhorn",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "165–193",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-929632-99-6",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "author": [
+                {
+                    "given": "Beate",
+                    "family": "Lehmann"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Ulrike",
+                    "family": "Pilarczyk"
+                },
+                {
+                    "given": "Arne",
+                    "family": "Homann"
+                },
+                {
+                    "given": "Ofer",
+                    "family": "Ashkenazi"
+                }
+            ]
+        },
+        {
+            "id": "C2F3FSYR",
+            "citation-label": "loewy_1997",
+            "type": "book",
+            "title": "Jugend in Palästina. Briefe an die Eltern 1935–1938",
+            "container-title": null,
+            "collection-title": "Bibliothek der Erinnerung",
+            "collection-number": "4",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Berlin",
+            "publisher": "Metropol",
+            "issued": {
+                "date-parts": [
+                    [
+                        1997
+                    ]
+                ],
+                "literal": "1997"
+            },
+            "page": null,
+            "number-of-pages": "243",
+            "DOI": null,
+            "ISBN": "978-3-926893-40-6",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Ernst",
+                    "family": "Loewy"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Brita",
+                    "family": "Eckert"
+                }
+            ]
+        },
+        {
+            "id": "HG689MGZ",
+            "citation-label": "maierhof-et-al_2004",
+            "type": "book",
+            "title": "Die Rettung jüdischer Kinder aus Nazideutschland",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Berlin",
+            "publisher": "Edition Berlin im Metropol Verlag",
+            "issued": {
+                "date-parts": [
+                    [
+                        2004
+                    ]
+                ],
+                "literal": "2004"
+            },
+            "page": null,
+            "number-of-pages": "351",
+            "DOI": null,
+            "ISBN": "978-3-936411-86-7",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "editor": [
+                {
+                    "given": "Gudrun",
+                    "family": "Maierhof"
+                },
+                {
+                    "given": "Chana C.",
+                    "family": "Schütz"
+                },
+                {
+                    "given": "Hermann",
+                    "family": "Simon"
+                }
+            ]
+        },
+        {
+            "id": "I7LVE8ID",
+            "citation-label": "meier_2004",
+            "type": "chapter",
+            "title": "Die Jugend-Alija in Deutschland 1932 bis 1941",
+            "container-title": "Die Rettung jüdischer Kinder aus Nazideutschland",
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Berlin",
+            "publisher": "Edition Berlin im Metropol Verlag",
+            "issued": {
+                "date-parts": [
+                    [
+                        2004
+                    ]
+                ],
+                "literal": "2004"
+            },
+            "page": "70–94",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-936411-86-7",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Alex",
+                    "family": "Meier"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Gudrun",
+                    "family": "Maierhof"
+                },
+                {
+                    "given": "Chana C.",
+                    "family": "Schütz"
+                },
+                {
+                    "given": "Hermann",
+                    "family": "Simon"
+                }
+            ]
+        },
+        {
+            "id": "GFIZWTV4",
+            "citation-label": "szamet_2020",
+            "type": "chapter",
+            "title": "Das erste Jahr. Ideologische Grundlagen und Perspektiven der Bildung in der Jugend-Alija im vorstaatlichen Israel",
+            "container-title": "Hachschara und Jugend-Alija. Wege jüdischer Jugend nach Palästina 1918-1941",
+            "collection-title": "Steinhorster Beiträge zur Geschichte von Schule, Kindheit und Jugend",
+            "collection-number": "1",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Gifhorn",
+            "publisher": "Gemeinnützige Bildungs- und Kultur GmbH des Landkreises Gifhorn",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "165–193",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-929632-99-6",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "author": [
+                {
+                    "given": "Miriam",
+                    "family": "Szamet"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Ulrike",
+                    "family": "Pilarczyk"
+                },
+                {
+                    "given": "Arne",
+                    "family": "Homann"
+                },
+                {
+                    "given": "Ofer",
+                    "family": "Ashkenazi"
+                }
+            ]
+        },
+        {
+            "id": "3DVH59ZQ",
+            "citation-label": "urban_2003",
+            "type": "book",
+            "title": "Rettet die Kinder! Die Jugend-Aliyah 1933–2003, Katalog zur Ausstellung im Jüdischen Museum",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Frankfurt am Main",
+            "publisher": "",
+            "issued": {
+                "date-parts": [
+                    [
+                        2003
+                    ]
+                ],
+                "literal": "2003"
+            },
+            "page": null,
+            "number-of-pages": "",
+            "DOI": null,
+            "ISBN": "",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Susanne",
+                    "family": "Urban"
+                }
+            ]
+        },
+        {
+            "id": "IC6JBQZW",
+            "citation-label": "urban_2006",
+            "type": "chapter",
+            "title": "Die Jugend-Alijah 1932 bis 1940.. Exil in der Fremde oder Heimat in Erez Israel?",
+            "container-title": "Kindheit und Jugend im Exil",
+            "collection-title": "Exilforschung. Ein internationales Jahrbuch",
+            "collection-number": "",
+            "volume": "24",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "",
+            "publisher": "De Gruyter",
+            "issued": {
+                "date-parts": [
+                    [
+                        2006
+                    ]
+                ],
+                "literal": "2006"
+            },
+            "page": "34-61",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-11-242296-0",
+            "ISSN": null,
+            "URL": "https://www.degruyter.com/document/doi/10.1515/9783112422960-003/html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        21,
+                        12,
+                        11
+                    ]
+                ],
+                "literal": "2022-06-16T12:41:46Z"
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Susanne",
+                    "family": "Urban"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Inge",
+                    "family": "Hansen-Schaberg"
+                }
+            ]
+        }
+    ]
+}

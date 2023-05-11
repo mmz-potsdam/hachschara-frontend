@@ -31,7 +31,7 @@
 
         {# TODO: favicon #}
     </head>
-    <body role="document" class="d-flex flex-column min-vh-100">
+    <body role="document" class="d-flex flex-column min-vh-100 route-{{ app.request.get('_route') | replace({'_' : '-'}) }}{% if document_class is defined %} {{ document_class }}{% endif %}">
         {% block navbar %}
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">

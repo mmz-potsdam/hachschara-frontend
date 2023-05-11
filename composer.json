@@ -5,6 +5,14 @@
             "url": "https://github.com/Donkfather/zotero-api"
         },
         {
+            "type": "vcs",
+            "url": "https://github.com/burki/hidden-entity-type-bundle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/burki/LiipUrlAutoConverterBundle.git"
+        },
+        {
             "type": "package",
             "package": {
                 "name": "citation-style-language/locales",
@@ -27,14 +35,6 @@
                     "reference": "master"
                 }
             }
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/burki/hidden-entity-type-bundle.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/burki/LiipUrlAutoConverterBundle.git"
         }
     ],
     "type": "project",
