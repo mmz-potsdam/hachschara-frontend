@@ -70,7 +70,8 @@ extends AbstractController
         ];
 
         foreach ([
-                'creator' => 'creator',
+                'author' => 'creator',
+                'editor' => 'creator',
                 'title' => 'title',
                 'in' => 'in',
                 'volumes' => 'volumes',

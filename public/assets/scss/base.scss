@@ -357,6 +357,14 @@ footer {
         .csl-entry {
             padding-left: 1.5em;
             text-indent: -1.5em;
+
+            .citeproc-creator {
+                font-weight: bold;
+            }
+
+            .citeproc-title ~ .citeproc-creator {
+                font-weight: normal;
+            }
         }
     }
 }
