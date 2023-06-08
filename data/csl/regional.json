@@ -460,51 +460,6 @@
             ]
         },
         {
-            "id": "7ETG5I3B",
-            "citation-label": "fischer_2018",
-            "type": "chapter",
-            "title": "„Umschulungslager“ Eichow. Jüdische Jugend zwischen Auswanderungsvorbereitung und Deportation. Mit einem lokalgeschichtlichen Rückblick",
-            "container-title": "Jahrbuch für brandenburgische Landesgeschichte",
-            "collection-title": "",
-            "collection-number": "",
-            "volume": "69",
-            "number-of-volumes": "",
-            "edition": "",
-            "publisher-place": "",
-            "publisher": "",
-            "issued": {
-                "date-parts": [
-                    [
-                        2018
-                    ]
-                ],
-                "literal": "2018"
-            },
-            "page": "165",
-            "number-of-pages": null,
-            "DOI": null,
-            "ISBN": "",
-            "ISSN": null,
-            "URL": "http://blha-bibliothek.brandenburg.de/de-de/Mediensuche/Einfache-Suche?searchhash=OCLC_9b361156f36904097a55f999e6854004a4f91ec6&top=y&detail=7",
-            "accessed": {
-                "date-parts": [
-                    [
-                        18,
-                        5,
-                        12
-                    ]
-                ],
-                "literal": "2021-11-12T10:53:21Z"
-            },
-            "language": "",
-            "author": [
-                {
-                    "given": "Hubertus",
-                    "family": "Fischer"
-                }
-            ]
-        },
-        {
             "id": "HLIMA39A",
             "citation-label": "fischer_2018",
             "type": "article-journal",
@@ -595,51 +550,6 @@
             ]
         },
         {
-            "id": "67ENTZZ6",
-            "citation-label": "fischer_2019",
-            "type": "article-journal",
-            "title": "Von der „blauen Vogelfarm“ zur „Mittelstandshachscharah“. Der Valentinenhof bei Oranienburg in den 1930er Jahren",
-            "container-title": "Mitteilungsblatt der Landesgeschichtlichen Vereinigung für die Mark Brandenburg e.V.",
-            "collection-title": "",
-            "collection-number": null,
-            "volume": "120",
-            "number-of-volumes": null,
-            "edition": null,
-            "publisher-place": null,
-            "publisher": null,
-            "issued": {
-                "date-parts": [
-                    [
-                        2019
-                    ]
-                ],
-                "literal": "2019"
-            },
-            "page": "15–31",
-            "number-of-pages": null,
-            "DOI": "",
-            "ISBN": null,
-            "ISSN": null,
-            "URL": "http://blha-bibliothek.brandenburg.de/de-de/Mediensuche/Einfache-Suche?search=marienkirche&top=y&page=31&id=3015489",
-            "accessed": {
-                "date-parts": [
-                    [
-                        18,
-                        5,
-                        12
-                    ]
-                ],
-                "literal": "2021-11-12T15:08:09Z"
-            },
-            "language": "de-DE",
-            "author": [
-                {
-                    "given": "Hubertus",
-                    "family": "Fischer"
-                }
-            ]
-        },
-        {
             "id": "YUVVVEIK",
             "citation-label": "fischer_2020",
             "type": "article-journal",
@@ -675,51 +585,6 @@
                 "literal": ""
             },
             "language": "German",
-            "author": [
-                {
-                    "given": "Hubertus",
-                    "family": "Fischer"
-                }
-            ]
-        },
-        {
-            "id": "4UB6M48Y",
-            "citation-label": "fischer_2020",
-            "type": "article-journal",
-            "title": "„Quenzsee“ und „Trockenfeld“. Unbekannte Hachschara-Zentren in Brandenburg und Schlesien während der NS-Zeit",
-            "container-title": "Landesgeschichtliche Vereinigung für die Mark Brandenburg e.V., Mitteilungsblatt",
-            "collection-title": "",
-            "collection-number": null,
-            "volume": "121",
-            "number-of-volumes": null,
-            "edition": null,
-            "publisher-place": null,
-            "publisher": null,
-            "issued": {
-                "date-parts": [
-                    [
-                        2020
-                    ]
-                ],
-                "literal": "2020"
-            },
-            "page": "84–101",
-            "number-of-pages": null,
-            "DOI": "",
-            "ISBN": null,
-            "ISSN": null,
-            "URL": "http://blha-bibliothek.brandenburg.de/de-de/Mediensuche/Einfache-Suche?id=3022969",
-            "accessed": {
-                "date-parts": [
-                    [
-                        21,
-                        12,
-                        11
-                    ]
-                ],
-                "literal": "2022-06-16T10:34:06Z"
-            },
-            "language": "de-DE",
             "author": [
                 {
                     "given": "Hubertus",
@@ -773,6 +638,141 @@
                 {
                     "given": "Dr. Peter",
                     "family": "Bahl u.a."
+                }
+            ]
+        },
+        {
+            "id": "4UB6M48Y",
+            "citation-label": "fischer_2020",
+            "type": "article-journal",
+            "title": "„Quenzsee“ und „Trockenfeld“. Unbekannte Hachschara-Zentren in Brandenburg und Schlesien während der NS-Zeit",
+            "container-title": "Landesgeschichtliche Vereinigung für die Mark Brandenburg e.V., Mitteilungsblatt",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "121",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "84–101",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        21,
+                        12,
+                        11
+                    ]
+                ],
+                "literal": "2022-06-16T10:34:06Z"
+            },
+            "language": "de-DE",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "7ETG5I3B",
+            "citation-label": "fischer_2018",
+            "type": "chapter",
+            "title": "„Umschulungslager“ Eichow. Jüdische Jugend zwischen Auswanderungsvorbereitung und Deportation. Mit einem lokalgeschichtlichen Rückblick",
+            "container-title": "Jahrbuch für brandenburgische Landesgeschichte",
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "69",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "",
+            "publisher": "",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ],
+                "literal": "2018"
+            },
+            "page": "165",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        18,
+                        5,
+                        12
+                    ]
+                ],
+                "literal": "2021-11-12T10:53:21Z"
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "67ENTZZ6",
+            "citation-label": "fischer_2019",
+            "type": "article-journal",
+            "title": "Von der „blauen Vogelfarm“ zur „Mittelstandshachscharah“. Der Valentinenhof bei Oranienburg in den 1930er Jahren",
+            "container-title": "Mitteilungsblatt der Landesgeschichtlichen Vereinigung für die Mark Brandenburg e.V.",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "120",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ],
+                "literal": "2019"
+            },
+            "page": "15–31",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        18,
+                        5,
+                        12
+                    ]
+                ],
+                "literal": "2021-11-12T15:08:09Z"
+            },
+            "language": "de-DE",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
                 }
             ]
         },
@@ -1996,7 +1996,7 @@
             "DOI": null,
             "ISBN": "",
             "ISSN": null,
-            "URL": "http://blha-bibliothek.brandenburg.de/de-de/Mediensuche/Einfache-Suche?&top=y&id=3014864",
+            "URL": "",
             "accessed": {
                 "date-parts": [
                     [
