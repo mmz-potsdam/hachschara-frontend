@@ -5,7 +5,6 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 use Doctrine\ORM\EntityManagerInterface;
@@ -206,11 +205,13 @@ extends BaseController
                     $group = 'birthDeath';
                     $value = [
                         'icon' => 'Place of Death' == $place['label'] ? 'blackIcon' : 'violetIcon',
-                        'html' => sprintf('<b>%s</b>: <a href="%s">%s</a>',
+                        'html' => sprintf('<b>%s</b>: %s',
                                           $place['label'],
+                                          /*
                                           htmlspecialchars($this->generateUrl('place-by-tgn', [
                                                'tgn' => $place['info']['tgn'],
                                           ])),
+                                          */
                                           htmlspecialchars($place['info']['name'], ENT_QUOTES))
                     ];
                     break;
@@ -219,34 +220,17 @@ extends BaseController
                     $group = 'birthDeath';
                     $value = [
                         'icon' => 'yellowIcon',
-                        'html' => sprintf('<b>%s</b>: %s<a href="%s">%s</a>',
+                        'html' => sprintf('<b>%s</b>: %s%s',
                                           $place['label'],
                                           !empty($place['info']['address']['address'])
                                             ? htmlspecialchars($place['info']['address']['address'], ENT_QUOTES) . ', '
                                             : '',
+                                          /*
                                           htmlspecialchars($this->generateUrl('place-by-tgn', [
                                                'tgn' => $place['info']['tgn'],
                                           ])),
+                                          */
                                           htmlspecialchars($place['info']['name'], ENT_QUOTES))
-                    ];
-                    break;
-
-                case 'Exhibition':
-                    $group = 'exhibition';
-                    $exhibition = $place['info']['exhibition'];
-                    $value = [
-                        'icon' => 'blueIcon',
-                        'html' =>  sprintf('<a href="%s">%s</a> at <a href="%s">%s</a> (%s)',
-                                htmlspecialchars($this->generateUrl('exhibition', [
-                                    'id' => $exhibition->getId(),
-                                ])),
-                                htmlspecialchars($exhibition->getTitleListing(), ENT_QUOTES),
-                                htmlspecialchars($this->generateUrl('location', [
-                                    'id' => $exhibition->getLocation()->getId(),
-                                ])),
-                                htmlspecialchars($exhibition->getLocation()->getNameListing(), ENT_QUOTES),
-                                $this->buildDisplayDate($exhibition)
-                        ),
                     ];
                     break;
             }
