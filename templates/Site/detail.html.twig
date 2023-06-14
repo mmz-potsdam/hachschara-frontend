@@ -14,6 +14,8 @@
     {{ helper.site_license(site.license) }}
 {% endmacro %}
 
+{% block title %}{{ site.name(app.request.locale) }} | {{ parent() }} {% endblock %}
+
 {% block head %}
     {{ map.head() }}
     <!-- https://simplelightbox.com/ -->

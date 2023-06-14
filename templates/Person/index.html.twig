@@ -2,6 +2,8 @@
 
 {% import 'Shared/helper.html.twig' as helper %}
 
+{% block title %}{{ 'Persons'|trans }} | {{ parent() }} {% endblock %}
+
 {% block body %}
     <h1>{{ 'Persons'|trans }}</h1>
     {#

@@ -1,5 +1,7 @@
 {% extends 'Base/base.html.twig' %}
 
+{% block title %}{{ 'The Network'|trans }} | {{ parent() }} {% endblock %}
+
 {% block body %}
     <h1>{{ 'The Network'|trans }}</h1>
     <p>
@@ -23,5 +25,5 @@
     {% for row in users %}
         <a href="{{ path('user', { 'id': row.id }) }}">{{ row.fullName(true) }}</a><br />
     {% endfor %}
-{% endif %}
+    {% endif %}
 {% endblock %}

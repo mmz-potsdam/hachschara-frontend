@@ -1,5 +1,7 @@
 {% extends 'Base/base.html.twig' %}
 
+{% block title %}{{ 'Glossary' | trans }} | {{ parent() }} {% endblock %}
+
 {% block body %}
     <h1>{{ 'Glossary' | trans }}</h1>
     {% if terms is not empty %}
