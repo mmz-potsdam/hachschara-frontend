@@ -352,6 +352,39 @@ footer {
 }
 
 /* route-specific styles */
+.route-home {
+    #banner {
+        a {
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .wrapper {
+        h2, h3 {
+            border-bottom: 1px solid $color-body-text;
+        }
+
+        h2 {
+            margin-bottom: 16px;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+    }
+
+    a.bold {
+        font-weight: bold;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
 .route-bibliography-index {
     .csl-bib-body {
         .csl-entry {
