@@ -49,6 +49,26 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Menu\Builder:
+        arguments: [ "@knp_menu.factory", "@translator.default", "@request_stack", "@router"  ]
+        tags:
+            # The alias is what is used to retrieve the menu
+            - { name: knp_menu.menu_builder, method: createMainMenu, alias: main }
+
+    App\Menu\Renderer:
+        arguments:
+            - '@knp_menu.matcher'
+            - '%knp_menu.renderer.list.options%'
+            - '%kernel.charset%'
+            # add your own dependencies here
+            - '@request_stack'
+            - '@router'
+            - '%jms_i18n_routing.locales%'
+        tags:
+            # The alias is what is used to retrieve the menu
+            - { name: knp_menu.renderer, alias: custom }
+
     App\Utils\MpdfConverter:
         arguments: [ '%app.mpdf-converter.arguments%' ]
 

@@ -168,7 +168,7 @@ ul.inverse {
         }
 
         .nav-item {
-            &:hover {
+            &:hover, &.current {
                 background-color: $color-background-inverse;
             }
         }
