@@ -11,30 +11,6 @@
         {
             "type": "vcs",
             "url": "https://github.com/burki/LiipUrlAutoConverterBundle.git"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "citation-style-language/locales",
-                "version": "1.0.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/citation-style-language/locales.git",
-                    "reference": "master"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "citation-style-language/styles-distribution",
-                "version": "1.0.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/citation-style-language/styles-distribution.git",
-                    "reference": "master"
-                }
-            }
         }
     ],
     "type": "project",
@@ -70,7 +46,7 @@
         "phpdocumentor/reflection-docblock": "^5.3",
         "presta/sitemap-bundle": "^3.3",
         "scienta/doctrine-json-functions": "^5.3",
-        "seboettg/citeproc-php": "2.4.1",
+        "seboettg/citeproc-php": "^2.6",
         "symfony/asset": "^5.4",
         "symfony/console": "^5.4",
         "symfony/dotenv": "^5.4",
