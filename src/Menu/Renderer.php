@@ -17,8 +17,8 @@ class Renderer extends \Knp\Menu\Renderer\ListRenderer
     protected $locales;
 
     public function __construct(MatcherInterface $matcher,
-                                array $defaultOptions = [],
-                                string $charset = null,
+                                array $defaultOptions,
+                                string $charset,
                                 RequestStack $requestStack,
                                 RouterInterface $router,
                                 array $locales = [])
