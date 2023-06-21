@@ -6,7 +6,6 @@
     <link href="http://www.zotero.org/styles/infoclio-de" rel="self"/>
     <link href="http://www.zotero.org/styles/infoclio-fr-smallcaps" rel="template"/>
     <link href="https://www.infoclio.ch/de/node/133932" rel="documentation"/>
-    -->
     <summary>Citation Style for https://exhibitions05-15.kugb.univie.ac.at/. Based on http://www.zotero.org/styles/infoclio-de</summary>
     <author>
       <name>Daniel Burckhardt</name>
@@ -243,9 +242,11 @@
         <group delimiter="&#160;">
           <number variable="volume"/>
           <number variable="issue" prefix="(" suffix=")"/>
-          <if variable="issued">
-            <date variable="issued" form="numeric" date-parts="day-month-year" prefix="(" suffix=")"/>
-          </if>
+          <choose>
+            <if variable="issued">
+              <date variable="issued" form="numeric" date-parts="day-month-year" prefix="(" suffix=")"/>
+            </if>
+          </choose>
         </group>
       </if>
       <else-if type="report song broadcast" match="any">
@@ -356,10 +357,10 @@
           <if variable="issued">
             <choose>
               <if is-numeric="edition">
-                <number vertical-align="super" variable="edition"/>
+                <number vertical-align="sup" variable="edition"/>
               </if>
               <else>
-                <text vertical-align="super" variable="edition"/>
+                <text vertical-align="sup" variable="edition"/>
               </else>
             </choose>
             <date variable="issued" form="numeric" date-parts="year"/>
