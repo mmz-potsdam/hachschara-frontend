@@ -7,21 +7,29 @@ use Doctrine\ORM\EntityManagerInterface;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Spatie\SchemaOrg\Schema;
 
 /**
  * DefaultController for home- and about-pages
  */
 class DefaultController
-extends AbstractController
+extends BaseController
 {
     /**
      * @Route("/", name="home")
      */
-    public function homeAction()
+    public function homeAction(TranslatorInterface $translator)
     {
-        return $this->render('Default/home.html.twig');
+        $schema = Schema::webSite()
+            ->name($translator->trans($this->getGlobal('site_name'), [], 'additional'))
+            ->description($translator->trans('site.description', [], 'additional'))
+            ;
+
+        return $this->render('Default/home.html.twig', [
+            'schema' => $schema,
+        ]);
     }
 
     /**

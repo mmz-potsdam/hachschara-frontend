@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Intl\Countries;
 
 use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\CssSelector\XPath\TranslatorInterface;
 
 /**
  * Common Base
@@ -17,11 +18,15 @@ abstract class BaseController
 extends AbstractController
 {
     protected $kernel;
+    protected $twigEnvironment;
+    protected $globals = null;
     protected $pageSize = 50;
 
-    public function __construct(KernelInterface $kernel)
+    public function __construct(KernelInterface $kernel,
+                                \Twig\Environment $twigEnvironment)
     {
         $this->kernel = $kernel;
+        $this->twigEnvironment = $twigEnvironment;
     }
 
     protected function expandCountryCode($countryCode, $labelUnknown = '[unknown]')
@@ -36,6 +41,16 @@ extends AbstractController
     protected function getDataDir()
     {
         return $this->kernel->getProjectDir() . '/data';
+    }
+
+    protected function getGlobal($key)
+    {
+        if (is_null($this->globals)) {
+            $this->globals = $this->twigEnvironment->getGlobals();
+        }
+
+        return array_key_exists($key, $this->globals)
+            ? $this->globals[$key] : null;
     }
 
     protected function buildPagination(Request $request,

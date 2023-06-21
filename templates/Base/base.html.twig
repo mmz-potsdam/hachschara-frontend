@@ -26,6 +26,10 @@
         {# slim-version of jquery doesn't work for tetranz/select2entity-bundle #}
         <script src="{{ app.request.basepath }}/js/jquery-3.6.0.min.js"></script>
 
+        {% if schema is defined and schema is not empty %}
+            {{ schema.toScript()|raw }}
+        {% endif %}
+
         {# for template-specific includes #}
         {% block head %}{% endblock head %}
 
