@@ -11,6 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="User")
  */
 class User
+implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
 {
     use HasTranslationsTrait;
 
@@ -448,5 +449,88 @@ class User
         return $givenNameFirst
             ? implode(' ', array_reverse($parts))
             : implode(', ', $parts);
+    }
+
+    public function jsonSerialize(): array
+    {
+        return [
+            'id' => $this->id,
+            'fullname' => $this->getFullname(),
+            'honorificPrefix' => $this->getHonorificPrefix(),
+            'description' => $this->getDescription(),
+            'gender' => $this->getGender(),
+            'gnd' => $this->gnd,
+            'slug' => $this->slug,
+        ];
+    }
+
+    public function jsonLdSerialize($locale, $omitContext = false)
+    {
+        static $genderMap = [
+            'F' => 'http://schema.org/Female',
+            'M' => 'http://schema.org/Male',
+        ];
+
+        $ret = [
+            '@context' => 'http://schema.org',
+            '@type' => 'Person',
+            'name' => $this->getFullname(true),
+        ];
+        if ($omitContext) {
+            unset($ret['@context']);
+        }
+
+        /*
+        foreach ([ 'birth', 'death'] as $lifespan) {
+            $property = $lifespan . 'Date';
+            if (!empty($this->$property)) {
+                $ret[$property] = \App\Utils\JsonLd::formatDate8601($this->$property);
+            }
+
+            $property = $lifespan . 'Place';
+            if (!is_null($this->$property)) {
+                $ret[$property] = $this->$property->jsonLdSerialize($locale, true);
+            }
+        }
+        */
+
+        $description = $this->getDescription($locale);
+        if (!empty($description)) {
+            $ret['description'] = $description;
+        }
+
+        foreach ([ 'givenName', 'familyName', 'url' ] as $property) {
+            if (!empty($this->$property)) {
+                $ret[$property] = $this->$property;
+
+            }
+        }
+
+        if (!empty($this->honorificPrefix)) {
+            $ret['honorificPrefix'] = $this->honorificPrefix;
+        }
+
+        if (!is_null($this->gender) && array_key_exists($this->gender, $genderMap)) {
+            $ret['gender'] = $genderMap[$this->gender];
+        }
+
+        $sameAs = [];
+        if (!empty($this->ulan)) {
+            $sameAs[] = 'http://vocab.getty.edu/ulan/' . $this->ulan;
+        }
+
+        if (!empty($this->gnd)) {
+            $sameAs[] = 'https://d-nb.info/gnd/' . $this->gnd;
+        }
+
+        if (!empty($this->wikidata)) {
+            $sameAs[] = 'http://www.wikidata.org/entity/' . $this->wikidata;
+        }
+
+        if (count($sameAs) > 0) {
+            $ret['sameAs'] = (1 == count($sameAs)) ? $sameAs[0] : $sameAs;
+        }
+
+        return $ret;
     }
 }
