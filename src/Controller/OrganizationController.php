@@ -1,11 +1,11 @@
 <?php
+// src/Controller/OrganizationController.php
 
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 use Doctrine\ORM\EntityManagerInterface;
@@ -57,8 +57,8 @@ extends BaseController
     }
 
     /**
-     * @Route("/organization/gnd/{gnd}.jsonld", requirements={"gnd"="[0-9xX]+"}, name="organization-by-gnd-jsonld")
-     * @Route("/organization/gnd/{gnd}", requirements={"gnd"="[0-9xX]+"}, name="organization-by-gnd")
+     * @Route("/organization/gnd/{gnd}.jsonld", requirements={"gnd"="[0-9xX\-]+"}, name="organization-by-gnd-jsonld")
+     * @Route("/organization/gnd/{gnd}", requirements={"gnd"="[0-9xX\-]+"}, name="organization-by-gnd")
      * @Route("/organization/{id}.jsonld", name="organization-jsonld", requirements={"id"="\d+"})
      * @Route("/organization/{id}", name="organization", requirements={"id"="\d+"})
      */
