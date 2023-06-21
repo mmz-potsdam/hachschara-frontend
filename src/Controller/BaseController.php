@@ -1,4 +1,5 @@
 <?php
+// src/Controller/BaseController.php
 
 namespace App\Controller;
 
@@ -7,16 +8,16 @@ use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Intl\Countries;
 
-use Doctrine\Persistence\ManagerRegistry;
 use Knp\Component\Pager\PaginatorInterface;
 
 /**
- *
+ * Common Base
  */
-class BaseController
+abstract class BaseController
 extends AbstractController
 {
     protected $kernel;
+    protected $pageSize = 50;
 
     public function __construct(KernelInterface $kernel)
     {

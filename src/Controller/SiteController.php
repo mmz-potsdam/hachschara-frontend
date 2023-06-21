@@ -1,4 +1,5 @@
 <?php
+// src/Controller/BibliographyController.php
 
 namespace App\Controller;
 

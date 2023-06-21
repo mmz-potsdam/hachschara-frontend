@@ -1,4 +1,5 @@
 <?php
+// src/Controller/DefaultController.php
 
 namespace App\Controller;
 
