@@ -26,8 +26,54 @@
         {# slim-version of jquery doesn't work for tetranz/select2entity-bundle #}
         <script src="{{ app.request.basepath }}/js/jquery-3.6.0.min.js"></script>
 
+        {% set schema_writen = false %}
         {% if schema is defined and schema is not empty %}
             {{ schema.toScript()|raw }}
+            {% set schema_writen = true %}
+        {% endif %}
+
+        {% if pageMeta is defined %}
+            {% if pageMeta.description is defined %}
+            <meta name="description" content="{{ pageMeta.description }}">
+            {% endif %}
+            {% if pageMeta.og is defined %}
+                {% for prop, val in pageMeta.og %}
+                    {% if val is iterable %}
+                        {% for single_val in val %}
+        <meta property="{{ prop }}" content="{{ single_val }}">
+                        {% endfor %}
+                    {% else %}
+        <meta property="{{ prop }}" content="{{ val }}">
+        {% if prop == 'og:description' and pageMeta.description is not defined %}
+        {# duplicate tag #}
+        <meta name="description" content="{{ val }}">
+        {% endif %}
+                    {% endif %}
+                {% endfor %}
+                {% if pageMeta.og['og:url'] is defined %}
+        <link rel="canonical" href="{{ pageMeta.og['og:url'] }}">
+                {% endif %}
+            {% elseif pageMeta.canonical is defined and pageMeta.canonical is not empty %}
+        <link rel="canonical" href="{{ pageMeta.canonical }}">
+            {% endif %}
+            {% if pageMeta.twitter is defined %}
+                {% for prop, val in pageMeta.twitter %}
+                    {% if val is iterable %}
+                        {% for single_val in val %}
+        <meta name="{{ prop }}" content="{{ single_val }}">
+                        {% endfor %}
+                    {% else %}
+        <meta name="{{ prop }}" content="{{ val }}">
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            {% if not schema_writen and pageMeta.jsonLd is defined %}
+        <script type="application/ld+json">
+            {{ pageMeta.jsonLd|json_encode(constant('JSON_UNESCAPED_UNICODE'))|raw }}
+        </script>
+            {% endif %}
+        {% elseif pageTitle is defined %}
+        <meta property="og:title" content="{{ pageTitle }}">
         {% endif %}
 
         {# for template-specific includes #}
