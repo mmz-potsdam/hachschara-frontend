@@ -367,16 +367,16 @@
         },
         {
             "name": "citation-style-language/styles",
-            "version": "v0.0.272",
+            "version": "v0.0.277",
             "source": {
                 "type": "git",
                 "url": "https://github.com/citation-style-language/styles.git",
-                "reference": "80b3861bce121a64d43ef167581f8d100a4f70aa"
+                "reference": "a97dbb32c57c8c00e47422dae4ba4f480e753da5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/citation-style-language/styles/zipball/80b3861bce121a64d43ef167581f8d100a4f70aa",
-                "reference": "80b3861bce121a64d43ef167581f8d100a4f70aa",
+                "url": "https://api.github.com/repos/citation-style-language/styles/zipball/a97dbb32c57c8c00e47422dae4ba4f480e753da5",
+                "reference": "a97dbb32c57c8c00e47422dae4ba4f480e753da5",
                 "shasum": ""
             },
             "type": "library",
@@ -394,7 +394,7 @@
             "homepage": "http://citationstyles.org/",
             "support": {
                 "issues": "https://github.com/citation-style-language/styles/issues",
-                "source": "https://github.com/citation-style-language/styles/tree/v0.0.272"
+                "source": "https://github.com/citation-style-language/styles/tree/v0.0.277"
             },
             "funding": [
                 {
@@ -402,7 +402,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-06-27T02:11:19+00:00"
+            "time": "2023-07-14T15:27:20+00:00"
         },
         {
             "name": "cocur/slugify",
@@ -2586,16 +2586,16 @@
         },
         {
             "name": "ifedko/php-doctrine-dbal-pagination",
-            "version": "3.0.2",
+            "version": "3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ifedko/php-doctrine-dbal-pagination.git",
-                "reference": "642bde8921b12790430202d61b728664da3e0ae8"
+                "reference": "2ef0d13829d27707b454a6f990f22822a6c8ad4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ifedko/php-doctrine-dbal-pagination/zipball/642bde8921b12790430202d61b728664da3e0ae8",
-                "reference": "642bde8921b12790430202d61b728664da3e0ae8",
+                "url": "https://api.github.com/repos/ifedko/php-doctrine-dbal-pagination/zipball/2ef0d13829d27707b454a6f990f22822a6c8ad4b",
+                "reference": "2ef0d13829d27707b454a6f990f22822a6c8ad4b",
                 "shasum": ""
             },
             "require": {
@@ -2631,9 +2631,9 @@
             "description": "Php pagination builder using doctrine dbal",
             "support": {
                 "issues": "https://github.com/ifedko/php-doctrine-dbal-pagination/issues",
-                "source": "https://github.com/ifedko/php-doctrine-dbal-pagination/tree/3.0.2"
+                "source": "https://github.com/ifedko/php-doctrine-dbal-pagination/tree/3.0.3"
             },
-            "time": "2022-03-17T09:36:16+00:00"
+            "time": "2023-07-13T14:02:02+00:00"
         },
         {
             "name": "jms/i18n-routing-bundle",
