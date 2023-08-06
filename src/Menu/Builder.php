@@ -116,7 +116,7 @@ class Builder
             ]);
 
         $menu->addChild('about', [
-            'label' => $this->translator->trans('Über'),
+            'label' => $this->translator->trans('About'),
             'route' => 'about',
             'attributes' => [
                 'id' => 'dropdownAboutMenuButton',
