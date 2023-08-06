@@ -6,11 +6,7 @@
         },
         {
             "type": "vcs",
-            "url": "https://github.com/burki/hidden-entity-type-bundle.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/burki/LiipUrlAutoConverterBundle.git"
+            "url": "https://github.com/burki/LiipUrlAutoConverterBundle"
         }
     ],
     "type": "project",
