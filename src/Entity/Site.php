@@ -807,53 +807,109 @@ implements JsonLdSerializable
     {
         $ret = [
             '@context' => 'http://schema.org',
-            '@type' => 'CreateAction',
-            'name' => $this->getName(),
+            '@type' => 'Article',
+            'name' => $this->getName($locale),
+            'headline' => $this->getName($locale),
         ];
 
         if ($omitContext) {
             unset($ret['@context']);
         }
 
-        foreach ([ 'start', 'end'] as $key) {
-            $property = $key . 'date';
-            if (!empty($this->$property)) {
-                $ret[$property . 'Time'] = \AppBundle\Utils\JsonLd::formatDate8601($this->$property);
+        if (!is_null($this->datePublished)) {
+            $ret['datePublished'] = \App\Utils\JsonLd::formatDate8601($this->datePublished);
+
+            if (!is_null($this->dateModified)) {
+                $dateModified = \App\Utils\JsonLd::formatDate8601($this->dateModified);
+
+                if ($dateModified != $ret['datePublished']) {
+                    $ret['dateModified'] = $dateModified;
+                }
             }
         }
 
-        if (!empty($this->location)) {
-            $ret['location'] = [
-                '@type' => 'Place',
-                'name' => $this->location->getName(),
+        $authors = [];
+        foreach ($this->getAuthors() as $author) {
+            $authors[] = $author->jsonLdSerialize($locale, true);
+        }
+
+        if (count($authors) > 0) {
+            $ret['author'] = (1 == count($authors)) ? $authors[0] : $authors;
+        }
+
+        $about = [
+            '@type' => 'LandmarksOrHistoricalBuildings',
+            'name' => $this->getName($locale),
+        ];
+
+        // TODO: move to App\Utils\JsonLd
+        $geo = $this->getGeo();
+        if (!(empty($geo) || false === strpos($geo, ','))) {
+            list($lat, $long) = explode(',', $geo, 2);
+            $about['geo'] = [
+                '@type' => 'GeoCoordinates',
+                'latitude' =>  (double)$lat,
+                'longitude' => (double)$long,
             ];
-
-            // TODO
-            $addresses = [];
-            /*
-            $addresses = array_map(function ($address) { return $address['info']; }, $this->location->getAddressesSeparated());
-            if (!empty($addresses)) {
-                $ret['location']['address'] = join(', ', $addresses);
-            }
-            */
-
-            /*
-            // TODO
-            $place = $this->location->getPlace();
-            if (!empty($place)) {
-                $ret['location']['containedInPlace'] = $place->jsonLdSerialize($locale, true);
-            }
-            */
         }
 
-        $description = $this->getDescriptionLocalized($locale);
-        if (!empty($description)) {
-            $ret['description'] = $description;
+        $address = [];
+
+        if (!empty($this->streetAddress)) {
+            $address['streetAddress'] = $this->streetAddress;
+        };
+
+        if (!empty($this->postalCode)) {
+            $address['postalCode'] = $this->postalCode;
+        }
+
+        if (!empty($address)) {
+            $about['address'] = [
+                '@type' => 'PostalAddress',
+                'addressLocality' => $this->locationLabel
+            ] + $address;
+        }
+
+        if (!is_null($this->location)) {
+            $about['containedInPlace'] = $this->location->jsonLdSerialize($locale, true);
+        }
+
+        if (false) {
+            foreach ([ 'start', 'end'] as $key) {
+                $property = $key . 'date';
+                if (!empty($this->$property)) {
+                    $ret[$property . 'Time'] = \AppBundle\Utils\JsonLd::formatDate8601($this->$property);
+                }
+            }
         }
 
         foreach ([ 'url' ] as $property) {
             if (!empty($this->$property)) {
-                $ret[$property] = $this->$property;
+                $about[$property] = $this->$property;
+            }
+        }
+
+        $ret['about'] = $about;
+
+        $description = $this->getDescriptionLocalized($locale);
+        if (!empty($description)) {
+            $ret['articleBody'] = $description;
+        }
+
+        if (!empty($this->license)) {
+            switch ($this->license) {
+                case '#public-domain':
+                    $ret['license'] = 'https://creativecommons.org/publicdomain/mark/1.0/deed.' . $locale;
+                    break;
+
+                case 'CC BY-NC-ND':
+                    $parts = explode(' ', $this->license, 2);
+                    $ret['license'] = sprintf('https://creativecommons.org/licenses/%s/4.0/',
+                                              strtolower($parts[1]));
+                    break;
+
+                default:
+                    $ret['license'] = $this->license;
             }
         }
 

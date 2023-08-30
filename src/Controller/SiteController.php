@@ -1,5 +1,5 @@
 <?php
-// src/Controller/BibliographyController.php
+// src/Controller/SiteController.php
 
 namespace App\Controller;
 
@@ -152,9 +152,6 @@ extends BaseController
         $routeParams = [ 'id' => $entity->getId() ];
 
         $locale = $request->getLocale();
-        if (in_array($routeName, [ 'site-jsonld' ])) {
-            return new JsonLdResponse($entity->jsonLdSerialize($locale));
-        }
 
         if ($entity->hasInfo()) {
             $citeProc = $this->instantiateCiteProc($locale);
@@ -166,7 +163,9 @@ extends BaseController
             $entity->buildContributorFull($entityManager);
         }
 
-        $locale = $request->getLocale();
+        if (in_array($routeName, [ 'site-jsonld' ])) {
+            return new JsonLdResponse($entity->jsonLdSerialize($locale));
+        }
 
         if (in_array($routeName, [ 'site-pdf' ])) {
             $html = $this->renderView('Site/detail.html.twig', [
