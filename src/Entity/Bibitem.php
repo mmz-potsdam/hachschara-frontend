@@ -979,7 +979,9 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     public function renderCitationAsHtml($citeProc, $extended = false)
     {
         $data = json_decode(json_encode($this->jsonSerialize()));
-        // var_dump($data);
+        if (property_exists($data, 'issued') && is_null($data->issued->literal)) {
+            unset($data->issued);
+        }
 
         $ret = $citeProc->render([ $data ]);
 
