@@ -23,7 +23,7 @@
         "citation-style-language/locales": "@dev",
         "cocur/slugify": "^4.3",
         "composer/package-versions-deprecated": "1.11.99.4",
-        "doctrine/annotations": "^1.0",
+        "doctrine/annotations": "^1.6|^2.0",
         "doctrine/doctrine-bundle": "^2.7",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/inflector": "^2.0",
