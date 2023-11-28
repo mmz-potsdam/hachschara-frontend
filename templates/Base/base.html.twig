@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app.request.getLocale() }}">
+<html class="no-js" lang="{{ app.request.getLocale() }}{% if 'en' == app.request.getLocale() %}-us{% endif %}">
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -109,7 +109,7 @@
                 {% endif %}
                 </ul>
             </nav>
-        </div>
+        </div><!-- .container -->
 
         <nav id="navigation-main-wrapper" class="navbar navbar-expand-md navbar-light">
             <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbarToggler">
