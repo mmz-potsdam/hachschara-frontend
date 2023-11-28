@@ -21,7 +21,7 @@
         "beberlei/doctrineextensions": "@stable",
         "box/spout": "^3.3",
         "citation-style-language/locales": "@dev",
-        "cocur/slugify": "4.4.*",
+        "cocur/slugify": "^4.4",
         "composer/package-versions-deprecated": "1.11.99.4",
         "doctrine/annotations": "^1.6|^2.0",
         "doctrine/doctrine-bundle": "^2.7",
@@ -132,6 +132,7 @@
         ]
     },
     "conflict": {
+        "cocur/slugify": "4.5.0",
         "symfony/symfony": "*"
     },
     "extra": {
