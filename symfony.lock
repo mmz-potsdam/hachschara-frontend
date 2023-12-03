@@ -114,11 +114,11 @@
     "gedmo/doctrine-extensions": {
         "version": "v3.1.0"
     },
+    "gjuric/i18n-routing-bundle": {
+        "version": "3.2.2"
+    },
     "ifedko/php-doctrine-dbal-pagination": {
         "version": "2.1.1"
-    },
-    "jms/i18n-routing-bundle": {
-        "version": "3.0.4"
     },
     "jms/translation-bundle": {
         "version": "1.6.0"
