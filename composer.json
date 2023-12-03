@@ -12,12 +12,12 @@
     "type": "project",
     "license": "proprietary",
     "require": {
-        "php": "^7.3|^8.1",
+        "php": "^7.4|^8.1",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-intl": "*",
         "armin/scssphp-bundle": "^1.2",
-        "babdev/pagerfanta-bundle": "^2.10",
+        "babdev/pagerfanta-bundle": "^3.8",
         "beberlei/doctrineextensions": "@stable",
         "box/spout": "^3.3",
         "citation-style-language/locales": "@dev",
@@ -32,7 +32,7 @@
         "hedii/zotero-api": "dev-master#c296090a23e557bd7b38c7f10132ada6bc333631",
         "ifedko/php-doctrine-dbal-pagination": "^3.0",
         "jms/i18n-routing-bundle": "^3.1",
-        "jms/translation-bundle": "^1.7",
+        "jms/translation-bundle": "^2.0",
         "knplabs/knp-menu-bundle": "^3.2",
         "knplabs/knp-paginator-bundle": "^5.9",
         "liip/url-auto-converter-bundle": "dev-master",
@@ -93,7 +93,7 @@
             "symfony/runtime": true
         },
         "platform": {
-            "php": "7.3.0"
+            "php": "7.4.0"
         },
         "preferred-install": {
             "*": "dist"
