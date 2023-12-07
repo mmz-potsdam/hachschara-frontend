@@ -85,7 +85,7 @@ extends BaseController
             'person' => $user,
             'sites' => $sites,
             'pageMeta' => [
-                // 'jsonLd' => $user->jsonLdSerialize($locale),
+                'jsonLd' => $user->jsonLdSerialize($locale),
                 // 'og' => $this->buildOg($user, $routeName, $routeParams),
                 // 'twitter' => $this->buildTwitter($user, $routeName, $routeParams),
             ],
