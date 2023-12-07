@@ -187,6 +187,13 @@ implements JsonLdSerializable
     /**
      * @var array
      *
+     * @ORM\Column(name="abstract", type="json", length=65535, nullable=true)
+     */
+    private $abstract;
+
+    /**
+     * @var array
+     *
      * @ORM\Column(name="description", type="json", length=65535, nullable=true)
      */
     private $description;
@@ -697,6 +704,16 @@ implements JsonLdSerializable
     }
 
     /**
+     * Gets localized abstract.
+     *
+     * @return string|null
+     */
+    public function getAbstractLocalized($locale = 'de')
+    {
+        return $this->getLocalizedProperty('abstract', $locale);
+    }
+
+    /**
      * Gets localized description.
      *
      * @return string|null
@@ -890,6 +907,11 @@ implements JsonLdSerializable
         }
 
         $ret['about'] = $about;
+
+        $abstract = $this->getAbstractLocalized($locale);
+        if (!empty($abstract)) {
+            $ret['description'] = $abstract;
+        }
 
         $description = $this->getDescriptionLocalized($locale);
         if (!empty($description)) {
