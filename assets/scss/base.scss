@@ -386,6 +386,28 @@ footer {
 }
 
 .route-bibliography-index {
+    .nav-tabs {
+        border-bottom: none;
+
+        .nav-link {
+            background-color: $color-background-inverse;
+
+            border: none;
+            border-radius: 0;
+
+            color: $color-body-inverse;
+
+            &.active {
+                background-color: $color-body-text;
+                color: $color-body-inverse;
+            }
+        }
+    }
+
+    .tab-content {
+        border: 1px solid $color-body-text;
+    }
+
     .csl-bib-body {
         .csl-entry {
             padding-left: 1.5em;
