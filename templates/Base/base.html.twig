@@ -30,11 +30,28 @@
         {% if schema is defined and schema is not empty %}
             {{ schema.toScript()|raw }}
             {% set schema_writen = true %}
+            {% if pageMeta is not defined or pageMeta.description is not defined %}
+                {% set description = schema.getProperty('description') %}
+                {% if description is not empty %}
+                    {% if pageMeta is not defined %}
+                        {% set pageMeta = { description: description } %}
+                    {% else %}
+                        {% set pageMeta = pageMeta|merge({ description: description }) %}
+                    {% endif %}
+                {% endif %}
+            {% endif %}
         {% endif %}
 
         {% if pageMeta is defined %}
+            {% if not schema_writen and pageMeta.jsonLd is defined %}
+        <script type="application/ld+json">
+            {{ pageMeta.jsonLd|json_encode(constant('JSON_UNESCAPED_UNICODE'))|raw }}
+        </script>
+            {% endif %}
             {% if pageMeta.description is defined %}
             <meta name="description" content="{{ pageMeta.description }}">
+            {% elseif pageMeta.jsonLd is defined and pageMeta.jsonLd.description is defined %}
+            <meta name="description" content="{{ pageMeta.jsonLd.description }}">
             {% endif %}
             {% if pageMeta.og is defined %}
                 {% for prop, val in pageMeta.og %}
@@ -66,11 +83,6 @@
         <meta name="{{ prop }}" content="{{ val }}">
                     {% endif %}
                 {% endfor %}
-            {% endif %}
-            {% if not schema_writen and pageMeta.jsonLd is defined %}
-        <script type="application/ld+json">
-            {{ pageMeta.jsonLd|json_encode(constant('JSON_UNESCAPED_UNICODE'))|raw }}
-        </script>
             {% endif %}
         {% elseif pageTitle is defined %}
         <meta property="og:title" content="{{ pageTitle }}">
