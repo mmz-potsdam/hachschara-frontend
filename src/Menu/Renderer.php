@@ -42,28 +42,30 @@ class Renderer extends \Knp\Menu\Renderer\ListRenderer
 
             $currentLocale = $request->getLocale();
 
-            $routeName = $request->attributes->get('_route');
-            $routeParameters = $request->attributes->get('_route_params');
+            $routeName = $request->attributes->get('_route'); // can be null on 404
 
-            //
-            $prepend = '<li class="nav-item d-md-none"><ul class="text-end list-inline">';
-            for ($i = 0; $i < count($this->locales); $i++) {
-                $last = $i == count($this->locales) - 1;
+            if (!empty($routeName)) {
+                $routeParameters = $request->attributes->get('_route_params');
 
-                $locale = $this->locales[$i];
-                $routeParameters['_locale'] = $locale;
+                $prepend = '<li class="nav-item d-md-none"><ul class="text-end list-inline">';
+                for ($i = 0; $i < count($this->locales); $i++) {
+                    $last = $i == count($this->locales) - 1;
 
-                $a = sprintf('<a class="nav-link%s" href="%s">%s</a>',
-                             $last ? '' : ' divider',
-                             $this->router->generate($routeName, $routeParameters),
-                             mb_strtoupper($locale, 'UTF-8'));
+                    $locale = $this->locales[$i];
+                    $routeParameters['_locale'] = $locale;
 
-                $prepend .= sprintf('<li class="list-inline-item%s">%s</li>',
-                                    $locale == $currentLocale ? ' active' : '',
-                                    $a);
+                    $a = sprintf('<a class="nav-link%s" href="%s">%s</a>',
+                                 $last ? '' : ' divider',
+                                 $this->router->generate($routeName, $routeParameters),
+                                 mb_strtoupper($locale, 'UTF-8'));
+
+                    $prepend .= sprintf('<li class="list-inline-item%s">%s</li>',
+                                        $locale == $currentLocale ? ' active' : '',
+                                        $a);
+                }
+
+                $prepend .= '</ul></li>';
             }
-
-            $prepend .= '</ul></li>';
         }
 
         return $prepend . parent::renderChildren($item, $options);
