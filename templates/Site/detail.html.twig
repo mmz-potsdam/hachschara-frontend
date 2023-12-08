@@ -48,9 +48,18 @@
 {% endblock %}
 
 {% block body %}
-    {{ helper.breadcrumb([ { route: 'site-index', label: 'Sites'}, { route: 'site-map', label: 'Map'} ]) }}
+    {{ helper.breadcrumb([ { route: 'site-index', label: 'Sites'}, { route: 'site-map', label: 'Map' } ]) }}
 
-    <h1>{{ site.name(app.request.locale) }}{% if 'site-pdf' != app.request.attributes.get('_route') %}<div id="print-icon"><a href="{{ path(app.request.attributes.get('_route') ~ '-pdf', app.request.attributes.get('_route_params')) }}" title="{{ 'Print Version'|trans }}"><i class="fa-solid fa-file-pdf"></i></a></div>{% endif %}</h1>
+    <div class="col-12">
+        <h1 class="detail">
+            {{ site.name(app.request.locale) }}
+            {% if 'site-pdf' != app.request.attributes.get('_route') %}
+                <div id="print-icon">
+                    <a href="{{ path(app.request.attributes.get('_route') ~ '-pdf', app.request.attributes.get('_route_params')) }}" title="{{ 'Print Version'|trans }}"><i class="bi bi-filetype-pdf"></i></a>
+                </div>
+            {% endif %}
+        </h1>
+    </div>
 
     <div class="col-md-9">
         <div class="container-fluid p-0">
@@ -204,7 +213,7 @@
                 {{ location['name'] }}
             {% endif %}
         {% endif %}
-        {% if site.hasInfo('address') %}<a href="#" data-bs-toggle="tooltip" data-bs-html="true" title="{{ helper.render_info(site.infoExpanded('address')) }}"><i class="fa fa-circle-info"></i></a>
+        {% if site.hasInfo('address') %}<a href="#" data-bs-toggle="tooltip" data-bs-html="true" title="{{ helper.render_info(site.infoExpanded('address')) }}"><i class="bi bi-info-circle-fill"></i></a>
         {% endif %}
         {% if site.location is not empty and site.location.historicalRegion is not empty %}
             <h4>{{ 'Historical Region'|trans }}</h4>

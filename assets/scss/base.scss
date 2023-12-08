@@ -34,6 +34,10 @@ $screen-sm-max:              ($screen-md-min - 1) !default;
 $screen-md-max:              ($screen-lg-min - 1) !default;
 $screen-lg-max:              ($screen-xl-min - 1) !default;
 
+@mixin underlined {
+    border-bottom: 1px solid $color-body-text;
+}
+
 @media print {
     /* http://drupal.stackexchange.com/a/59908*/
     a[href]:after {
@@ -57,8 +61,15 @@ main {
 body {
     font-family: $font-stack-sans;
 
-    .breadcrumb-item.active {
-        color: $color-body-text !important;
+    .breadcrumb-item {
+        a {
+            text-decoration: none;
+        }
+
+        &.active {
+            color: $color-body-text !important;
+            font-weight: bold;
+        }
     }
 
     a, a:hover {
@@ -69,7 +80,7 @@ body {
 nav {
     .navbar-brand, .navbar-brand:visited, .navbar-brand:focus {
         font-size: 24px;
-        line-height: 30px;
+        line-height: 32px;
         text-transform: uppercase;
         color: $color-color-spot;
     }
@@ -85,9 +96,14 @@ nav {
     }
 
     .nav-item {
-        line-height: 30px; /* same as navbar-brand */
+        line-height: 32px; /* same as navbar-brand */
         &.active a {
             font-weight: bold;
+        }
+
+        /* hide arrows indicating dropdown */
+        .nav-link.dropdown-toggle::after {
+            display: none;
         }
     }
 
@@ -207,17 +223,17 @@ main {
         position: relative;
         width: 100%;
         margin-top: 30px !important;
+        padding-right: 40px;
     }
 
     #print-icon {
         position: absolute;
-        right: 16px;
-        top: 12px;
-        font-size: 24px;
+        right: 0px;
+        top: -6px;
+        font-size: 32px;
         a {
-            color: #999;
             &:hover {
-                color: inherit;
+                color: #999;
             }
         }
     }
@@ -237,6 +253,14 @@ main {
                 text-decoration: underline;
             }
         }
+    }
+
+    h1.detail {
+        margin-top: 15px !important;
+        margin-bottom: 30px;
+        padding-bottom: 0.2rem;
+        font-size: calc(1.325rem + 0.9vw); /* like h2 */
+        @include underlined;
     }
 
     h2.initial {
@@ -329,7 +353,7 @@ footer {
 }
 
 #banner {
-    margin-top: 30px;
+    margin-top: 45px;
     margin-bottom: 30px;
     background-color: $color-color-spot;
     color: $color-body-inverse;
@@ -364,7 +388,7 @@ footer {
 
     .wrapper {
         h2, h3 {
-            border-bottom: 1px solid $color-body-text;
+            @include underlined;
         }
 
         h2 {
