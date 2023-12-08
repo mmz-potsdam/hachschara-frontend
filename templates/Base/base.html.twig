@@ -144,38 +144,42 @@
         <footer class="mt-auto">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-10">
                         <a href="{{ path('home') }}">
                             <img src="{{ app.request.basepath }}/img/logo_inverse.{{ app.request.locale }}.svg" alt="{{ site_name|trans({}, 'additional') }}" style="height: 40px; width: auto; margin-bottom: 1rem;" />
                         </a>
-                    </div>
-                    <div class="col-sm-6">
                         <div style="margin-bottom: 1rem;">
                             {{ 'A project of'|trans }}
                         </div>
-                        <div style="margin-bottom: 1rem;">
-                            <a href="https://www.mmz-potsdam.de/" target="_blank">
-                                <img src="{{ app.request.basepath }}/img/logo-mmz.{{ app.request.locale }}.svg" alt="{{ 'Moses Mendelssohn Center for European-Jewish Studies'|trans }}" style="height: 75px; width: auto;" />
-                            </a>
-                        </div>
-                        <div style="margin-bottom: 1.3rem;">
-                            <a href="https://www.juedischejugendkultur.de/" target="_blank">
-                            {{ 'DFG project'|trans }}<br />
-                            <div style="color: #30345F; font-size: 80%; line-height: 1.0; max-width: 300px;">
-                                {{ 'Between Aliyah and Escape: Jewish Youth Organizations and Zionist Education under the Nazi Regime and in pre-State Israel from 1933-1945'|trans }}
-                                (TU Braunschweig)</div>
-                            </a>
-                        </div>
-                        <div style="margin-bottom: 1rem;">
-                            <a href="https://www.stiftung-denkmal.de/" target="_blank">
-                                <img src="{{ app.request.basepath }}/img/stiftung-denkmal.png" alt="{{ 'Foundation Memorial to the Murdered Jews of Europe'|trans }}" style="height: 50px; width: auto;" />
-                            </a>
-                        </div>
                     </div>
-                    <div class="col-sm-2{# text-sm-end#}">
+                    <div class="col-2{# text-sm-end#}">
                         <a href="{{ path('imprint') }}#contact">{{ 'Contact'|trans }}</a><br />
                         <a href="{{ path('imprint') }}#data-protection">{{ 'Privacy'|trans }}</a><br />
                         <a href="{{ path('imprint') }}#imprint">{{ 'Imprint'|trans }}</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="d-flex flex-row flex-wrap align-items-end">
+                            <div class="me-5 mb-4">
+                                <a href="https://www.mmz-potsdam.de/" target="_blank">
+                                    <img src="{{ app.request.basepath }}/img/logo-mmz.{{ app.request.locale }}.svg" alt="{{ 'Moses Mendelssohn Center for European-Jewish Studies'|trans }}" style="height: 75px; width: auto;" />
+                                </a>
+                            </div>
+                            <div class="me-5 mb-4">
+                                <a href="https://www.juedischejugendkultur.de/" target="_blank">
+                                {{ 'DFG project'|trans }}<br />
+                                <div style="color: #30345F; font-size: 80%; line-height: 1.0; max-width: 200px;">
+                                    {{ 'Between Aliyah and Escape: Jewish Youth Organizations and Zionist Education under the Nazi Regime and in pre-State Israel from 1933-1945'|trans }}
+                                    (TU Braunschweig)</div>
+                                </a>
+                            </div>
+                            <div class="mb-4">
+                                <a href="https://www.stiftung-denkmal.de/" target="_blank">
+                                    <img src="{{ app.request.basepath }}/img/stiftung-denkmal.png" alt="{{ 'Foundation Memorial to the Murdered Jews of Europe'|trans }}" style="height: 50px; width: auto;" />
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
