@@ -14,7 +14,7 @@
     {{ helper.site_license(site.license) }}
 {% endmacro %}
 
-{% block title %}{{ site.name(app.request.locale) }} | {{ parent() }} {% endblock %}
+{% block title %}{{ site.name(app.request.locale) }} | {{ parent() }}{% endblock %}
 
 {% block head %}
     {{ map.head() }}
@@ -234,7 +234,11 @@
             $( window ).resize(adjustMapSize);
             adjustMapSize();
 
-            var map = L.map('map');
+            var map = L.map('map', { attributionControl: false });
+            L.control.attribution({
+                prefix: ''
+            }).addTo(map);
+
             L.marker([ {{ site.geo }} ]).addTo(map);
             map.setView([{{ site.geo }}], 10);
 

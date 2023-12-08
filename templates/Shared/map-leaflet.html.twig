@@ -1,6 +1,6 @@
 {% macro head() %}
-    <link rel="stylesheet" href="{{ app.request.basepath }}/vendor/leaflet-1.6.0/leaflet.css" />
-    <script src="{{ app.request.basepath }}/vendor/leaflet-1.6.0/leaflet.js"></script>
+    <link rel="stylesheet" href="{{ app.request.basepath }}/vendor/leaflet-1.9.4/leaflet.css" />
+    <script src="{{ app.request.basepath }}/vendor/leaflet-1.9.4/leaflet.js"></script>
 {% endmacro %}
 
 {% macro head_markercluster() %}
@@ -20,7 +20,7 @@
     <script>
     var grayIcon = new L.Icon({
         iconUrl: '{{ app.request.basepath }}/vendor/leaflet-color-markers/img/marker-icon-2x-grey.png',
-        shadowUrl: '{{ app.request.basepath }}/vendor/leaflet-1.6.0/images/marker-shadow.png',
+        shadowUrl: '{{ app.request.basepath }}/vendor/leaflet-1.9.4/images/marker-shadow.png',
         iconSize: [25, 41],
         iconAnchor: [12, 41],
         popupAnchor: [1, -34],
@@ -62,9 +62,12 @@
     {% import _self as map %}
     var map = null;
     function showMap() {
-        map = L.map('map', { zoomControl: false });
+        map = L.map('map', { zoomControl: false, attributionControl: false });
         L.control.zoom({
             position: 'topright'
+        }).addTo(map);
+        L.control.attribution({
+            prefix: ''
         }).addTo(map);
 
         {% if bounds is empty %}
