@@ -23,7 +23,7 @@ extends BaseController
     public function homeAction(TranslatorInterface $translator)
     {
         $schema = Schema::webSite()
-            ->name($translator->trans($this->getGlobal('site_name'), [], 'additional'))
+            ->name(/** @Ignore */$translator->trans($this->getGlobal('site_name'), [], 'additional'))
             ->description($translator->trans('site.description', [], 'additional'))
             ;
 
