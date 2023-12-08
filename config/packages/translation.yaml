@@ -12,9 +12,10 @@ jms_i18n_routing:
 
 jms_translation:
     configs:
-        # so you can run ./bin/console translation:extract de --config=app
+        # so you can run ./bin/console jms:translation:extract de --config=app
         # see http://jmsyst.com/bundles/JMSTranslationBundle/master/cookbook/extraction_configs
         app:
             dirs: ["%kernel.project_dir%/templates", "%kernel.project_dir%/src"]
             output_dir: "%kernel.project_dir%/translations"
             extractors: [jms_i18n_routing]
+            excluded_names: ["MpdfConverter.php"]

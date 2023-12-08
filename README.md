@@ -56,7 +56,7 @@ Development Notes
 Translate messages and routes according to settings in
 `jms_translation.configs.app`
 
-    ./bin/console translation:extract de --config=app
+    ./bin/console jms:translation:extract de --config=app
 
 
 ### Project Setup
