@@ -56,7 +56,7 @@
         <div class="container-fluid p-0">
             <dl class="row">
             {% if site.alternateName is not empty %}
-                <dt class="col-md-4 col-lg-3">{{ 'Alternate Name'|trans }}</dt>
+                <dt class="col-md-4 col-lg-3">{{ 'Also Known As'|trans }}</dt>
                 <dd class="col-md-8 col-lg-9">
                     {{ site.alternateName|nl2br }}
                 </dd>
@@ -97,7 +97,7 @@
                 </dd>
             {% endif %}
             {% if site.educations is not empty or site.educationsDescriptionLocalized(app.request.locale) is not empty %}
-                <dt class="col-md-4 col-lg-3">{{ 'Educational Areas'|trans }}</dt>
+                <dt class="col-md-4 col-lg-3">{{ 'Areas of Training Offered'|trans }}</dt>
                 <dd class="col-md-8 col-lg-9">
                     {% if site.educations is not empty %}
                         <div>
