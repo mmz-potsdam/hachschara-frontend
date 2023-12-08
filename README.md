@@ -28,7 +28,7 @@ Installation
 ------------
 ### Requirements
 
-- PHP >= 7.3 (check with `php -v`)
+- PHP >= 8.1 (check with `php -v`)
 - composer (check with `composer -v`; if it is missing, see https://getcomposer.org/)
 
 ### Adjust Local Settings
@@ -68,12 +68,6 @@ Translate messages and routes according to settings in
         autoUpdate: '%kernel.debug%'
         assets:
             "css/base.css":
-                src: "public/assets/scss/base.scss"
+                src: "assets/scss/base.scss"
                 sourceMap: true
 ```
-
-
-TODO
-----
-Upgrade to Symfony 6 (requires PHP 8.1)
-* Switch to gjuric/i18n-routing-bundle and cvele/translation-bundle
