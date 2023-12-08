@@ -255,12 +255,14 @@ main {
         }
     }
 
-    h1.detail {
-        margin-top: 15px !important;
-        margin-bottom: 30px;
-        padding-bottom: 0.2rem;
-        font-size: calc(1.325rem + 0.9vw); /* like h2 */
-        @include underlined;
+    @media screen {
+        h1.detail {
+            margin-top: 15px !important;
+            margin-bottom: 30px;
+            padding-bottom: 0.2rem;
+            font-size: calc(1.325rem + 0.9vw); /* like h2 */
+            @include underlined;
+        }
     }
 
     h2.initial {
