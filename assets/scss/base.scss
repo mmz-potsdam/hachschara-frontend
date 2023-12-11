@@ -334,6 +334,15 @@ main {
             content: ' \25CF';
         }
     }
+
+    .seealso-ul {
+        a, a:visited {
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 }
 
 footer {
@@ -446,6 +455,15 @@ footer {
             .citeproc-title ~ .citeproc-creator {
                 font-weight: normal;
             }
+        }
+    }
+}
+
+/* detail pages */
+.route-site, .route-person, .route-organization, .route-user {
+    @media screen {
+        h3 {
+            @include underlined;
         }
     }
 }
