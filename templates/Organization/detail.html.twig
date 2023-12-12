@@ -68,7 +68,7 @@
                 <dt class="col-sm-4 col-md-3">{{ 'Related Sites'|trans }}</dt>
                 <dd class="col-sm-8 col-md-9">
                 {% for siteRef in siteRefs %}
-                    <div><a href="{{ path('site', { 'id': siteRef.site.id }) }}">{{ siteRef.site.name }}</a> ({{ siteRef.role.nameLocalized(app.request.locale) }})</div>
+                    <div><a href="{{ path('site', { 'id': siteRef.site.id }) }}">{{ siteRef.site.name(app.request.locale) }}</a> ({{ siteRef.role.nameLocalized(app.request.locale) }})</div>
                 {% endfor %}
                 </dd>
             {% endif %}
