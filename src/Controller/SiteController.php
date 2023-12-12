@@ -51,7 +51,7 @@ extends BaseController
 
         $qb->select([
                 'PR',
-                $nameSort . " HIDDEN nameSort"
+                $nameSort . ' HIDDEN nameSort',
             ])
             ->from('App\Entity\Site', 'PR')
             ->leftJoin('PR.location', 'P')

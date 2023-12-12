@@ -740,6 +740,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
             '@type' => 'Person',
             'name' => $this->getFullname(true),
         ];
+
         if ($omitContext) {
             unset($ret['@context']);
         }
@@ -764,7 +765,6 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
         foreach ([ 'givenName', 'familyName', 'url' ] as $property) {
             if (!empty($this->$property)) {
                 $ret[$property] = $this->$property;
-
             }
         }
 

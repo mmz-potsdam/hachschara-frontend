@@ -3,7 +3,7 @@
 {% import 'Shared/helper.html.twig' as helper %}
 {% import 'Shared/map-leaflet.html.twig' as map %}
 
-{% block title %}{{ organization.name }} | {{ parent() }}{% endblock %}
+{% block title %}{{ organization.name(app.request.locale) }} | {{ parent() }}{% endblock %}
 
 {% block head %}
     {{ map.head() }}
@@ -15,7 +15,7 @@
     {{ helper.breadcrumb([ { label: 'Look-up' }, { route: app.request.attributes.get('_route'), label: 'Organizations'} ]) }}
 
     <div class="col-12">
-        <h1 class="detail">{{ organization.name }}</h1>
+        <h1 class="detail">{{ organization.name(app.request.locale) }}</h1>
     </div>
 
     <div class="col-md-8 col-lg-9">

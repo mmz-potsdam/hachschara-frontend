@@ -128,9 +128,9 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
      *
      * @return string
      */
-    public function getName()
+    public function getName($locale = null)
     {
-        return $this->name;
+        return $this->getTranslatedProperty('name', $locale);
     }
 
     /**
@@ -245,7 +245,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
         $ret = [
             '@context' => 'http://schema.org',
             '@type' => 'Organization',
-            'name' => $this->getName(),
+            'name' => $this->getName($locale),
         ];
 
         if ($omitContext) {
@@ -269,10 +269,9 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
             $ret['description'] = $description;
         }
 
-        foreach ([ 'name', 'url' ] as $property) {
+        foreach ([ 'url' ] as $property) {
             if (!empty($this->$property)) {
                 $ret[$property] = $this->$property;
-
             }
         }
 
@@ -304,7 +303,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     {
         $ret = [
             'og:type' => 'profile',
-            'og:title' => $this->getName(),
+            'og:title' => $this->getName($locale),
         ];
 
         $parts = [];

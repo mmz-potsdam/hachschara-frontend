@@ -28,12 +28,20 @@ extends BaseController
                                 PaginatorInterface $paginator,
                                 TranslatorInterface $translator)
     {
+        $locale = $request->getLocale();
+
         $qb = $entityManager
             ->createQueryBuilder();
 
+        $nameSort = 'O.name';
+        if ($locale != \App\Entity\Site::$defaultLocale) {
+            $nameSort = sprintf("CONCAT_WS('', JSON_UNQUOTE(JSON_EXTRACT(O.translations ,'$.%s.name')), %s)",
+                                $locale, $nameSort);
+        }
+
         $qb->select([
                 'O',
-                "O.name HIDDEN nameSort"
+                $nameSort . ' HIDDEN nameSort',
             ])
             ->distinct()
             ->from('\App\Entity\Organization', 'O')

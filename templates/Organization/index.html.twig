@@ -25,7 +25,7 @@
         <div class="multi-col">
         {% set last_initial = '' %}
         {% for row in pagination %}
-            {% set initial = row.name|slug|first|upper %}
+            {% set initial = row.name(app.request.locale)|slug|first|upper %}
             {% if initial != last_initial %}
                 <div class="avoid-break">
                 <h2 class="initial">{{ initial }}</h2>
@@ -33,7 +33,7 @@
             {% else %}
                 <div>
             {% endif %}
-            <a href="{{ path('organization', { 'id': row.id }) }}">{{ row.name }}</a>
+            <a href="{{ path('organization', { 'id': row.id }) }}">{{ row.name(app.request.locale) }}</a>
                 </div>
         {% endfor %}
 
