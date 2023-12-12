@@ -29,7 +29,9 @@
                     nav: true,
                     showCounter: true,
                     alertError: false,
-                    overlayOpacity: 1
+                    overlayOpacity: 1,
+                    captionSelector: function (el) { return el.nextElementSibling },
+                    captionType: 'text'
                 });
             });
         });
