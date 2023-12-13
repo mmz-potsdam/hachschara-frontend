@@ -19,6 +19,9 @@ implements JsonLdSerializable
 
     protected static $termsById = null;
 
+    /**
+     * Fetch Term for display purpose
+     */
     public static function initTerms($em)
     {
         if (!is_null(self::$termsById)) {

@@ -96,7 +96,6 @@ extends BaseController
                     $data[] = $info;
                 }
             }
-            // dd($data);
 
             return $this->render('Site/map.html.twig', [
                 'pageTitle' => $translator->trans('Sites'),

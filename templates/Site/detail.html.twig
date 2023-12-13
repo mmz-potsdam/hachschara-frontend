@@ -173,6 +173,13 @@
                 </dd>
             {% endif %}
 
+            {% if site.hasInfo('general') %}
+                <dt class="col-md-4 col-lg-3">{{ 'Sources and Notes'|trans }}</dt>
+                <dd class="col-md-8 col-lg-9">
+                    {{ helper.render_info(site.infoExpanded('general')) }}
+                </dd>
+            {% endif %}
+
             {% if site.hasInfo('publication') %}
                 <dt class="col-md-4 col-lg-3">{{ 'Literature'|trans }}</dt>
                 <dd class="col-md-8 col-lg-9">
