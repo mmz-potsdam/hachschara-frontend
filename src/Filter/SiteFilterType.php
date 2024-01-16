@@ -10,7 +10,7 @@ use Lexik\Bundle\FormFilterBundle\Filter\Form\Type as Filters;
 class SiteFilterType
 extends CrudFilterType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $this->addSearchFilter($builder, [
             'PR.name',
@@ -40,7 +40,7 @@ extends CrudFilterType
         **/
     }
 
-    public function getBlockPrefix()
+    public function getBlockPrefix(): string
     {
         return 'site_filter';
     }

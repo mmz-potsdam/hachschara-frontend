@@ -28,7 +28,7 @@ class AppExtension extends AbstractExtension
         $this->dateFormatter = $dateFormatter;
     }
 
-    public function getFunctions()
+    public function getFunctions(): array
     {
         return [
             new TwigFunction('countryName', [ $this, 'getCountryName' ]),
@@ -36,7 +36,7 @@ class AppExtension extends AbstractExtension
         ];
     }
 
-    public function getFilters()
+    public function getFilters(): array
     {
         return [
             // general
