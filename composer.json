@@ -7,6 +7,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/burki/LiipUrlAutoConverterBundle"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/knallcharge/select2entity-bundle"
         }
     ],
     "type": "project",
@@ -16,7 +20,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-intl": "*",
-        "armin/scssphp-bundle": "^1.2",
+        "armin/scssphp-bundle": "@dev",
         "babdev/pagerfanta-bundle": "^3.8",
         "beberlei/doctrineextensions": "@stable",
         "box/spout": "^3.3",
@@ -43,7 +47,7 @@
         "scienta/doctrine-json-functions": "^5.3",
         "seboettg/citeproc-php": "^2.6",
         "spatie/schema-org": "^3.4",
-        "spiriitlabs/form-filter-bundle": "^7.0",
+        "spiriitlabs/form-filter-bundle": "^10.0",
         "symfony/apache-pack": "^1.0",
         "symfony/asset": "^6.4",
         "symfony/console": "^6.4",
@@ -70,7 +74,7 @@
         "symfony/validator": "^6.4",
         "symfony/web-link": "^6.4",
         "symfony/yaml": "^6.4",
-        "tetranz/select2entity-bundle": "^3.1",
+        "tetranz/select2entity-bundle": "dev-master#99bfd77",
         "twig/extra-bundle": "^3.6",
         "twig/intl-extra": "^3.6",
         "twig/string-extra": "^3.6",

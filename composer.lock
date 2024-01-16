@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "54f32a3186ff1e1838446be15de7444b",
+    "content-hash": "0de463b85fb47fc31beabf03ff897e4a",
     "packages": [
         {
             "name": "armin/scssphp-bundle",
-            "version": "1.2.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/a-r-m-i-n/scssphp-bundle.git",
-                "reference": "273d566ce1acf552a5a3c1260502e1adf6a81d16"
+                "reference": "370a98a69ed0ffc3313321e672590f035f05e05e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a-r-m-i-n/scssphp-bundle/zipball/273d566ce1acf552a5a3c1260502e1adf6a81d16",
-                "reference": "273d566ce1acf552a5a3c1260502e1adf6a81d16",
+                "url": "https://api.github.com/repos/a-r-m-i-n/scssphp-bundle/zipball/370a98a69ed0ffc3313321e672590f035f05e05e",
+                "reference": "370a98a69ed0ffc3313321e672590f035f05e05e",
                 "shasum": ""
             },
             "require": {
@@ -28,6 +28,7 @@
                 "symfony/framework-bundle": "^4.0 | ^5.0 | ^6.0",
                 "symfony/twig-bridge": "^4.0 | ^5.0 | ^6.0"
             },
+            "default-branch": true,
             "type": "symfony-bundle",
             "extra": {
                 "symfony": {
@@ -53,9 +54,9 @@
             "description": "Symfony bundle to parse scss sources at runtime.",
             "support": {
                 "issues": "https://github.com/a-r-m-i-n/scssphp-bundle/issues",
-                "source": "https://github.com/a-r-m-i-n/scssphp-bundle/tree/1.2.0"
+                "source": "https://github.com/a-r-m-i-n/scssphp-bundle/tree/master"
             },
-            "time": "2022-03-20T18:51:10+00:00"
+            "time": "2023-09-06T09:22:32+00:00"
         },
         {
             "name": "babdev/pagerfanta-bundle",
@@ -5006,55 +5007,44 @@
         },
         {
             "name": "spiriitlabs/form-filter-bundle",
-            "version": "v7.0.3",
+            "version": "v10.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SpiriitLabs/form-filter-bundle.git",
-                "reference": "7588970d84c1604b98743588ba9020f6bddf6303"
+                "reference": "7a1ab5c7f8d1890562f8a3e57796bbb8f84e5be8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SpiriitLabs/form-filter-bundle/zipball/7588970d84c1604b98743588ba9020f6bddf6303",
-                "reference": "7588970d84c1604b98743588ba9020f6bddf6303",
+                "url": "https://api.github.com/repos/SpiriitLabs/form-filter-bundle/zipball/7a1ab5c7f8d1890562f8a3e57796bbb8f84e5be8",
+                "reference": "7a1ab5c7f8d1890562f8a3e57796bbb8f84e5be8",
                 "shasum": ""
             },
             "require": {
                 "doctrine/orm": "^2.10",
-                "php": ">=7.1",
-                "symfony/form": "^4.4|^5.1|^6.0",
-                "symfony/framework-bundle": "^4.4|^5.1|^6.0"
+                "php": ">=7.4",
+                "symfony/form": "^5.3|^6.0|^7.0",
+                "symfony/framework-bundle": "^5.3|^6.0|^7.0"
             },
             "require-dev": {
+                "doctrine/annotations": "^2.0",
                 "doctrine/doctrine-bundle": "^1.8 || ^2.0",
-                "doctrine/mongodb-odm-bundle": "^4.1",
-                "symfony/phpunit-bridge": "^4.4|^5.1|^6.0",
-                "symfony/var-dumper": "^4.4|^5.1|^6.0"
-            },
-            "suggest": {
-                "alcaeus/mongo-php-adapter": "Install this package if using the PHP 7 MongoDB Driver"
+                "rector/rector": "^0.17.1",
+                "symfony/phpunit-bridge": "^5.3|^6.0|^7.0",
+                "symfony/var-dumper": "^5.3|^6.0|^7.0",
+                "symplify/easy-coding-standard": "^11.3"
             },
             "type": "symfony-bundle",
             "autoload": {
                 "psr-4": {
-                    "Lexik\\Bundle\\FormFilterBundle\\": ""
+                    "Spiriit\\Bundle\\FormFilterBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "authors": [
-                {
-                    "name": "Cedric Girard",
-                    "email": "c.girard@lexik.fr"
-                },
-                {
-                    "name": "Dev Lexik",
-                    "email": "dev@lexik.fr"
-                }
-            ],
             "description": "This bundle aim to provide classes to build some form filters and then build a doctrine query from this form filter.",
-            "homepage": "https://github.com/lexik/LexikFormFilterBundle",
+            "homepage": "https://github.com/SpiriitLabs/form-filter-bundle",
             "keywords": [
                 "bundle",
                 "doctrine",
@@ -5063,9 +5053,9 @@
                 "symfony"
             ],
             "support": {
-                "source": "https://github.com/SpiriitLabs/form-filter-bundle/tree/v7.0.3"
+                "source": "https://github.com/SpiriitLabs/form-filter-bundle/tree/v10.0.0"
             },
-            "time": "2022-07-28T11:49:50+00:00"
+            "time": "2024-01-15T14:09:58+00:00"
         },
         {
             "name": "symfony/apache-pack",
@@ -10118,16 +10108,16 @@
         },
         {
             "name": "tetranz/select2entity-bundle",
-            "version": "v3.1.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/tetranz/select2entity-bundle.git",
-                "reference": "66f515417c609f20f49ff27d3980ffcf1b8f347b"
+                "url": "https://github.com/knallcharge/select2entity-bundle.git",
+                "reference": "99bfd77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tetranz/select2entity-bundle/zipball/66f515417c609f20f49ff27d3980ffcf1b8f347b",
-                "reference": "66f515417c609f20f49ff27d3980ffcf1b8f347b",
+                "url": "https://api.github.com/repos/knallcharge/select2entity-bundle/zipball/99bfd77",
+                "reference": "99bfd77",
                 "shasum": ""
             },
             "require": {
@@ -10141,6 +10131,7 @@
                 "symfony/routing": ">=4.0",
                 "twig/twig": ">=2.9"
             },
+            "default-branch": true,
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": []
@@ -10150,7 +10141,6 @@
                     "Tetranz\\Select2EntityBundle\\": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -10168,10 +10158,9 @@
                 "typeahead"
             ],
             "support": {
-                "issues": "https://github.com/tetranz/select2entity-bundle/issues",
-                "source": "https://github.com/tetranz/select2entity-bundle/tree/v3.1.0"
+                "source": "https://github.com/knallcharge/select2entity-bundle/tree/master"
             },
-            "time": "2020-09-28T11:42:58+00:00"
+            "time": "2024-01-11T11:50:08+00:00"
         },
         {
             "name": "twig/extra-bundle",
@@ -12328,10 +12317,12 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "armin/scssphp-bundle": 20,
         "beberlei/doctrineextensions": 0,
         "citation-style-language/locales": 20,
         "hedii/zotero-api": 20,
-        "liip/url-auto-converter-bundle": 20
+        "liip/url-auto-converter-bundle": 20,
+        "tetranz/select2entity-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
