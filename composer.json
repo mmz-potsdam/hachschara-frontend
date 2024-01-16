@@ -31,7 +31,7 @@
         "gedmo/doctrine-extensions": "^3.1",
         "hedii/zotero-api": "dev-master#c296090a23e557bd7b38c7f10132ada6bc333631",
         "ifedko/php-doctrine-dbal-pagination": "^3.0",
-        "gjuric/i18n-routing-bundle": "^3.1",
+        "gjuric/i18n-routing-bundle": "3.2.2",
         "jms/translation-bundle": "^2.0",
         "knplabs/knp-menu-bundle": "^3.2",
         "knplabs/knp-paginator-bundle": "^5.9",
