@@ -20,9 +20,7 @@ extends BaseController
 {
     protected $pageSize = 500;
 
-    /**
-     * @Route("/organization", name="organization-index")
-     */
+    #[Route(path: '/organization', name: 'organization-index')]
     public function indexAction(Request $request,
                                 EntityManagerInterface $entityManager,
                                 PaginatorInterface $paginator,
@@ -64,12 +62,10 @@ extends BaseController
         ]);
     }
 
-    /**
-     * @Route("/organization/gnd/{gnd}.jsonld", requirements={"gnd"="[0-9xX\-]+"}, name="organization-by-gnd-jsonld")
-     * @Route("/organization/gnd/{gnd}", requirements={"gnd"="[0-9xX\-]+"}, name="organization-by-gnd")
-     * @Route("/organization/{id}.jsonld", name="organization-jsonld", requirements={"id"="\d+"})
-     * @Route("/organization/{id}", name="organization", requirements={"id"="\d+"})
-     */
+    #[Route(path: '/organization/gnd/{gnd}.jsonld', requirements: ['gnd' => '[0-9xX\-]+'], name: 'organization-by-gnd-jsonld')]
+    #[Route(path: '/organization/gnd/{gnd}', requirements: ['gnd' => '[0-9xX\-]+'], name: 'organization-by-gnd')]
+    #[Route(path: '/organization/{id}.jsonld', name: 'organization-jsonld', requirements: ['id' => '\d+'])]
+    #[Route(path: '/organization/{id}', name: 'organization', requirements: ['id' => '\d+'])]
     public function detailAction(Request $request, EntityManagerInterface $entityManager,
                                  $id = null, $gnd = null)
     {
@@ -272,12 +268,7 @@ extends BaseController
         return $markers;
     }
 
-    /**
-     * @Route("/organization/gnd/beacon", name="organization-gnd-beacon")
-     *
-     * Provide a BEACON file as described in
-     *  https://de.wikipedia.org/wiki/Wikipedia:BEACON
-     */
+    #[Route(path: '/organization/gnd/beacon', name: 'organization-gnd-beacon')]
     public function gndBeaconAction(EntityManagerInterface $entityManager, TranslatorInterface $translator, \Twig\Environment $twig)
     {
         $ret = '#FORMAT: BEACON' . "\n"

@@ -25,10 +25,10 @@ if (!function_exists('mb_ucfirst') && function_exists('mb_substr')) {
  *
  * @see http://schema.org/CreativeWork and derived documents Documentation on Schema.org
  *
- * @ORM\Entity
- * @ORM\Table(name="Publication")
  *
  */
+#[ORM\Table(name: 'Publication')]
+#[ORM\Entity]
 class Bibitem
 implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSerializable */
 {
@@ -137,24 +137,24 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * @var int
      *
-     * @ORM\Column(type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
+    #[ORM\Column(type: 'integer')]
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: 'AUTO')]
     protected $id;
 
     /**
      * @var integer
      *
-     * @ORM\Column(type="integer", nullable=false)
      */
+    #[ORM\Column(type: 'integer', nullable: false)]
     protected $status = 0;
 
     /**
      * @var string The type of the Bibliographic Item (as in Zotero)
      *
-     * @ORM\Column(name="type", type="string", nullable=true)
      */
+    #[ORM\Column(name: 'type', type: 'string', nullable: true)]
     protected $itemType;
 
     /**
@@ -166,23 +166,23 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
 
     /**
      * @var string The author of this CreativeWork.
-     * @ORM\Column(type="string", nullable=true)
      *
      */
+    #[ORM\Column(type: 'string', nullable: true)]
     protected $author;
 
     /**
      * @var string The editor of this CreativeWork.
-     * @ORM\Column(type="string", nullable=true)
      *
      */
+    #[ORM\Column(type: 'string', nullable: true)]
     protected $editor;
 
     /**
      * @var string The series of books the book was published in
      *
-     * @ORM\Column(type="string", nullable=true)
      */
+    #[ORM\Column(type: 'string', nullable: true)]
     protected $series;
 
     /**
@@ -195,8 +195,8 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * @var string The volume of a journal or multi-volume book
      *
-     * @ORM\Column(type="string", nullable=true)
      */
+    #[ORM\Column(type: 'string', nullable: true)]
     protected $volume;
 
     /**
@@ -209,59 +209,58 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * @var string The issue of a journal, magazine, or tech-report, if applicable
      *
-     * @ORM\Column(type="string", nullable=true)
      */
+    #[ORM\Column(type: 'string', nullable: true)]
     protected $issue;
 
     /**
      * @var string The edition of a book
      *
-     * @ORM\Column(name="book_edition", type="string", nullable=true)
      */
+    #[ORM\Column(name: 'book_edition', type: 'string', nullable: true)]
     protected $bookEdition;
 
     /**
      * @var string The place(s) of publication
      *
-     * @ORM\Column(name="place", type="string", nullable=true)
      */
+    #[ORM\Column(name: 'place', type: 'string', nullable: true)]
     protected $publicationLocation; /* map to contentLocation in Schema.org */
-
     /**
      * @var Publisher The publisher.
      *
-     * @ORM\ManyToOne(targetEntity="App\Entity\Publisher")
-     * @ORM\JoinColumn(name="publisher_id", referencedColumnName="id")
      */
+    #[ORM\ManyToOne(targetEntity: 'App\Entity\Publisher')]
+    #[ORM\JoinColumn(name: 'publisher_id', referencedColumnName: 'id')]
     protected $publisher;
 
     /**
      * @var Journal The journal.
      *
-     * @ORM\ManyToOne(targetEntity="App\Entity\Journal")
-     * @ORM\JoinColumn(name="journal_id", referencedColumnName="id")
      */
+    #[ORM\ManyToOne(targetEntity: 'App\Entity\Journal')]
+    #[ORM\JoinColumn(name: 'journal_id', referencedColumnName: 'id')]
     protected $journal;
 
     /**
      * @var string Date of first broadcast/publication.
      *
-     * @ORM\Column(name="publication_date", type="string", nullable=true)
      */
+    #[ORM\Column(name: 'publication_date', type: 'string', nullable: true)]
     protected $datePublished;
 
     /**
      * @var string The number of pages of the book
      *
-     * @ORM\Column(name="pages", type="string", nullable=true)
      */
+    #[ORM\Column(name: 'pages', type: 'string', nullable: true)]
     protected $pagination;
 
     /**
      * @var string The number of pages of the book
      *
-     * @ORM\Column(name="number_of_pages", type="string", nullable=true)
      */
+    #[ORM\Column(name: 'number_of_pages', type: 'string', nullable: true)]
     protected $numberOfPages;
 
     /**
@@ -274,8 +273,8 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * @var string The isbn of the book
      *
-     * @ORM\Column(type="string", nullable=true)
      */
+    #[ORM\Column(type: 'string', nullable: true)]
     protected $isbn;
 
     /**
@@ -295,39 +294,39 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * @var string The title of the item.
      *
-     * @Assert\Type(type="string")
-     * @Assert\NotNull
-     * @ORM\Column(length=512)
      */
+    #[Assert\Type(type: 'string')]
+    #[Assert\NotNull]
+    #[ORM\Column(length: 512)]
     protected $title;
 
     /**
      * @var string The subtitle of the item.
      *
-     * @ORM\Column(nullable=true)
      */
+    #[ORM\Column(nullable: true)]
     protected $subtitle;
 
     /**
      * @var string The title of the book or journal for bookSection / journalArticle.
      *
-     * @ORM\Column(name="booktitle", length=512, nullable=true)
      */
+    #[ORM\Column(name: 'booktitle', length: 512, nullable: true)]
     protected $containerName;
 
     /**
      * @var string URL of the item.
      *
-     * @Assert\Url
-     * @ORM\Column(nullable=true)
      */
+    #[Assert\Url]
+    #[ORM\Column(nullable: true)]
     protected $url;
 
     /**
      * @var string Public note.
      *
-     * @ORM\Column(nullable=true)
      */
+    #[ORM\Column(nullable: true)]
     protected $note;
 
     /**
@@ -341,16 +340,16 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
      * @var \DateTime
      *
      * @Gedmo\Timestampable(on="create")
-     * @ORM\Column(name="created", type="datetime")
      */
+    #[ORM\Column(name: 'created', type: 'datetime')]
     protected $createdAt;
 
     /**
      * @var \DateTime
      *
      * @Gedmo\Timestampable(on="update")
-     * @ORM\Column(name="changed", type="datetime")
      */
+    #[ORM\Column(name: 'changed', type: 'datetime')]
     protected $changedAt;
 
     /**

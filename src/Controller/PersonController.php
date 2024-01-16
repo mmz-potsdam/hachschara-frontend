@@ -20,9 +20,7 @@ extends BaseController
 {
     protected $pageSize = 500;
 
-    /**
-     * @Route("/person", name="person-index")
-     */
+    #[Route(path: '/person', name: 'person-index')]
     public function indexAction(Request $request,
                                 EntityManagerInterface $entityManager,
                                 PaginatorInterface $paginator,
@@ -56,12 +54,10 @@ extends BaseController
         ]);
     }
 
-    /**
-     * @Route("/person/gnd/{gnd}.jsonld", requirements={"gnd"="[0-9xX]+"}, name="person-by-gnd-jsonld")
-     * @Route("/person/gnd/{gnd}", requirements={"gnd"="[0-9xX]+"}, name="person-by-gnd")
-     * @Route("/person/{id}.jsonld", name="person-jsonld", requirements={"id"="\d+"})
-     * @Route("/person/{id}", name="person", requirements={"id"="\d+"})
-     */
+    #[Route(path: '/person/gnd/{gnd}.jsonld', requirements: ['gnd' => '[0-9xX]+'], name: 'person-by-gnd-jsonld')]
+    #[Route(path: '/person/gnd/{gnd}', requirements: ['gnd' => '[0-9xX]+'], name: 'person-by-gnd')]
+    #[Route(path: '/person/{id}.jsonld', name: 'person-jsonld', requirements: ['id' => '\d+'])]
+    #[Route(path: '/person/{id}', name: 'person', requirements: ['id' => '\d+'])]
     public function detailAction(Request $request, EntityManagerInterface $entityManager,
                                  $id = null, $gnd = null)
     {
@@ -257,12 +253,7 @@ extends BaseController
         return $markers;
     }
 
-    /**
-     * @Route("/person/gnd/beacon", name="person-gnd-beacon")
-     *
-     * Provide a BEACON file as described in
-     *  https://de.wikipedia.org/wiki/Wikipedia:BEACON
-     */
+    #[Route(path: '/person/gnd/beacon', name: 'person-gnd-beacon')]
     public function gndBeaconAction(EntityManagerInterface $entityManager, TranslatorInterface $translator, \Twig\Environment $twig)
     {
         $ret = '#FORMAT: BEACON' . "\n"

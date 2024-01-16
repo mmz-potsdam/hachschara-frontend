@@ -17,9 +17,7 @@ use Spatie\SchemaOrg\Schema;
 class DefaultController
 extends BaseController
 {
-    /**
-     * @Route("/", name="home")
-     */
+    #[Route(path: '/', name: 'home')]
     public function homeAction(TranslatorInterface $translator)
     {
         $schema = Schema::webSite()
@@ -32,25 +30,19 @@ extends BaseController
         ]);
     }
 
-    /**
-     * @Route("/about", name="about")
-     */
+    #[Route(path: '/about', name: 'about')]
     public function aboutAction(Request $request)
     {
         return $this->render('Default/about.' . $request->getLocale() . '.html.twig');
     }
 
-    /**
-     * @Route("/about/hakhshara", name="about-hakhshara")
-     */
+    #[Route(path: '/about/hakhshara', name: 'about-hakhshara')]
     public function aboutTermAction(Request $request)
     {
         return $this->render('Default/about-hakhshara.' .  $request->getLocale() .  '.html.twig');
     }
 
-    /**
-     * @Route("/about/network", name="about-network")
-     */
+    #[Route(path: '/about/network', name: 'about-network')]
     public function aboutNetworkAction(Request $request, EntityManagerInterface $entityManager)
     {
         $qb = $entityManager
@@ -92,9 +84,7 @@ extends BaseController
         ]);
     }
 
-    /**
-     * @Route("/imprint", name="imprint")
-     */
+    #[Route(path: '/imprint', name: 'imprint')]
     public function imprintAction(Request $request)
     {
         return $this->render('Default/imprint.' . $request->getLocale() . '.html.twig');

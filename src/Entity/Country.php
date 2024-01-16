@@ -4,25 +4,22 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo; // this will be like an alias for Gedmo extensions annotations
-
 /**
 * The Country
 *
- * @ORM\Entity
- * @ORM\Table(name="Country")
 */
+#[ORM\Table(name: 'Country')]
+#[ORM\Entity]
 class Country
 {
     /**
      * @var string
-     * @ORM\Id
-     * @ORM\Column(name="cc", type="string", nullable=false)
-    */
+     */
+    #[ORM\Id]
+    #[ORM\Column(name: 'cc', type: 'string', nullable: false)]
     protected $countryCode;
 
-    /**
-    * @ORM\Column(type="string", nullable=false)
-    */
+    #[ORM\Column(type: 'string', nullable: false)]
     protected $name;
 
     /**

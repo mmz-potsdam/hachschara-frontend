@@ -7,8 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * PersonMedia
  *
- * @ORM\Entity
  */
+#[ORM\Entity]
 class PersonMedia
 extends Media
 {
@@ -16,14 +16,13 @@ extends Media
      * @var integer
      */
     protected $type = 10; // $GLOBALS['TYPE_PERSON'] - must match DiscriminatorMap
-
     /**
      *
      * @var Person
      *
-     * @ORM\ManyToOne(targetEntity="Person", inversedBy="media", fetch="EXTRA_LAZY")
-     * @ORM\JoinColumn(name="item_id", referencedColumnName="id")
      */
+    #[ORM\ManyToOne(targetEntity: 'Person', inversedBy: 'media', fetch: 'EXTRA_LAZY')]
+    #[ORM\JoinColumn(name: 'item_id', referencedColumnName: 'id')]
     protected $person;
 
     public function getPathPrefix()

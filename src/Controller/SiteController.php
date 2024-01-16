@@ -22,10 +22,8 @@ extends BaseController
 {
     protected $pageSize = 200;
 
-    /**
-     * @Route("/site/map", name="site-map")
-     * @Route("/site", name="site-index")
-     */
+    #[Route(path: '/site/map', name: 'site-map')]
+    #[Route(path: '/site', name: 'site-index')]
     public function indexAction(Request $request,
                                 EntityManagerInterface $entityManager,
                                 PaginatorInterface $paginator,
@@ -120,11 +118,9 @@ extends BaseController
         ]);
     }
 
-    /**
-     * @Route("/site/{id}.jsonld", name="site-jsonld", requirements={"id"="\d+"})
-     * @Route("/site/{id}.pdf", name="site-pdf", requirements={"id"="\d+"})
-     * @Route("/site/{id}", name="site", requirements={"id"="\d+"})
-     */
+    #[Route(path: '/site/{id}.jsonld', name: 'site-jsonld', requirements: ['id' => '\d+'])]
+    #[Route(path: '/site/{id}.pdf', name: 'site-pdf', requirements: ['id' => '\d+'])]
+    #[Route(path: '/site/{id}', name: 'site', requirements: ['id' => '\d+'])]
     public function detailAction(Request $request,
                                  EntityManagerInterface $entityManager,
                                  \App\Utils\MpdfConverter $pdfConverter,

@@ -14,10 +14,10 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @see http://schema.org/CreativeWork and derived documents Documentation on Schema.org
  *
- * @ORM\Entity
- * @ORM\Table(name="Journal")
  *
  */
+#[ORM\Table(name: 'Journal')]
+#[ORM\Entity]
 class Journal
 extends CreativeWork
 implements \JsonSerializable, JsonLdSerializable /*, OgSerializable, TwitterSerializable */
@@ -27,17 +27,17 @@ implements \JsonSerializable, JsonLdSerializable /*, OgSerializable, TwitterSeri
     /**
      * @var int
      *
-     * @ORM\Column(type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
+    #[ORM\Column(type: 'integer')]
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: 'AUTO')]
     protected $id;
 
     /**
      * @var integer
      *
-     * @ORM\Column(type="integer", nullable=false)
      */
+    #[ORM\Column(type: 'integer', nullable: false)]
     protected $status = 0;
 
     protected $itemType = 'journal';
@@ -45,16 +45,15 @@ implements \JsonSerializable, JsonLdSerializable /*, OgSerializable, TwitterSeri
     /**
      * @var string The place(s) of publication
      *
-     * @ORM\Column(name="place", type="string", nullable=true)
      */
+    #[ORM\Column(name: 'place', type: 'string', nullable: true)]
     protected $publicationLocation; /* map to contentLocation in Schema.org */
-
     /**
      * @var Publisher The publisher.
      *
-     * @ORM\ManyToOne(targetEntity="App\Entity\Publisher")
-     * @ORM\JoinColumn(name="publisher_id", referencedColumnName="id")
      */
+    #[ORM\ManyToOne(targetEntity: 'App\Entity\Publisher')]
+    #[ORM\JoinColumn(name: 'publisher_id', referencedColumnName: 'id')]
     protected $publisher;
 
     /**
@@ -67,34 +66,34 @@ implements \JsonSerializable, JsonLdSerializable /*, OgSerializable, TwitterSeri
     /**
      * @var string The name of the item.
      *
-     * @Assert\Type(type="string")
-     * @Assert\NotNull
-     * @ORM\Column(length=512)
      */
+    #[Assert\Type(type: 'string')]
+    #[Assert\NotNull]
+    #[ORM\Column(length: 512)]
     protected $name;
 
     /**
      * @var string URL of the item.
      *
-     * @Assert\Url
-     * @ORM\Column(nullable=true)
      */
+    #[Assert\Url]
+    #[ORM\Column(nullable: true)]
     protected $url;
 
     /**
      * @var \DateTime
      *
      * @Gedmo\Timestampable(on="create")
-     * @ORM\Column(name="created", type="datetime")
      */
+    #[ORM\Column(name: 'created', type: 'datetime')]
     protected $createdAt;
 
     /**
      * @var \DateTime
      *
      * @Gedmo\Timestampable(on="update")
-     * @ORM\Column(name="changed", type="datetime")
      */
+    #[ORM\Column(name: 'changed', type: 'datetime')]
     protected $changedAt;
 
     /**

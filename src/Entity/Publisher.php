@@ -13,9 +13,9 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @see http://schema.org/Organization Documentation on Schema.org
  *
- * @ORM\Entity
- * @ORM\Table(name="Publisher")
  */
+#[ORM\Table(name: 'Publisher')]
+#[ORM\Entity]
 class Publisher
 implements \JsonSerializable /*, JsonLdSerializable */
 {
@@ -42,33 +42,33 @@ implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * @var int
      *
-     * @ORM\Column(type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
+    #[ORM\Column(type: 'integer')]
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: 'AUTO')]
     protected $id;
 
     /**
      * @var integer
      *
-     * @ORM\Column(type="integer", nullable=false)
      */
+    #[ORM\Column(type: 'integer', nullable: false)]
     protected $status = 0;
 
     /**
      * @var string The name of the item.
      *
-     * @Assert\Type(type="string")
-     * @ORM\Column(nullable=true)
      */
+    #[Assert\Type(type: 'string')]
+    #[ORM\Column(nullable: true)]
     protected $name;
 
     /**
      * @var string URL of the item.
      *
-     * @Assert\Url
-     * @ORM\Column(nullable=true)
      */
+    #[Assert\Url]
+    #[ORM\Column(nullable: true)]
     protected $url;
 
     /**
@@ -81,16 +81,16 @@ implements \JsonSerializable /*, JsonLdSerializable */
      * @var \DateTime
      *
      * *Gedmo\Timestampable(on="create")
-     * @ORM\Column(name="created", type="datetime")
      */
+    #[ORM\Column(name: 'created', type: 'datetime')]
     protected $createdAt;
 
     /**
      * @var \DateTime
      *
      * *Gedmo\Timestampable(on="update")
-     * @ORM\Column(name="changed", type="datetime")
      */
+    #[ORM\Column(name: 'changed', type: 'datetime')]
     protected $changedAt;
 
     /**

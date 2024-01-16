@@ -9,9 +9,9 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @see https://schema.org/Organization Documentation on Schema.org
  *
- * @ORM\Entity
  *
  */
+#[ORM\Entity]
 class Organization
 extends Agent
 implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
@@ -21,37 +21,37 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * @var string Date of birth.
      *
-     * @ORM\Column(type="string", nullable=true)
      */
+    #[ORM\Column(type: 'string', nullable: true)]
     protected $foundingDate;
 
     /**
      * @var string Date of death.
      *
-     * @ORM\Column(type="string", nullable=true)
      */
+    #[ORM\Column(type: 'string', nullable: true)]
     protected $dissolutionDate;
 
     /**
      * @var string name.
      *
-     * @ORM\Column(name="name", nullable=true)
      */
+    #[ORM\Column(name: 'name', nullable: true)]
     protected $name;
 
     /**
      * @var Place The place where the organization was founded.
      *
-     * @ORM\ManyToOne(targetEntity="App\Entity\Place")
-     * @ORM\JoinColumn(name="founding_location_id", referencedColumnName="id")
      */
+    #[ORM\ManyToOne(targetEntity: 'App\Entity\Place')]
+    #[ORM\JoinColumn(name: 'founding_location_id', referencedColumnName: 'id')]
     protected $foundingLocation;
 
     /**
      * @var string Name of the foundingLocation.
      *
-     * @ORM\Column(nullable=true,name="founding_location")
      */
+    #[ORM\Column(nullable: true, name: 'founding_location')]
     protected $foundingLocationLabel;
 
     /**

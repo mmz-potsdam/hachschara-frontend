@@ -9,9 +9,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Site
  *
- * @ORM\Table(name="Project")
- * @ORM\Entity
  */
+#[ORM\Table(name: 'Project')]
+#[ORM\Entity]
 class Site
 implements JsonLdSerializable
 {
@@ -58,240 +58,229 @@ implements JsonLdSerializable
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
+    #[ORM\Column(name: 'id', type: 'integer', nullable: false)]
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: 'IDENTITY')]
     private $id;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="status", type="integer", nullable=false)
      */
+    #[ORM\Column(name: 'status', type: 'integer', nullable: false)]
     private $status = '0';
 
     /**
      * @var \DateTime Date of first broadcast/publication.
      *
-     * @Assert\Date
-     * @ORM\Column(name="published", type="datetime", nullable=true)
      */
+    #[Assert\Date]
+    #[ORM\Column(name: 'published', type: 'datetime', nullable: true)]
     private $datePublished;
 
     /**
      * @var \DateTime The date on which the CreativeWork was most recently modified or when the item's entry was modified .
      *
-     * @Assert\Date
-     * @ORM\Column(name="modified", type="datetime", nullable=true)
      */
+    #[Assert\Date]
+    #[ORM\Column(name: 'modified', type: 'datetime', nullable: true)]
     private $dateModified;
 
     /**
      * @var string A license document that applies to this content, typically indicated by URL.
      *
-     * @Assert\Type(type="string")
-     * @ORM\Column(name="license", nullable=true)
      */
+    #[Assert\Type(type: 'string')]
+    #[ORM\Column(name: 'license', nullable: true)]
     protected $license;
 
-    /**
-     * @ORM\Column(name="type", type="simple_array", nullable=false)
-     */
+    #[ORM\Column(name: 'type', type: 'simple_array', nullable: false)]
     private $types;
 
     /**
      * @var Place The location of, for example, where an event is happening, where an organization is located, or where an action takes place. .
      *
-     * @ORM\ManyToOne(targetEntity="App\Entity\Place", inversedBy="sites")
-     * @ORM\JoinColumn(name="locality_id", referencedColumnName="id")
      */
+    #[ORM\ManyToOne(targetEntity: 'App\Entity\Place', inversedBy: 'sites')]
+    #[ORM\JoinColumn(name: 'locality_id', referencedColumnName: 'id')]
     protected $location;
 
     /**
      * @var string Name of the location.
      *
-     * @ORM\Column(nullable=true,name="locality")
      */
+    #[ORM\Column(nullable: true, name: 'locality')]
     protected $locationLabel;
 
     /**
      * @var string Street Address of the location.
      *
-     * @ORM\Column(nullable=true,name="street_address")
      */
+    #[ORM\Column(nullable: true, name: 'street_address')]
     protected $streetAddress;
 
     /**
      * @var string Postal Code of the location.
      *
-     * @ORM\Column(nullable=true,name="postal_code")
      */
+    #[ORM\Column(nullable: true, name: 'postal_code')]
     protected $postalCode;
 
     /**
      * @var double The latitude of the place.
      *
-     * @ORM\Column(nullable=true)
      *
      */
+    #[ORM\Column(nullable: true)]
     protected $latitude;
 
     /**
      * @var double The longitude of the place.
      *
-     * @ORM\Column(nullable=true)
      *
      */
+    #[ORM\Column(nullable: true)]
     protected $longitude;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="start_date", type="string", nullable=true)
      */
+    #[ORM\Column(name: 'start_date', type: 'string', nullable: true)]
     private $startDate;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="realized_date", type="string", nullable=true)
      */
+    #[ORM\Column(name: 'realized_date', type: 'string', nullable: true)]
     private $realizedDate;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="end_date", type="string", nullable=true)
      */
+    #[ORM\Column(name: 'end_date', type: 'string', nullable: true)]
     private $endDate;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="destruction_date", type="string", nullable=true)
      */
+    #[ORM\Column(name: 'destruction_date', type: 'string', nullable: true)]
     private $destructionDate;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=511, nullable=true)
      */
+    #[ORM\Column(name: 'name', type: 'string', length: 511, nullable: true)]
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="alternate_name", type="text", nullable=true)
      */
+    #[ORM\Column(name: 'alternate_name', type: 'text', nullable: true)]
     private $alternateName;
 
     /**
      * @var array
      *
-     * @ORM\Column(name="abstract", type="json", length=65535, nullable=true)
      */
+    #[ORM\Column(name: 'abstract', type: 'json', length: 65535, nullable: true)]
     private $abstract;
 
     /**
      * @var array
      *
-     * @ORM\Column(name="description", type="json", length=65535, nullable=true)
      */
+    #[ORM\Column(name: 'description', type: 'json', length: 65535, nullable: true)]
     private $description;
 
     /**
      * @var double
      *
-     * @ORM\Column(name="operating_area", type="decimal", nullable=true)
      */
+    #[ORM\Column(name: 'operating_area', type: 'decimal', nullable: true)]
     private $operatingArea;
 
     /**
      * @var array
      *
-     * @ORM\Column(name="operating_area_description", type="json", length=65535, nullable=true)
      */
+    #[ORM\Column(name: 'operating_area_description', type: 'json', length: 65535, nullable: true)]
     private $operatingAreaDescription;
 
-    /**
-     * @ORM\Column(name="educations", type="simple_array", length=4096, nullable=true)
-     */
+    #[ORM\Column(name: 'educations', type: 'simple_array', length: 4096, nullable: true)]
     private $educations;
 
     /**
      * @var array
      *
-     * @ORM\Column(name="educations_description", type="json", length=65535, nullable=true)
      */
+    #[ORM\Column(name: 'educations_description', type: 'json', length: 65535, nullable: true)]
     private $educationsDescription;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="condition", type="integer", nullable=true)
      */
+    #[ORM\Column(name: 'condition', type: 'integer', nullable: true)]
     private $condition = '0';
 
     /**
      * @var string
      *
-     * @ORM\Column(name="project_history", type="text", nullable=true)
      */
+    #[ORM\Column(name: 'project_history', type: 'text', nullable: true)]
     private $projectHistory;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="url", type="string", length=255, nullable=true)
      */
+    #[ORM\Column(name: 'url', type: 'string', length: 255, nullable: true)]
     private $url;
 
-    /**
-     * @ORM\OneToMany(
-     *   targetEntity="AgentSite",
-     *   mappedBy="site",
-     *   cascade={"persist", "remove"},
-     *   orphanRemoval=TRUE
-     * )
-     * @ORM\OrderBy({"ord" = "ASC"})
-     */
+    #[ORM\OneToMany(targetEntity: 'AgentSite', mappedBy: 'site', cascade: ['persist', 'remove'], orphanRemoval: true)]
+    #[ORM\OrderBy(['ord' => 'ASC'])]
     private $agentReferences;
 
     /**
      * @var array|null
      *
-     * @ORM\Column(name="notes", type="json", length=65535, nullable=true)
      */
+    #[ORM\Column(name: 'notes', type: 'json', length: 65535, nullable: true)]
     private $notes;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="created", type="datetime", nullable=true)
      */
+    #[ORM\Column(name: 'created', type: 'datetime', nullable: true)]
     private $createdAt;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="created_by", type="integer", nullable=true)
      */
+    #[ORM\Column(name: 'created_by', type: 'integer', nullable: true)]
     private $createdBy;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="changed", type="datetime", nullable=true)
      */
+    #[ORM\Column(name: 'changed', type: 'datetime', nullable: true)]
     private $changedAt;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="changed_by", type="integer", nullable=true)
      */
+    #[ORM\Column(name: 'changed_by', type: 'integer', nullable: true)]
     private $changedBy;
 
     /**
@@ -307,10 +296,8 @@ implements JsonLdSerializable
      */
     protected $persons;
 
-    /**
-     * @ORM\OneToMany(targetEntity="SiteMedia", mappedBy="site", fetch="EAGER")
-     * @ORM\OrderBy({"name" = "ASC", "ord" = "ASC"})
-     */
+    #[ORM\OneToMany(targetEntity: 'SiteMedia', mappedBy: 'site', fetch: 'EAGER')]
+    #[ORM\OrderBy(['name' => 'ASC', 'ord' => 'ASC'])]
     protected $media;
 
     public static function extractYear($datetime)

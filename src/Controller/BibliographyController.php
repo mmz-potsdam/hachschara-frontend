@@ -13,9 +13,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 class BibliographyController
 extends BaseController
 {
-    /**
-     * @Route("/bibliography", name="bibliography-index")
-     */
+    #[Route(path: '/bibliography', name: 'bibliography-index')]
     public function indexAction(Request $request,
                                 TranslatorInterface $translator,
                                 array $zoteroCollections)

@@ -5,16 +5,15 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Inflector\InflectorFactory;
 use Gedmo\Mapping\Annotation as Gedmo; // alias for Gedmo extensions annotations
-
 /**
  * Entities that have a somewhat fixed, physical extension.
  *
  * @see http://schema.org/Place Documentation on Schema.org
  *
- * @ORM\Entity
- * @ORM\Table(name="Geoname")
  *
  */
+#[ORM\Table(name: 'Geoname')]
+#[ORM\Entity]
 class Place
 implements \JsonSerializable /*, JsonLdSerializable */
 {
@@ -92,121 +91,116 @@ implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * @var int
      *
-     * @ORM\Id
-     * @ORM\Column(type="integer")
      *
      */
+    #[ORM\Id]
+    #[ORM\Column(type: 'integer')]
     protected $id;
 
     /**
      * @var integer
      *
-     * @ORM\Column(type="integer", nullable=false)
      */
+    #[ORM\Column(type: 'integer', nullable: false)]
     protected $status = 0;
 
     /**
      * @var string
      *
-     * @ORM\Column(type="string", nullable=false)
      */
+    #[ORM\Column(type: 'string', nullable: false)]
     protected $type = 'inhabited place';
 
     /**
      * @var double The latitude of the place.
      *
-     * @ORM\Column(nullable=true)
      *
      */
+    #[ORM\Column(nullable: true)]
     protected $latitude;
 
     /**
      * @var double The longitude of the place.
      *
-     * @ORM\Column(nullable=true)
      *
      */
+    #[ORM\Column(nullable: true)]
     protected $longitude;
 
     /**
      * @var string The name of the item.
      *
-     * @ORM\Column(nullable=false)
      */
+    #[ORM\Column(nullable: false)]
     protected $name;
 
     /**
      * @var string An alias for the item.
      *
-     * @ORM\Column(name="name_alternate", type="string", nullable=true)
      */
+    #[ORM\Column(name: 'name_alternate', type: 'string', nullable: true)]
     protected $alternateName;
 
-    /**
-     *
-     * @ORM\Column(name="country_code", type="string", nullable=true)
-     *
-     */
+    
+    #[ORM\Column(name: 'country_code', type: 'string', nullable: true)]
     protected $countryCode;
 
     /**
      * xvar Country|null
      *
-     * @ORM\ManyToOne(targetEntity="Country", fetch="EAGER")
-     * @ORM\JoinColumn(name="country_code", referencedColumnName="cc", nullable=true)
      */
+    #[ORM\ManyToOne(targetEntity: 'Country', fetch: 'EAGER')]
+    #[ORM\JoinColumn(name: 'country_code', referencedColumnName: 'cc', nullable: true)]
     protected $country;
 
     /**
      * @var Term The role.
      *
-     * @ORM\ManyToOne(targetEntity="App\Entity\Term")
-     * @ORM\JoinColumn(name="historical_region", referencedColumnName="id")
      */
+    #[ORM\ManyToOne(targetEntity: 'App\Entity\Term')]
+    #[ORM\JoinColumn(name: 'historical_region', referencedColumnName: 'id')]
     protected $historicalRegion;
 
     /**
      * @var string
-     * @ORM\Column(type="string", nullable=true)
      */
+    #[ORM\Column(type: 'string', nullable: true)]
     protected $tgn;
 
     /**
      * @var string
-     * @ORM\Column(name="tgn_parent", type="string", nullable=true)
      */
+    #[ORM\Column(name: 'tgn_parent', type: 'string', nullable: true)]
     protected $parentTgn;
 
     /**
      * @var string
-     * @ORM\Column(type="string", nullable=true)
      */
+    #[ORM\Column(type: 'string', nullable: true)]
     protected $gnd;
 
     /**
      * @var string
-     * @ORM\Column(name="geonames_id", type="string", nullable=true)
      */
+    #[ORM\Column(name: 'geonames_id', type: 'string', nullable: true)]
     protected $geonames;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Site", mappedBy="location",cascade={"all"}, fetch="EXTRA_LAZY")
-     * @ORM\OrderBy({"name" = "ASC"})
-     */
+    #[ORM\OneToMany(targetEntity: 'Site', mappedBy: 'location', cascade: ['all'], fetch: 'EXTRA_LAZY')]
+    #[ORM\OrderBy(['name' => 'ASC'])]
     protected $sites;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="created", type="datetime")
      */
+    #[ORM\Column(name: 'created', type: 'datetime')]
     protected $createdAt;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="changed", type="datetime")
      */
+    #[ORM\Column(name: 'changed', type: 'datetime')]
     protected $changedAt;
 
     /**

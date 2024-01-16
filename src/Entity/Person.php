@@ -9,9 +9,9 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @see https://schema.org/Person Documentation on Schema.org
  *
- * @ORM\Entity
  *
  */
+#[ORM\Entity]
 class Person
 extends Agent
 implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
@@ -106,87 +106,87 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * @var string Denomination.
      *
-     * @ORM\Column(nullable=true)
      */
+    #[ORM\Column(nullable: true)]
     protected $denomination;
 
     /**
      * @var string Date of birth.
      *
-     * @ORM\Column(type="string", nullable=true)
      */
+    #[ORM\Column(type: 'string', nullable: true)]
     protected $birthDate;
 
     /**
      * @var string Cause of death.
      *
-     * @ORM\Column(type="string", nullable=true)
      */
+    #[ORM\Column(type: 'string', nullable: true)]
     protected $deathCause;
 
     /**
      * @var string Date of death.
      *
-     * @ORM\Column(type="string", nullable=true)
      */
+    #[ORM\Column(type: 'string', nullable: true)]
     protected $deathDate;
 
     /**
      * @var string Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.
      *
-     * @ORM\Column(name="family_name", nullable=true)
      */
+    #[ORM\Column(name: 'family_name', nullable: true)]
     protected $familyName;
 
     /**
      * @var string Gender of the person.
      *
-     * @ORM\Column(name="gender", nullable=true)
      */
+    #[ORM\Column(name: 'gender', nullable: true)]
     protected $gender;
 
     /**
      * @var string Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.
      *
-     * @ORM\Column(name="given_name", nullable=true)
      */
+    #[ORM\Column(name: 'given_name', nullable: true)]
     protected $givenName;
 
     /**
      * @var string Nationality of the person.
      *
-     * @ORM\Column(name="nationality", nullable=true)
      */
+    #[ORM\Column(name: 'nationality', nullable: true)]
     protected $nationality;
 
     /**
      * @var Place The place where the person was born.
      *
-     * @ORM\ManyToOne(targetEntity="App\Entity\Place")
-     * @ORM\JoinColumn(name="birth_place_id", referencedColumnName="id")
      */
+    #[ORM\ManyToOne(targetEntity: 'App\Entity\Place')]
+    #[ORM\JoinColumn(name: 'birth_place_id', referencedColumnName: 'id')]
     protected $birthPlace;
 
     /**
      * @var string Name of the birthPlace.
      *
-     * @ORM\Column(nullable=true,name="birth_place")
      */
+    #[ORM\Column(nullable: true, name: 'birth_place')]
     protected $birthPlaceLabel;
 
     /**
      * @var Place The place where the person died.
      *
-     * @ORM\ManyToOne(targetEntity="App\Entity\Place")
-     * @ORM\JoinColumn(name="death_place_id", referencedColumnName="id")
      */
+    #[ORM\ManyToOne(targetEntity: 'App\Entity\Place')]
+    #[ORM\JoinColumn(name: 'death_place_id', referencedColumnName: 'id')]
     protected $deathPlace;
 
     /**
      * @var string Name of the deathPlace.
      *
-     * @ORM\Column(nullable=true,name="death_place")
      */
+    #[ORM\Column(nullable: true, name: 'death_place')]
     protected $deathPlaceLabel;
 
     /**
@@ -199,8 +199,8 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * @var string
      *
-     * @ORM\Column(name="honorific_prefix", nullable=true)
      */
+    #[ORM\Column(name: 'honorific_prefix', nullable: true)]
     protected $honorificPrefix;
 
     /**
@@ -209,10 +209,8 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
      */
     protected $honorificSuffix;
 
-    /**
-     * @ORM\OneToMany(targetEntity="PersonMedia", mappedBy="person", fetch="EAGER")
-     * @ORM\OrderBy({"name" = "ASC", "ord" = "ASC"})
-     */
+    #[ORM\OneToMany(targetEntity: 'PersonMedia', mappedBy: 'person', fetch: 'EAGER')]
+    #[ORM\OrderBy(['name' => 'ASC', 'ord' => 'ASC'])]
     protected $media;
 
     /**

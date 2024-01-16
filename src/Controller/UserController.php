@@ -15,12 +15,10 @@ use Doctrine\ORM\EntityManagerInterface;
 class UserController
 extends BaseController
 {
-    /**
-     * @Route("/about/network/gnd/{gnd}.jsonld", requirements={"gnd"="[0-9xX]+"}, name="user-by-gnd-jsonld")
-     * @Route("/about/network/gnd/{gnd}", requirements={"gnd"="[0-9xX]+"}, name="user-by-gnd")
-     * @Route("/about/network/{id}.jsonld", name="user-jsonld", requirements={"id"="\d+"})
-     * @Route("/about/network/{id}", name="user", requirements={"id"="\d+"})
-     */
+    #[Route(path: '/about/network/gnd/{gnd}.jsonld', requirements: ['gnd' => '[0-9xX]+'], name: 'user-by-gnd-jsonld')]
+    #[Route(path: '/about/network/gnd/{gnd}', requirements: ['gnd' => '[0-9xX]+'], name: 'user-by-gnd')]
+    #[Route(path: '/about/network/{id}.jsonld', name: 'user-jsonld', requirements: ['id' => '\d+'])]
+    #[Route(path: '/about/network/{id}', name: 'user', requirements: ['id' => '\d+'])]
     public function detailAction(Request $request, EntityManagerInterface $entityManager,
                                  $id = null, $gnd = null)
     {

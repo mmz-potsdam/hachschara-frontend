@@ -7,12 +7,12 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * An agent, such as a person or an organization.
  *
- * @ORM\Entity
- * @ORM\Table(name="Agent")
- * @ORM\InheritanceType("SINGLE_TABLE")
- * @ORM\DiscriminatorColumn(name="type", type="string")
- * @ORM\DiscriminatorMap({"person" = "Person", "organization" = "Organization"})
  */
+#[ORM\Table(name: 'Agent')]
+#[ORM\Entity]
+#[ORM\InheritanceType('SINGLE_TABLE')]
+#[ORM\DiscriminatorColumn(name: 'type', type: 'string')]
+#[ORM\DiscriminatorMap(['person' => 'Person', 'organization' => 'Organization'])]
 abstract class Agent
 {
     use HasTranslationsTrait;
@@ -84,64 +84,64 @@ abstract class Agent
     /**
      * @var int
      *
-     * @ORM\Column(type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
+    #[ORM\Column(type: 'integer')]
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: 'AUTO')]
     protected $id;
 
     /**
      * @var integer
      *
-     * @ORM\Column(type="integer", nullable=false)
      */
+    #[ORM\Column(type: 'integer', nullable: false)]
     protected $status = 0;
 
     /**
      * @var string Additional name forms.
      *
-     * @ORM\Column(name="alternate_name", nullable=true)
      */
+    #[ORM\Column(name: 'alternate_name', nullable: true)]
     protected $alternateName;
 
     /**
      * @var string A short description of the item.
      *
-     * @ORM\Column(name="description", type="string", length="4096", nullable=true)
      *
      */
+    #[ORM\Column(name: 'description', type: 'string', length: '4096', nullable: true)]
     protected $description;
 
     /**
      * @var string A description of the item.
      *
-     * @ORM\Column(name="disambiguating_description", type="string", nullable=true)
      *
      */
+    #[ORM\Column(name: 'disambiguating_description', type: 'string', nullable: true)]
     protected $disambiguatingDescription;
 
     /**
      * @var string
-     * @ORM\Column(type="string", nullable=true)
      */
+    #[ORM\Column(type: 'string', nullable: true)]
     protected $ulan;
 
     /**
      * @var string
-     * @ORM\Column(name="gnd",type="string", nullable=true)
      */
+    #[ORM\Column(name: 'gnd', type: 'string', nullable: true)]
     protected $gnd;
 
     /**
      * @var string
-     * @ORM\Column(type="string", nullable=true)
      */
+    #[ORM\Column(type: 'string', nullable: true)]
     protected $viaf;
 
     /**
      * @var string
-     * @ORM\Column(type="string", nullable=true)
      */
+    #[ORM\Column(type: 'string', nullable: true)]
     protected $wikidata;
 
     /**
@@ -149,30 +149,28 @@ abstract class Agent
     */
     protected $entityfacts;
 
-    /**
-     * @ORM\OneToMany(targetEntity="AgentSite", mappedBy="agent", cascade={"persist", "remove"}, orphanRemoval=TRUE)
-     */
+    #[ORM\OneToMany(targetEntity: 'AgentSite', mappedBy: 'agent', cascade: ['persist', 'remove'], orphanRemoval: true)]
     protected $siteReferences;
 
     /**
      * @var
      *
-     * @ORM\Column(type="json", nullable=true)
      */
+    #[ORM\Column(type: 'json', nullable: true)]
     protected $notes;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="created", type="datetime")
      */
+    #[ORM\Column(name: 'created', type: 'datetime')]
     protected $createdAt;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="changed", type="datetime")
      */
+    #[ORM\Column(name: 'changed', type: 'datetime')]
     protected $changedAt;
 
     /**
@@ -189,8 +187,8 @@ abstract class Agent
     /**
      * @var string URL of the item.
      *
-     * @ORM\Column(nullable=true)
      */
+    #[ORM\Column(nullable: true)]
     protected $url;
 
     /**

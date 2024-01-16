@@ -7,9 +7,9 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * A user.
  *
- * @ORM\Entity
- * @ORM\Table(name="User")
  */
+#[ORM\Table(name: 'User')]
+#[ORM\Entity]
 class User
 implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
 {
@@ -18,38 +18,38 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * @var int
      *
-     * @ORM\Column(type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
+    #[ORM\Column(type: 'integer')]
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: 'AUTO')]
     protected $id;
 
     /**
      * @var integer
      *
-     * @ORM\Column(type="integer", nullable=false)
      */
+    #[ORM\Column(type: 'integer', nullable: false)]
     protected $status = 0;
 
     /**
      * @var string Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.
      *
-     * @ORM\Column(name="family_name", nullable=true)
      */
+    #[ORM\Column(name: 'family_name', nullable: true)]
     protected $familyName;
 
     /**
      * @var string Gender of the person.
      *
-     * @ORM\Column(name="gender", nullable=true)
      */
+    #[ORM\Column(name: 'gender', nullable: true)]
     protected $gender;
 
     /**
      * @var string Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.
      *
-     * @ORM\Column(name="given_name", nullable=true)
      */
+    #[ORM\Column(name: 'given_name', nullable: true)]
     protected $givenName;
 
     /**
@@ -62,9 +62,9 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * @var string A short description of the item.
      *
-     * @ORM\Column(name="description", type="string", length="4096", nullable=true)
      *
      */
+    #[ORM\Column(name: 'description', type: 'string', length: '4096', nullable: true)]
     protected $description;
 
     /**
@@ -83,8 +83,8 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
 
     /**
      * @var string
-     * @ORM\Column(name="gnd",type="string", nullable=true)
      */
+    #[ORM\Column(name: 'gnd', type: 'string', nullable: true)]
     protected $gnd;
 
     /**
@@ -107,15 +107,15 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="created", type="datetime")
      */
+    #[ORM\Column(name: 'created', type: 'datetime')]
     protected $createdAt;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="changed", type="datetime")
      */
+    #[ORM\Column(name: 'changed', type: 'datetime')]
     protected $changedAt;
 
     /**
@@ -132,8 +132,8 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * @var string URL of the item.
      *
-     * @ORM\Column(nullable=true)
      */
+    #[ORM\Column(nullable: true)]
     protected $url;
 
     /**

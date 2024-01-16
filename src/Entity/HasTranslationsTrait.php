@@ -7,8 +7,7 @@
 namespace App\Entity;
 
 use Doctrine\Inflector\InflectorFactory;
-
-use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\Mapping as ORM;
 
 trait HasTranslationsTrait
 {
@@ -17,8 +16,8 @@ trait HasTranslationsTrait
     /**
      * @var array
      *
-     * @ORM\Column(type="json", nullable=true)
      */
+    #[ORM\Column(type: 'json', nullable: true)]
     protected $translations;
 
     /**
