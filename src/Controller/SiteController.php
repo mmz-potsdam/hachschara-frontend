@@ -12,7 +12,7 @@ use Doctrine\ORM\EntityManagerInterface;
 
 use Knp\Component\Pager\PaginatorInterface;
 
-use Lexik\Bundle\FormFilterBundle\Filter\FilterBuilderUpdaterInterface;
+use Spiriit\Bundle\FormFilterBundle\Filter\FilterBuilderUpdaterInterface;
 
 /**
  *
@@ -66,7 +66,7 @@ extends BaseController
 
         if ($request->query->has($form->getName())) {
             // manually bind values from the request
-            $form->submit($request->query->get($form->getName()));
+            $form->submit($request->query->all()[$form->getName()]);
 
             // build the query from the given form object
             $queryBuilderUpdater->addFilterConditions($form, $qb);
