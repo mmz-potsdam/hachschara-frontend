@@ -21,7 +21,7 @@
         "ext-iconv": "*",
         "ext-intl": "*",
         "armin/scssphp-bundle": "@dev",
-        "babdev/pagerfanta-bundle": "^3.8",
+        "babdev/pagerfanta-bundle": "^4.4",
         "beberlei/doctrineextensions": "@stable",
         "box/spout": "^3.3",
         "citation-style-language/locales": "@dev",
