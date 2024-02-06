@@ -42,7 +42,7 @@
         "masterminds/html5": "^2.7",
         "mpdf/mpdf": "^8.1",
         "phpdocumentor/reflection-docblock": "^5.3",
-        "presta/sitemap-bundle": "^3.3",
+        "presta/sitemap-bundle": "^4.0",
         "scienta/doctrine-json-functions": "^5.3",
         "seboettg/citeproc-php": "^2.6",
         "spatie/schema-org": "^3.4",
