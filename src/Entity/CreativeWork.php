@@ -14,6 +14,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class CreativeWork
 extends SchemaOrg
+implements \JsonSerializable
 {
     protected static function buildCorresp($zoteroData, $zoteroMeta)
     {
@@ -1040,7 +1041,7 @@ extends SchemaOrg
      * We transfer to Citeproc JSON
      * see https://github.com/citation-style-language/schema/blob/master/csl-data.json
      */
-    public function jsonSerialize($locale = 'de_DE')
+    public function jsonSerialize($locale = 'de_DE'): array
     {
         // see http://aurimasv.github.io/z2csl/typeMap.xml
         static $typeMap = [
