@@ -37,7 +37,7 @@
         "gjuric/i18n-routing-bundle": "3.2.2",
         "jms/translation-bundle": "^2.2",
         "knplabs/knp-menu-bundle": "^3.3",
-        "knplabs/knp-paginator-bundle": "^5.9",
+        "knplabs/knp-paginator-bundle": "^6.3",
         "liip/url-auto-converter-bundle": "dev-master",
         "masterminds/html5": "^2.7",
         "mpdf/mpdf": "^8.1",
