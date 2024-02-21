@@ -130,14 +130,14 @@
         {% endif %}
 
         /* Legend specific */
-        var legend = L.control({ position: 'bottomleft' });
+        var legend = L.control({ position: 'topright' });
 
         legend.onAdd = function(map) {
             var div = L.DomUtil.create('div', 'legend');
             L.DomUtil.addClass(div, 'leaflet-control-attribution');
 
             div.innerHTML += '<span class="circle" style="color: #2A82CB"></span> {{ 'Published Entries'|trans }}';
-            div.innerHTML += ' <span class="circle" style="color: #7B7B7B"></span> {{ 'Additional Sites'|trans }}';
+            div.innerHTML += '<br/><span class="circle" style="color: #7B7B7B"></span> {{ 'Additional Sites'|trans }}';
 
             return div;
         };
