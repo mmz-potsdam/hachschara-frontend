@@ -158,7 +158,7 @@
                 <dt class="col-md-4 col-lg-3">{{ 'Related Organizations'|trans }}</dt>
                 <dd class="col-md-8 col-lg-9">
                 {% for orgRef in orgRefs %}
-                    <div><a href="{{ path('organization', { 'id': orgRef.agent.id }) }}">{{ orgRef.agent.name(app.request.locale) }}</a> ({{ orgRef.role.nameLocalized(app.request.locale) }})</div>
+                    <div>{{ helper.organization_linked(orgRef.agent, app.request.locale) }} ({{ orgRef.role.nameLocalized(app.request.locale) }})</div>
                 {% endfor %}
                 </dd>
             {% endif %}
@@ -168,7 +168,7 @@
                 <dt class="col-md-4 col-lg-3">{{ 'Related Persons'|trans }}</dt>
                 <dd class="col-md-8 col-lg-9">
                 {% for personRef in personRefs %}
-                    <div><a href="{{ path('person', { 'id': personRef.agent.id }) }}">{{ personRef.agent.fullname }}</a> ({{ personRef.role.nameLocalized(app.request.locale) }})</div>
+                    <div>{{ helper.person_linked(personRef.agent, false) }} ({{ personRef.role.nameLocalized(app.request.locale) }})</div>
                 {% endfor %}
                 </dd>
             {% endif %}

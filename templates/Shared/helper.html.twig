@@ -113,11 +113,15 @@
 {%- endmacro %}
 
 {% macro person_linked(person, givenNameFirst) -%}
-    <a href="{% if person.ulan is not empty %}{{ path('person-by-ulan', { 'ulan' : person.ulan }) }}{% elseif person.gnd is not empty %}{{ path('person-by-gnd', { 'gnd' : person.gnd }) }}{% else %}{{ path('person', { 'id' : person.id }) }}{% endif %}">{{ person.fullname(givenNameFirst|default(false)) }}</a>
+    <a href="{% if person.gnd is not empty %}{{ path('person-by-gnd', { 'gnd' : person.gnd }) }}{% else %}{{ path('person', { 'id' : person.id }) }}{% endif %}">{{ person.fullname(givenNameFirst|default(false)) }}</a>
 {%- endmacro %}
 
 {% macro person_linked_anchor(person) -%}
     <a href="#person-{{ person.id }}">{{ person.fullname }}</a>
+{%- endmacro %}
+
+{% macro organization_linked(organization, locale) -%}
+    <a href="{% if organization.gnd is not empty %}{{ path('organization-by-gnd', { 'gnd' : organization.gnd }) }}{% else %}{{ path('organization', { 'id' : organization.id }) }}{% endif %}">{{ organization.name(locale) }}</a>
 {%- endmacro %}
 
 {% macro seealso_head_gnd() %}

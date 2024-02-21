@@ -27,15 +27,16 @@
         {% for row in pagination %}
             {% set initial = row.name(app.request.locale)|slug|first|upper %}
             {% if initial != last_initial %}
-                <div class="avoid-break">
+            <div class="avoid-break">
                 <h2 class="initial">{{ initial }}</h2>
                 {% set last_initial = initial %}
             {% else %}
-                <div>
+            <div>
             {% endif %}
-            <a href="{{ path('organization', { 'id': row.id }) }}">{{ row.name(app.request.locale) }}</a>
-                </div>
+                {{ helper.organization_linked(row, app.request.locale) }}
+            </div>
         {% endfor %}
+        </div>
 
         {# display navigation #}
         {{ knp_pagination_render(pagination) }}
