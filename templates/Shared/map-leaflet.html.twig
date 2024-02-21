@@ -16,17 +16,6 @@
 
 {% macro head_colormarkers() %}
     <script src="{{ app.request.basepath }}/vendor/leaflet-color-markers/js/leaflet-color-markers.js"></script>
-
-    <script>
-    var grayIcon = new L.Icon({
-        iconUrl: '{{ app.request.basepath }}/vendor/leaflet-color-markers/img/marker-icon-2x-grey.png',
-        shadowUrl: '{{ app.request.basepath }}/vendor/leaflet-1.9.4/images/marker-shadow.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-        shadowSize: [41, 41]
-    });
-    </script>
 {% endmacro %}
 
 {% macro head_heatmap() %}
@@ -133,4 +122,14 @@
         popupAnchor: [1, -34],
         shadowSize: [41, 41]
     });
+
+    var grayIcon = new L.Icon({
+        iconUrl: baseUrlMarkerImg + 'marker-icon-2x-grey.png',
+        shadowUrl: baseUrlMarkerImg + 'marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    });
+
 {% endmacro %}
