@@ -6,7 +6,6 @@ namespace App\EventListener;
  * See https://github.com/prestaconcept/PrestaSitemapBundle/blob/master/Resources/doc/4-dynamic-routes-usage.md
  */
 
-use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\RouterInterface;
@@ -65,42 +64,6 @@ implements EventSubscriberInterface
         return [
             SitemapPopulateEvent::class => 'populate',
         ];
-    }
-
-    /**
-     * Build url in primary and alternate language and add it to sitemap
-     */
-    private function addUrl(UrlContainerInterface $urls, $volume, $resource = null)
-    {
-        $route = 'dynamic';
-        $params = [
-            'path' => $this->twigAppExtension->buildResourcePath(!is_null($resource) ? $resource : $volume),
-        ];
-
-        $url = $this->router->generate($route, $params, UrlGeneratorInterface::ABSOLUTE_URL);
-
-        $datestamp = is_null($resource)
-            ? $volume->getDatestamp() : $resource->getDatestamp();
-        if (is_null($datestamp)) {
-            $datestamp = new \DateTime();
-        }
-
-        $sitemapUrl = new UrlConcrete($url, $datestamp);
-
-        $alternate = $this->buildLocaleSwitch($volume, $resource);
-
-        if (!empty($alternate['route_params_locale_switch'])) {
-            $sitemapUrl = new \Presta\SitemapBundle\Sitemap\Url\GoogleMultilangUrlDecorator($sitemapUrl);
-
-            // add decorations for alternate language versions
-            foreach ($alternate['route_params_locale_switch'] as $altLocale => $params) {
-                $altUrl = $this->router->generate($route, $params + [ '_locale' => $altLocale ], UrlGeneratorInterface::ABSOLUTE_URL);
-
-                $sitemapUrl->addLink($altUrl, $altLocale);
-            }
-        }
-
-        $urls->addUrl($sitemapUrl, $volume->getId(true));
     }
 
     // see http://stackoverflow.com/a/10473026
@@ -177,8 +140,12 @@ implements EventSubscriberInterface
                         $query = $qb->getQuery();
                         $entities = $query->getResult();
                         foreach ($entities as $entity) {
-                            $gnd = null; // $entity->getGnd();
-                            if (!empty($gnd)) {
+
+                            $gnd = method_exists($entity, 'getGnd')
+                                ? $entity->getGnd()
+                                : null;
+
+                                if (!empty($gnd)) {
                                 $url = $this->router->generate($routeName . '-by-gnd', [ 'gnd' => $gnd, '_locale' => $defaults['_locale'] ],
                                                                UrlGeneratorInterface::ABSOLUTE_URL);
                             }
