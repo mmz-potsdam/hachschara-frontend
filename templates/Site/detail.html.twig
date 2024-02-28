@@ -18,6 +18,11 @@
 
 {% block head %}
     {{ map.head() }}
+    {{ map.head_extramarkers() }}
+    <script>
+    {{ map.defineSvgIcons() }}
+    </script>
+
     <!-- https://simplelightbox.com/ -->
     <link rel="stylesheet" href="{{ app.request.basepath }}/vendor/simple-lightbox/simple-lightbox.min.css">
     <script src="{{ app.request.basepath }}/vendor/simple-lightbox/simple-lightbox.jquery.min.js"></script>
@@ -250,7 +255,12 @@
                 prefix: ''
             }).addTo(map);
 
-            L.marker([ {{ site.geo }} ]).addTo(map);
+            var markerOptions = {
+                icon: blueIcon
+            };
+            L.marker([ {{ site.geo }} ], markerOptions)
+                .addTo(map);
+
             map.setView([{{ site.geo }}], 10);
 
             {{ map.addTileLayer() }}

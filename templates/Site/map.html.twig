@@ -9,10 +9,17 @@
     {{ parent() }}
 
     {{ map.head() }}
+    {#
     {{ map.head_colormarkers() }}
     <script>
     {{ map.defineColorIcons() }}
     </script>
+    #}
+    {{ map.head_extramarkers() }}
+    <script>
+    {{ map.defineSvgIcons() }}
+    </script>
+
     {{ map.head_markercluster() }}
 {% endblock %}
 
@@ -90,6 +97,7 @@
 
             var markerOptions = {
                 // title: title // removed in favor of bindTooltip below
+                icon: blueIcon
             };
 
             if (!linked) {
@@ -139,8 +147,8 @@
             var div = L.DomUtil.create('div', 'legend');
             L.DomUtil.addClass(div, 'leaflet-control-attribution');
 
-            div.innerHTML += '<span class="circle" style="color: #2A82CB"></span> {{ 'Published Entries'|trans }}';
-            div.innerHTML += '<br/><span class="circle" style="color: #7B7B7B"></span> {{ 'Additional Sites'|trans }}';
+            div.innerHTML += '<span class="circle" style="color: #478aa9"></span> {{ 'Published Entries'|trans }}';
+            div.innerHTML += '<br/><span class="circle" style="color: #7b7b7b"></span> {{ 'Additional Sites'|trans }}';
 
             return div;
         };

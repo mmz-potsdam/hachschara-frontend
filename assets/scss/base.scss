@@ -330,8 +330,18 @@ main {
         min-height: 480px;
         height: 80vh;
 
-        .circle:before {
-            content: ' \25CF';
+        /* raise the dot */
+        .extra-marker.extra-marker-svg i {
+            bottom: 18px;
+        }
+
+        .legend {
+            font-size: 14px; /* from 12px */
+
+            .circle:before {
+                font-size: 16px;
+                content: ' \25CF';
+            }
         }
     }
 
@@ -440,13 +450,14 @@ footer {
     }
 
     .tab-content {
-        border: 1px solid $color-body-text;
+        border: none; /* 1px solid $color-body-text; */
     }
 
     .csl-bib-body {
         .csl-entry {
             padding-left: 1.5em;
             text-indent: -1.5em;
+            margin-bottom: 1rem;
 
             .citeproc-creator {
                 font-weight: bold;
