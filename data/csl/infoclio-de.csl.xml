@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="note" default-locale="de" version="1.0" name-delimiter="; ">
   <info>
-    <title>Infoclio (German - Switzerland)</title>
-    <id>http://www.zotero.org/styles/infoclio-de</id>
+    <title>Jewish History Online</title>
+    <id>http://www.zotero.org/styles/jewisch-history-online</id>
     <link href="http://www.zotero.org/styles/infoclio-de" rel="self"/>
     <link href="http://www.zotero.org/styles/infoclio-fr-smallcaps" rel="template"/>
     <link href="https://www.infoclio.ch/de/node/133932" rel="documentation"/>
-    <summary>Citation Style for https://exhibitions05-15.kugb.univie.ac.at/. Based on http://www.zotero.org/styles/infoclio-de</summary>
+    <summary>Citation Style for jewish-history-online.net/bibliography. Based on http://www.zotero.org/styles/infoclio-de</summary>
     <author>
       <name>Daniel Burckhardt</name>
       <email>burckhardtd@geschichte.hu-berlin.de</email>
