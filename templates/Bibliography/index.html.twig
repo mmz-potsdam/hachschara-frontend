@@ -22,17 +22,17 @@
         <p>The following bibliography is incomplete and is only intended to provide an overview. Memoirs/biographies in which halutzim recall (mostly briefly) their time in Hakhshara have largely been omitted.  </p>
     {% endif %}
 
-    <ul class="nav nav-tabs" id="contentsTab" role="tablist">
+    <ul class="nav nav-tabs nav-fill" id="contentsTab" role="tablist">
         {% for key, data in bibliographyBySection %}
         <li class="nav-item" role="presentation">
-            <a class="nav-link{% if loop.first %} active{% endif %}" id="{{ key }}-tab" data-bs-toggle="tab" data-bs-target="#{{ key }}" role="tab" aria-controls="{{ key }}" aria-selected="{% if loop.first %}true{% else %}false{% endif %}">{{ data.title|trans({}, 'additional') }}</a>
+            <a class="nav-link{% if false and loop.first %} active{% endif %}" id="{{ key }}-tab" data-bs-toggle="tab" data-bs-target="#{{ key }}" role="tab" aria-controls="{{ key }}" aria-selected="{% if loop.first %}true{% else %}false{% endif %}">{{ data.title|trans({}, 'additional') }}</a>
         </li>
         {% endfor %}
     </ul>
 
     <div class="tab-content p-3" id="contentsTabContent">
         {% for key, data in bibliographyBySection %}
-        <div class="tab-pane fade show{% if loop.first %} active{% endif %}" id="{{ key }}" role="tabpanel" aria-labelledby="{{ key }}-tab">
+        <div class="tab-pane fade show{% if false and loop.first %} active{% endif %}" id="{{ key }}" role="tabpanel" aria-labelledby="{{ key }}-tab">
             {{ data.contentHtml|raw }}
         </div>
         {% endfor %}

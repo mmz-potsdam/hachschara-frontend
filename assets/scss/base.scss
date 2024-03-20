@@ -451,6 +451,12 @@ footer {
     .nav-tabs {
         border-bottom: none;
 
+        @media (max-width: $screen-sm-max) {
+            .nav-item {
+                width: 100%;
+            }
+        }
+
         .nav-link {
             background-color: $color-background-inverse;
 
