@@ -133,7 +133,7 @@
                     </div>
                 </dd>
                 <script>
-                if ($(window).width() < 768) {
+                if (true || $(window).width() < 768) {
                     // https://www.aakashweb.com/docs/jquery-collapser/
                     $('#description').collapser({
                         mode: 'lines',
@@ -144,6 +144,25 @@
                     });
                 }
                 </script>
+            {% endif %}
+
+            {% set objectMedia = site.media('object')|merge(site.media('additional')) %}
+            {% if objectMedia is not empty %}
+            </dl>
+        </div><!-- .container-fluid -->
+
+            <div class="d-flex flex-row flex-wrap mb-4">
+                {% for img in objectMedia %}
+                <figure class="figure-object mb-0">
+                    <a href="{{ helper.build_media_url(app, img) }}" data-toggle="lightbox">
+                        <img src="{{ helper.build_media_url(app, img) }}" />
+                    </a>
+                    <figcaption class="d-none">{{ img.caption|converturls|nl2br }}</figcaption>
+                </figure>
+                {% endfor %}
+            </div>
+        <div class="container-fluid p-0">
+            <dl class="row">
             {% endif %}
 
             {% if site.condition is not empty or site.projectHistory is not empty %}
@@ -193,20 +212,6 @@
             {% endif %}
             </dl>
         </div><!-- .container-fluid -->
-
-        {% set objectMedia = site.media('object')|merge(site.media('additional')) %}
-        {% if objectMedia is not empty %}
-        <div class="d-flex flex-row flex-wrap mb-4">
-            {% for img in objectMedia %}
-            <figure class="figure-object mb-0">
-                <a href="{{ helper.build_media_url(app, img) }}" data-toggle="lightbox">
-                    <img src="{{ helper.build_media_url(app, img) }}" />
-                </a>
-                <figcaption class="d-none">{{ img.caption|converturls|nl2br }}</figcaption>
-            </figure>
-            {% endfor %}
-        </div>
-        {% endif %}
 
         {{ _self.source_footer(site) }}
     </div>
@@ -260,7 +265,6 @@
             };
             L.marker([ {{ site.geo }} ], markerOptions)
                 .addTo(map);
-
             map.setView([{{ site.geo }}], 10);
 
             {{ map.addTileLayer() }}
