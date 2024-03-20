@@ -157,6 +157,17 @@ ul.inverse {
     }
 }
 
+.card {
+    border-color: $color-body-text;
+    border-radius: 0;
+    li {
+        border: none;
+    }
+    a {
+        color: $color-body-text;
+    }
+}
+
 .multi-col {
     @media (min-width: $screen-md-min) {
         -webkit-column-count: 2; /* Chrome, Safari, Opera */
