@@ -75,6 +75,12 @@ body {
     a, a:hover {
         color: $color-color-link;
     }
+
+    @media (min-width: $screen-xl-min) {
+        p, ol {
+            max-width: 75%;
+        }
+    }
 }
 
 nav {
