@@ -144,7 +144,7 @@
         <footer class="mt-auto">
             <div class="container">
                 <div class="row">
-                    <div class="col-10">
+                    <div class="col col-sm-10">
                         <a href="{{ path('home') }}">
                             <img src="{{ app.request.basepath }}/img/logo_inverse.{{ app.request.locale }}.svg" alt="{{ site_name|trans({}, 'additional') }}" style="height: 40px; width: auto; margin-bottom: 1rem;" />
                         </a>
@@ -152,7 +152,7 @@
                             {{ 'A project of'|trans }}
                         </div>
                     </div>
-                    <div class="col-2{# text-sm-end#}">
+                    <div class="col col-sm-2">
                         <a href="{{ path('imprint') }}#contact">{{ 'Contact'|trans }}</a><br />
                         <a href="{{ path('imprint') }}#data-protection">{{ 'Privacy'|trans }}</a><br />
                         <a href="{{ path('imprint') }}#imprint">{{ 'Imprint'|trans }}</a>
