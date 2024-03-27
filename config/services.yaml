@@ -20,6 +20,8 @@ parameters:
                     BI: 'roboto-v30-latin-ext_latin-700italic.ttf'
             default_font: pdffont
 
+    app.wordpress.url: 'https://juedische-geschichte-online.net/projekt/hachschara/'
+
     app.zotero.options:
         api-key: "%env(string:ZOTERO_API_KEY)%"
         group-id: 4432580
@@ -82,3 +84,8 @@ services:
     App\Service\ZoteroApiService:
         arguments:
             $options: "%app.zotero.options%"
+
+    Vnn\WpApiClient\WpClient:
+        arguments:
+            - !service { class: Vnn\WpApiClient\Http\GuzzleAdapter, arguments: [ !service { class: 'GuzzleHttp\Client' } ] }
+            - '%app.wordpress.url%'

@@ -321,28 +321,6 @@ main {
         list-style: inside;
     }
 
-    figure {
-        display: table;
-
-        img {
-            display: block;
-            max-height: 180px;
-            max-width: 100%;
-            width: auto;
-        }
-
-        figcaption {
-            display: table-caption;
-            caption-side: bottom;
-            /* text-align: center; */
-            a {
-                /* break long commons urls */
-                word-break: break-all; /* for Safari */
-                overflow-wrap: anywhere;
-            }
-        }
-    }
-
     #map {
         min-height: 480px;
         height: 80vh;
@@ -502,6 +480,41 @@ footer {
     }
 }
 
+.route-site {
+    figure {
+        display: table;
+
+        img {
+            display: block;
+            max-height: 180px;
+            max-width: 100%;
+            width: auto;
+        }
+
+        figcaption {
+            display: table-caption;
+            caption-side: bottom;
+            /* text-align: center; */
+            a {
+                /* break long commons urls */
+                word-break: break-all; /* for Safari */
+                overflow-wrap: anywhere;
+            }
+        }
+    }
+
+}
+
+.route-blog {
+    figure {
+        img {
+            max-width: 80%;
+            width: auto;
+            max-height: 600px;
+            height: auto;
+        }
+    }
+}
 /* simplelightbox */
 @media (max-aspect-ratio: 1/1.3) {
     /* move caption below image on portrait-mode 4:3 */

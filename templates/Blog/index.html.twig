@@ -1,0 +1,20 @@
+{% extends 'Base/base.html.twig' %}
+
+{% import 'Shared/helper.html.twig' as helper %}
+
+{% block body %}
+    <h1>{{ 'News'|trans }}</h1>
+
+    {% for post in posts %}
+        <div style=clear: left">{{ date(post['date'])|date('F d, Y'|trans)}}</div>
+        <h3 id="{{ post['slug'] }}" style="clear: left">
+            <a href="{{ path('blog', { 'slug': post['slug'] }) }}">{{ post['title']['rendered']|raw }}</a>
+        </h3>
+        <div>
+            {% if post['media_url'] is defined and post['media_url'] is not empty %}
+            <div class="blog-image-left" style="background-image: url('{{ post['media_url']['source_url'] }}')"></div>
+            {% endif %}
+            {{ post['excerpt']['rendered']|raw }}
+        </div>
+    {% endfor %}
+{% endblock %}
