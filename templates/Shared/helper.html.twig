@@ -124,30 +124,15 @@
     <a href="{% if organization.gnd is not empty %}{{ path('organization-by-gnd', { 'gnd' : organization.gnd }) }}{% else %}{{ path('organization', { 'id' : organization.id }) }}{% endif %}">{{ organization.name(locale) }}</a>
 {%- endmacro %}
 
-{% macro seealso_head_gnd() %}
+{% macro seealso_head_gnd(services = { 'gnd-entityfacts': 'https://juedische-geschichte-online.net/lod-resolver/seealso/entityfacts/gnd' }) %}
     <!-- https://verbundwiki.gbv.de/display/VZG/SeeAlso -->
     <script src="{{ app.request.basepath }}/js/seealso.js"></script>
     <script>
         var service = new SeeAlsoCollection();
         service.services = {
-            'pndaks' : new SeeAlsoService('https://juedische-geschichte-online.net/lod-resolver/seealso/findbuch/seealso/pnd-aks/-lemo@ap/-dome')
-        };
-        service.views = {
-            'seealso-ul' : new SeeAlsoUL({
-                linkTarget: '_blank',
-                maxItems: 100
-            })
-        };
-        service.replaceTagsOnLoad();
-    </script>
-{% endmacro %}
-
-{% macro seemore_head_gnd() %}
-    <script src="{{ app.request.basepath }}/js/seealso.js"></script>
-    <script>
-        var service = new SeeAlsoCollection();
-        service.services = {
-            'gndaks' : new SeeAlsoService('https://juedische-geschichte-online.net/lod-resolver/seealso/findbuch/seemore/gnd-aks/-dewp@wd')
+            {% for key, url in services %}
+            {{ key|json_encode|raw }} : new SeeAlsoService({{ url|json_encode|raw }}){% if not loop.last %}, {% endif %}
+            {% endfor %}
         };
         service.views = {
             'seealso-ul' : new SeeAlsoUL({

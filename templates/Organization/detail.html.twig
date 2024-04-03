@@ -8,7 +8,7 @@
 {% block head %}
     {{ map.head() }}
 
-    {{ helper.seemore_head_gnd() }}
+    {{ helper.seealso_head_gnd() }}
 {% endblock %}
 
 {% block body %}
@@ -82,7 +82,7 @@
             <h3>{{ 'Integrated Authority File'|trans }}
                 <a href="https://d-nb.info/gnd/{{ organization.gnd }}" target="_blank">{{ organization.gnd }}</a>
             </h3>
-            <div title="{{ organization.gnd }}" class="gndaks seealso-ul"></div>
+            <div title="{{ organization.gnd }}" class="gnd-entityfacts seealso-ul"></div>
         {% endif %}
     </div>
 {% endblock %}
