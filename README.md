@@ -4,7 +4,7 @@ License
 -------
     Code for the Front-end of hachschara.juedische-geschichte-online.net
 
-    (C) 2023 Moses Mendelssohn Center for European-Jewish Studies (MMZ)
+    (C) 2023-2024 Moses Mendelssohn Center for European-Jewish Studies (MMZ)
         Daniel Burckhardt
 
 
@@ -28,7 +28,7 @@ Installation
 ------------
 ### Requirements
 
-- PHP >= 8.1 (check with `php -v`)
+- PHP >= 8.2 (check with `php -v`)
 - composer (check with `composer -v`; if it is missing, see https://getcomposer.org/)
 
 ### Adjust Local Settings
