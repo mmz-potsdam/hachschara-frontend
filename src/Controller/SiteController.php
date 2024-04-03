@@ -166,7 +166,7 @@ extends BaseController
             $html = $this->renderView('Site/detail.html.twig', [
                 'pageTitle' => $entity->getName($locale),
                 'site' => $entity,
-                'mapMarkers' => $this->buildMapMarkers($entity),
+                'mapMarkers' => $this->buildMapMarkers($entity, $locale),
                 'printview' => true,
                 'pageMeta' => [
                     'jsonLd' => $entity->jsonLdSerialize($locale),
@@ -198,55 +198,13 @@ extends BaseController
         ]);
     }
 
+    /**
+     * $entity->getGeo() is used directly to place the marker
+     * So this is currently an empty stub
+     */
     protected function buildMapMarkers($entity, $locale = null)
     {
         $markers = [];
-
-        $places = [];
-
-        $location = $entity->getLocationInfo();
-        if (!empty($foundingLocation) && !empty($foundingLocation['geo'])) {
-            $places[] = [
-                'info' => $foundingLocation,
-                'label' => 'Location',
-            ];
-        }
-
-        foreach ($places as $place) {
-            $value = $group = null;
-            switch ($place['label']) {
-                default:
-                    $group = 'birthDeath';
-                    $value = [
-                        'icon' => 'Place of Death' == $place['label'] ? 'blackIcon' : 'violetIcon',
-                        'html' => sprintf('<b>%s</b>: <a href="%s">%s</a>',
-                                          $place['label'],
-                                          htmlspecialchars($this->generateUrl('place-by-tgn', [
-                                               'tgn' => $place['info']['tgn'],
-                                          ])),
-                                          htmlspecialchars($place['info']['name'], ENT_QUOTES))
-                    ];
-                    break;
-
-            }
-
-            if (is_null($value)) {
-                continue;
-            }
-
-            if (!array_key_exists($geo = $place['info']['geo'], $markers)) {
-                $markers[$geo] = [
-                    'place' => $place['info'],
-                    'groupedEntries' => [],
-                ];
-            }
-
-            if (!array_key_exists($group, $markers[$geo]['groupedEntries'])) {
-                $markers[$geo]['groupedEntries'][$group] = [];
-            }
-
-            $markers[$geo]['groupedEntries'][$group][] = $value;
-        }
 
         return $markers;
     }
