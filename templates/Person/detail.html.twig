@@ -43,7 +43,7 @@
             <dl class="row">
             {% if person.gender is not empty %}
                 <dt class="col-sm-4 col-md-3">{{ 'Gender'|trans }}</dt>
-                <dd class="col-sm-8 col-md-9">{{ person.genderLabel|trans }}</dd>
+                <dd class="col-sm-8 col-md-9">{{ person.genderLabel|trans({}, 'additional') }}</dd>
             {% endif %}
             {% if person.honorificPrefix is not empty %}
                 <dt class="col-sm-4 col-md-3">{{ 'Academic Title'|trans }}</dt>
@@ -53,10 +53,6 @@
                 <dt class="col-sm-4 col-md-3">{{ 'Alternate Name(s)'|trans }}</dt>
                 <dd class="col-sm-8 col-md-9">{{ person.alternateName|nl2br }}</dd>
             {% endif %}
-            {#% if person.notes is not empty and person.notes.name is not empty %}
-                <dt class="col-sm-4 col-md-3">Notes</dt>
-                <dd class="col-sm-8 col-md-9">{{ dump(person.notes.name) }}</dd>
-            {% endif %#}
             {% set birthPlace = person.birthPlaceInfo(app.request.locale) %}
             {% if birthPlace is not empty or person.birthDate is not empty %}
                 <dt class="col-sm-4 col-md-3">{{ 'Born'|trans }}</dt>
@@ -93,10 +89,12 @@
                 <dt class="col-sm-4 col-md-3">{{ 'Cause of Death'|trans }}</dt>
                 <dd class="col-sm-8 col-md-9">{{ person.deathCause }}</dd>
             {% endif %}
-            {#% if person.notes is not empty and person.notes['birth_death'] is not empty %}
-                <dt class="col-sm-4 col-md-3">{{ 'Notes'|trans }}</dt>
-                <dd class="col-sm-8 col-md-9">{{ dump(person.notes['birth_death']) }}</dd>
-            {% endif %#}
+            {% if person.hasInfo('birth_death') %}
+                <dt class="col-sm-4 col-md-3">{{ 'Sources and Notes'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">
+                    {{ helper.render_info(person.infoExpanded('birth_death')) }}
+                </dd>
+            {% endif %}
             {% if person.nationality is not empty %}
                 <dt class="col-sm-4 col-md-3">{{ 'Nationality'|trans }}</dt>
                 <dd class="col-sm-8 col-md-9">{{ person.nationality }}</dd>
@@ -116,6 +114,12 @@
                 {% for siteRef in siteRefs %}
                     <div><a href="{{ path('site', { 'id': siteRef.site.id }) }}">{{ siteRef.site.name(app.request.locale) }}</a> ({{ siteRef.role.nameLocalized(app.request.locale) }})</div>
                 {% endfor %}
+                </dd>
+            {% endif %}
+            {% if person.hasInfo('name') %}
+                <dt class="col-md-4 col-lg-3">{{ 'Additional Sources'|trans }}</dt>
+                <dd class="col-md-8 col-lg-9">
+                    {{ helper.render_info(person.infoExpanded('name')) }}
                 </dd>
             {% endif %}
             </dl>

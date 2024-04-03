@@ -55,10 +55,12 @@
                     {{ organization.dissolutionDate|dateextended -}}
                 </dd>
             {% endif %}
-            {#% if organization.notes is not empty and organization.notes['founding_dissolution'] is not empty %}
-                <dt class="col-sm-4 col-md-3">Notes</dt>
-                <dd class="col-sm-8 col-md-9">{{ dump(organization.notes['founding_dissolution']) }}</dd>
-            {% endif %#}
+            {% if organization.hasInfo('founding_dissolution') %}
+                <dt class="col-sm-4 col-md-3">{{ 'Sources and Notes'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">
+                    {{ helper.render_info(organization.infoExpanded('founding_dissolution')) }}
+                </dd>
+            {% endif %}
             {% if organization.description(app.request.locale) is not empty %}
                 <dt class="col-sm-4 col-md-3">{{ 'Description'|trans }}</dt>
                 <dd class="col-sm-8 col-md-9">{{ organization.description(app.request.locale)|nl2br }}</dd>
@@ -70,6 +72,12 @@
                 {% for siteRef in siteRefs %}
                     <div><a href="{{ path('site', { 'id': siteRef.site.id }) }}">{{ siteRef.site.name(app.request.locale) }}</a> ({{ siteRef.role.nameLocalized(app.request.locale) }})</div>
                 {% endfor %}
+                </dd>
+            {% endif %}
+            {% if organization.hasInfo('name') %}
+                <dt class="col-md-4 col-lg-3">{{ 'Additional Sources'|trans }}</dt>
+                <dd class="col-md-8 col-lg-9">
+                    {{ helper.render_info(organization.infoExpanded('name')) }}
                 </dd>
             {% endif %}
             </dl>

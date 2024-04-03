@@ -106,6 +106,12 @@ extends BaseController
             $routeParams = [ 'gnd' => $organization->getGnd() ];
         }
 
+        if ($organization->hasInfo()) {
+            $citeProc = $this->instantiateCiteProc($locale);
+            // expand the publications
+            $organization->buildInfoFull($entityManager, $citeProc);
+        }
+
         return $this->render('Organization/detail.html.twig', [
             'pageTitle' => $organization->getName(), // TODO: lifespan in brackets
             'organization' => $organization,

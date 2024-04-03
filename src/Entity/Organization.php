@@ -18,6 +18,11 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
 {
     use AddressesTrait;
 
+    use InfoTrait;
+
+    protected $info = [];
+    protected $extractFromNotes = [ 'name', 'birth_death' ];
+
     /**
      * @var string Date of birth.
      *

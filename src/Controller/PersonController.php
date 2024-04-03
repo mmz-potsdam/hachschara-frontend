@@ -98,6 +98,12 @@ extends BaseController
             $routeParams = [ 'gnd' => $person->getGnd() ];
         }
 
+        if ($person->hasInfo()) {
+            $citeProc = $this->instantiateCiteProc($locale);
+            // expand the publications
+            $person->buildInfoFull($entityManager, $citeProc);
+        }
+
         return $this->render('Person/detail.html.twig', [
             'pageTitle' => $person->getFullname(true), // TODO: lifespan in brackets
             'person' => $person,
