@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "086787ddb494fd760638218b8509748b",
+    "content-hash": "11ddfe4940052bfd56367bcde8f0e04e",
     "packages": [
         {
             "name": "armin/scssphp-bundle",
@@ -2836,16 +2836,16 @@
         },
         {
             "name": "knplabs/knp-menu-bundle",
-            "version": "v3.4.1",
+            "version": "v3.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpMenuBundle.git",
-                "reference": "925dd71fc9d7c31dd852a0537757be60c25e3afe"
+                "reference": "6a1e3e1f4131f9a5a967e36717a1fe680c183637"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpMenuBundle/zipball/925dd71fc9d7c31dd852a0537757be60c25e3afe",
-                "reference": "925dd71fc9d7c31dd852a0537757be60c25e3afe",
+                "url": "https://api.github.com/repos/KnpLabs/KnpMenuBundle/zipball/6a1e3e1f4131f9a5a967e36717a1fe680c183637",
+                "reference": "6a1e3e1f4131f9a5a967e36717a1fe680c183637",
                 "shasum": ""
             },
             "require": {
@@ -2895,9 +2895,9 @@
             ],
             "support": {
                 "issues": "https://github.com/KnpLabs/KnpMenuBundle/issues",
-                "source": "https://github.com/KnpLabs/KnpMenuBundle/tree/v3.4.1"
+                "source": "https://github.com/KnpLabs/KnpMenuBundle/tree/v3.4.2"
             },
-            "time": "2024-04-15T13:35:09+00:00"
+            "time": "2024-06-03T08:48:36+00:00"
         },
         {
             "name": "knplabs/knp-paginator-bundle",
@@ -9915,12 +9915,12 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/knallcharge/select2entity-bundle.git",
+                "url": "https://github.com/burki/select2entity-bundle.git",
                 "reference": "99bfd77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/knallcharge/select2entity-bundle/zipball/99bfd77",
+                "url": "https://api.github.com/repos/burki/select2entity-bundle/zipball/99bfd77",
                 "reference": "99bfd77",
                 "shasum": ""
             },
@@ -9962,7 +9962,7 @@
                 "typeahead"
             ],
             "support": {
-                "source": "https://github.com/knallcharge/select2entity-bundle/tree/master"
+                "source": "https://github.com/burki/select2entity-bundle/tree/master"
             },
             "time": "2024-01-11T11:50:08+00:00"
         },
