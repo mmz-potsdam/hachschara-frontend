@@ -165,14 +165,14 @@
             <dl class="row">
             {% endif %}
 
-            {% if site.condition is not empty or site.projectHistory is not empty %}
+            {% if site.condition is not empty or site.projectHistory(app.request.locale) is not empty %}
                 <dt class="col-md-4 col-lg-3">{{ 'State of Conservation'|trans }}</dt>
                 <dd class="col-md-8 col-lg-9">
                 {% if site.condition is not empty %}
                     {{ site.condition.nameLocalized(app.request.locale) }}
                 {% endif %}
-                {% if site.projectHistory is not empty %}
-                    <p>{{ site.projectHistory|nl2br }}</p>
+                {% if site.projectHistory(app.request.locale) is not empty %}
+                    <p>{{ site.projectHistory(app.request.locale)|nl2br }}</p>
                 {% endif %}
                 </dd>
             {% endif %}

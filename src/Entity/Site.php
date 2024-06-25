@@ -525,13 +525,13 @@ implements JsonLdSerializable
     }
 
     /**
-     * Gets projectHistory.
+     * Gets project history.
      *
      * @return string
      */
-    public function getProjectHistory()
+    public function getProjectHistory($locale = 'de')
     {
-        return $this->projectHistory;
+        return $this->getTranslatedProperty('projectHistory', $locale);
     }
 
     /**
