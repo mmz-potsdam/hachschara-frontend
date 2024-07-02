@@ -35,10 +35,17 @@ Installation
 
 - vi .env.local (not commited)
 
-Directory Permissions for cache and logs
+Directory Permissions for
+
+cache and logs
 
 - sudo setfacl -R -m u:www-data:rwX ./var
 - sudo setfacl -dR -m u:www-data:rwX ./var
+
+bundles
+
+- sudo setfacl -R -m u:www-data:rwX ./public/bundles
+- sudo setfacl -dR -m u:www-data:rwX ./public/bundles
 
 ### SCSS compilation
 In a `prod` environment, generate `public/css/base.css`
