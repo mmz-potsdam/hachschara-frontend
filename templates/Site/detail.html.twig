@@ -192,7 +192,11 @@
                 <dt class="col-md-4 col-lg-3">{{ 'Related Persons'|trans }}</dt>
                 <dd class="col-md-8 col-lg-9">
                 {% for personRef in personRefs %}
-                    <div>{{ helper.person_linked(personRef.agent, false) }} ({{ personRef.role.nameLocalized(app.request.locale) }})</div>
+                    <div>{{ helper.person_linked(personRef.agent, false) }}
+                        {% if personRef.role is not null and personRef.role.name != 'Teilnehmer:in' %}
+                        ({{ personRef.role.nameLocalized(app.request.locale) }})
+                        {% endif %}
+                    </div>
                 {% endfor %}
                 </dd>
             {% endif %}
