@@ -86,16 +86,19 @@
         var addressPoints = {{ data|json_encode|raw }};
         for (var i = 0; i < addressPoints.length; i++) {
             var a = addressPoints[i];
+            console.log(a);
             var title = a[2];
-            var linked = a[3];
+            var linked = title[0] == '<'; // is a <a href="">... tag
+            var status = a[3]; // 0: abstract, -1: nothing
 
             var markerOptions = {
                 // title: title // removed in favor of bindTooltip below
                 icon: blueIcon
             };
 
-            if (!linked) {
-                markerOptions.icon = grayIcon;
+            if (status < 1) {
+                markerOptions.icon = 0 == status
+                    ? yellowIcon : grayIcon;
             }
 
             var marker = L.marker(L.latLng(a[0], a[1]), markerOptions);
@@ -106,7 +109,7 @@
             if (!isTouchDevice()) {
                 marker.bindTooltip(linked ? $(title).text() : title, tooltipProperties);
 
-                if (linked) {
+                if (status == 1) {
                     var href = $(title).attr('href');
 
                     // closure, https://stackoverflow.com/a/19323214
@@ -119,9 +122,14 @@
 
                     marker.on('click', callback);
                 }
+                else if (status == 0) {
+                    marker.bindPopup('<strong>' + title + '</strong>'
+                        + '<div>' + a[4] + '</div>');
+                }
             }
             else {
-                marker.bindPopup('<strong>' + title + '</strong>');
+                marker.bindPopup('<strong>' + title + '</strong>'
+                    + (status == 0 ? '<div>' + a[4] + '</div>' : ''));
             }
 
             markers.addLayer(marker);
@@ -142,6 +150,7 @@
             L.DomUtil.addClass(div, 'leaflet-control-attribution');
 
             div.innerHTML += '<span class="circle" style="color: #478aa9"></span> {{ 'Published Entries'|trans }}';
+            div.innerHTML += '<br/><span class="circle" style="color: #e6bb33"></span> {{ 'Short Descriptions'|trans }}';
             div.innerHTML += '<br/><span class="circle" style="color: #7b7b7b"></span> {{ 'Additional Sites'|trans }}';
 
             return div;

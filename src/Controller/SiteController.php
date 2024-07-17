@@ -89,7 +89,22 @@ extends BaseController
                         $info[] = $name;
                     }
 
-                    $info[] = $result->getStatus() == 1;
+                    $abstractLocalized = null;
+                    switch ($result->getStatus()) {
+                        case 1:
+                            $linked = 1;
+                            break;
+
+                        default:
+                            $abstractLocalized = $result->getAbstractLocalized($locale);
+                            $linked = !empty($abstractLocalized) ? 0 : -1;
+                    }
+
+                    $info[] = $linked;
+
+                    $info[] = 0 === $linked
+                        ? htmlspecialchars($abstractLocalized, ENT_COMPAT, 'utf-8')
+                        : null;
 
                     $data[] = $info;
                 }
