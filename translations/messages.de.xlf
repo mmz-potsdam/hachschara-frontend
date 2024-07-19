@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2024-04-03T12:53:40Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
+  <file date="2024-07-17T13:25:37Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -25,17 +25,18 @@
       <trans-unit id="dbcf1758bea56f94a38e7f582a926fdd7ce5c9b5" resname="Additional Sites">
         <source>Additional Sites</source>
         <target>Weitere Orte</target>
-        <jms:reference-file line="151">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\map.html.twig\</jms:reference-file>
+        <jms:reference-file line="146">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\map.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="cbb2804c9fa44dd6b291e1cb9b465b12cc4189ce" resname="Additional Sources">
         <source>Additional Sources</source>
-        <target state="new">Weitere Quellen</target>
-        <jms:reference-file line="124">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
+        <target>Weitere Quellen</target>
+        <jms:reference-file line="78">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Organization\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="120">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="d70f93df5e8f9b55be44fbeee9d203972e3383d4" resname="Address">
         <source>Address</source>
         <target>Adresse</target>
-        <jms:reference-file line="220">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="224">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="0c2c47a5ff3b3a51e1eaf845a38b21bd0eb21feb" resname="Also Known As">
         <source>Also Known As</source>
@@ -72,12 +73,12 @@
       <trans-unit id="3669ed0cd8b360db24b7639d3a8c0424d68395e9" resname="Born">
         <source>Born</source>
         <target>Geboren</target>
-        <jms:reference-file line="62">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="58">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="e419cc56b4a4e2c74c4e87aeb17e49142fd9475e" resname="Cause of Death">
         <source>Cause of Death</source>
         <target>Todesursache</target>
-        <jms:reference-file line="93">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="89">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="88d86b7721d587644e9c4cf33a084202cb3b0ff0" resname="Closed">
         <source>Closed</source>
@@ -93,20 +94,20 @@
       <trans-unit id="2d946ef8e3d3cf110b51dc1d6580f03c92209f13" resname="Denomination">
         <source>Denomination</source>
         <target>Denomination</target>
-        <jms:reference-file line="107">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="103">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="55f8ebc805e65b5b71ddafdae390e3be2bcd69af" resname="Description">
         <source>Description</source>
         <target>Beschreibung</target>
-        <jms:reference-file line="63">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Organization\detail.html.twig\</jms:reference-file>
-        <jms:reference-file line="111">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="65">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Organization\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="107">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
         <jms:reference-file line="129">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\detail.html.twig\</jms:reference-file>
         <jms:reference-file line="106">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\User\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="68316444b99c6ba68313bede5aa8603526904561" resname="Died">
         <source>Died</source>
         <target>Gestorben</target>
-        <jms:reference-file line="78">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="74">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="3da930f3774f9a806afed64d3343d46c828c1661" resname="Dissolution">
         <source>Dissolution</source>
@@ -116,7 +117,7 @@
       <trans-unit id="c0598ae67e8782dfffb8b49de8fe27f445fdd088" resname="External Information">
         <source>External Information</source>
         <target>Weiterführende Informationen</target>
-        <jms:reference-file line="276">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="280">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="b226aad69c677d3aad539e7365be2e847cced54c" resname="F d, Y">
         <source>F d, Y</source>
@@ -140,7 +141,7 @@
       <trans-unit id="0765d03a79b01914b5029a88daaba700f60db1bd" resname="Founding Location">
         <source>Founding Location</source>
         <target>Gegründet in</target>
-        <jms:reference-file line="131">\..\..\..\..\D:/Projekte/hachschara/frontend/src\Controller\OrganizationController.php\</jms:reference-file>
+        <jms:reference-file line="137">\..\..\..\..\D:/Projekte/hachschara/frontend/src\Controller\OrganizationController.php\</jms:reference-file>
       </trans-unit>
       <trans-unit id="8a754c61c2ced0c5ff79a1827e02c9d643d6d926" resname="Gender">
         <source>Gender</source>
@@ -168,7 +169,7 @@
       <trans-unit id="9a68a6c32779a58ceed53f724d889b29e85ad83d" resname="Historical Region">
         <source>Historical Region</source>
         <target>Historische Verwaltungseinheit</target>
-        <jms:reference-file line="238">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="242">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="70f8bb9a8a5393ef080507a89e4b98d139000d65" resname="Home">
         <source>Home</source>
@@ -191,8 +192,8 @@
       <trans-unit id="2312ce905355db60ba0a4da09a398ae54ecc79fd" resname="Integrated Authority File">
         <source>Integrated Authority File</source>
         <target>Gemeinsame Normdatei</target>
-        <jms:reference-file line="82">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Organization\detail.html.twig\</jms:reference-file>
-        <jms:reference-file line="169">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="90">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Organization\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="165">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
         <jms:reference-file line="161">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\User\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="c17e5c9d2507136080093320a0436a57b3618190" resname="Literature">
@@ -202,7 +203,7 @@
         <jms:reference-file line="111">\..\..\..\..\D:/Projekte/hachschara/frontend/src\Menu\Builder.php\</jms:reference-file>
         <jms:reference-file line="3">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Bibliography\index.html.twig\</jms:reference-file>
         <jms:reference-file line="7">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Bibliography\index.html.twig\</jms:reference-file>
-        <jms:reference-file line="208">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="212">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="0e395bfa3879c6532f36f789e96f80c57030f8f0" resname="Look-up">
         <source>Look-up</source>
@@ -214,7 +215,7 @@
         <source>Map</source>
         <target>Karte</target>
         <jms:reference-file line="37">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Default\home.html.twig\</jms:reference-file>
-        <jms:reference-file line="244">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="248">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="74f09ec887e17a194a4940f7905e439222ce6d86" resname="Moses Mendelssohn Center for European-Jewish Studies">
         <source>Moses Mendelssohn Center for European-Jewish Studies</source>
@@ -224,7 +225,7 @@
       <trans-unit id="1969ead537490c3bbaf406fab393be9acbe514c1" resname="Nationality">
         <source>Nationality</source>
         <target>Nationalität</target>
-        <jms:reference-file line="103">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="99">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="34c808d0a63f277e04fb23a5f76cc83d0a3e024b" resname="News">
         <source>News</source>
@@ -292,7 +293,7 @@
       <trans-unit id="3e700b8d23a559a365808353b8629f929fd559f2" resname="Place of Activity">
         <source>Place of Activity</source>
         <target>Wirkungsort</target>
-        <jms:reference-file line="159">\..\..\..\..\D:/Projekte/hachschara/frontend/src\Controller\OrganizationController.php\</jms:reference-file>
+        <jms:reference-file line="165">\..\..\..\..\D:/Projekte/hachschara/frontend/src\Controller\OrganizationController.php\</jms:reference-file>
         <jms:reference-file line="165">\..\..\..\..\D:/Projekte/hachschara/frontend/src\Controller\PersonController.php\</jms:reference-file>
       </trans-unit>
       <trans-unit id="2dfd5205e0be47782320bce1af35867c023b9af0" resname="Place of Birth">
@@ -318,7 +319,7 @@
       <trans-unit id="f5403051ca65e193b035aebe0c938e20f6944dae" resname="Published Entries">
         <source>Published Entries</source>
         <target>Veröffentlichte Beiträge</target>
-        <jms:reference-file line="150">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\map.html.twig\</jms:reference-file>
+        <jms:reference-file line="144">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\map.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="8bfa7f284ccbf5e2b4a53c9f6f00ebabdef8837c" resname="Read-on">
         <source>Read-on</source>
@@ -345,14 +346,19 @@
       <trans-unit id="6d9174ab5322d81b34e6062d010ddebae0a3493e" resname="Related Sites">
         <source>Related Sites</source>
         <target>Zugehörige Orte</target>
-        <jms:reference-file line="68">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Organization\detail.html.twig\</jms:reference-file>
-        <jms:reference-file line="116">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="70">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Organization\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="112">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
         <jms:reference-file line="114">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\User\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="bce06414177f72ab70e6387b6af9f8ceef0d6049" resname="Search">
         <source>Search</source>
         <target>Suche</target>
         <jms:reference-file line="33">\..\..\..\..\D:/Projekte/hachschara/frontend/src\Filter\CrudFilterType.php\</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7a84b903d656d2a48a0a7f118a66f6b43f4c3ef7" resname="Short Descriptions">
+        <source>Short Descriptions</source>
+        <target state="new">Kurzbeschreibungen</target>
+        <jms:reference-file line="145">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\map.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="50a279de829f2dc398ac2ac7c9367508ea4b5df5" resname="Show all">
         <source>Show all</source>
@@ -368,14 +374,15 @@
         <jms:reference-file line="35">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Default\home.html.twig\</jms:reference-file>
         <jms:reference-file line="5">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\index.html.twig\</jms:reference-file>
         <jms:reference-file line="8">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\index.html.twig\</jms:reference-file>
-        <jms:reference-file line="27">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\map.html.twig\</jms:reference-file>
+        <jms:reference-file line="21">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\map.html.twig\</jms:reference-file>
         <jms:reference-file line="6">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\map.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="46840ddf946e7a398f8714fb6ee1c0d68e004285" resname="Sources and Notes">
         <source>Sources and Notes</source>
         <target>Quellen und Hinweise</target>
-        <jms:reference-file line="97">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
-        <jms:reference-file line="201">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="59">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Organization\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="93">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Person\detail.html.twig\</jms:reference-file>
+        <jms:reference-file line="205">\..\..\..\..\D:/Projekte/hachschara/frontend/templates\Site\detail.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="0a0ec726958c1a6946f9c8a15337677783d977d4" resname="State of Conservation">
         <source>State of Conservation</source>

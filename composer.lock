@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "11ddfe4940052bfd56367bcde8f0e04e",
+    "content-hash": "ca7d4c9e600943d022040ebd547a6ee3",
     "packages": [
         {
             "name": "armin/scssphp-bundle",
@@ -300,16 +300,16 @@
         },
         {
             "name": "citation-style-language/styles",
-            "version": "v0.0.436",
+            "version": "v0.0.439",
             "source": {
                 "type": "git",
                 "url": "https://github.com/citation-style-language/styles.git",
-                "reference": "48ca7a2086d0969802eaa70d9b2d2b4ed849b1cf"
+                "reference": "3674fcfb11197f8a7bfaedadaf8ea147e34feedd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/citation-style-language/styles/zipball/48ca7a2086d0969802eaa70d9b2d2b4ed849b1cf",
-                "reference": "48ca7a2086d0969802eaa70d9b2d2b4ed849b1cf",
+                "url": "https://api.github.com/repos/citation-style-language/styles/zipball/3674fcfb11197f8a7bfaedadaf8ea147e34feedd",
+                "reference": "3674fcfb11197f8a7bfaedadaf8ea147e34feedd",
                 "shasum": ""
             },
             "type": "library",
@@ -327,7 +327,7 @@
             "homepage": "http://citationstyles.org/",
             "support": {
                 "issues": "https://github.com/citation-style-language/styles/issues",
-                "source": "https://github.com/citation-style-language/styles/tree/v0.0.436"
+                "source": "https://github.com/citation-style-language/styles/tree/v0.0.439"
             },
             "funding": [
                 {
@@ -335,7 +335,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-06-09T02:10:25+00:00"
+            "time": "2024-07-12T13:04:59+00:00"
         },
         {
             "name": "cocur/slugify",
@@ -3497,16 +3497,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v5.0.2",
+            "version": "v5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "139676794dc1e9231bf7bcd123cfc0c99182cb13"
+                "reference": "683130c2ff8c2739f4822ff7ac5c873ec529abd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/139676794dc1e9231bf7bcd123cfc0c99182cb13",
-                "reference": "139676794dc1e9231bf7bcd123cfc0c99182cb13",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/683130c2ff8c2739f4822ff7ac5c873ec529abd1",
+                "reference": "683130c2ff8c2739f4822ff7ac5c873ec529abd1",
                 "shasum": ""
             },
             "require": {
@@ -3517,7 +3517,7 @@
             },
             "require-dev": {
                 "ircmaxell/php-yacc": "^0.0.7",
-                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0"
+                "phpunit/phpunit": "^9.0"
             },
             "bin": [
                 "bin/php-parse"
@@ -3549,9 +3549,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v5.0.2"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v5.1.0"
             },
-            "time": "2024-03-05T20:51:40+00:00"
+            "time": "2024-07-01T20:03:41+00:00"
         },
         {
             "name": "pagerfanta/core",
@@ -4398,31 +4398,30 @@
         },
         {
             "name": "scienta/doctrine-json-functions",
-            "version": "5.5.0",
+            "version": "6.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ScientaNL/DoctrineJsonFunctions.git",
-                "reference": "afcb6af4d1421f795fec5cbf29c02aaf486f21c7"
+                "reference": "0d9c01ab012e628b845191d2c3b369855308c457"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ScientaNL/DoctrineJsonFunctions/zipball/afcb6af4d1421f795fec5cbf29c02aaf486f21c7",
-                "reference": "afcb6af4d1421f795fec5cbf29c02aaf486f21c7",
+                "url": "https://api.github.com/repos/ScientaNL/DoctrineJsonFunctions/zipball/0d9c01ab012e628b845191d2c3b369855308c457",
+                "reference": "0d9c01ab012e628b845191d2c3b369855308c457",
                 "shasum": ""
             },
             "require": {
-                "doctrine/dbal": "^3.2",
+                "doctrine/dbal": "^3.2 || ^4",
                 "doctrine/lexer": "^2.0 || ^3.0",
                 "doctrine/orm": "^2.19 || ^3",
                 "ext-pdo": "*",
-                "php": "^7.4 || ^8.0"
+                "php": "^8.1"
             },
             "require-dev": {
-                "doctrine/annotations": "^2",
-                "doctrine/coding-standard": "^8.0 || ^9.0",
-                "phpunit/phpunit": "^8.0 || ^9.0",
+                "doctrine/coding-standard": "^9.0 || ^10.0 || ^11.0 || ^12.0",
+                "phpunit/phpunit": "^10.1",
                 "psalm/plugin-phpunit": "^0.18",
-                "slevomat/coding-standard": "^8.4",
+                "slevomat/coding-standard": "~8",
                 "symfony/cache": "^5.4 || ^6.4 || ^7",
                 "vimeo/psalm": "^5.2",
                 "webmozart/assert": "^1.11"
@@ -4431,11 +4430,6 @@
                 "dunglas/doctrine-json-odm": "To serialize / deserialize objects as JSON documents."
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.1-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Scienta\\DoctrineJsonFunctions\\": "src/"
@@ -4451,7 +4445,7 @@
                     "homepage": "https://github.com/ScientaNL/DoctrineJsonFunctions/contributors"
                 }
             ],
-            "description": "A set of extensions to Doctrine 2 that add support for json query functions.",
+            "description": "A set of extensions to Doctrine that add support for json query functions.",
             "keywords": [
                 "database",
                 "doctrine",
@@ -4466,9 +4460,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ScientaNL/DoctrineJsonFunctions/issues",
-                "source": "https://github.com/ScientaNL/DoctrineJsonFunctions/tree/5.5.0"
+                "source": "https://github.com/ScientaNL/DoctrineJsonFunctions/tree/6.1.0"
             },
-            "time": "2024-03-08T08:39:12+00:00"
+            "time": "2024-04-10T07:24:09+00:00"
         },
         {
             "name": "scssphp/scssphp",
@@ -10769,42 +10763,42 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "8.5.38",
+            "version": "8.5.39",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "1ecad678646c817a29e55a32c930f3601c3f5a8c"
+                "reference": "172ba97bcf97ae6ef86ca256adf77aece8a143fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1ecad678646c817a29e55a32c930f3601c3f5a8c",
-                "reference": "1ecad678646c817a29e55a32c930f3601c3f5a8c",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/172ba97bcf97ae6ef86ca256adf77aece8a143fe",
+                "reference": "172ba97bcf97ae6ef86ca256adf77aece8a143fe",
                 "shasum": ""
             },
             "require": {
-                "doctrine/instantiator": "^1.3.1",
+                "doctrine/instantiator": "^1.5.0",
                 "ext-dom": "*",
                 "ext-json": "*",
                 "ext-libxml": "*",
                 "ext-mbstring": "*",
                 "ext-xml": "*",
                 "ext-xmlwriter": "*",
-                "myclabs/deep-copy": "^1.10.0",
-                "phar-io/manifest": "^2.0.3",
-                "phar-io/version": "^3.0.2",
+                "myclabs/deep-copy": "^1.12.0",
+                "phar-io/manifest": "^2.0.4",
+                "phar-io/version": "^3.2.1",
                 "php": ">=7.2",
-                "phpunit/php-code-coverage": "^7.0.12",
-                "phpunit/php-file-iterator": "^2.0.4",
+                "phpunit/php-code-coverage": "^7.0.17",
+                "phpunit/php-file-iterator": "^2.0.6",
                 "phpunit/php-text-template": "^1.2.1",
-                "phpunit/php-timer": "^2.1.2",
+                "phpunit/php-timer": "^2.1.4",
                 "sebastian/comparator": "^3.0.5",
-                "sebastian/diff": "^3.0.2",
-                "sebastian/environment": "^4.2.3",
-                "sebastian/exporter": "^3.1.5",
-                "sebastian/global-state": "^3.0.0",
-                "sebastian/object-enumerator": "^3.0.3",
-                "sebastian/resource-operations": "^2.0.1",
-                "sebastian/type": "^1.1.3",
+                "sebastian/diff": "^3.0.6",
+                "sebastian/environment": "^4.2.5",
+                "sebastian/exporter": "^3.1.6",
+                "sebastian/global-state": "^3.0.5",
+                "sebastian/object-enumerator": "^3.0.5",
+                "sebastian/resource-operations": "^2.0.3",
+                "sebastian/type": "^1.1.5",
                 "sebastian/version": "^2.0.1"
             },
             "suggest": {
@@ -10847,7 +10841,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/8.5.38"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/8.5.39"
             },
             "funding": [
                 {
@@ -10863,7 +10857,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-04-05T04:31:23+00:00"
+            "time": "2024-07-10T11:43:00+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
