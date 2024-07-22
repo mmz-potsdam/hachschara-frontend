@@ -311,32 +311,32 @@
             ]
         },
         {
-            "id": "DNMRHHHT",
-            "citation-label": "buser_2017",
-            "type": "chapter",
-            "title": "Hachscharah unter NS-Herrschaft. Jugendfürsorge und Auswanderungsvorbereitung",
-            "container-title": "Jüdische Jugendbewegung und soziale Praxis",
-            "collection-title": "Schriftenreihe des Arbeitskreises Geschichte der jüdischen Wohlfahrt in Deutschland",
-            "collection-number": "Band 6",
+            "id": "S7HXHJC2",
+            "citation-label": "bergbauer-et-al_2024",
+            "type": "book",
+            "title": "Jüdische Jugend im Übergang – Jewish Youth in Transit. Selbstverständnis und Ideen in Zeiten des Wandels",
+            "container-title": null,
+            "collection-title": "Europäisch-Jüdische Studien – Beiträge",
+            "collection-number": "59",
             "volume": "",
             "number-of-volumes": "",
-            "edition": null,
-            "publisher-place": "Frankfurt am Main",
-            "publisher": "Fachhochschulverlag, Der Verlag für angewandte Wissenschaften",
+            "edition": "",
+            "publisher-place": "Berlin",
+            "publisher": "De Gruyter",
             "issued": {
                 "date-parts": [
                     [
-                        2017
+                        2024
                     ]
                 ],
-                "literal": "2017"
+                "literal": "2024"
             },
-            "page": "293–307",
-            "number-of-pages": null,
+            "page": null,
+            "number-of-pages": "",
             "DOI": null,
-            "ISBN": "978-3-943787-77-1",
+            "ISBN": "978-3-11-076852-7",
             "ISSN": null,
-            "URL": "",
+            "URL": "https://doi.org/10.1515/9783110774702",
             "accessed": {
                 "date-parts": [
                     [
@@ -345,25 +345,27 @@
                 ],
                 "literal": ""
             },
-            "language": "ger",
-            "author": [
-                {
-                    "given": "Verena",
-                    "family": "Buser"
-                }
-            ],
+            "language": "",
             "editor": [
                 {
-                    "given": "Sabine",
-                    "family": "Hering"
+                    "given": "Knut",
+                    "family": "Bergbauer"
                 },
                 {
-                    "given": "Harald",
-                    "family": "Lordick"
+                    "given": "Nora M.",
+                    "family": "Kissling"
                 },
                 {
-                    "given": "Gerd",
-                    "family": "Stecklina"
+                    "given": "Beate",
+                    "family": "Lehmann"
+                },
+                {
+                    "given": "Ulrike",
+                    "family": "Pilarczyk"
+                },
+                {
+                    "given": "Ofer",
+                    "family": "Ashkenazi"
                 }
             ]
         },
@@ -421,6 +423,63 @@
                 {
                     "given": "Joachim",
                     "family": "Wolschke-Bulmahn"
+                }
+            ]
+        },
+        {
+            "id": "DNMRHHHT",
+            "citation-label": "buser_2017",
+            "type": "chapter",
+            "title": "Hachscharah unter NS-Herrschaft. Jugendfürsorge und Auswanderungsvorbereitung",
+            "container-title": "Jüdische Jugendbewegung und soziale Praxis",
+            "collection-title": "Schriftenreihe des Arbeitskreises Geschichte der jüdischen Wohlfahrt in Deutschland",
+            "collection-number": "6",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Frankfurt am Main",
+            "publisher": "Fachhochschulverlag, Der Verlag für angewandte Wissenschaften",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ],
+                "literal": "2017"
+            },
+            "page": "293–307",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-943787-77-1",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "author": [
+                {
+                    "given": "Verena",
+                    "family": "Buser"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Sabine",
+                    "family": "Hering"
+                },
+                {
+                    "given": "Harald",
+                    "family": "Lordick"
+                },
+                {
+                    "given": "Gerd",
+                    "family": "Stecklina"
                 }
             ]
         },
@@ -637,7 +696,7 @@
             "title": "Die Anfänge der religiösen Hachschara in Deutschland",
             "container-title": "Hachschara und Jugend-Alija. Wege jüdischer Jugend nach Palästina 1918-1941",
             "collection-title": "Steinhorster Beiträge zur Geschichte von Schule, Kindheit und Jugend",
-            "collection-number": "Band 1",
+            "collection-number": "1",
             "volume": "",
             "number-of-volumes": "",
             "edition": "",
@@ -946,7 +1005,7 @@
             "DOI": null,
             "ISBN": "978-3-8353-0439-0",
             "ISSN": null,
-            "URL": "",
+            "URL": "https://www.igdj-hh.de/upload/gemeinschaft_in_bildern.pdf",
             "accessed": {
                 "date-parts": [
                     [
@@ -1199,7 +1258,7 @@
             "language": "en",
             "author": [
                 {
-                    "given": "Ch",
+                    "given": "Chaim",
                     "family": "Schatzker"
                 }
             ]

@@ -198,7 +198,7 @@
             "collection-number": "",
             "volume": "",
             "number-of-volumes": "",
-            "edition": null,
+            "edition": "",
             "publisher-place": "Bremen",
             "publisher": "Edition Temmen",
             "issued": {
@@ -456,49 +456,6 @@
                 {
                     "given": "Hermann",
                     "family": "Simon"
-                }
-            ]
-        },
-        {
-            "id": "HLIMA39A",
-            "citation-label": "fischer_2018",
-            "type": "article-journal",
-            "title": "Das jüdische Umschulungslager Belzig. Hechaluz-Ausbildungsstätte zwischen Neuanfang und Verdrängung 1932–1934",
-            "container-title": "Forschungen zur brandenburgischen und preußischen Geschichte",
-            "collection-title": "",
-            "collection-number": null,
-            "volume": "28",
-            "number-of-volumes": null,
-            "edition": null,
-            "publisher-place": null,
-            "publisher": null,
-            "issued": {
-                "date-parts": [
-                    [
-                        2018
-                    ]
-                ],
-                "literal": "2018"
-            },
-            "page": "99–123",
-            "number-of-pages": null,
-            "DOI": "",
-            "ISBN": null,
-            "ISSN": null,
-            "URL": "",
-            "accessed": {
-                "date-parts": [
-                    [
-                        ""
-                    ]
-                ],
-                "literal": ""
-            },
-            "language": "",
-            "author": [
-                {
-                    "given": "Hubertus",
-                    "family": "Fischer"
                 }
             ]
         },
@@ -769,6 +726,49 @@
                 "literal": "2021-11-12T15:08:09Z"
             },
             "language": "de-DE",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "HLIMA39A",
+            "citation-label": "fischer_2018",
+            "type": "article-journal",
+            "title": "Das jüdische Umschulungslager Belzig. Hechaluz-Ausbildungsstätte zwischen Neuanfang und Verdrängung 1932–1934",
+            "container-title": "Forschungen zur brandenburgischen und preußischen Geschichte",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "28",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ],
+                "literal": "2018"
+            },
+            "page": "99–123",
+            "number-of-pages": null,
+            "DOI": "10.3790/fbpg.28.1-2.99",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
             "author": [
                 {
                     "given": "Hubertus",
@@ -1470,15 +1470,15 @@
             "id": "55R68K99",
             "citation-label": "linse_1983",
             "type": "chapter",
-            "title": "Jüdisches Siedeln. Kibbuz Cheruth",
+            "title": "Kibbuz Cheruth",
             "container-title": "Zurück, o Mensch, zur Mutter Erde. Landkommunen in Deutschland 1890 - 1933",
-            "collection-title": "Dtv dtv-dokumente",
+            "collection-title": "dtv-dokumente",
             "collection-number": "2934",
             "volume": "",
             "number-of-volumes": "",
             "edition": "Orig.-Ausg",
             "publisher-place": "München",
-            "publisher": "Dt. Taschenbuch-Verl",
+            "publisher": "Deutscher Taschenbuch Verlag",
             "issued": {
                 "date-parts": [
                     [
@@ -1487,7 +1487,7 @@
                 ],
                 "literal": "1983"
             },
-            "page": "293–311",
+            "page": "293–359",
             "number-of-pages": null,
             "DOI": null,
             "ISBN": "978-3-423-02934-6",
