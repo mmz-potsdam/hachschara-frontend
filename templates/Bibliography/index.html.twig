@@ -24,7 +24,7 @@
 
     <ul class="nav nav-tabs nav-fill" id="contentsTab" role="tablist">
         {% for key, data in bibliographyBySection %}
-        <li class="nav-item" role="presentation">
+        <li class="nav-item me-2 mb-2" role="presentation">
             <a class="nav-link{% if false and loop.first %} active{% endif %}" id="{{ key }}-tab" data-bs-toggle="tab" data-bs-target="#{{ key }}" role="tab" aria-controls="{{ key }}" aria-selected="{% if loop.first %}true{% else %}false{% endif %}">{{ data.title|trans({}, 'additional') }}</a>
         </li>
         {% endfor %}

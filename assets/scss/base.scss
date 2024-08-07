@@ -429,9 +429,16 @@ footer {
     .nav-tabs {
         border-bottom: none;
 
+        @media (max-width: $screen-md-max) {
+            .nav-item {
+                width: 45%;
+            }
+        }
+
         @media (max-width: $screen-sm-max) {
             .nav-item {
                 width: 100%;
+                margin-right: 0;
             }
         }
 
@@ -443,7 +450,7 @@ footer {
 
             color: $color-body-inverse;
 
-            &.active {
+            &.active, &:hover {
                 background-color: $color-body-text;
                 color: $color-body-inverse;
             }
