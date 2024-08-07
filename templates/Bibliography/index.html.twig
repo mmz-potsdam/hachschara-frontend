@@ -2,9 +2,14 @@
 
 {% block title %}{{ 'Literature'|trans }} | {{ parent() }} {% endblock %}
 
+{% block head %}
+    <script src="{{ app.request.basepath }}/js/jquery.collapser.min.js"></script>
+{% endblock %}
+
 {% block body %}
 <div class="col-12">
     <h1>{{ 'Literature'|trans }}</h1>
+    <div id="description" class="mb-3">
     {% if 'de' == app.request.locale %}
         <p>Zur Geschichte der Hachschara gibt es wenig systematische Forschung und Erinnerung. Eine umfassende Überblicksdarstellung zur „Auslands-Hachschara“ hat in den 1970er Jahren Perez Leshem/Fritz Lichtenstein vorgelegt. Ende der 1990er Jahre publizierte eine Potsdamer Forscher:innen-Gruppe einen kleinen Sammelband zur Hachschara (Paetz/Weiss). Zu gleicher Zeit erschien die Darstellung von Eliyahu Kutti Salinger zur jüdisch-chaluzischen Jugendbewegung nach 1933, die auch Fragen von Hachschara behandelte. Das von Ruth und Herbert Fiedler 2004 verfasste Buch über das „Landwerk Ahrensdorf“ enthält auch eine Einführung und Übersicht zur Problematik, dazu umfangreiche Erinnerungen von Chaluzim und Chaluzoth. Der von Ilana Michaeli und Irmgard Klönne 2007 herausgegebene Erinnerungsband zur Hachschara in Gut Winkel enthält einen Beitrag von Ulrike Pilarczyk und Ilka von Cossart, in dem vorliegende Befunde zur Hachschara erstmalig systematisch erfasst und durch eigene Forschungen ergänzt wurden.</p>
         <p>Das Thema wurde von beiden Autorinnen wenig später erneut aufgegriffen und breiter in den Zusammenhang der Jüdischen Jugendbewegung eingebettet (Pilarczyk 2009). 2020 publizierten zwei Projekt-Gruppen, die sich sowohl mit systematischen Fragen, als auch mit lokalen/regionalen Beschreibungen von Hachschara beschäftigt hatten, erste Forschungsergebnisse. Der Tagungsband „Hachschara und Jugend-Alija“ (Pilarczyk et al. 2020) präsentiert Ergebnisse quellenbasierter Forschung des DFG-Projektes an der TU Braunschweig. Einleitend bietet der Band – erstmalig – einen fast vollständigen Überblick über die verstreuten Forschungen und Publikationen zum Thema.</p>
@@ -21,6 +26,19 @@
         <p>Even if the following lists seem extensive and a whole series of smaller publications are not included at all, a comprehensive overall presentation on the history of the Hakhshara still does not exist. There are also still many “blind spots” in this field and therefore a need for further research. </p>
         <p>The following bibliography is incomplete and is only intended to provide an overview. Memoirs/biographies in which halutzim recall (mostly briefly) their time in Hakhshara have largely been omitted.  </p>
     {% endif %}
+    </div>
+    <script>
+        if (true || $(window).width() < 768) {
+            // https://www.aakashweb.com/docs/jquery-collapser/
+            $('#description').collapser({
+                mode: 'lines',
+                truncate: 10,
+                showText: '{{ 'Show all'|trans }} &#x2335;',
+                hideText: '',
+                hideClass: 'hidden',
+            });
+        }
+    </script>
 
     <ul class="nav nav-tabs nav-fill" id="contentsTab" role="tablist">
         {% for key, data in bibliographyBySection %}

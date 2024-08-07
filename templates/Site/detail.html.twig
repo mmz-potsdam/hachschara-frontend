@@ -4,7 +4,7 @@
 {% import 'Shared/map-leaflet.html.twig' as map %}
 
 {% macro source_footer(site) %}
-    <h3 id="citation">{{ 'Recommended Citation'|trans }}</h3>
+    <h3 id="citation" class="mt-4">{{ 'Recommended Citation'|trans }}</h3>
     <p>
     {% for author in site.authors %}{% if author.status != -1 %}<a href="{{ path('user', { 'id': author.id }) }}">{{ author.fullname(true) }}</a>{% else %}{{ author.fullname(true) }}{% endif %}, {% endfor %}
     {{ site.name }}{% if false and site.translator is not empty %} ({{ 'translated by'|trans }} {{ article.translator.fullname(true) }}){% endif %}, {{ 'in'|trans }}: {{ site_name|trans({}, 'additional') }}
@@ -43,15 +43,6 @@
     </script>
 
     <script src="{{ app.request.basepath }}/js/jquery.collapser.min.js"></script>
-    <style>
-        #description.hidden > a[data-ctrl] {
-            display: block;
-            margin-top: 0px;
-            text-align: right;
-            border-top: 1px solid #EDEDE5; /* $color-gray-light */
-            padding-top: 4px;
-        }
-    </style>
 {% endblock %}
 
 {% block body %}
