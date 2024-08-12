@@ -32,6 +32,11 @@
     <div id="map-container">
         <div id="map" class="w-100"></div>
     </div>
+    <div class="legend text-md-end">
+        <span class="circle" style="color: #478aa9"></span> {{ 'Published Entries'|trans }}<br/>
+        <span class="circle" style="color: #e6bb33"></span> {{ 'Short Descriptions'|trans }}<br/>
+        <span class="circle" style="color: #7b7b7b"></span> {{ 'Additional Sites'|trans }}
+    </div>
 
     <script type="text/javascript">
         function isTouchDevice ()
@@ -84,9 +89,20 @@
         });
 
         var addressPoints = {{ data|json_encode|raw }};
+        var maxWidth = 340
+        if (window.innerWidth * 0.7 < maxWidth) {
+            maxWidth = window.innerWidth * 0.7;
+            if (maxWidth < 200) {
+                maxWidth = 200;
+            }
+        }
+
+        var popupOptions = {
+            maxWidth : maxWidth
+        };
+
         for (var i = 0; i < addressPoints.length; i++) {
             var a = addressPoints[i];
-            console.log(a);
             var title = a[2];
             var linked = title[0] == '<'; // is a <a href="">... tag
             var status = a[3]; // 0: abstract, -1: nothing
@@ -124,12 +140,12 @@
                 }
                 else if (status == 0) {
                     marker.bindPopup('<strong>' + title + '</strong>'
-                        + '<div>' + a[4] + '</div>');
+                        + '<div>' + a[4] + '</div>', popupOptions);
                 }
             }
             else {
                 marker.bindPopup('<strong>' + title + '</strong>'
-                    + (status == 0 ? '<div>' + a[4] + '</div>' : ''));
+                    + (status == 0 ? '<div>' + a[4] + '</div>' : ''), popupOptions);
             }
 
             markers.addLayer(marker);
@@ -141,7 +157,7 @@
             map.fitBounds(markers.getBounds().pad(0.1));
         }
         {% endif %}
-
+        {#
         /* Legend specific */
         var legend = L.control({ position: 'topright' });
 
@@ -157,5 +173,6 @@
         };
 
         legend.addTo(map);
+        #}
     </script>
 {% endblock %}

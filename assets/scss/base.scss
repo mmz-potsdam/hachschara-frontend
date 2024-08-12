@@ -329,14 +329,21 @@ main {
         .extra-marker.extra-marker-svg i {
             bottom: 18px;
         }
+    }
 
-        .legend {
-            font-size: 14px; /* from 12px */
+    .leaflet-popup-content {
+        /* decrease from
+         *  margin: 13px 24px 13px 20px;
+         */
+        margin: 13px 16px 13px 16px;
+    }
 
-            .circle:before {
-                font-size: 16px;
-                content: ' \25CF';
-            }
+    .legend {
+        font-size: 14px; /* from 12px */
+
+        .circle:before {
+            font-size: 16px;
+            content: ' \25CF';
         }
     }
 
