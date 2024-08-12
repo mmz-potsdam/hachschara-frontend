@@ -483,6 +483,12 @@ footer {
             .citeproc-title ~ .citeproc-creator {
                 font-weight: normal;
             }
+
+            @media (max-width: $screen-sm-max) {
+                a {
+                    word-break: break-all;
+                }
+            }
         }
     }
 }
