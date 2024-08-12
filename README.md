@@ -54,6 +54,10 @@ In a `prod` environment, generate `public/css/base.css`
 
 Development Notes
 -----------------
+### Update Bibliography
+
+    ./bin/console zotero:fetch-collections
+
 ### Local Web Server
 
 - php -S localhost:8000 -t public
@@ -64,7 +68,6 @@ Translate messages and routes according to settings in
 `jms_translation.configs.app`
 
     ./bin/console jms:translation:extract de --config=app
-
 
 ### Project Setup
 
