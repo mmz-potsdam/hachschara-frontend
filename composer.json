@@ -84,10 +84,10 @@
         "symfony/web-link": "7.1.*",
         "symfony/yaml": "7.1.*",
         "tetranz/select2entity-bundle": "dev-master#99bfd77",
-        "twig/extra-bundle": "^3.10",
-        "twig/intl-extra": "^3.10",
-        "twig/string-extra": "^3.10",
-        "twig/twig": "^3.10",
+        "twig/extra-bundle": "^3.11",
+        "twig/intl-extra": "^3.11",
+        "twig/string-extra": "^3.11",
+        "twig/twig": "^3.11",
         "vnn/wordpress-rest-api-client": "dev-master"
     },
     "require-dev": {
