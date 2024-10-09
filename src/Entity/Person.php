@@ -100,7 +100,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     use InfoTrait;
 
     protected $info = [];
-    protected $extractFromNotes = [ 'name', 'founding_dissolution' ];
+    protected $extractFromNotes = [ 'name', 'birth_death' ];
 
     /**
      * @var string An additional name for a Person, can be used for a middle name.
