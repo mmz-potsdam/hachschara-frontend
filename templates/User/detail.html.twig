@@ -34,8 +34,8 @@
 
     <div class="col-sm-8 col-lg-9">
         <div class="container-fluid p-0">
-            {% if person.disambiguatingDescription is not empty %}
-                <p>{{ person.disambiguatingDescription }}</p>
+            {% if person.disambiguatingDescription(app.request.locale) is not empty %}
+                <p>{{ person.disambiguatingDescription(app.request.locale) }}</p>
             {% endif %}
             <dl class="row">
             {#% if person.gender is not empty %}
@@ -161,7 +161,7 @@
             <h3>{{ 'Integrated Authority File'|trans }}
                 <a href="https://d-nb.info/gnd/{{ person.gnd }}" target="_blank">{{ person.gnd }}</a>
             </h3>
-            <div title="{{ person.gnd }}" class="pndaks seealso-ul"></div>
+            <div title="{{ person.gnd }}" class="gnd-entityfacts seealso-ul"></div>
         {% endif %}
     </div>
 {% endblock %}
