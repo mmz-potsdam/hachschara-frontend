@@ -507,188 +507,6 @@
             ]
         },
         {
-            "id": "YUVVVEIK",
-            "citation-label": "fischer_2020",
-            "type": "article-journal",
-            "title": "Lobitten. Ein „freies“ jüdisches Lehrgut in Ostpreußen während der NS-Zeit (1934–1939)",
-            "container-title": "Preußenland, Jahrbuch der Historischen Kommission für ost- und westpreußische Landesforschung und der Copernicus-Vereinigung für Geschichte und Landeskunde Westpreußens",
-            "collection-title": "",
-            "collection-number": null,
-            "volume": "10",
-            "number-of-volumes": null,
-            "edition": null,
-            "publisher-place": null,
-            "publisher": null,
-            "issued": {
-                "date-parts": [
-                    [
-                        2020
-                    ]
-                ],
-                "literal": "2020"
-            },
-            "page": "123–150",
-            "number-of-pages": null,
-            "DOI": "",
-            "ISBN": null,
-            "ISSN": null,
-            "URL": "",
-            "accessed": {
-                "date-parts": [
-                    [
-                        ""
-                    ]
-                ],
-                "literal": ""
-            },
-            "language": "German",
-            "author": [
-                {
-                    "given": "Hubertus",
-                    "family": "Fischer"
-                }
-            ]
-        },
-        {
-            "id": "QSRATDSL",
-            "citation-label": "fischer_2020",
-            "type": "article-journal",
-            "title": "Polenzwerder – Wohnplatz mit ungewöhnlicher Geschichte. Ein jüdisches Lehrgut in Brandenburg, seine Wandlungen und Praktikanten 1937 bis 1941/42",
-            "container-title": "Jahrbuch für Brandenburgische Landesgeschichte",
-            "collection-title": "",
-            "collection-number": null,
-            "volume": "71",
-            "number-of-volumes": null,
-            "edition": null,
-            "publisher-place": null,
-            "publisher": null,
-            "issued": {
-                "date-parts": [
-                    [
-                        2020
-                    ]
-                ],
-                "literal": "2020"
-            },
-            "page": "181–231",
-            "number-of-pages": null,
-            "DOI": "",
-            "ISBN": null,
-            "ISSN": null,
-            "URL": "",
-            "accessed": {
-                "date-parts": [
-                    [
-                        ""
-                    ]
-                ],
-                "literal": ""
-            },
-            "language": "",
-            "author": [
-                {
-                    "given": "Hubertus",
-                    "family": "Fischer"
-                }
-            ],
-            "editor": [
-                {
-                    "given": "Dr. Peter",
-                    "family": "Bahl u.a."
-                }
-            ]
-        },
-        {
-            "id": "4UB6M48Y",
-            "citation-label": "fischer_2020",
-            "type": "article-journal",
-            "title": "„Quenzsee“ und „Trockenfeld“. Unbekannte Hachschara-Zentren in Brandenburg und Schlesien während der NS-Zeit",
-            "container-title": "Landesgeschichtliche Vereinigung für die Mark Brandenburg e.V., Mitteilungsblatt",
-            "collection-title": "",
-            "collection-number": null,
-            "volume": "121",
-            "number-of-volumes": null,
-            "edition": null,
-            "publisher-place": null,
-            "publisher": null,
-            "issued": {
-                "date-parts": [
-                    [
-                        2020
-                    ]
-                ],
-                "literal": "2020"
-            },
-            "page": "84–101",
-            "number-of-pages": null,
-            "DOI": "",
-            "ISBN": null,
-            "ISSN": null,
-            "URL": "",
-            "accessed": {
-                "date-parts": [
-                    [
-                        21,
-                        12,
-                        11
-                    ]
-                ],
-                "literal": "2022-06-16T10:34:06Z"
-            },
-            "language": "de-DE",
-            "author": [
-                {
-                    "given": "Hubertus",
-                    "family": "Fischer"
-                }
-            ]
-        },
-        {
-            "id": "7ETG5I3B",
-            "citation-label": "fischer_2018",
-            "type": "chapter",
-            "title": "„Umschulungslager“ Eichow. Jüdische Jugend zwischen Auswanderungsvorbereitung und Deportation. Mit einem lokalgeschichtlichen Rückblick",
-            "container-title": "Jahrbuch für brandenburgische Landesgeschichte",
-            "collection-title": "",
-            "collection-number": "",
-            "volume": "69",
-            "number-of-volumes": "",
-            "edition": "",
-            "publisher-place": "",
-            "publisher": "",
-            "issued": {
-                "date-parts": [
-                    [
-                        2018
-                    ]
-                ],
-                "literal": "2018"
-            },
-            "page": "165",
-            "number-of-pages": null,
-            "DOI": null,
-            "ISBN": "",
-            "ISSN": null,
-            "URL": "",
-            "accessed": {
-                "date-parts": [
-                    [
-                        18,
-                        5,
-                        12
-                    ]
-                ],
-                "literal": "2021-11-12T10:53:21Z"
-            },
-            "language": "",
-            "author": [
-                {
-                    "given": "Hubertus",
-                    "family": "Fischer"
-                }
-            ]
-        },
-        {
             "id": "67ENTZZ6",
             "citation-label": "fischer_2019",
             "type": "article-journal",
@@ -773,6 +591,769 @@
                 {
                     "given": "Hubertus",
                     "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "4URVLRST",
+            "citation-label": "fischer_2021",
+            "type": "article-journal",
+            "title": "Diersburg bei Offenburg – erste Hachschara in Baden? Jüdische landwirtschaftliche und gärtnerische Ausbildungsstätten im Land Baden zwischen 1919 und 1939",
+            "container-title": "Zeitschrift für die Geschichte des Oberrheins",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "169",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ],
+                "literal": "2021"
+            },
+            "page": "497–518",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "57KNWWK9",
+            "citation-label": "fischer_2020",
+            "type": "article-journal",
+            "title": "Memel – Carlsberg – Baugstkorallen. Hachschara im Memelgebiet 1933 bis 1936 mit einem Seitenblick auf die Republik Litauen",
+            "container-title": "Jahrbuch für die Geschichte Mittel- und Ostdeutschlands",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "66",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "149–186",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "2AGR7Y5X",
+            "citation-label": "fischer_2019",
+            "type": "article-journal",
+            "title": "Hachschara in Hagenow. Eine jüdische landwirtschaftliche Ausbildungsstätte in Mecklenburg im zeitgeschichtlichen Kontext 1933–1935 betrachtet",
+            "container-title": "Mecklenburgische Jahrbücher",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "134",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ],
+                "literal": "2019"
+            },
+            "page": "235–254",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "XGC4BY2W",
+            "citation-label": "fischer_2019",
+            "type": "article-journal",
+            "title": "Von Freienstein bis Augusthof. Jüdische landwirtschaftliche und gärtnerische Ausbildungsstellen in Pommern während der NS-Zeit. Eine Forschungsskizze",
+            "container-title": "Baltische Studien. Pommersche Jahrbücher für Landesgeschichte",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "105",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ],
+                "literal": "2019"
+            },
+            "page": "213–242",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "7ETG5I3B",
+            "citation-label": "fischer_2018",
+            "type": "article-journal",
+            "title": "„Umschulungslager“ Eichow. Jüdische Jugend zwischen Auswanderungsvorbereitung und Deportation. Mit einem lokalgeschichtlichen Rückblick",
+            "container-title": "Jahrbuch für brandenburgische Landesgeschichte",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "69",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ],
+                "literal": "2018"
+            },
+            "page": "165",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        18,
+                        5,
+                        12
+                    ]
+                ],
+                "literal": "2021-11-12T10:53:21Z"
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "EKM8IZCT",
+            "citation-label": "fischer_2018",
+            "type": "article-journal",
+            "title": "„Hachschara“ in der Neumark. Altkarbe, Dragebruch, Heinersdorf. Drei kaum bekannte jüdische Ausbildungsstätten in den ersten Jahren der NS-Diktatur",
+            "container-title": "Landesgeschichtliche Vereinigung für die Mark Brandenburg e.V., Mitteilungsblatt",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "119",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ],
+                "literal": "2018"
+            },
+            "page": "135–153",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "Z25XPXM3",
+            "citation-label": "fischer_2020",
+            "type": "article-journal",
+            "title": "Hachschara w Nowej Marchii. Altkarbe (Stare Kurowo), Dragebruch (Drawiny) i Heinersdorf (Chwalęcice). Trzy rozpoznane żydowskie wiejskie ośrodki edukacyjne w pierwszych latach dyktatury narodowosocjalistycznej",
+            "container-title": "Nadwarciańskim Roczniku Historyczno-Archiwalnym",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "27",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "73–95",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "YUVVVEIK",
+            "citation-label": "fischer_2020",
+            "type": "article-journal",
+            "title": "Lobitten. Ein „freies“ jüdisches Lehrgut in Ostpreußen während der NS-Zeit (1934–1939)",
+            "container-title": "Preußenland, Jahrbuch der Historischen Kommission für ost- und westpreußische Landesforschung und der Copernicus-Vereinigung für Geschichte und Landeskunde Westpreußens",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "10",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "123–150",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "German",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "4CBJ9E98",
+            "citation-label": "fischer_2024",
+            "type": "article-journal",
+            "title": "Anders leben oder überleben? Wie sich Jüdinnen und Juden in der Neumark auf ein Leben in Palästina vorbereiteten",
+            "container-title": "Blickwechsel. Magazin für deutsche Kultur und Geschichte im östlichen Europa",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "11",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ],
+                "literal": "2024"
+            },
+            "page": "16–19",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "7YRB29JH",
+            "citation-label": "fischer_2023",
+            "type": "article-journal",
+            "title": "Das ehemalige Remontedepot Bärenklau uns seine ‚jüdische‘ Geschichte 1920–1933. Genossenschaftsexperiment – Siedlung zur Sesshaftmachung – Vorbereitung zur Auswanderung (Hachschara)",
+            "container-title": "Landesgeschichtliche Vereinigung für die Mark Brandenburg e.V., Mitteilungsblatt",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "124",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ],
+                "literal": "2023"
+            },
+            "page": "84–107",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "2QT6FCU2",
+            "citation-label": "fischer_2022",
+            "type": "article-journal",
+            "title": "Lötze bei Rathenow. Ziegelei – jüdisches Lehrgut – NS-Landjahrheim. Ein Wohnplatz im Havelland im Wechsel seiner Funktionen",
+            "container-title": "Jahrbuch für brandenburgische Landesgeschichte",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "73",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ],
+                "literal": "2022"
+            },
+            "page": "139–166",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "BPZBRXJN",
+            "citation-label": "fischer_2022",
+            "type": "article-journal",
+            "title": "Jüdische landwirtschaftliche Ausbildungsstätten der Weimarer Zeit in den Provinzen Grenzmark Posen-Westpreußen und Brandenburg im Kontext der früheren Chaluzbewegung (1920–1933)",
+            "container-title": "Forschungen zur brandenburgischen und preußischen Geschichte",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "32",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ],
+                "literal": "2022"
+            },
+            "page": "159–209",
+            "number-of-pages": null,
+            "DOI": "10.3790/fbpg.32.1.159",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "4UB6M48Y",
+            "citation-label": "fischer_2020",
+            "type": "article-journal",
+            "title": "„Quenzsee“ und „Trockenfeld“. Unbekannte Hachschara-Zentren in Brandenburg und Schlesien während der NS-Zeit",
+            "container-title": "Landesgeschichtliche Vereinigung für die Mark Brandenburg e.V., Mitteilungsblatt",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "121",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "84–101",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        21,
+                        12,
+                        11
+                    ]
+                ],
+                "literal": "2022-06-16T10:34:06Z"
+            },
+            "language": "de-DE",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "QSRATDSL",
+            "citation-label": "fischer_2020",
+            "type": "article-journal",
+            "title": "Polenzwerder – Wohnplatz mit ungewöhnlicher Geschichte. Ein jüdisches Lehrgut in Brandenburg, seine Wandlungen und Praktikanten 1937 bis 1941/42",
+            "container-title": "Jahrbuch für brandenburgische Landesgeschichte",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "71",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "181–231",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "UDXI4YPP",
+            "citation-label": "fischer_2019",
+            "type": "article-journal",
+            "title": "Bomsdorf und der Bachad. Rekonstruktion einer religiös-zionistischen Hachschara",
+            "container-title": "Sachsen und Anhalt. Jahrbuch der Historischen Kommission für Sachsen und Anhalt",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "31",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ],
+                "literal": "2019"
+            },
+            "page": "167–192",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "BMRH2DIA",
+            "citation-label": "fischer_2012",
+            "type": "article-journal",
+            "title": "„Heutzutage ist alles politisch!“ Jüdische Jugend auf dem Land 1933 bis 1938 im Spiegel autobiographischer und bildlicher Zeugnisse",
+            "container-title": "Die Gartenkunst 24/1. Joachim Wolschke-Bulmahn zum 60. Geburtstag",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ],
+                "literal": "2012"
+            },
+            "page": "88–96",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Bianca Maria",
+                    "family": "Rinaldi"
+                },
+                {
+                    "given": "Inken",
+                    "family": "Formann"
+                }
+            ]
+        },
+        {
+            "id": "9KNQTZE8",
+            "citation-label": "fischer-and-wolschke-bulmahn_2017",
+            "type": "chapter",
+            "title": "Die jüdische Jugendbewegung zwischen romantischer Naturwahrnehmung und Landwirtschaft und Hachschara",
+            "container-title": "Jüdische Jugendbewegung und soziale Praxis",
+            "collection-title": "Schriftenreihe des Arbeitskreises Geschichte der jüdischen Wohlfahrt in Deutschland 6. Frankfurt am Main",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Frankfurt am Main",
+            "publisher": "",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ],
+                "literal": "2017"
+            },
+            "page": "259–291",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                },
+                {
+                    "given": "Joachim",
+                    "family": "Wolschke-Bulmahn"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Sabine",
+                    "family": "Hering"
+                },
+                {
+                    "given": "Harald",
+                    "family": "Lordick"
+                },
+                {
+                    "given": "Gerd",
+                    "family": "Stecklina"
                 }
             ]
         },
@@ -1435,7 +2016,7 @@
             "number-of-volumes": "",
             "edition": "",
             "publisher-place": "Göttingen",
-            "publisher": "Vandenhoeck u. Ruprecht",
+            "publisher": "Vandenhoeck und Ruprecht",
             "issued": {
                 "date-parts": [
                     [
@@ -1520,7 +2101,7 @@
             "citation-label": "lordick_2020",
             "type": "chapter",
             "title": "Das Landwerk Neuendorf. Berufsumschichtung – Hachschara – Zwangsarbeit",
-            "container-title": "Hachschara und Jugend-Alija. Wege jüdischer Jugend nach Palästina 1918-1941",
+            "container-title": "Hachschara und Jugend-Alija. Wege jüdischer Jugend nach Palästina 1918–1941",
             "collection-title": "Steinhorster Beiträge zur Geschichte von Schule, Kindheit und Jugend",
             "collection-number": "1",
             "volume": "",
@@ -1541,7 +2122,7 @@
             "DOI": null,
             "ISBN": "978-3-929632-99-6",
             "ISSN": null,
-            "URL": "",
+            "URL": "https://doi.org/10.24355/dbbs.084-202104201055-0",
             "accessed": {
                 "date-parts": [
                     [
@@ -1593,7 +2174,7 @@
                 ],
                 "literal": "2017"
             },
-            "page": "S. 7-12",
+            "page": "7–12",
             "number-of-pages": null,
             "DOI": "",
             "ISBN": null,
@@ -1827,7 +2408,7 @@
             "number-of-volumes": "",
             "edition": "",
             "publisher-place": "Halle",
-            "publisher": "mdv, Mitteldt. Verl",
+            "publisher": "mdv, Mitteldeutscher Verlag",
             "issued": {
                 "date-parts": [
                     [
@@ -1885,7 +2466,7 @@
                 ],
                 "literal": "1999"
             },
-            "page": "S. 52–53",
+            "page": "52–53",
             "number-of-pages": null,
             "DOI": null,
             "ISBN": "978-3-932981-50-0",
@@ -2144,7 +2725,7 @@
                 ],
                 "literal": "1999"
             },
-            "page": "S. 89-94",
+            "page": "89-94",
             "number-of-pages": null,
             "DOI": null,
             "ISBN": "978-3-932981-50-0",
