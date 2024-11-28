@@ -41,6 +41,11 @@ extends BaseController
             }
             */
 
+            // link doi:
+            $bibliographyHtml = preg_replace('/(doi:<span class="citeproc\-DOI">)(\S+)(<\/span>)/',
+                                             '<a href="https://doi.org/\2" target="_blank">\1\2\3</a>',
+                                             $bibliographyHtml);
+
             $bibliographyBySection[$basename] = $descr + [ 'contentHtml' => $bibliographyHtml ];
         }
 
