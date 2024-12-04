@@ -16,6 +16,7 @@ extends Command
 {
     protected $zoteroApiService;
     protected $cslDir;
+    protected $zoteroCollections;
 
     public function __construct(\App\Service\ZoteroApiService $zoteroApiService,
                                 string $projectDir,
