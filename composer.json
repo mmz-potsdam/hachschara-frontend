@@ -14,10 +14,6 @@
         },
         {
             "type": "vcs",
-            "url": "https://github.com/burki/JMSTranslationBundle"
-        },
-        {
-            "type": "vcs",
             "url": "https://github.com/burki/select2entity-bundle"
         },
         {
@@ -46,7 +42,7 @@
         "hedii/zotero-api": "dev-master#c296090a23e557bd7b38c7f10132ada6bc333631",
         "ifedko/php-doctrine-dbal-pagination": "^3.0",
         "gjuric/i18n-routing-bundle": "^3.2",
-        "jms/translation-bundle": "dev-master",
+        "jms/translation-bundle": "^2.6",
         "knplabs/knp-menu-bundle": "^3.4",
         "knplabs/knp-paginator-bundle": "^6.4",
         "liip/url-auto-converter-bundle": "dev-master",
@@ -91,6 +87,7 @@
         "vnn/wordpress-rest-api-client": "dev-master"
     },
     "require-dev": {
+        "doctrine/annotations": "^2.0",
         "phpunit/phpunit": "^8.5",
         "symfony/browser-kit": "7.2.*",
         "symfony/css-selector": "7.2.*",
