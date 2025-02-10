@@ -17,7 +17,6 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
 
     /**
      * @var int
-     *
      */
     #[ORM\Column(type: 'integer')]
     #[ORM\Id]
@@ -26,75 +25,71 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
 
     /**
      * @var integer
-     *
      */
     #[ORM\Column(type: 'integer', nullable: false)]
     protected $status = 0;
 
     /**
-     * @var string Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.
-     *
+     * @var string|null Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.
      */
     #[ORM\Column(name: 'family_name', nullable: true)]
     protected $familyName;
 
     /**
-     * @var string Gender of the person.
-     *
+     * @var string|null Gender of the person.
      */
     #[ORM\Column(name: 'gender', nullable: true)]
     protected $gender;
 
     /**
-     * @var string Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.
-     *
+     * @var string|null Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.
      */
     #[ORM\Column(name: 'given_name', nullable: true)]
     protected $givenName;
 
     /**
-     * @var string Additional name forms.
+     * @var string|null Additional name forms.
      *
      * xORM\Column(name="alternate_name", nullable=true)
      */
     protected $alternateName;
 
     /**
-     * @var string A short description of the item.
-     *
-     *
+     * @var string|null A short description of the item.
      */
     #[ORM\Column(name: 'description', type: 'string', length: '4096', nullable: true)]
     protected $description;
 
     /**
-     * @var string A description of the item.
+     * @var string|null A description of the item.
      *
      * xORM\Column(name="disambiguating_description", type="string", nullable=true)
-     *
      */
     protected $disambiguatingDescription;
 
     /**
-     * @var string
+     * @var string|null
+     *
      * xORM\Column(type="string", nullable=true)
      */
     protected $ulan;
 
     /**
-     * @var string
+     * @var string|null
      */
     #[ORM\Column(name: 'gnd', type: 'string', nullable: true)]
     protected $gnd;
 
     /**
-     * @var string
+     * @var string|null
+     *
      * xORM\Column(type="string", nullable=true)
      */
     protected $viaf;
 
     /**
-     * @var string
+     * @var string|null
+     *
      * xORM\Column(type="string", nullable=true)
      */
     protected $wikidata;
@@ -106,32 +101,28 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
 
     /**
      * @var \DateTime
-     *
      */
     #[ORM\Column(name: 'created', type: 'datetime')]
     protected $createdAt;
 
     /**
      * @var \DateTime
-     *
      */
     #[ORM\Column(name: 'changed', type: 'datetime')]
     protected $changedAt;
 
     /**
-     * @var \DateTime The date on which the Person or one of its related entities were last modified.
+     * @var \DateTime|null The date on which the Person or one of its related entities were last modified.
      */
     protected $dateModified;
 
     /**
-     * @var string
-     *
+     * @var string|null
      */
     protected $slug;
 
     /**
      * @var string URL of the item.
-     *
      */
     #[ORM\Column(nullable: true)]
     protected $url;
@@ -187,7 +178,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Gets alternateName.
      *
-     * @return string
+     * @return string|null
      */
     public function getAlternateName()
     {
@@ -245,7 +236,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Gets url.
      *
-     * @return string
+     * @return string|null
      */
     public function getUrl()
     {
@@ -269,7 +260,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Gets gnd.
      *
-     * @return string
+     * @return string|null
      */
     public function getGnd()
     {
@@ -293,7 +284,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Gets ulan.
      *
-     * @return string
+     * @return string|null
      */
     public function getUlan()
     {
@@ -317,7 +308,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Gets viaf.
      *
-     * @return string
+     * @return string|null
      */
     public function getViaf()
     {
@@ -341,7 +332,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Gets wikidata.
      *
-     * @return string
+     * @return string|null
      */
     public function getWikidata()
     {
@@ -351,7 +342,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Sets notes.
      *
-     * @param array $notes
+     * @param array|null $notes
      *
      * @return $this
      */
@@ -365,7 +356,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Gets notes.
      *
-     * @return array
+     * @return array|null
      */
     public function getNotes()
     {
@@ -389,7 +380,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Gets slug.
      *
-     * @return string
+     * @return string|null
      */
     public function getSlug()
     {
@@ -399,11 +390,11 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Sets dateModified.
      *
-     * @param \DateTime $dateModified
+     * @param \DateTime|null $dateModified
      *
      * @return $this
      */
-    public function setDateModified(\DateTime $dateModified = null)
+    public function setDateModified(?\DateTime $dateModified = null)
     {
         $this->dateModified = $dateModified;
 
@@ -413,7 +404,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Gets dateModified.
      *
-     * @return \DateTime
+     * @return \DateTime|null
      */
     public function getDateModified()
     {

@@ -69,7 +69,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Sets foundingDate.
      *
-     * @param string $foundingDate
+     * @param string|null $foundingDate
      *
      * @return $this
      */
@@ -83,7 +83,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Gets foundingDate.
      *
-     * @return string
+     * @return string|null
      */
     public function getFoundingDate()
     {
@@ -93,7 +93,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Sets dissolutionDate.
      *
-     * @param string $dissolutionDate
+     * @param string|null $dissolutionDate
      *
      * @return $this
      */
@@ -107,7 +107,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Gets dissolutionDate.
      *
-     * @return string
+     * @return string|null
      */
     public function getDissolutionDate()
     {
@@ -131,7 +131,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Gets name.
      *
-     * @return string
+     * @return string|null
      */
     public function getName($locale = null)
     {
@@ -141,11 +141,11 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Sets foundingLocation.
      *
-     * @param Place $foundingLocation
+     * @param Place|null $foundingLocation
      *
      * @return $this
      */
-    public function setFoundingLocation(Place $foundingLocation = null)
+    public function setFoundingLocation(?Place $foundingLocation = null)
     {
         $this->foundingLocation = $foundingLocation;
 
@@ -155,7 +155,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Gets foundingLocation.
      *
-     * @return Place
+     * @return Place|null
      */
     public function getFoundingLocation()
     {
@@ -165,7 +165,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Gets foundingLocationLabel.
      *
-     * @return string
+     * @return string|null
      */
     public function getFoundingLocationLabel()
     {

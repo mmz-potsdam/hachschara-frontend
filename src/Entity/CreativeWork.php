@@ -319,7 +319,7 @@ implements \JsonSerializable
     /**
      * Sets creators.
      *
-     * @param array $creators
+     * @param array|null $creators
      *
      * @return $this
      */
@@ -333,7 +333,7 @@ implements \JsonSerializable
     /**
      * Gets creators.
      *
-     * @return array
+     * @return array|null
      */
     public function getCreators()
     {
@@ -343,7 +343,7 @@ implements \JsonSerializable
     /**
      * Sets series.
      *
-     * @param string $series
+     * @param string|null $series
      *
      * @return $this
      */
@@ -367,7 +367,7 @@ implements \JsonSerializable
     /**
      * Sets series number.
      *
-     * @param string $seriesNumber
+     * @param string|null $seriesNumber
      *
      * @return $this
      */
@@ -391,7 +391,7 @@ implements \JsonSerializable
     /**
      * Sets volume.
      *
-     * @param string $volume
+     * @param string|null $volume
      *
      * @return $this
      */
@@ -415,7 +415,7 @@ implements \JsonSerializable
     /**
      * Sets number of volumes.
      *
-     * @param string $numberOfVolumes
+     * @param string|null $numberOfVolumes
      *
      * @return $this
      */
@@ -439,7 +439,7 @@ implements \JsonSerializable
     /**
      * Sets issue.
      *
-     * @param string $issue
+     * @param string|null $issue
      *
      * @return $this
      */
@@ -463,7 +463,7 @@ implements \JsonSerializable
     /**
      * Sets edition of the book.
      *
-     * @param string $bookEdition
+     * @param string|null $bookEdition
      *
      * @return $this
      */
@@ -487,7 +487,7 @@ implements \JsonSerializable
     /**
      * Sets publication location.
      *
-     * @param string $publicationLocation
+     * @param string|null $publicationLocation
      *
      * @return $this
      */
@@ -511,7 +511,7 @@ implements \JsonSerializable
     /**
      * Sets publisher.
      *
-     * @param string $publisher
+     * @param string|null $publisher
      *
      * @return $this
      */
@@ -535,7 +535,7 @@ implements \JsonSerializable
     /**
      * Sets datePublished.
      *
-     * @param string $datePublished
+     * @param string|null $datePublished
      *
      * @return $this
      */
@@ -559,7 +559,7 @@ implements \JsonSerializable
     /**
      * Sets pagination.
      *
-     * @param string $pagination
+     * @param string|null $pagination
      *
      * @return $this
      */
@@ -583,7 +583,7 @@ implements \JsonSerializable
     /**
      * Sets number of pages.
      *
-     * @param string $numberOfPages
+     * @param string|null $numberOfPages
      *
      * @return $this
      */
@@ -607,7 +607,7 @@ implements \JsonSerializable
     /**
      * Sets the DOI of the publication.
      *
-     * @param string $doi
+     * @param string|null $doi
      *
      * @return $this
      */
@@ -631,7 +631,7 @@ implements \JsonSerializable
     /**
      * Sets the ISBN of the book.
      *
-     * @param string $isbn
+     * @param string|null $isbn
      *
      * @return $this
      */
@@ -693,7 +693,7 @@ implements \JsonSerializable
      *
      * @return $this
      */
-    public function setIsPartOf(CreativeWork $isPartOf = null)
+    public function setIsPartOf(?CreativeWork $isPartOf = null)
     {
         $this->isPartOf = $isPartOf;
 
@@ -703,7 +703,7 @@ implements \JsonSerializable
     /**
      * Gets isPartOf.
      *
-     * @return CreativeWork
+     * @return CreativeWork|null
      */
     public function getIsPartOf()
     {
@@ -786,7 +786,7 @@ implements \JsonSerializable
     /**
      * Gets language.
      *
-     * @return string
+     * @return string|null
      */
     public function getLanguage()
     {
@@ -796,7 +796,7 @@ implements \JsonSerializable
     /**
      * Sets dateAccessed.
      *
-     * @param string $dateAccessed
+     * @param string|null $dateAccessed
      *
      * @return $this
      */
@@ -810,7 +810,7 @@ implements \JsonSerializable
     /**
      * Gets dateAccessed.
      *
-     * @return string
+     * @return string|null
      */
     public function getDateAccessed()
     {
@@ -834,7 +834,7 @@ implements \JsonSerializable
     /**
      * Gets slug.
      *
-     * @return string
+     * @return string|null
      */
     public function getSlug($fallback = false)
     {
@@ -858,7 +858,7 @@ implements \JsonSerializable
     /**
      * Gets version.
      *
-     * @return string
+     * @return string|null
      */
     public function getVersion()
     {
@@ -868,7 +868,7 @@ implements \JsonSerializable
     /**
      * Gets cover URL.
      *
-     * @return string
+     * @return string|null
      */
     public function getCoverUrl()
     {
@@ -1296,8 +1296,10 @@ implements \JsonSerializable
                                 $creatorsParent[] = $creator;
                             }
                         }
+
                         $parent->setCreators($creatorsParent);
                     }
+
                     $ret['isPartOf'] = $parent->jsonLdSerialize($locale, true);
                 }
             }

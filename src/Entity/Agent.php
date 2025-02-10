@@ -502,11 +502,11 @@ abstract class Agent
     /**
      * Sets dateModified.
      *
-     * @param \DateTime $dateModified
+     * @param \DateTime|null $dateModified
      *
      * @return $this
      */
-    public function setDateModified(\DateTime $dateModified = null)
+    public function setDateModified(?\DateTime $dateModified = null)
     {
         $this->dateModified = $dateModified;
 
@@ -516,7 +516,7 @@ abstract class Agent
     /**
      * Gets dateModified.
      *
-     * @return \DateTime
+     * @return \DateTime|null
      */
     public function getDateModified()
     {

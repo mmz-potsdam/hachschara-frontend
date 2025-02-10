@@ -301,7 +301,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Sets birthDate.
      *
-     * @param string $birthDate
+     * @param string|null $birthDate
      *
      * @return $this
      */
@@ -315,7 +315,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Gets birthDate.
      *
-     * @return string
+     * @return string|null
      */
     public function getBirthDate()
     {
@@ -325,7 +325,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Sets deathDate.
      *
-     * @param string $deathDate
+     * @param string|null $deathDate
      *
      * @return $this
      */
@@ -339,7 +339,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Gets deathDate.
      *
-     * @return string
+     * @return string|null
      */
     public function getDeathDate()
     {
@@ -470,11 +470,11 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Sets birthPlace.
      *
-     * @param Place $birthPlace
+     * @param Place|null $birthPlace
      *
      * @return $this
      */
-    public function setBirthPlace(Place $birthPlace = null)
+    public function setBirthPlace(?Place $birthPlace = null)
     {
         $this->birthPlace = $birthPlace;
 
@@ -484,7 +484,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Gets birthPlace.
      *
-     * @return Place
+     * @return Place|null
      */
     public function getBirthPlace()
     {
@@ -547,11 +547,11 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Sets deathPlace.
      *
-     * @param Place $deathPlace
+     * @param Place|null $deathPlace
      *
      * @return $this
      */
-    public function setDeathPlace(Place $deathPlace = null)
+    public function setDeathPlace(?Place $deathPlace = null)
     {
         $this->deathPlace = $deathPlace;
 
@@ -561,7 +561,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
     /**
      * Gets deathPlace.
      *
-     * @return Place
+     * @return Place|null
      */
     public function getDeathPlace()
     {

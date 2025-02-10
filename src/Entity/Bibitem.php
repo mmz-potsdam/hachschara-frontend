@@ -226,8 +226,9 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
      */
     #[ORM\Column(name: 'place', type: 'string', nullable: true)]
     protected $publicationLocation; /* map to contentLocation in Schema.org */
+
     /**
-     * @var Publisher The publisher.
+     * @var Publisher|null The publisher.
      *
      */
     #[ORM\ManyToOne(targetEntity: 'App\Entity\Publisher')]
@@ -403,7 +404,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Sets creators.
      *
-     * @param array $creators
+     * @param array|null $creators
      *
      * @return $this
      */
@@ -417,7 +418,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Gets creators.
      *
-     * @return array
+     * @return array|null
      */
     public function getCreators()
     {
@@ -427,7 +428,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Gets author(s).
      *
-     * @return string
+     * @return string|null
      */
     public function getAuthor()
     {
@@ -437,7 +438,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Gets author(s).
      *
-     * @return string
+     * @return string|null
      */
     public function getItemType()
     {
@@ -445,9 +446,9 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     }
 
     /**
-     * Gets author(s).
+     * Gets editor(s).
      *
-     * @return string
+     * @return string|null
      */
     public function getEditor()
     {
@@ -457,7 +458,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Sets series.
      *
-     * @param string $series
+     * @param string|null $series
      *
      * @return $this
      */
@@ -471,7 +472,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Gets series.
      *
-     * @return string
+     * @return string|null
      */
     public function getSeries()
     {
@@ -481,7 +482,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Sets series number.
      *
-     * @param string $seriesNumber
+     * @param string|null $seriesNumber
      *
      * @return $this
      */
@@ -495,7 +496,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Gets series number.
      *
-     * @return string
+     * @return string|null
      */
     public function getSeriesNumber()
     {
@@ -505,7 +506,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Sets volume.
      *
-     * @param string $volume
+     * @param string|null $volume
      *
      * @return $this
      */
@@ -519,7 +520,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Gets volume.
      *
-     * @return string
+     * @return string|null
      */
     public function getVolume()
     {
@@ -529,7 +530,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Sets number of volumes.
      *
-     * @param string $numberOfVolumes
+     * @param string|null $numberOfVolumes
      *
      * @return $this
      */
@@ -543,7 +544,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Gets number of volumes.
      *
-     * @return string
+     * @return string|null
      */
     public function getNumberOfVolumes()
     {
@@ -553,7 +554,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Sets issue.
      *
-     * @param string $issue
+     * @param string|null $issue
      *
      * @return $this
      */
@@ -567,7 +568,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Gets issue.
      *
-     * @return string
+     * @return string|null
      */
     public function getIssue()
     {
@@ -577,7 +578,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Sets edition of the book.
      *
-     * @param string $bookEdition
+     * @param string|null $bookEdition
      *
      * @return $this
      */
@@ -591,7 +592,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Gets book edition.
      *
-     * @return string
+     * @return string|null
      */
     public function getBookEdition()
     {
@@ -601,7 +602,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Sets publication location.
      *
-     * @param string $publicationLocation
+     * @param string|null $publicationLocation
      *
      * @return $this
      */
@@ -615,7 +616,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Gets publication location.
      *
-     * @return string
+     * @return string|null
      */
     public function getPublicationLocation()
     {
@@ -625,7 +626,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Sets publisher.
      *
-     * @param Publisher $publisher
+     * @param Publisher|null $publisher
      *
      * @return $this
      */
@@ -639,7 +640,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Gets publisher.
      *
-     * @return Publisher
+     * @return Publisher|null
      */
     public function getPublisher()
     {
@@ -649,7 +650,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Sets datePublished.
      *
-     * @param string $datePublished
+     * @param string|null $datePublished
      *
      * @return $this
      */
@@ -663,7 +664,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Gets datePublished.
      *
-     * @return string
+     * @return string|null
      */
     public function getDatePublished()
     {
@@ -673,7 +674,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Sets pagination.
      *
-     * @param string $pagination
+     * @param string|null $pagination
      *
      * @return $this
      */
@@ -687,7 +688,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Gets pagination.
      *
-     * @return string
+     * @return string|null
      */
     public function getPagination()
     {
@@ -697,7 +698,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Sets number of pages.
      *
-     * @param string $numberOfPages
+     * @param string|null $numberOfPages
      *
      * @return $this
      */
@@ -711,7 +712,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Gets number of pages.
      *
-     * @return string
+     * @return string|null
      */
     public function getNumberOfPages()
     {
@@ -721,7 +722,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Sets printer.
      *
-     * @param string $printer
+     * @param string|null $printer
      *
      * @return $this
      */
@@ -735,7 +736,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Gets printer.
      *
-     * @return string
+     * @return string|null
      */
     public function getPrinter()
     {
@@ -745,7 +746,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Sets the DOI of the publication.
      *
-     * @param string $doi
+     * @param string|null $doi
      *
      * @return $this
      */
@@ -759,7 +760,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Gets the DOI of the publication.
      *
-     * @return string
+     * @return string|null
      */
     public function getDoi()
     {
@@ -769,7 +770,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Sets the ISBN of the book.
      *
-     * @param string $isbn
+     * @param string|null $isbn
      *
      * @return $this
      */
@@ -783,7 +784,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Gets ISBN of the book.
      *
-     * @return string
+     * @return string|null
      */
     public function getIsbn()
     {
@@ -803,11 +804,11 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Sets dateModified.
      *
-     * @param \DateTime $dateModified
+     * @param \DateTime|null $dateModified
      *
      * @return $this
      */
-    public function setDateModified(\DateTime $dateModified = null)
+    public function setDateModified(?\DateTime $dateModified = null)
     {
         $this->dateModified = $dateModified;
 
@@ -817,7 +818,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
     /**
      * Gets dateModified.
      *
-     * @return \DateTime
+     * @return \DateTime|null
      */
     public function getDateModified()
     {

@@ -334,7 +334,7 @@ implements JsonLdSerializable
     /**
      * Gets alternateName.
      *
-     * @return string
+     * @return string|null
      */
     public function getAlternateName()
     {
@@ -547,11 +547,11 @@ implements JsonLdSerializable
     /**
      * Sets founding location.
      *
-     * @param Place $foundingLocation
+     * @param Place|null $foundingLocation
      *
      * @return $this
      */
-    public function setFoundingLocation(Place $foundingLocation = null)
+    public function setFoundingLocation(?Place $foundingLocation = null)
     {
         $this->foundingLocation = $foundingLocation;
 
@@ -561,7 +561,7 @@ implements JsonLdSerializable
     /**
      * Gets location.
      *
-     * @return Place
+     * @return Place|null
      */
     public function getLocation()
     {

@@ -141,7 +141,7 @@ implements \JsonSerializable /*, JsonLdSerializable */
     #[ORM\Column(name: 'name_alternate', type: 'string', nullable: true)]
     protected $alternateName;
 
-    
+
     #[ORM\Column(name: 'country_code', type: 'string', nullable: true)]
     protected $countryCode;
 
@@ -595,11 +595,11 @@ implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Sets dateModified.
      *
-     * @param \DateTime $dateModified
+     * @param \DateTime|null $dateModified
      *
      * @return $this
      */
-    public function setDateModified(\DateTime $dateModified = null)
+    public function setDateModified(?\DateTime $dateModified = null)
     {
         $this->dateModified = $dateModified;
 
@@ -609,7 +609,7 @@ implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Gets dateModified.
      *
-     * @return \DateTime
+     * @return \DateTime|null
      */
     public function getDateModified()
     {

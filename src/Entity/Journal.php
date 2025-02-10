@@ -123,7 +123,7 @@ implements \JsonSerializable, JsonLdSerializable /*, OgSerializable, TwitterSeri
     /**
      * Sets ISSN.
      *
-     * @param string $issn
+     * @param string|null $issn
      *
      * @return $this
      */
@@ -137,7 +137,7 @@ implements \JsonSerializable, JsonLdSerializable /*, OgSerializable, TwitterSeri
     /**
      * Gets ISSN.
      *
-     * @return string
+     * @return string|null
      */
     public function getIssn()
     {
@@ -171,7 +171,7 @@ implements \JsonSerializable, JsonLdSerializable /*, OgSerializable, TwitterSeri
     /**
      * Sets publication location.
      *
-     * @param string $publicationLocation
+     * @param string|null $publicationLocation
      *
      * @return $this
      */
@@ -185,7 +185,7 @@ implements \JsonSerializable, JsonLdSerializable /*, OgSerializable, TwitterSeri
     /**
      * Gets publication location.
      *
-     * @return string
+     * @return string|null
      */
     public function getPublicationLocation()
     {
@@ -195,7 +195,7 @@ implements \JsonSerializable, JsonLdSerializable /*, OgSerializable, TwitterSeri
     /**
      * Sets publisher.
      *
-     * @param Publisher $publisher
+     * @param Publisher|null $publisher
      *
      * @return $this
      */
@@ -209,7 +209,7 @@ implements \JsonSerializable, JsonLdSerializable /*, OgSerializable, TwitterSeri
     /**
      * Gets publisher.
      *
-     * @return Publisher
+     * @return Publisher|null
      */
     public function getPublisher()
     {
@@ -219,11 +219,11 @@ implements \JsonSerializable, JsonLdSerializable /*, OgSerializable, TwitterSeri
     /**
      * Sets dateModified.
      *
-     * @param \DateTime $dateModified
+     * @param \DateTime|null $dateModified
      *
      * @return $this
      */
-    public function setDateModified(\DateTime $dateModified = null)
+    public function setDateModified(?\DateTime $dateModified = null)
     {
         $this->changedAt = $dateModified;
 
@@ -233,7 +233,7 @@ implements \JsonSerializable, JsonLdSerializable /*, OgSerializable, TwitterSeri
     /**
      * Gets dateModified.
      *
-     * @return \DateTime
+     * @return \DateTime|null
      */
     public function getDateModified()
     {
@@ -281,7 +281,7 @@ implements \JsonSerializable, JsonLdSerializable /*, OgSerializable, TwitterSeri
     /**
      * Gets url.
      *
-     * @return string
+     * @return string|null
      */
     public function getUrl()
     {
