@@ -645,6 +645,49 @@
             ]
         },
         {
+            "id": "Y4EXCNHM",
+            "citation-label": "gruner_1997",
+            "type": "article-journal",
+            "title": "Die Arbeitslager für den Zwangseinsatz deutscher und nichtdeutscher Juden im Dritten Reich, 2. Kapitel. Zu den Lagern der Reichsvereinigung (ab 1941 Arbeitslager) im deutschen Reich",
+            "container-title": "Gedenkstättenrundbrief",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "79",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        1997
+                    ]
+                ],
+                "literal": "1997"
+            },
+            "page": "3–17",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Wolf",
+                    "family": "Gruner"
+                }
+            ]
+        },
+        {
             "id": "MAVCWPRW",
             "citation-label": "haestrup_1983",
             "type": "book",
@@ -743,6 +786,49 @@
                 {
                     "given": "Ofer",
                     "family": "Ashkenazi"
+                }
+            ]
+        },
+        {
+            "id": "KM4N4QFP",
+            "citation-label": "koppatz_2010",
+            "type": "thesis",
+            "title": "Hachscharot. „Aushandlungsorte“ jüdischer Identität (M.A.-Arbeit)",
+            "container-title": null,
+            "collection-title": null,
+            "collection-number": null,
+            "volume": null,
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": "Heidelberg",
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2010
+                    ]
+                ],
+                "literal": "2010"
+            },
+            "page": null,
+            "number-of-pages": "94",
+            "DOI": null,
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Susanne",
+                    "family": "Koppatz"
                 }
             ]
         },
@@ -933,6 +1019,49 @@
             ]
         },
         {
+            "id": "WFFDL9DW",
+            "citation-label": "nicosia_2005",
+            "type": "article-journal",
+            "title": "Jewish Farmers in Hitler’s Germany. Zionist Occupational Retraining and Nazi “Jewish Policy”",
+            "container-title": "Holocaust and Genocide Studies",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "19",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2005
+                    ]
+                ],
+                "literal": "2005"
+            },
+            "page": "365–389",
+            "number-of-pages": null,
+            "DOI": "10.1093/hgs/dci040",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Francis R.",
+                    "family": "Nicosia"
+                }
+            ]
+        },
+        {
             "id": "CNA5GSX4",
             "citation-label": "paetz-and-weiss_1999",
             "type": "book",
@@ -1040,7 +1169,7 @@
             "id": "U2HSDEEQ",
             "citation-label": "pilarczyk-et-al_2020",
             "type": "book",
-            "title": "Hachschara und Jugend-Alija. Wege jüdischer Jugend nach Palästina 1918-1941",
+            "title": "Hachschara und Jugend-Alija. Wege jüdischer Jugend nach Palästina 1918–1941",
             "container-title": null,
             "collection-title": "Steinhorster Beiträge zur Geschichte von Schule, Kindheit und Jugend",
             "collection-number": "Band 1",
@@ -1062,7 +1191,7 @@
             "DOI": null,
             "ISBN": "978-3-929632-99-6",
             "ISSN": null,
-            "URL": "",
+            "URL": "https://doi.org/10.24355/dbbs.084-202104201055-0",
             "accessed": {
                 "date-parts": [
                     [
@@ -1260,6 +1389,55 @@
                 {
                     "given": "Chaim",
                     "family": "Schatzker"
+                }
+            ]
+        },
+        {
+            "id": "UDLLWU9D",
+            "citation-label": "stambolis_2020",
+            "type": "chapter",
+            "title": "„Wir dürfen über dem Acker die Sterne nicht verlieren.“ Zur Lebens- und Selbstsicht jüdisch jugendbewegter E- und Remigranten",
+            "container-title": "Flucht und Rückkehr. Deutsch-jüdische Lebenswege nach 1933",
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Gießen",
+            "publisher": "Psychosozial-Verlag",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "103–120",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-8379-2977-5",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Barbara",
+                    "family": "Stambolis"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Barbara",
+                    "family": "Stambolis"
                 }
             ]
         },

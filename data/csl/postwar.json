@@ -3,6 +3,49 @@
     "key": "59MF7CAV",
     "data": [
         {
+            "id": "59CXFKQB",
+            "citation-label": "patt_2009",
+            "type": "book",
+            "title": "Finding Home and Homeland. Jewish Youth and Zionism in the Aftermath of the Holocaust",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Detroit",
+            "publisher": "Wayne State University Press",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009
+                    ]
+                ],
+                "literal": "2009"
+            },
+            "page": null,
+            "number-of-pages": "384",
+            "DOI": null,
+            "ISBN": "978-0-8143-3426-3",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "eng",
+            "author": [
+                {
+                    "given": "Avinoam J.",
+                    "family": "Patt"
+                }
+            ]
+        },
+        {
             "id": "X4XFSPDT",
             "citation-label": "tobias_1997",
             "type": "book",
@@ -85,6 +128,67 @@
                 {
                     "given": "Judith",
                     "family": "Tydor Baumel"
+                }
+            ]
+        },
+        {
+            "id": "3VBCAHF5",
+            "citation-label": "urban_2015",
+            "type": "chapter",
+            "title": "„…nach eigenen Angaben im Kibbuc Gehringshof“. Displaced Persons in den Akten des ITS. Projekte und Einblicke in Forschungsansätze",
+            "container-title": "Freilegungen. Spiegelungen der NS-Verfolgung und ihrer Konsequenzen",
+            "collection-title": "Jahrbuch des International Tracing Service",
+            "collection-number": "4",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Göttingen",
+            "publisher": "Wallstein Verlag",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ],
+                "literal": "2015"
+            },
+            "page": "191–214",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-8353-1657-7",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Susanne",
+                    "family": "Urban"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Rebecca",
+                    "family": "Boehling"
+                },
+                {
+                    "given": "Susanne",
+                    "family": "Urban"
+                },
+                {
+                    "given": "Elizabeth",
+                    "family": "Anthony"
+                },
+                {
+                    "given": "Suzanne",
+                    "family": "Brown-Fleming"
                 }
             ]
         }

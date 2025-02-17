@@ -46,6 +46,59 @@
             ]
         },
         {
+            "id": "M4SFV7FS",
+            "citation-label": "bade_2021",
+            "type": "chapter",
+            "title": "„Die Juden sind am Winterhilfswerk des deutschen Volkes nicht beteiligt“. Jüdisches Leben in Blankenese zwischen Exklusion und Selbstbehauptung (1933–1939)",
+            "container-title": "Blankenese im Nationalsozialismus 1933–1939",
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Hamburg",
+            "publisher": "KJM Buchverlag",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ],
+                "literal": "2021"
+            },
+            "page": "117–133",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-96194-118-6",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Claudia",
+                    "family": "Bade"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Jan",
+                    "family": "Kurz"
+                },
+                {
+                    "given": "Fabian",
+                    "family": "Weber"
+                }
+            ]
+        },
+        {
             "id": "WQ6CNKMU",
             "citation-label": "bergbauer_2020",
             "type": "chapter",
@@ -166,7 +219,7 @@
                 ],
                 "literal": "1979"
             },
-            "page": "70-81",
+            "page": "70–81",
             "number-of-pages": null,
             "DOI": "",
             "ISBN": null,
@@ -268,7 +321,7 @@
                 ],
                 "literal": "2015"
             },
-            "page": "193-217",
+            "page": "193–217",
             "number-of-pages": null,
             "DOI": null,
             "ISBN": "",
@@ -301,64 +354,11 @@
             ]
         },
         {
-            "id": "S874NF5R",
-            "citation-label": "bussenius_1999",
-            "type": "chapter",
-            "title": "Zionistische Erzeihung im Norddeutschen Moor - Die Ausbildungsstätte des Hechaluz auf dem Brüderhof Harksheide",
-            "container-title": "\"Hachschara\". Die Vorbereitung junger Juden auf die Auswanderung nach Palästina",
-            "collection-title": "",
-            "collection-number": "",
-            "volume": "",
-            "number-of-volumes": "",
-            "edition": "",
-            "publisher-place": "Potsdam",
-            "publisher": "Verlag für Berlin-Brandenburg GmbH",
-            "issued": {
-                "date-parts": [
-                    [
-                        1999
-                    ]
-                ],
-                "literal": "1999"
-            },
-            "page": "S. 29-40",
-            "number-of-pages": null,
-            "DOI": null,
-            "ISBN": "",
-            "ISSN": null,
-            "URL": "",
-            "accessed": {
-                "date-parts": [
-                    [
-                        ""
-                    ]
-                ],
-                "literal": ""
-            },
-            "language": "",
-            "author": [
-                {
-                    "given": "Sieghard",
-                    "family": "Bußenius"
-                }
-            ],
-            "editor": [
-                {
-                    "given": "Andreas",
-                    "family": "Paetz"
-                },
-                {
-                    "given": "Karin",
-                    "family": "Weiss"
-                }
-            ]
-        },
-        {
             "id": "FN76WYY7",
             "citation-label": "bussenius_1998",
             "type": "chapter",
             "title": "Zionistische Erziehung im norddeutschen Moor. Die Ausbildungsstätte des Hechaluz auf dem „Brüderhof“ bei Harksheide",
-            "container-title": "Menora und Hakenkreuz. Zur Geschichte der Juden in und aus Schleswig-Holstein, Lübeck und Altona (1918-1998)",
+            "container-title": "Menora und Hakenkreuz. Zur Geschichte der Juden in und aus Schleswig-Holstein, Lübeck und Altona (1918–1998)",
             "collection-title": "",
             "collection-number": "",
             "volume": "",
@@ -403,6 +403,102 @@
                 {
                     "given": "Miriam",
                     "family": "Gillis-Carlebach"
+                }
+            ]
+        },
+        {
+            "id": "S874NF5R",
+            "citation-label": "bussenius_1999",
+            "type": "chapter",
+            "title": "Zionistische Erzeihung im Norddeutschen Moor – Die Ausbildungsstätte des Hechaluz auf dem Brüderhof Harksheide",
+            "container-title": "„Hachschara“. Die Vorbereitung junger Juden auf die Auswanderung nach Palästina",
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Potsdam",
+            "publisher": "Verlag für Berlin-Brandenburg GmbH",
+            "issued": {
+                "date-parts": [
+                    [
+                        1999
+                    ]
+                ],
+                "literal": "1999"
+            },
+            "page": "29–40",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Sieghard",
+                    "family": "Bußenius"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Andreas",
+                    "family": "Paetz"
+                },
+                {
+                    "given": "Karin",
+                    "family": "Weiss"
+                }
+            ]
+        },
+        {
+            "id": "YZR2ARTC",
+            "citation-label": "droesser_2004",
+            "type": "chapter",
+            "title": "Eine landwirtschaftliche Ausbildungsstätte für Juden in Urfeld – der Kibbuz „Bamaaleh“",
+            "container-title": "Vom Leben der Juden in Wesseling – eine Dokumentation über 600 Jahre Geschichte",
+            "collection-title": "Blätter zur Geschichte der Stadt Wesseling",
+            "collection-number": "VI",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Wesseling",
+            "publisher": "Verein für Orts- und Heimatkunde",
+            "issued": {
+                "date-parts": [
+                    [
+                        2004
+                    ]
+                ],
+                "literal": "2004"
+            },
+            "page": "37–45",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Wolfgang",
+                    "family": "Drösser"
                 }
             ]
         },
@@ -616,92 +712,6 @@
                 "literal": "2021"
             },
             "page": "497–518",
-            "number-of-pages": null,
-            "DOI": "",
-            "ISBN": null,
-            "ISSN": null,
-            "URL": "",
-            "accessed": {
-                "date-parts": [
-                    [
-                        ""
-                    ]
-                ],
-                "literal": ""
-            },
-            "language": "",
-            "author": [
-                {
-                    "given": "Hubertus",
-                    "family": "Fischer"
-                }
-            ]
-        },
-        {
-            "id": "57KNWWK9",
-            "citation-label": "fischer_2020",
-            "type": "article-journal",
-            "title": "Memel – Carlsberg – Baugstkorallen. Hachschara im Memelgebiet 1933 bis 1936 mit einem Seitenblick auf die Republik Litauen",
-            "container-title": "Jahrbuch für die Geschichte Mittel- und Ostdeutschlands",
-            "collection-title": "",
-            "collection-number": null,
-            "volume": "66",
-            "number-of-volumes": null,
-            "edition": null,
-            "publisher-place": null,
-            "publisher": null,
-            "issued": {
-                "date-parts": [
-                    [
-                        2020
-                    ]
-                ],
-                "literal": "2020"
-            },
-            "page": "149–186",
-            "number-of-pages": null,
-            "DOI": "",
-            "ISBN": null,
-            "ISSN": null,
-            "URL": "",
-            "accessed": {
-                "date-parts": [
-                    [
-                        ""
-                    ]
-                ],
-                "literal": ""
-            },
-            "language": "",
-            "author": [
-                {
-                    "given": "Hubertus",
-                    "family": "Fischer"
-                }
-            ]
-        },
-        {
-            "id": "2AGR7Y5X",
-            "citation-label": "fischer_2019",
-            "type": "article-journal",
-            "title": "Hachschara in Hagenow. Eine jüdische landwirtschaftliche Ausbildungsstätte in Mecklenburg im zeitgeschichtlichen Kontext 1933–1935 betrachtet",
-            "container-title": "Mecklenburgische Jahrbücher",
-            "collection-title": "",
-            "collection-number": null,
-            "volume": "134",
-            "number-of-volumes": null,
-            "edition": null,
-            "publisher-place": null,
-            "publisher": null,
-            "issued": {
-                "date-parts": [
-                    [
-                        2019
-                    ]
-                ],
-                "literal": "2019"
-            },
-            "page": "235–254",
             "number-of-pages": null,
             "DOI": "",
             "ISBN": null,
@@ -1201,49 +1211,6 @@
             ]
         },
         {
-            "id": "UDXI4YPP",
-            "citation-label": "fischer_2019",
-            "type": "article-journal",
-            "title": "Bomsdorf und der Bachad. Rekonstruktion einer religiös-zionistischen Hachschara",
-            "container-title": "Sachsen und Anhalt. Jahrbuch der Historischen Kommission für Sachsen und Anhalt",
-            "collection-title": "",
-            "collection-number": null,
-            "volume": "31",
-            "number-of-volumes": null,
-            "edition": null,
-            "publisher-place": null,
-            "publisher": null,
-            "issued": {
-                "date-parts": [
-                    [
-                        2019
-                    ]
-                ],
-                "literal": "2019"
-            },
-            "page": "167–192",
-            "number-of-pages": null,
-            "DOI": "",
-            "ISBN": null,
-            "ISSN": null,
-            "URL": "",
-            "accessed": {
-                "date-parts": [
-                    [
-                        ""
-                    ]
-                ],
-                "literal": ""
-            },
-            "language": "",
-            "author": [
-                {
-                    "given": "Hubertus",
-                    "family": "Fischer"
-                }
-            ]
-        },
-        {
             "id": "BMRH2DIA",
             "citation-label": "fischer_2012",
             "type": "article-journal",
@@ -1297,30 +1264,30 @@
             ]
         },
         {
-            "id": "9KNQTZE8",
-            "citation-label": "fischer-and-wolschke-bulmahn_2017",
-            "type": "chapter",
-            "title": "Die jüdische Jugendbewegung zwischen romantischer Naturwahrnehmung und Landwirtschaft und Hachschara",
-            "container-title": "Jüdische Jugendbewegung und soziale Praxis",
-            "collection-title": "Schriftenreihe des Arbeitskreises Geschichte der jüdischen Wohlfahrt in Deutschland 6. Frankfurt am Main",
-            "collection-number": "",
-            "volume": "",
-            "number-of-volumes": "",
-            "edition": "",
-            "publisher-place": "Frankfurt am Main",
-            "publisher": "",
+            "id": "R78LPK34",
+            "citation-label": "fischer_2019",
+            "type": "article-journal",
+            "title": "Bomsdorf und der Bachad. Rekonstruktion einer religiös-zionistischen Hachschara",
+            "container-title": "Sachsen und Anhalt",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "31",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
             "issued": {
                 "date-parts": [
                     [
-                        2017
+                        2019
                     ]
                 ],
-                "literal": "2017"
+                "literal": "2019"
             },
-            "page": "259–291",
+            "page": "167-192",
             "number-of-pages": null,
-            "DOI": null,
-            "ISBN": "",
+            "DOI": "",
+            "ISBN": null,
             "ISSN": null,
             "URL": "",
             "accessed": {
@@ -1332,6 +1299,137 @@
                 "literal": ""
             },
             "language": "",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "NIPTR79C",
+            "citation-label": "fischer_2019",
+            "type": "article-journal",
+            "title": "Hachschara in Hagenow. Eine jüdische landwirtschaftliche Ausbildungsstätte in Mecklenburg im zeitgeschichtlichen Kontext 1933–1935 betrachtet",
+            "container-title": "",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "134",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ],
+                "literal": "2019"
+            },
+            "page": "235–254",
+            "number-of-pages": null,
+            "DOI": "10.18453/ROSDOK_ID00002855",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "http://rosdok.uni-rostock.de/resolve/id/rosdok_document_0000017182",
+            "accessed": {
+                "date-parts": [
+                    [
+                        18,
+                        5,
+                        12
+                    ]
+                ],
+                "literal": "2021-11-12T15:14:55Z"
+            },
+            "language": "de",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "QWRZ7TTP",
+            "citation-label": "fischer_2020",
+            "type": "article-journal",
+            "title": "Memel – Carlsberg – Baugstkorallen. Hachschara im Memelgebiet 1933 bis 1936 mit einem Seitenblick auf die Republik Litauen",
+            "container-title": "Jahrbuch für die Geschichte Mittel- und Ostdeutschlands",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "66",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "149-186",
+            "number-of-pages": null,
+            "DOI": "10.1515/jgod-2020-0004",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Hubertus",
+                    "family": "Fischer"
+                }
+            ]
+        },
+        {
+            "id": "9KNQTZE8",
+            "citation-label": "fischer-and-wolschke-bulmahn_2017",
+            "type": "chapter",
+            "title": "Die jüdische Jugendbewegung zwischen romantischer Naturwahrnehmung und Landwirtschaft und Hachschara",
+            "container-title": "Jüdische Jugendbewegung und soziale Praxis",
+            "collection-title": "Schriftenreihe des Arbeitskreises Geschichte der jüdischen Wohlfahrt in Deutschland",
+            "collection-number": "6",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Frankfurt am Main",
+            "publisher": "Fachhochschulverlag, der Verlag für Angewandte Wissenschaft",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ],
+                "literal": "2017"
+            },
+            "page": "259–291",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-943787-77-1",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "deu",
             "author": [
                 {
                     "given": "Hubertus",
@@ -1412,7 +1510,7 @@
             "container-title": null,
             "collection-title": "",
             "collection-number": "",
-            "volume": "1-7",
+            "volume": "1–7",
             "number-of-volumes": "",
             "edition": "",
             "publisher-place": "Luckenwalde",
@@ -1493,6 +1591,49 @@
                 {
                     "given": "Manfred",
                     "family": "Bosch"
+                }
+            ]
+        },
+        {
+            "id": "D2D236H2",
+            "citation-label": "ganor_2020",
+            "type": "article-journal",
+            "title": "To Farm a Future. The Displaced Youth of Gross-Breesen",
+            "container-title": "Bulletin of the GHI Washington, Supplements",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "15",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "19–40",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "https://perspectivia.net/receive/pnet_mods_00003552",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Sheer",
+                    "family": "Ganor"
                 }
             ]
         },
@@ -1705,6 +1846,92 @@
                 {
                     "given": "Ofer",
                     "family": "Ashkenazi"
+                }
+            ]
+        },
+        {
+            "id": "6NDF2D5P",
+            "citation-label": "gillette_2011",
+            "type": "book",
+            "title": "The Virginia Plan. William B Thalhimer & a Rescue from Nazi Germany",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Charleston",
+            "publisher": "The History Press",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011
+                    ]
+                ],
+                "literal": "2011"
+            },
+            "page": null,
+            "number-of-pages": "206",
+            "DOI": null,
+            "ISBN": "978-1-60949-171-0",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Robert H.",
+                    "family": "Gillette"
+                }
+            ]
+        },
+        {
+            "id": "IKNAATGC",
+            "citation-label": "gillette_2015",
+            "type": "book",
+            "title": "Escape to Virginia. From Nazi Germany to Thalhimer's Farm",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Charleston",
+            "publisher": "The History Press",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ],
+                "literal": "2015"
+            },
+            "page": null,
+            "number-of-pages": "252",
+            "DOI": null,
+            "ISBN": "978-1-62619-912-5",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Robert H.",
+                    "family": "Gillette"
                 }
             ]
         },
@@ -2048,6 +2275,51 @@
             ]
         },
         {
+            "id": "ZF7EWVNE",
+            "citation-label": "kuchenbecker_2011",
+            "type": "article-journal",
+            "title": "Zionisten und Chaluzim in Messingwerk",
+            "container-title": "Jahrbuch für brandenburgische Landesgeschichte",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "62",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2011
+                    ]
+                ],
+                "literal": "2011"
+            },
+            "page": "129–139",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        21,
+                        12,
+                        11
+                    ]
+                ],
+                "literal": "2022-06-16T11:05:31Z"
+            },
+            "language": "de-DE",
+            "author": [
+                {
+                    "given": "Arnold",
+                    "family": "Kuchenbecker"
+                }
+            ]
+        },
+        {
             "id": "55R68K99",
             "citation-label": "linse_1983",
             "type": "chapter",
@@ -2057,7 +2329,7 @@
             "collection-number": "2934",
             "volume": "",
             "number-of-volumes": "",
-            "edition": "Orig.-Ausg",
+            "edition": "",
             "publisher-place": "München",
             "publisher": "Deutscher Taschenbuch Verlag",
             "issued": {
@@ -2093,6 +2365,53 @@
                 {
                     "given": "Ulrich",
                     "family": "Linse"
+                }
+            ]
+        },
+        {
+            "id": "3RCPMHVV",
+            "citation-label": "lochmann-and-lochmann_2020",
+            "type": "chapter",
+            "title": "Die Hachschara in Sennfeld (landwirtschaftliches Lehrgut für Jugendliche)",
+            "container-title": "Jüdisches Leben in Sennfeld",
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Elztal-Dallau",
+            "publisher": "Laub GmbH & Co.",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "111–127",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-88260-101-5",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Reinhart",
+                    "family": "Lochmann"
+                },
+                {
+                    "given": "Reinhart",
+                    "family": "Lochmann"
                 }
             ]
         },
@@ -2397,6 +2716,92 @@
             ]
         },
         {
+            "id": "GY5RV9DM",
+            "citation-label": "naarmann_2000",
+            "type": "book",
+            "title": "„Ein Auge gen Zion“. Das jüdische Umschulungs- und Einsatzlager am Grünen Weg in Paderborn 1939–1943",
+            "container-title": null,
+            "collection-title": "Paderborner Beiträge zur Geschichte",
+            "collection-number": "10",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Köln",
+            "publisher": "SH-Verlag",
+            "issued": {
+                "date-parts": [
+                    [
+                        2000
+                    ]
+                ],
+                "literal": "2000"
+            },
+            "page": null,
+            "number-of-pages": "184",
+            "DOI": null,
+            "ISBN": "978-3-89498-087-0",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "author": [
+                {
+                    "given": "Margit",
+                    "family": "Naarmann"
+                }
+            ]
+        },
+        {
+            "id": "B38Q3CR9",
+            "citation-label": "oved_1996",
+            "type": "book",
+            "title": "The Witness of the Brothers. A History of the Bruderhof",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "New Brunswick",
+            "publisher": "Transaction Publishers",
+            "issued": {
+                "date-parts": [
+                    [
+                        1996
+                    ]
+                ],
+                "literal": "1996"
+            },
+            "page": null,
+            "number-of-pages": "",
+            "DOI": null,
+            "ISBN": "978-1-56000-203-1",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Jaacov",
+                    "family": "Oved"
+                }
+            ]
+        },
+        {
             "id": "7ETA87J7",
             "citation-label": "paetz_1998",
             "type": "chapter",
@@ -2450,7 +2855,7 @@
             "citation-label": "paetz-and-weiss_1999",
             "type": "chapter",
             "title": "Auf Hachschara in Brandenburg – Stätten jüdischer Berufsausbildung in der früheren Provinz Brandenburg",
-            "container-title": "\"Hachschara\". Die Vorbereitung junger Juden auf die Auswanderung nach Palästina",
+            "container-title": "„Hachschara“.. Die Vorbereitung junger Juden auf die Auswanderung nach Palästina",
             "collection-title": "",
             "collection-number": "",
             "volume": "",
@@ -2552,6 +2957,98 @@
             ]
         },
         {
+            "id": "PURBUKSR",
+            "citation-label": "philipsen_2008",
+            "type": "book",
+            "title": "„Jägerslust“. Gutshof, Kibbuz, Flüchtlingslager, Militär-Areal",
+            "container-title": null,
+            "collection-title": "Schriftenreihe der Gesellschaft für Flensburger Stadtgeschichte",
+            "collection-number": "69",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Flensburg",
+            "publisher": "Gesellschaft für Flensburger Stadtgeschichte",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008
+                    ]
+                ],
+                "literal": "2008"
+            },
+            "page": null,
+            "number-of-pages": "104",
+            "DOI": null,
+            "ISBN": "978-3-925856-59-4",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "ger",
+            "author": [
+                {
+                    "given": "Bernd",
+                    "family": "Philipsen"
+                }
+            ]
+        },
+        {
+            "id": "KDKUMMYQ",
+            "citation-label": "projektgruppe-des-belziger-forums-e-v_2019",
+            "type": "chapter",
+            "title": "Das Kaufmann-Heim in Belzig",
+            "container-title": "Jüdisches Leben im ländlichen Raum. Spurensuche in der Region Belzig 1933–1945",
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Berlin",
+            "publisher": "Treibgut Verlag",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ],
+                "literal": "2019"
+            },
+            "page": "23–37",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-947674-02-2",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "",
+                    "family": "Projektgruppe des Belziger Forums e.V."
+                }
+            ],
+            "editor": [
+                {
+                    "given": "",
+                    "family": "Projektgruppe des Belziger Forums e.V."
+                }
+            ]
+        },
+        {
             "id": "Z5GUW7ZD",
             "citation-label": "schmid_2016",
             "type": "chapter",
@@ -2599,6 +3096,49 @@
                 {
                     "given": "",
                     "family": "Zentrum für Gartenbaukunst und Landschaftsarchitektur Hannover"
+                }
+            ]
+        },
+        {
+            "id": "R4K5FXEN",
+            "citation-label": "schmid_2017",
+            "type": "book",
+            "title": "Ahlem. Die Geschichte einer jüdischen Gartenbauschule",
+            "container-title": null,
+            "collection-title": "AhlemSchriften",
+            "collection-number": "1",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "2. ergänzte Auflage",
+            "publisher-place": "Bremen",
+            "publisher": "Edition Temmen",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ],
+                "literal": "2017"
+            },
+            "page": null,
+            "number-of-pages": "",
+            "DOI": null,
+            "ISBN": "978-3-86108-039-8",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "editor": [
+                {
+                    "given": "Hans-Dieter",
+                    "family": "Schmid"
                 }
             ]
         },
@@ -2656,6 +3196,184 @@
                 {
                     "given": "",
                     "family": "Verein der Freunde und Förderer des Kreismuseums Finsterwalde e.V."
+                }
+            ]
+        },
+        {
+            "id": "NNH5TAEU",
+            "citation-label": "schueler_2020",
+            "type": "book",
+            "title": "En kibbutz i Falun. Historien om hur min Familj Gick Sonder",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Stockholm",
+            "publisher": "Norstedts förlag",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": null,
+            "number-of-pages": "315",
+            "DOI": null,
+            "ISBN": "978-91-1-308795-5",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "swe",
+            "author": [
+                {
+                    "given": "Kaj",
+                    "family": "Schueler"
+                }
+            ]
+        },
+        {
+            "id": "WND6TWL6",
+            "citation-label": "sluiter_2019",
+            "type": "book",
+            "title": "Kibboets Beverwijk. Palestina-pioniers in Velsen-Noord en Beverwijk",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "",
+            "publisher": "De Vrijstaat Roetz",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ],
+                "literal": "2019"
+            },
+            "page": null,
+            "number-of-pages": "",
+            "DOI": null,
+            "ISBN": "978-94-6345-827-6",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Saskia",
+                    "family": "Sluiter"
+                }
+            ]
+        },
+        {
+            "id": "XK2LZ3LD",
+            "citation-label": "stegman-and-vorsteveld_1983",
+            "type": "book",
+            "title": "Het joodse werkdorp in de Wieringermeer, 1934–1941",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Zutphen",
+            "publisher": "Walburg Pers",
+            "issued": {
+                "date-parts": [
+                    [
+                        1983
+                    ]
+                ],
+                "literal": "1983"
+            },
+            "page": null,
+            "number-of-pages": "208",
+            "DOI": null,
+            "ISBN": "978-90-6011-150-5",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "H. B. J.",
+                    "family": "Stegman"
+                },
+                {
+                    "given": "J. P.",
+                    "family": "Vorsteveld"
+                }
+            ]
+        },
+        {
+            "id": "KVXEF7SU",
+            "citation-label": "streb_2020",
+            "type": "article-journal",
+            "title": "Ein Kibbuz im Lahntal – Die Hachschara-Stätte „Löhnberger Hütte“ von 1936-1938",
+            "container-title": "Rundbrief der Gesellschaft für christlich-jüdische Zusammenarbeit Limbug e.V.",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "25–30",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "http://cjz-limburg.de/PDF/Rundbrief_2_2020.pdf",
+            "accessed": {
+                "date-parts": [
+                    [
+                        15,
+                        9,
+                        10
+                    ]
+                ],
+                "literal": "2022-03-10"
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Markus",
+                    "family": "Streb"
                 }
             ]
         },
@@ -2811,6 +3529,49 @@
             ]
         },
         {
+            "id": "5JYVNQ8R",
+            "citation-label": "voigt_2016",
+            "type": "book",
+            "title": "Villa Emma. Jüdische Kinder auf der Flucht. 1940–1945",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Berlin",
+            "publisher": "Metropol",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ],
+                "literal": "2016"
+            },
+            "page": null,
+            "number-of-pages": "334",
+            "DOI": null,
+            "ISBN": "978-3-86331-292-3",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Klaus",
+                    "family": "Voigt"
+                }
+            ]
+        },
+        {
             "id": "E9G33M7R",
             "citation-label": "winkelmann_1996",
             "type": "chapter",
@@ -2860,6 +3621,149 @@
                 {
                     "given": "Michael",
                     "family": "Winkelmann"
+                }
+            ]
+        },
+        {
+            "id": "HT76BUUY",
+            "citation-label": "wolff_2020",
+            "type": "chapter",
+            "title": "Der Traum vom deutsch-jüdischen Bauern. Das Auswandererlehrgut Groß-Breesen (1935–1938) und die verspätete Emigrationspolitik des Centralvereins",
+            "container-title": "„Was soll aus uns werden?“ Zur Geschichte des Centralvereins deutscher Staatsbürger jüdischen Glaubens im nationalsozialistischen Deutschland",
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Berlin",
+            "publisher": "Metropol",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ],
+                "literal": "2020"
+            },
+            "page": "195–237",
+            "number-of-pages": null,
+            "DOI": null,
+            "ISBN": "978-3-86331-530-6",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Frank",
+                    "family": "Wolff"
+                }
+            ],
+            "editor": [
+                {
+                    "given": "Regina",
+                    "family": "Grundmann"
+                },
+                {
+                    "given": "Bernd J.",
+                    "family": "Hartmann"
+                },
+                {
+                    "given": "Daniel",
+                    "family": "Siemens"
+                }
+            ]
+        },
+        {
+            "id": "ZQGUQFQP",
+            "citation-label": "yona_2012",
+            "type": "article-journal",
+            "title": "A kibbutz in the diaspora. The pioneer movement in Poland and the Klossova kibbutz",
+            "container-title": "The Journal of Israeli History",
+            "collection-title": "",
+            "collection-number": null,
+            "volume": "31",
+            "number-of-volumes": null,
+            "edition": null,
+            "publisher-place": null,
+            "publisher": null,
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ],
+                "literal": "2012"
+            },
+            "page": "9–43",
+            "number-of-pages": null,
+            "DOI": "",
+            "ISBN": null,
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Rona",
+                    "family": "Yona"
+                }
+            ]
+        },
+        {
+            "id": "PI8WQ38Z",
+            "citation-label": "zeldenrust_2022",
+            "type": "book",
+            "title": "Kibboets op de klei. Een Joodse Droom in Franeker",
+            "container-title": null,
+            "collection-title": "",
+            "collection-number": "",
+            "volume": "",
+            "number-of-volumes": "",
+            "edition": "",
+            "publisher-place": "Amsterdam",
+            "publisher": "Boom",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ],
+                "literal": "2022"
+            },
+            "page": null,
+            "number-of-pages": "256",
+            "DOI": null,
+            "ISBN": "978-90-244-5126-5",
+            "ISSN": null,
+            "URL": "",
+            "accessed": {
+                "date-parts": [
+                    [
+                        ""
+                    ]
+                ],
+                "literal": ""
+            },
+            "language": "",
+            "author": [
+                {
+                    "given": "Auke",
+                    "family": "Zeldenrust"
                 }
             ]
         }
