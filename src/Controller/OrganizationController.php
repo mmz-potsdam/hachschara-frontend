@@ -1,4 +1,5 @@
 <?php
+
 // src/Controller/OrganizationController.php
 
 namespace App\Controller;
@@ -7,25 +8,23 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
-
 use Doctrine\ORM\EntityManagerInterface;
-
 use Knp\Component\Pager\PaginatorInterface;
 
 /**
  *
  */
-class OrganizationController
-extends BaseController
+class OrganizationController extends BaseController
 {
     protected $pageSize = 500;
 
     #[Route(path: '/organization', name: 'organization-index')]
-    public function indexAction(Request $request,
-                                EntityManagerInterface $entityManager,
-                                PaginatorInterface $paginator,
-                                TranslatorInterface $translator)
-    {
+    public function indexAction(
+        Request $request,
+        EntityManagerInterface $entityManager,
+        PaginatorInterface $paginator,
+        TranslatorInterface $translator
+    ) {
         $locale = $request->getLocale();
 
         $qb = $entityManager
@@ -33,14 +32,17 @@ extends BaseController
 
         $nameSort = 'O.name';
         if ($locale != \App\Entity\Site::$defaultLocale) {
-            $nameSort = sprintf("CONCAT_WS('', JSON_UNQUOTE(JSON_EXTRACT(O.translations ,'$.%s.name')), %s)",
-                                $locale, $nameSort);
+            $nameSort = sprintf(
+                "CONCAT_WS('', JSON_UNQUOTE(JSON_EXTRACT(O.translations ,'$.%s.name')), %s)",
+                $locale,
+                $nameSort
+            );
         }
 
         $qb->select([
-                'O',
-                $nameSort . ' HIDDEN nameSort',
-            ])
+            'O',
+            $nameSort . ' HIDDEN nameSort',
+        ])
             ->distinct()
             ->from('\App\Entity\Organization', 'O')
             ->innerJoin('O.siteReferences', 'SR')
@@ -48,7 +50,7 @@ extends BaseController
             ->where('O.status IN (0,1)')
             ->andWhere('PR.status IN (1)')
             ->orderBy('nameSort')
-            ;
+        ;
 
         $pagination = $this->buildPagination($request, $paginator, $qb->getQuery(), [
             // the following leads to wrong display in combination with our
@@ -66,9 +68,12 @@ extends BaseController
     #[Route(path: '/organization/gnd/{gnd}', requirements: ['gnd' => '[0-9xX\-]+'], name: 'organization-by-gnd')]
     #[Route(path: '/organization/{id}.jsonld', name: 'organization-jsonld', requirements: ['id' => '\d+'])]
     #[Route(path: '/organization/{id}', name: 'organization', requirements: ['id' => '\d+'])]
-    public function detailAction(Request $request, EntityManagerInterface $entityManager,
-                                 $id = null, $gnd = null)
-    {
+    public function detailAction(
+        Request $request,
+        EntityManagerInterface $entityManager,
+        $id = null,
+        $gnd = null
+    ) {
         $criteria = new \Doctrine\Common\Collections\Criteria();
 
         if (!empty($id)) {
@@ -208,12 +213,14 @@ extends BaseController
                     $group = 'birthDeath';
                     $value = [
                         'icon' => 'Place of Death' == $place['label'] ? 'blackIcon' : 'violetIcon',
-                        'html' => sprintf('<b>%s</b>: <a href="%s">%s</a>',
-                                          $place['label'],
-                                          htmlspecialchars($this->generateUrl('place-by-tgn', [
-                                               'tgn' => $place['info']['tgn'],
-                                          ])),
-                                          htmlspecialchars($place['info']['name'], ENT_QUOTES))
+                        'html' => sprintf(
+                            '<b>%s</b>: <a href="%s">%s</a>',
+                            $place['label'],
+                            htmlspecialchars($this->generateUrl('place-by-tgn', [
+                                'tgn' => $place['info']['tgn'],
+                            ])),
+                            htmlspecialchars($place['info']['name'], ENT_QUOTES)
+                        ),
                     ];
                     break;
 
@@ -221,15 +228,17 @@ extends BaseController
                     $group = 'birthDeath';
                     $value = [
                         'icon' => 'yellowIcon',
-                        'html' => sprintf('<b>%s</b>: %s<a href="%s">%s</a>',
-                                          $place['label'],
-                                          !empty($place['info']['address']['address'])
+                        'html' => sprintf(
+                            '<b>%s</b>: %s<a href="%s">%s</a>',
+                            $place['label'],
+                            !empty($place['info']['address']['address'])
                                             ? htmlspecialchars($place['info']['address']['address'], ENT_QUOTES) . ', '
                                             : '',
-                                          htmlspecialchars($this->generateUrl('place-by-tgn', [
-                                               'tgn' => $place['info']['tgn'],
-                                          ])),
-                                          htmlspecialchars($place['info']['name'], ENT_QUOTES))
+                            htmlspecialchars($this->generateUrl('place-by-tgn', [
+                                'tgn' => $place['info']['tgn'],
+                            ])),
+                            htmlspecialchars($place['info']['name'], ENT_QUOTES)
+                        ),
                     ];
                     break;
 
@@ -238,16 +247,17 @@ extends BaseController
                     $exhibition = $place['info']['exhibition'];
                     $value = [
                         'icon' => 'blueIcon',
-                        'html' =>  sprintf('<a href="%s">%s</a> at <a href="%s">%s</a> (%s)',
-                                htmlspecialchars($this->generateUrl('exhibition', [
-                                    'id' => $exhibition->getId(),
-                                ])),
-                                htmlspecialchars($exhibition->getTitleListing(), ENT_QUOTES),
-                                htmlspecialchars($this->generateUrl('location', [
-                                    'id' => $exhibition->getLocation()->getId(),
-                                ])),
-                                htmlspecialchars($exhibition->getLocation()->getNameListing(), ENT_QUOTES),
-                                $this->buildDisplayDate($exhibition)
+                        'html' =>  sprintf(
+                            '<a href="%s">%s</a> at <a href="%s">%s</a> (%s)',
+                            htmlspecialchars($this->generateUrl('exhibition', [
+                                'id' => $exhibition->getId(),
+                            ])),
+                            htmlspecialchars($exhibition->getTitleListing(), ENT_QUOTES),
+                            htmlspecialchars($this->generateUrl('location', [
+                                'id' => $exhibition->getLocation()->getId(),
+                            ])),
+                            htmlspecialchars($exhibition->getLocation()->getNameListing(), ENT_QUOTES),
+                            $this->buildDisplayDate($exhibition)
                         ),
                     ];
                     break;
@@ -280,8 +290,10 @@ extends BaseController
         $ret = '#FORMAT: BEACON' . "\n"
              . '#PREFIX: http://d-nb.info/gnd/'
              . "\n";
-        $ret .= sprintf('#TARGET: %s/gnd/{ID}',
-                        $this->generateUrl('organization-index', [], \Symfony\Component\Routing\Generator\UrlGeneratorInterface::ABSOLUTE_URL))
+        $ret .= sprintf(
+            '#TARGET: %s/gnd/{ID}',
+            $this->generateUrl('organization-index', [], \Symfony\Component\Routing\Generator\UrlGeneratorInterface::ABSOLUTE_URL)
+        )
               . "\n";
 
         $globals = $twig->getGlobals();
@@ -299,7 +311,7 @@ extends BaseController
                 ->andWhere('O.gnd IS NOT NULL')
                 ->orderBy('O.gnd')
                 ->getQuery()
-                ;
+        ;
 
         foreach ($query->execute() as $actor) {
             $ret .=  $actor->getGnd() . "\n";

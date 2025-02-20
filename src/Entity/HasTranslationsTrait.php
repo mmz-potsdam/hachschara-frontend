@@ -31,8 +31,7 @@ trait HasTranslationsTrait
 
             if (!is_null($this->translations)
                 && array_key_exists($locale, $this->translations)
-                && array_key_exists($key, $this->translations[$locale]))
-            {
+                && array_key_exists($key, $this->translations[$locale])) {
                 return $this->translations[$locale][$key];
             }
 

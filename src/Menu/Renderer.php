@@ -1,12 +1,13 @@
 <?php
+
 // src/Menu/Renderer.php
 
 // see https://symfony.com/bundles/KnpMenuBundle/current/custom_renderer.html
+
 namespace App\Menu;
 
 use Knp\Menu\ItemInterface;
 use Knp\Menu\Matcher\MatcherInterface;
-
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\RouterInterface;
 
@@ -16,13 +17,14 @@ class Renderer extends \Knp\Menu\Renderer\ListRenderer
     protected $router;
     protected $locales;
 
-    public function __construct(MatcherInterface $matcher,
-                                array $defaultOptions,
-                                string $charset,
-                                RequestStack $requestStack,
-                                RouterInterface $router,
-                                array $locales = [])
-    {
+    public function __construct(
+        MatcherInterface $matcher,
+        array $defaultOptions,
+        string $charset,
+        RequestStack $requestStack,
+        RouterInterface $router,
+        array $locales = []
+    ) {
         $this->requestStack = $requestStack;
         $this->router = $router;
         $this->locales = $locales;
@@ -54,14 +56,18 @@ class Renderer extends \Knp\Menu\Renderer\ListRenderer
                     $locale = $this->locales[$i];
                     $routeParameters['_locale'] = $locale;
 
-                    $a = sprintf('<a class="nav-link%s" href="%s">%s</a>',
-                                 $last ? '' : ' divider',
-                                 $this->router->generate($routeName, $routeParameters),
-                                 mb_strtoupper($locale, 'UTF-8'));
+                    $a = sprintf(
+                        '<a class="nav-link%s" href="%s">%s</a>',
+                        $last ? '' : ' divider',
+                        $this->router->generate($routeName, $routeParameters),
+                        mb_strtoupper($locale, 'UTF-8')
+                    );
 
-                    $prepend .= sprintf('<li class="list-inline-item%s">%s</li>',
-                                        $locale == $currentLocale ? ' active' : '',
-                                        $a);
+                    $prepend .= sprintf(
+                        '<li class="list-inline-item%s">%s</li>',
+                        $locale == $currentLocale ? ' active' : '',
+                        $a
+                    );
                 }
 
                 $prepend .= '</ul></li>';

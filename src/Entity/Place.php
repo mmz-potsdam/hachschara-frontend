@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Inflector\InflectorFactory;
 use Gedmo\Mapping\Annotation as Gedmo; // alias for Gedmo extensions annotations
+
 /**
  * Entities that have a somewhat fixed, physical extension.
  *
@@ -14,8 +15,7 @@ use Gedmo\Mapping\Annotation as Gedmo; // alias for Gedmo extensions annotations
  */
 #[ORM\Table(name: 'Geoname')]
 #[ORM\Entity]
-class Place
-implements \JsonSerializable /*, JsonLdSerializable */
+class Place implements \JsonSerializable /*, JsonLdSerializable */
 {
     static $zoomLevelByType = [
         'neighborhood' => 12,
@@ -301,8 +301,8 @@ implements \JsonSerializable /*, JsonLdSerializable */
         }
 
         return $this->sites->filter(
-            function($entity) {
-               return 1 == $entity->getStatus();
+            function ($entity) {
+                return 1 == $entity->getStatus();
             }
         );
     }
@@ -505,14 +505,14 @@ implements \JsonSerializable /*, JsonLdSerializable */
         $qb = $em->createQueryBuilder();
 
         $qb->select([
-                'P',
-                "COALESCE(P.alternateName,P.name) HIDDEN nameSort"
-            ])
+            'P',
+            "COALESCE(P.alternateName,P.name) HIDDEN nameSort",
+        ])
             ->from('App\Entity\Place', 'P')
             ->where("P.parentTgn = :tgn")
             ->setParameter('tgn', $this->tgn)
             ->orderBy('nameSort')
-            ;
+        ;
 
         return $qb->getQuery()->getResult();
     }

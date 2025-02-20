@@ -1,4 +1,5 @@
 <?php
+
 // src/Controller/SiteController.php
 
 namespace App\Controller;
@@ -7,29 +8,26 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
-
 use Doctrine\ORM\EntityManagerInterface;
-
 use Knp\Component\Pager\PaginatorInterface;
-
 use Spiriit\Bundle\FormFilterBundle\Filter\FilterBuilderUpdaterInterface;
 
 /**
  *
  */
-class SiteController
-extends BaseController
+class SiteController extends BaseController
 {
     protected $pageSize = 200;
 
     #[Route(path: '/site/map', name: 'site-map')]
     #[Route(path: '/site', name: 'site-index')]
-    public function indexAction(Request $request,
-                                EntityManagerInterface $entityManager,
-                                PaginatorInterface $paginator,
-                                TranslatorInterface $translator,
-                                FilterBuilderUpdaterInterface $queryBuilderUpdater)
-    {
+    public function indexAction(
+        Request $request,
+        EntityManagerInterface $entityManager,
+        PaginatorInterface $paginator,
+        TranslatorInterface $translator,
+        FilterBuilderUpdaterInterface $queryBuilderUpdater
+    ) {
         $routeName = $request->get('_route');
         $locale = $request->getLocale();
 
@@ -38,25 +36,28 @@ extends BaseController
 
         $nameSort = 'PR.name';
         if ($locale != \App\Entity\Site::$defaultLocale) {
-            $nameSort = sprintf("CONCAT_WS('', JSON_UNQUOTE(JSON_EXTRACT(PR.translations ,'$.%s.name')), %s)",
-                                $locale, $nameSort);
+            $nameSort = sprintf(
+                "CONCAT_WS('', JSON_UNQUOTE(JSON_EXTRACT(PR.translations ,'$.%s.name')), %s)",
+                $locale,
+                $nameSort
+            );
         }
 
         $statusCondition = 'site-map' == $routeName
             ? 'PR.status <> -1'
             : 'PR.status IN (1)'
-            ;
+        ;
 
         $qb->select([
-                'PR',
-                $nameSort . ' HIDDEN nameSort',
-            ])
+            'PR',
+            $nameSort . ' HIDDEN nameSort',
+        ])
             ->from('App\Entity\Site', 'PR')
             ->leftJoin('PR.location', 'P')
             ->leftJoin('P.country', 'C')
             ->where($statusCondition)
             ->orderBy('nameSort')
-            ;
+        ;
 
         $form = $this->createForm(\App\Filter\SiteFilterType::class, [
             // 'choices' => array_flip($this->buildCountries($entityManager)),
@@ -78,12 +79,14 @@ extends BaseController
                     $name = htmlspecialchars($result->getName($locale), ENT_COMPAT, 'utf-8');
 
                     $parts = explode(',', $geo, 2);
-                    $info = [ (double)$parts[0], (double)$parts[1] ];
+                    $info = [ (float) $parts[0], (float) $parts[1] ];
 
                     if ($result->getStatus() == 1) {
-                        $info[] = sprintf('<a href="%s">%s</a>',
-                                          $this->generateUrl('site', [ 'id' => $result->getId() ]),
-                                          $name);
+                        $info[] = sprintf(
+                            '<a href="%s">%s</a>',
+                            $this->generateUrl('site', [ 'id' => $result->getId() ]),
+                            $name
+                        );
                     }
                     else {
                         $info[] = $name;
@@ -136,11 +139,12 @@ extends BaseController
     #[Route(path: '/site/{id}.jsonld', name: 'site-jsonld', requirements: ['id' => '\d+'])]
     #[Route(path: '/site/{id}.pdf', name: 'site-pdf', requirements: ['id' => '\d+'])]
     #[Route(path: '/site/{id}', name: 'site', requirements: ['id' => '\d+'])]
-    public function detailAction(Request $request,
-                                 EntityManagerInterface $entityManager,
-                                 \App\Utils\MpdfConverter $pdfConverter,
-                                 $id)
-    {
+    public function detailAction(
+        Request $request,
+        EntityManagerInterface $entityManager,
+        \App\Utils\MpdfConverter $pdfConverter,
+        $id
+    ) {
         $repo = $entityManager
                 ->getRepository('App\Entity\Site');
 
@@ -195,7 +199,7 @@ extends BaseController
 
             $pdfDoc = $pdfConverter->convert($htmlDoc);
 
-            return new Response((string)$pdfDoc, Response::HTTP_OK, [
+            return new Response((string) $pdfDoc, Response::HTTP_OK, [
                 'Content-Type' => 'application/pdf',
                 // 'Content-Disposition' => 'inline; filename="' . $filename . '"',
             ]);

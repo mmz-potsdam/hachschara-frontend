@@ -12,11 +12,11 @@ use Doctrine\ORM\Mapping as ORM;
  *
  */
 #[ORM\Entity]
-class Person
-extends Agent
-implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
+class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
 {
     use AddressesTrait;
+
+    use InfoTrait;
 
     const FLAGS_PRIMARY_PERSON = 0x1000;
     const FLAGS_SECONDARY_PERSON = 0x4000;
@@ -96,8 +96,6 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
 
         return $ret;
     }
-
-    use InfoTrait;
 
     protected $info = [];
     protected $extractFromNotes = [ 'name', 'birth_death' ];
@@ -694,7 +692,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
 
                 return is_null($name)
                     || strpos($entry->getName(), $name) === 0 // str_starts_with for PHP < 8.0
-                    ;
+                ;
             }
         );
     }

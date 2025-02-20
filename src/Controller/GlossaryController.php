@@ -1,4 +1,5 @@
 <?php
+
 // src/Controller/GlossaryController.php
 
 namespace App\Controller;
@@ -6,20 +7,19 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
-
 use Doctrine\ORM\EntityManagerInterface;
 
 /**
  *
  */
-class GlossaryController
-extends BaseController
+class GlossaryController extends BaseController
 {
     #[Route(path: '/glossary', name: 'glossary-index')]
-    public function indexAction(Request $request,
-                                EntityManagerInterface $entityManager,
-                                TranslatorInterface $translator)
-    {
+    public function indexAction(
+        Request $request,
+        EntityManagerInterface $entityManager,
+        TranslatorInterface $translator
+    ) {
         $qb = $entityManager
                 ->createQueryBuilder();
 
@@ -27,19 +27,21 @@ extends BaseController
             $sortExpression = 'T.name';
         }
         else {
-            $sortExpression = sprintf("COALESCE(JSON_UNQUOTE(JSON_EXTRACT(T.title, '$.%s')), T.name)",
-                                      $request->getLocale());
+            $sortExpression = sprintf(
+                "COALESCE(JSON_UNQUOTE(JSON_EXTRACT(T.title, '$.%s')), T.name)",
+                $request->getLocale()
+            );
         }
 
         $qb->select([
-                'T',
-                $sortExpression . " HIDDEN nameSort",
+            'T',
+            $sortExpression . " HIDDEN nameSort",
 
-            ])
+        ])
             ->from('\App\Entity\Term', 'T')
             ->where("T.category='glossary' AND T.status IN (0,1)")
             ->orderBy('nameSort')
-            ;
+        ;
 
         $query = $qb->getQuery();
 

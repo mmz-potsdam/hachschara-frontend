@@ -1,4 +1,5 @@
 <?php
+
 // src/Controller/BaseController.php
 
 namespace App\Controller;
@@ -7,24 +8,23 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Intl\Countries;
-
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\CssSelector\XPath\TranslatorInterface;
 
 /**
  * Common Base
  */
-abstract class BaseController
-extends AbstractController
+abstract class BaseController extends AbstractController
 {
     protected $kernel;
     protected $twigEnvironment;
     protected $globals = null;
     protected $pageSize = 50;
 
-    public function __construct(KernelInterface $kernel,
-                                \Twig\Environment $twigEnvironment)
-    {
+    public function __construct(
+        KernelInterface $kernel,
+        \Twig\Environment $twigEnvironment
+    ) {
         $this->kernel = $kernel;
         $this->twigEnvironment = $twigEnvironment;
     }
@@ -53,10 +53,12 @@ extends AbstractController
             ? $this->globals[$key] : null;
     }
 
-    protected function buildPagination(Request $request,
-                                       PaginatorInterface $paginator,
-                                       $query, $options = [])
-    {
+    protected function buildPagination(
+        Request $request,
+        PaginatorInterface $paginator,
+        $query,
+        $options = []
+    ) {
         $limit = $this->pageSize;
         if (array_key_exists('pageSize', $options)) {
             $limit = $options['pageSize'];
@@ -75,28 +77,30 @@ extends AbstractController
         $cslPath = $this->getDataDir() . '/csl/infoclio-de.csl.xml';
 
         $wrapSpan = function ($renderedText, $class) {
-            return '<span class="citeproc-'. $class . '">' . $renderedText . '</span>';
+            return '<span class="citeproc-' . $class . '">' . $renderedText . '</span>';
         };
 
         $additionalMarkup = [
-            'URL' => function ($cslItem, $renderedText)  {
-                return sprintf('<a href="%s" target="_blank">%s</a>',
-                               $renderedText, $renderedText);
+            'URL' => function ($cslItem, $renderedText) {
+                return sprintf(
+                    '<a href="%s" target="_blank">%s</a>',
+                    $renderedText,
+                    $renderedText
+                );
             },
         ];
 
         foreach ([
-                'author' => 'creator',
-                'editor' => 'creator',
-                'title' => 'title',
-                'in' => 'in',
-                'volumes' => 'volumes',
-                'book-series' => 'book-series',
-                'place' => 'place',
-                'date' => 'data',
-                'DOI' => 'DOI',
-            ] as $key => $class)
-        {
+            'author' => 'creator',
+            'editor' => 'creator',
+            'title' => 'title',
+            'in' => 'in',
+            'volumes' => 'volumes',
+            'book-series' => 'book-series',
+            'place' => 'place',
+            'date' => 'data',
+            'DOI' => 'DOI',
+        ] as $key => $class) {
             $additionalMarkup[$key] = function ($cslItem, $renderedText) use ($wrapSpan, $class) {
                 return $wrapSpan($renderedText, $class);
             };

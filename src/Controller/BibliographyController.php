@@ -1,4 +1,5 @@
 <?php
+
 // src/Controller/BibliographyController.php
 
 namespace App\Controller;
@@ -10,14 +11,14 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 /**
  *
  */
-class BibliographyController
-extends BaseController
+class BibliographyController extends BaseController
 {
     #[Route(path: '/bibliography', name: 'bibliography-index')]
-    public function indexAction(Request $request,
-                                TranslatorInterface $translator,
-                                array $zoteroCollections)
-    {
+    public function indexAction(
+        Request $request,
+        TranslatorInterface $translator,
+        array $zoteroCollections
+    ) {
         $bibliographyBySection = [];
 
         foreach ($zoteroCollections as $basename => $descr) {
@@ -42,9 +43,11 @@ extends BaseController
             */
 
             // link doi:
-            $bibliographyHtml = preg_replace('/(doi:<span class="citeproc\-DOI">)(\S+)(<\/span>)/',
-                                             '<a href="https://doi.org/\2" target="_blank">\1\2\3</a>',
-                                             $bibliographyHtml);
+            $bibliographyHtml = preg_replace(
+                '/(doi:<span class="citeproc\-DOI">)(\S+)(<\/span>)/',
+                '<a href="https://doi.org/\2" target="_blank">\1\2\3</a>',
+                $bibliographyHtml
+            );
 
             $bibliographyBySection[$basename] = $descr + [ 'contentHtml' => $bibliographyHtml ];
         }

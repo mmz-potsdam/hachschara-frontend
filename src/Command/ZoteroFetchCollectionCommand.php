@@ -1,6 +1,7 @@
 <?php
 
 // src/Command/ZoteroFetchCollectionCommand.php
+
 namespace App\Command;
 
 use Symfony\Component\Console\Command\Command;
@@ -11,17 +12,17 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 
-class ZoteroFetchCollectionCommand
-extends Command
+class ZoteroFetchCollectionCommand extends Command
 {
     protected $zoteroApiService;
     protected $cslDir;
     protected $zoteroCollections;
 
-    public function __construct(\App\Service\ZoteroApiService $zoteroApiService,
-                                string $projectDir,
-                                array $zoteroCollections)
-    {
+    public function __construct(
+        \App\Service\ZoteroApiService $zoteroApiService,
+        string $projectDir,
+        array $zoteroCollections
+    ) {
         // you *must* call the parent constructor
         parent::__construct();
 
@@ -35,10 +36,10 @@ extends Command
         $this
             ->setName('zotero:fetch-collections')
             ->setDescription('Fetch items from Zotero collection')
-            ;
+        ;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output) : int
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $ret = -3;
 
@@ -55,8 +56,11 @@ extends Command
                 $response = $request->send();
             }
             catch (\GuzzleHttp\Exception\ClientException $e) {
-                $output->writeln(sprintf('<error>Error requesting collection %s (%s)</error>',
-                                         $key, $e->getResponse()->getStatusCode()));
+                $output->writeln(sprintf(
+                    '<error>Error requesting collection %s (%s)</error>',
+                    $key,
+                    $e->getResponse()->getStatusCode()
+                ));
 
                 /*
                 if (404 == $e->getResponse()->getStatusCode()) {
@@ -123,10 +127,10 @@ extends Command
                 $fnameOut = $this->cslDir . '/' . $basename . '.json';
 
                 $out = json_encode([
-                        'group-id' => $groupId,
-                        'key' => $key,
-                        'data' => $data,
-                    ], JSON_UNESCAPED_SLASHES
+                    'group-id' => $groupId,
+                    'key' => $key,
+                    'data' => $data,
+                ], JSON_UNESCAPED_SLASHES
                        | JSON_PRETTY_PRINT
                        | JSON_UNESCAPED_UNICODE);
 
@@ -134,8 +138,10 @@ extends Command
 
                 if (false === $res) {
                     $ret = -2;
-                    $output->writeln(sprintf('<error>Error writing %s</error>',
-                                             $fnameOut));
+                    $output->writeln(sprintf(
+                        '<error>Error writing %s</error>',
+                        $fnameOut
+                    ));
                 }
             }
         }

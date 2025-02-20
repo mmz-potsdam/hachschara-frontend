@@ -1,14 +1,14 @@
 <?php
+
 // SiteFilterType.php
+
 namespace App\Filter;
 
 use Symfony\Component\Form\FormBuilderInterface;
-
 use Spiriit\Bundle\FormFilterBundle\Filter\Query\QueryInterface;
 use Spiriit\Bundle\FormFilterBundle\Filter\Form\Type as Filters;
 
-class SiteFilterType
-extends CrudFilterType
+class SiteFilterType extends CrudFilterType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {

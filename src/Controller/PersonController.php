@@ -1,4 +1,5 @@
 <?php
+
 // src/Controller/PersonController.php
 
 namespace App\Controller;
@@ -7,32 +8,30 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
-
 use Doctrine\ORM\EntityManagerInterface;
-
 use Knp\Component\Pager\PaginatorInterface;
 
 /**
  *
  */
-class PersonController
-extends BaseController
+class PersonController extends BaseController
 {
     protected $pageSize = 500;
 
     #[Route(path: '/person', name: 'person-index')]
-    public function indexAction(Request $request,
-                                EntityManagerInterface $entityManager,
-                                PaginatorInterface $paginator,
-                                TranslatorInterface $translator)
-    {
+    public function indexAction(
+        Request $request,
+        EntityManagerInterface $entityManager,
+        PaginatorInterface $paginator,
+        TranslatorInterface $translator
+    ) {
         $qb = $entityManager
             ->createQueryBuilder();
 
         $qb->select([
-                'P',
-                "CONCAT(COALESCE(P.familyName,P.givenName), ' ', COALESCE(P.givenName, '')) HIDDEN nameSort"
-            ])
+            'P',
+            "CONCAT(COALESCE(P.familyName,P.givenName), ' ', COALESCE(P.givenName, '')) HIDDEN nameSort",
+        ])
             ->distinct()
             ->from('\App\Entity\Person', 'P')
             ->innerJoin('P.siteReferences', 'SR')
@@ -40,7 +39,7 @@ extends BaseController
             ->where('P.status IN (0,1)')
             ->andWhere('PR.status IN (1)')
             ->orderBy('nameSort')
-            ;
+        ;
 
         $pagination = $this->buildPagination($request, $paginator, $qb->getQuery(), [
             // the following leads to wrong display in combination with our
@@ -58,9 +57,12 @@ extends BaseController
     #[Route(path: '/person/gnd/{gnd}', requirements: ['gnd' => '[0-9xX]+'], name: 'person-by-gnd')]
     #[Route(path: '/person/{id}.jsonld', name: 'person-jsonld', requirements: ['id' => '\d+'])]
     #[Route(path: '/person/{id}', name: 'person', requirements: ['id' => '\d+'])]
-    public function detailAction(Request $request, EntityManagerInterface $entityManager,
-                                 $id = null, $gnd = null)
-    {
+    public function detailAction(
+        Request $request,
+        EntityManagerInterface $entityManager,
+        $id = null,
+        $gnd = null
+    ) {
         $criteria = new \Doctrine\Common\Collections\Criteria();
 
         if (!empty($id)) {
@@ -208,14 +210,16 @@ extends BaseController
                     $group = 'birthDeath';
                     $value = [
                         'icon' => 'Place of Death' == $place['label'] ? 'blackIcon' : 'violetIcon',
-                        'html' => sprintf('<b>%s</b>: %s',
-                                          $place['label'],
-                                          /*
-                                          htmlspecialchars($this->generateUrl('place-by-tgn', [
-                                               'tgn' => $place['info']['tgn'],
-                                          ])),
-                                          */
-                                          htmlspecialchars($place['info']['name'], ENT_QUOTES))
+                        'html' => sprintf(
+                            '<b>%s</b>: %s',
+                            $place['label'],
+                            /*
+                            htmlspecialchars($this->generateUrl('place-by-tgn', [
+                                 'tgn' => $place['info']['tgn'],
+                            ])),
+                            */
+                            htmlspecialchars($place['info']['name'], ENT_QUOTES)
+                        ),
                     ];
                     break;
 
@@ -223,17 +227,19 @@ extends BaseController
                     $group = 'birthDeath';
                     $value = [
                         'icon' => 'yellowIcon',
-                        'html' => sprintf('<b>%s</b>: %s%s',
-                                          $place['label'],
-                                          !empty($place['info']['address']['address'])
+                        'html' => sprintf(
+                            '<b>%s</b>: %s%s',
+                            $place['label'],
+                            !empty($place['info']['address']['address'])
                                             ? htmlspecialchars($place['info']['address']['address'], ENT_QUOTES) . ', '
                                             : '',
-                                          /*
-                                          htmlspecialchars($this->generateUrl('place-by-tgn', [
-                                               'tgn' => $place['info']['tgn'],
-                                          ])),
-                                          */
-                                          htmlspecialchars($place['info']['name'], ENT_QUOTES))
+                            /*
+                            htmlspecialchars($this->generateUrl('place-by-tgn', [
+                                 'tgn' => $place['info']['tgn'],
+                            ])),
+                            */
+                            htmlspecialchars($place['info']['name'], ENT_QUOTES)
+                        ),
                     ];
                     break;
             }
@@ -265,8 +271,10 @@ extends BaseController
         $ret = '#FORMAT: BEACON' . "\n"
              . '#PREFIX: http://d-nb.info/gnd/'
              . "\n";
-        $ret .= sprintf('#TARGET: %s/gnd/{ID}',
-                        $this->generateUrl('person-index', [], \Symfony\Component\Routing\Generator\UrlGeneratorInterface::ABSOLUTE_URL))
+        $ret .= sprintf(
+            '#TARGET: %s/gnd/{ID}',
+            $this->generateUrl('person-index', [], \Symfony\Component\Routing\Generator\UrlGeneratorInterface::ABSOLUTE_URL)
+        )
               . "\n";
 
         $globals = $twig->getGlobals();
@@ -284,7 +292,7 @@ extends BaseController
                 ->andWhere('P.gnd IS NOT NULL')
                 ->orderBy('P.gnd')
                 ->getQuery()
-                ;
+        ;
 
         foreach ($query->execute() as $actor) {
             $ret .=  $actor->getGnd() . "\n";

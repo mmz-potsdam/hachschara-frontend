@@ -1,21 +1,19 @@
 <?php
+
 // src/Controller/DefaultController.php
 
 namespace App\Controller;
 
 use Doctrine\ORM\EntityManagerInterface;
-
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
-
 use Spatie\SchemaOrg\Schema;
 
 /**
  * DefaultController for home- and about-pages
  */
-class DefaultController
-extends BaseController
+class DefaultController extends BaseController
 {
     #[Route(path: '/', name: 'home')]
     public function homeAction(TranslatorInterface $translator)
@@ -23,7 +21,7 @@ extends BaseController
         $schema = Schema::webSite()
             ->name(/** @Ignore */$translator->trans($this->getGlobal('site_name'), [], 'additional'))
             ->description($translator->trans('site.description', [], 'additional'))
-            ;
+        ;
 
         return $this->render('Default/home.html.twig', [
             'schema' => $schema,
@@ -39,7 +37,7 @@ extends BaseController
     #[Route(path: '/about/hakhshara', name: 'about-hakhshara')]
     public function aboutTermAction(Request $request)
     {
-        return $this->render('Default/about-hakhshara.' .  $request->getLocale() .  '.html.twig');
+        return $this->render('Default/about-hakhshara.' . $request->getLocale() . '.html.twig');
     }
 
     #[Route(path: '/about/network', name: 'about-network')]
@@ -49,12 +47,12 @@ extends BaseController
                 ->createQueryBuilder();
 
         $qb->select([
-                "JSON_EXTRACT(PR.contributor, '$[*].id_user') AS ids"
-            ])
+            "JSON_EXTRACT(PR.contributor, '$[*].id_user') AS ids",
+        ])
             ->distinct()
             ->from('App\Entity\Site', 'PR')
             ->where("PR.status IN (1)")
-            ;
+        ;
 
         $userIds = [];
         foreach ($qb->getQuery()->getResult() as $result) {
@@ -67,14 +65,14 @@ extends BaseController
         $users = [];
         if (!empty($userIds)) {
             $qb->select([
-                    'U',
-                    "CONCAT(COALESCE(U.familyName,U.givenName), ' ', COALESCE(U.givenName, '')) HIDDEN nameSort",
-                ])
+                'U',
+                "CONCAT(COALESCE(U.familyName,U.givenName), ' ', COALESCE(U.givenName, '')) HIDDEN nameSort",
+            ])
                 ->from('App\Entity\User', 'U')
                 ->andWhere('U.id IN (:ids) AND U.status <> -1')
                 ->setParameter('ids', $userIds)
                 ->orderBy('nameSort')
-                ;
+            ;
 
             $users = $qb->getQuery()->getResult();
         }

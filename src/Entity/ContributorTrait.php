@@ -46,7 +46,7 @@ trait ContributorTrait
                 ->from('App\Entity\User', 'U')
                 ->andWhere('U.id IN (:ids) AND U.status <> -1')
                 ->setParameter('ids', array_keys($usersById))
-                ;
+            ;
 
             $results = $qb->getQuery()
                 ->getResult();

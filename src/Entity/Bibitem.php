@@ -4,9 +4,7 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-
 use Gedmo\Mapping\Annotation as Gedmo; // alias for Gedmo extensions annotations
-
 use Symfony\Component\Validator\Constraints as Assert;
 
 if (!function_exists('mb_ucfirst') && function_exists('mb_substr')) {
@@ -29,8 +27,7 @@ if (!function_exists('mb_ucfirst') && function_exists('mb_substr')) {
  */
 #[ORM\Table(name: 'Publication')]
 #[ORM\Entity]
-class Bibitem
-implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSerializable */
+class Bibitem implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSerializable */
 {
     /**
      * Build a list of normalized ISBNs of the book.
@@ -988,19 +985,27 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
         /* vertical-align: super doesn't render nicely:
            http://stackoverflow.com/a/1530819/2114681
         */
-        $ret = preg_replace('/style="([^"]*)vertical\-align\:\s*super;([^"]*)"/',
-                            'style="\1vertical-align: super; font-size: 66%;\2"', $ret);
+        $ret = preg_replace(
+            '/style="([^"]*)vertical\-align\:\s*super;([^"]*)"/',
+            'style="\1vertical-align: super; font-size: 66%;\2"',
+            $ret
+        );
 
         if ($extended) {
             // make links clickable
-            $ret = preg_replace_callback('/(<span class="citeproc\-URL">&lt;)(.*?)(&gt;)/',
+            $ret = preg_replace_callback(
+                '/(<span class="citeproc\-URL">&lt;)(.*?)(&gt;)/',
                 function ($matches) {
                     return $matches[1]
-                        . sprintf('<a href="%s" target="_blank">%s</a>',
-                              $matches[2], $matches[2])
+                        . sprintf(
+                            '<a href="%s" target="_blank">%s</a>',
+                            $matches[2],
+                            $matches[2]
+                        )
                     . $matches[3];
                 },
-                $ret);
+                $ret
+            );
 
             $append = [];
 
@@ -1021,8 +1026,11 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
             }
         }
 
-        return preg_replace('~^<div class="csl\-bib\-body"><div style="text\-indent: \-25px; padding\-left: 25px;"><div class="csl-entry">(.*?)</div></div></div>$~',
-                            '\1', $ret);
+        return preg_replace(
+            '~^<div class="csl\-bib\-body"><div style="text\-indent: \-25px; padding\-left: 25px;"><div class="csl-entry">(.*?)</div></div></div>$~',
+            '\1',
+            $ret
+        );
     }
 
     private function parseLocalizedDate($dateStr, $locale = 'de_DE', $pattern = 'dd. MMMM yyyy')
@@ -1034,9 +1042,9 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
             $dateObj = \DateTime::createFromFormat('U', $formatter->parse($dateStr));
             if (false !== $dateObj) {
                 return [
-                    'year' => (int)$dateObj->format('Y'),
-                    'month' =>  (int)$dateObj->format('m'),
-                    'day' => (int)$dateObj->format('d'),
+                    'year' => (int) $dateObj->format('Y'),
+                    'month' =>  (int) $dateObj->format('m'),
+                    'day' => (int) $dateObj->format('d'),
                 ];
             }
         }
@@ -1084,7 +1092,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
         }
 
         if (!filter_var($dateStr, FILTER_VALIDATE_INT) === false) {
-            $parts[] = (int)$dateStr;
+            $parts[] = (int) $dateStr;
 
             return $parts;
         }
@@ -1226,7 +1234,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
                 $type = 'CreativeWork';
                 break;
 
-            // just for building isPartOf
+                // just for building isPartOf
             case 'issue':
                 $type = 'PublicationIssue';
                 break;
@@ -1268,8 +1276,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
             $creators = preg_split('/\s*;\s*/', $this->$key);
             foreach ($creators as $creator) {
                 if ('author' == $key
-                    && in_array($type, [ 'PublicationIssue', 'Periodical' ]))
-                {
+                    && in_array($type, [ 'PublicationIssue', 'Periodical' ])) {
                     continue;
                 }
                 else if ('editor' == $key && in_array($type, [ 'Chapter' ])) {
@@ -1323,7 +1330,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
             }
 
             if (!empty($this->numberOfPages) && preg_match('/^\d+$/', $this->numberOfPages)) {
-                $ret['numberOfPages'] = (int)$this->numberOfPages;
+                $ret['numberOfPages'] = (int) $this->numberOfPages;
             }
         }
         else if (in_array($type, [ 'ScholarlyArticle', 'Chapter' ])) {
@@ -1382,8 +1389,7 @@ implements \JsonSerializable /*, JsonLdSerializable, OgSerializable, TwitterSeri
         }
 
         if (!is_null($this->datePublished)
-            && !in_array($type, [ 'ScholarlyArticle', 'Chapter', 'Periodical' ]))
-        {
+            && !in_array($type, [ 'ScholarlyArticle', 'Chapter', 'Periodical' ])) {
             $ret['datePublished'] = \App\Utils\JsonLd::formatDate8601($this->datePublished);
         }
 

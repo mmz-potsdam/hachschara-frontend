@@ -1,27 +1,28 @@
 <?php
+
 // src/Controller/UserController.php
 
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-
 use Doctrine\ORM\EntityManagerInterface;
-
 
 /**
  *
  */
-class UserController
-extends BaseController
+class UserController extends BaseController
 {
     #[Route(path: '/about/network/gnd/{gnd}.jsonld', requirements: ['gnd' => '[0-9xX]+'], name: 'user-by-gnd-jsonld')]
     #[Route(path: '/about/network/gnd/{gnd}', requirements: ['gnd' => '[0-9xX]+'], name: 'user-by-gnd')]
     #[Route(path: '/about/network/{id}.jsonld', name: 'user-jsonld', requirements: ['id' => '\d+'])]
     #[Route(path: '/about/network/{id}', name: 'user', requirements: ['id' => '\d+'])]
-    public function detailAction(Request $request, EntityManagerInterface $entityManager,
-                                 $id = null, $gnd = null)
-    {
+    public function detailAction(
+        Request $request,
+        EntityManagerInterface $entityManager,
+        $id = null,
+        $gnd = null
+    ) {
         $criteria = new \Doctrine\Common\Collections\Criteria();
 
         if (!empty($id)) {
@@ -63,19 +64,21 @@ extends BaseController
         $qb = $entityManager
                 ->createQueryBuilder();
 
-        $json_contains = sprintf("JSON_CONTAINS(PR.contributor, '%s') = 1",
-                                 json_encode([ 'id_user' => (string)$user->getId() ]));
+        $json_contains = sprintf(
+            "JSON_CONTAINS(PR.contributor, '%s') = 1",
+            json_encode([ 'id_user' => (string) $user->getId() ])
+        );
 
         $qb->select([
-                'PR',
-                "PR.name HIDDEN nameSort"
-            ])
+            'PR',
+            "PR.name HIDDEN nameSort",
+        ])
             ->from('App\Entity\Site', 'PR')
             ->leftJoin('PR.location', 'P')
             ->leftJoin('P.country', 'C')
             ->where("PR.status IN (1) AND " . $json_contains)
             ->orderBy('nameSort')
-            ;
+        ;
         $sites = $qb->getQuery()->getResult();
 
         return $this->render('User/detail.html.twig', [

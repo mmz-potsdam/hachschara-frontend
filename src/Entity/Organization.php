@@ -12,9 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  */
 #[ORM\Entity]
-class Organization
-extends Agent
-implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
+class Organization extends Agent implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
 {
     use AddressesTrait;
 

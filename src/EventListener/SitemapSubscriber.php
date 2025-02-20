@@ -9,19 +9,14 @@ namespace App\EventListener;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\RouterInterface;
-
 use Symfony\Contracts\Translation\TranslatorInterface;
-
 use Doctrine\ORM\EntityManagerInterface;
-
 use App\Twig\AppExtension;
-
 use Presta\SitemapBundle\Event\SitemapPopulateEvent;
 use Presta\SitemapBundle\Service\UrlContainerInterface;
 use Presta\SitemapBundle\Sitemap\Url\UrlConcrete;
 
-class SitemapSubscriber
-implements EventSubscriberInterface
+class SitemapSubscriber implements EventSubscriberInterface
 {
     /**
      * @var EntityManagerInterface
@@ -45,11 +40,12 @@ implements EventSubscriberInterface
 
     /**
      */
-    public function __construct(EntityManagerInterface $entityManager,
-                                AppExtension $twigAppExtension,
-                                RouterInterface $router,
-                                TranslatorInterface $translator)
-    {
+    public function __construct(
+        EntityManagerInterface $entityManager,
+        AppExtension $twigAppExtension,
+        RouterInterface $router,
+        TranslatorInterface $translator
+    ) {
         $this->entityManager = $entityManager;
         $this->twigAppExtension = $twigAppExtension;
         $this->router = $router;
@@ -115,8 +111,7 @@ implements EventSubscriberInterface
             $routeName = $parts[count($parts) - 1];
 
             if (in_array($routeName, [ 'place-inhabited' ])
-                || preg_match('/^search\-select\-/', $routeName))
-            {
+                || preg_match('/^search\-select\-/', $routeName)) {
                 // omit certain routes from sitemap
                 continue;
             }
@@ -135,7 +130,7 @@ implements EventSubscriberInterface
                         $qb->select([ 'E' ])
                             ->from('\App\Entity\\' . ucfirst($routeName), 'E')
                             ->where('site' == $routeName ? 'E.status IN (1)' : 'E.status IN (0,1)')
-                            ;
+                        ;
 
                         $query = $qb->getQuery();
                         $entities = $query->getResult();
@@ -145,13 +140,19 @@ implements EventSubscriberInterface
                                 ? $entity->getGnd()
                                 : null;
 
-                                if (!empty($gnd)) {
-                                $url = $this->router->generate($routeName . '-by-gnd', [ 'gnd' => $gnd, '_locale' => $defaults['_locale'] ],
-                                                               UrlGeneratorInterface::ABSOLUTE_URL);
+                            if (!empty($gnd)) {
+                                $url = $this->router->generate(
+                                    $routeName . '-by-gnd',
+                                    [ 'gnd' => $gnd, '_locale' => $defaults['_locale'] ],
+                                    UrlGeneratorInterface::ABSOLUTE_URL
+                                );
                             }
                             else {
-                                $url = $this->router->generate($routeName, [ 'id' => $entity->getId(), '_locale' => $defaults['_locale'] ],
-                                                               UrlGeneratorInterface::ABSOLUTE_URL);
+                                $url = $this->router->generate(
+                                    $routeName,
+                                    [ 'id' => $entity->getId(), '_locale' => $defaults['_locale'] ],
+                                    UrlGeneratorInterface::ABSOLUTE_URL
+                                );
                             }
 
                             $this->addUrlDescription($urlDescriptions, $routeName . $entity->getId(), $defaults['_locale'], [ 'url' => $url, 'urlset' => $urlset ]);
@@ -165,8 +166,8 @@ implements EventSubscriberInterface
             }
             else {
                 $url = $this->router->generate($routeName, [
-                        '_locale' => $defaults['_locale'],
-                    ], UrlGeneratorInterface::ABSOLUTE_URL);
+                    '_locale' => $defaults['_locale'],
+                ], UrlGeneratorInterface::ABSOLUTE_URL);
 
                 if (!$this->endsWith($url, '/beacon')) {
                     $this->addUrlDescription($urlDescriptions, $routeName, $defaults['_locale'], [ 'url' => $url, 'urlset' => $urlset ]);
@@ -178,13 +179,13 @@ implements EventSubscriberInterface
             if (array_key_exists($locale, $urlDescription)) {
                 $localeUrlDescription = $urlDescription[$locale];
                 $url = new UrlConcrete(
-                        $localeUrlDescription['url']
-                        //,
-                        // TODO: custom settings for lastMod, changeFreq, weight
-                        // new \DateTime(),
-                        // UrlConcrete::CHANGEFREQ_WEEKLY,
-                        // 0.5
-                    );
+                    $localeUrlDescription['url']
+                    //,
+                    // TODO: custom settings for lastMod, changeFreq, weight
+                    // new \DateTime(),
+                    // UrlConcrete::CHANGEFREQ_WEEKLY,
+                    // 0.5
+                );
 
                 $url = new \Presta\SitemapBundle\Sitemap\Url\GoogleMultilangUrlDecorator($url);
 
@@ -195,7 +196,8 @@ implements EventSubscriberInterface
                     }
                 }
 
-                $event->getUrlContainer()->addUrl($url,
+                $event->getUrlContainer()->addUrl(
+                    $url,
                     $localeUrlDescription['urlset']
                 );
             }

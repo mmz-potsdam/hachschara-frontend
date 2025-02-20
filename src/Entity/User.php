@@ -10,8 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 #[ORM\Table(name: 'User')]
 #[ORM\Entity]
-class User
-implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
+class User implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
 {
     use HasTranslationsTrait;
 

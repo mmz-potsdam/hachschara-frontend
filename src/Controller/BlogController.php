@@ -4,14 +4,12 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-
 use Vnn\WpApiClient\WpClient;
 
 /**
  *
  */
-class BlogController
-extends DefaultController
+class BlogController extends DefaultController
 {
     #[Route(path: '/news', name: 'blog-index')]
     public function blogIndexAction(Request $request, WpClient $client)
@@ -79,11 +77,16 @@ extends DefaultController
                 $post['media_url'] = $media['media_details']['sizes']['onepress-small'];
             }
 
-            $post['content']['rendered'] = preg_replace_callback("#(<span class='easy-footnote'><a href='(.*?)'\s*title='(.*?)'>)#",
-                                                                 function ($matches) {
-                                                                    return sprintf('<a data-toggle="tooltip" href="#" title="%s">',
-                                                                                  $matches[3]);
-                                                                 }, $post['content']['rendered']);
+            $post['content']['rendered'] = preg_replace_callback(
+                "#(<span class='easy-footnote'><a href='(.*?)'\s*title='(.*?)'>)#",
+                function ($matches) {
+                    return sprintf(
+                        '<a data-toggle="tooltip" href="#" title="%s">',
+                        $matches[3]
+                    );
+                },
+                $post['content']['rendered']
+            );
         }
 
         return $this->render('Blog/detail.html.twig', [

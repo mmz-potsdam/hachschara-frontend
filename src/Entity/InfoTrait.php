@@ -46,7 +46,8 @@ trait InfoTrait
             foreach ($entries as $entry) {
                 if (!empty($entry['id_publication'])) {
                     if (preg_match('/^journal:(\d+)$/', $entry['id_publication'], $matches)) {
-                        $journalsById[$matches[1]] = null;;
+                        $journalsById[$matches[1]] = null;
+                        ;
                     }
                     else {
                         $publicationsById[$entry['id_publication']] = null;
@@ -62,7 +63,7 @@ trait InfoTrait
                 ->from('App\Entity\Bibitem', 'B')
                 ->andWhere('B.id IN (:ids) AND B.status <> -1')
                 ->setParameter('ids', array_keys($publicationsById))
-                ;
+            ;
 
             $results = $qb->getQuery()
                 ->getResult();
@@ -76,8 +77,7 @@ trait InfoTrait
         foreach ($this->info as $key => $entries) {
             foreach ($entries as $entry) {
                 if (!empty($entry['id_publication'])
-                    && !is_null($publicationsById[$entry['id_publication']]))
-                {
+                    && !is_null($publicationsById[$entry['id_publication']])) {
                     $bibitem = $publicationsById[$entry['id_publication']];
                     if ($bibitem instanceof Journal) {
                         $citation = $bibitem->getName();

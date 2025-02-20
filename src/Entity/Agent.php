@@ -63,8 +63,7 @@ abstract class Agent
             $uri = $place['@id'];
             if (preg_match('/^'
                            . preg_quote('http://d-nb.info/gnd/', '/')
-                           . '(\d+\-?[\dxX]?)$/', $uri, $matches))
-            {
+                           . '(\d+\-?[\dxX]?)$/', $uri, $matches)) {
                 $placeInfo['gnd'] = $matches[1];
             }
         }

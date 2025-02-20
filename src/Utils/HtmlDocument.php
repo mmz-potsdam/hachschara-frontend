@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Methods for Document Conversions.
  * Interfaces inspired by ezcDocument
@@ -9,8 +10,7 @@
 
 namespace App\Utils;
 
-class HtmlDocument
-extends Document
+class HtmlDocument extends Document
 {
     protected $mimeType = 'text/html';
     protected $dom = null;
@@ -131,11 +131,11 @@ extends Document
                 'wrap' => 120,
             ];
 
-            $tidy = new \tidy;
+            $tidy = new \tidy();
             $tidy->parseString($this->saveString(), $configuration, 'utf8');
             $tidy->cleanRepair();
 
-            $this->loadString((string)$tidy);
+            $this->loadString((string) $tidy);
 
             return true;
         }

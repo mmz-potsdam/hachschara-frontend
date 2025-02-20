@@ -36,7 +36,8 @@ class DateFormatter
         return $datePartsReduced;
     }
 
-    protected function formatDateparts($year, $month, $day, $datetimeStyle, $incomplete = false) {
+    protected function formatDateparts($year, $month, $day, $datetimeStyle, $incomplete = false)
+    {
         if (intval($month) == 0 && intval($day) == 0 && intval($year) == 0) {
             return '';
         }
@@ -105,33 +106,43 @@ class DateFormatter
             // range
             $valueInternal['modifier'] = '/';
             $valueInternalEnd = $this->parseEdtfDate($parts[1]);
-            $valueAppend = $valueInternal['modifier'] . $this->formatDateparts($valueInternalEnd['year'], $valueInternalEnd['month'], $valueInternalEnd['day'],
-                                                                               $datetimeStyle, true);
+            $valueAppend = $valueInternal['modifier'] . $this->formatDateparts(
+                $valueInternalEnd['year'],
+                $valueInternalEnd['month'],
+                $valueInternalEnd['day'],
+                $datetimeStyle,
+                true
+            );
         }
 
-        $fieldValue = $this->formatDateparts($valueInternal['year'], $valueInternal['month'], $valueInternal['day'],
-                                             $datetimeStyle, true);
+        $fieldValue = $this->formatDateparts(
+            $valueInternal['year'],
+            $valueInternal['month'],
+            $valueInternal['day'],
+            $datetimeStyle,
+            true
+        );
 
         if (!empty($valueInternal['modifier'])) {
             switch ($valueInternal['modifier']) {
-              case '~':
-                $fieldValue = $this->translator->trans('circa') . ' ' . $fieldValue;
-                break;
+                case '~':
+                    $fieldValue = $this->translator->trans('circa') . ' ' . $fieldValue;
+                    break;
 
-              case '<':
-                $fieldValue = $this->translator->trans('before') . ' ' . $fieldValue;
-                break;
+                case '<':
+                    $fieldValue = $this->translator->trans('before') . ' ' . $fieldValue;
+                    break;
 
-              case '>':
-                $fieldValue = $this->translator->trans('after') . ' ' . $fieldValue;
-                break;
+                case '>':
+                    $fieldValue = $this->translator->trans('after') . ' ' . $fieldValue;
+                    break;
 
-              case '?':
-                $fieldValue .= '?';
-                break;
+                case '?':
+                    $fieldValue .= '?';
+                    break;
 
-              default:
-                // var_dump($valueInternal['modifier']);
+                default:
+                    // var_dump($valueInternal['modifier']);
             }
         }
 

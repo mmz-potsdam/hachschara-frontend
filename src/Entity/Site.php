@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -12,10 +11,13 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 #[ORM\Table(name: 'Project')]
 #[ORM\Entity]
-class Site
-implements JsonLdSerializable
+class Site implements JsonLdSerializable
 {
     use HasTranslationsTrait;
+
+    use ContributorTrait;
+
+    use InfoTrait;
 
     protected static $termsById = null;
 
@@ -41,16 +43,12 @@ implements JsonLdSerializable
                 'condition',
                 'education',
             ])
-            ;
+        ;
 
         foreach ($qb->getQuery()->getResult() as $term) {
             self::$termsById[$term->getId()] = $term;
         }
     }
-
-    use ContributorTrait;
-
-    use InfoTrait;
 
     protected $info = [];
     protected $extractFromNotes = [ 'address', 'general', 'publication' ];
@@ -307,7 +305,7 @@ implements JsonLdSerializable
         }
 
         if (preg_match('/^([\d]+)/', $datetime, $matches)) {
-            return (int)($matches[1]);
+            return (int) ($matches[1]);
         }
     }
 
@@ -470,15 +468,13 @@ implements JsonLdSerializable
 
         if (is_array($this->$property)) {
             if (array_key_exists($locale, $this->$property)
-                && !empty($this->$property[$locale]))
-            {
+                && !empty($this->$property[$locale])) {
                 return $this->$property[$locale];
             }
 
             // fallback
             if (array_key_exists('de', $this->$property)
-                && !empty($this->$property['de']))
-            {
+                && !empty($this->$property['de'])) {
                 return $this->$property['de'];
             }
         }
@@ -764,7 +760,7 @@ implements JsonLdSerializable
      */
     public function getPersonReferences()
     {
-        return $this->getAgentReferences()->filter(function(AgentSite $agentSite) {
+        return $this->getAgentReferences()->filter(function (AgentSite $agentSite) {
             return $agentSite->getAgent() instanceof Person;
         });
     }
@@ -776,7 +772,7 @@ implements JsonLdSerializable
      */
     public function getOrganizationReferences()
     {
-        return $this->getAgentReferences()->filter(function(AgentSite $agentSite) {
+        return $this->getAgentReferences()->filter(function (AgentSite $agentSite) {
             return $agentSite->getAgent() instanceof Organization;
         });
     }
@@ -800,7 +796,7 @@ implements JsonLdSerializable
 
                 return is_null($name)
                     || strpos($entry->getName(), $name) === 0 // str_starts_with for PHP < 8.0
-                    ;
+                ;
             }
         );
     }
@@ -852,11 +848,11 @@ implements JsonLdSerializable
         // TODO: move to App\Utils\JsonLd
         $geo = $this->getGeo();
         if (!(empty($geo) || false === strpos($geo, ','))) {
-            list($lat, $long) = explode(',', $geo, 2);
+            [$lat, $long] = explode(',', $geo, 2);
             $about['geo'] = [
                 '@type' => 'GeoCoordinates',
-                'latitude' =>  (double)$lat,
-                'longitude' => (double)$long,
+                'latitude' =>  (float) $lat,
+                'longitude' => (float) $long,
             ];
         }
 
@@ -873,7 +869,7 @@ implements JsonLdSerializable
         if (!empty($address)) {
             $about['address'] = [
                 '@type' => 'PostalAddress',
-                'addressLocality' => $this->locationLabel
+                'addressLocality' => $this->locationLabel,
             ] + $address;
         }
 
@@ -916,8 +912,10 @@ implements JsonLdSerializable
 
                 case 'CC BY-NC-ND':
                     $parts = explode(' ', $this->license, 2);
-                    $ret['license'] = sprintf('https://creativecommons.org/licenses/%s/4.0/',
-                                              strtolower($parts[1]));
+                    $ret['license'] = sprintf(
+                        'https://creativecommons.org/licenses/%s/4.0/',
+                        strtolower($parts[1])
+                    );
                     break;
 
                 default:

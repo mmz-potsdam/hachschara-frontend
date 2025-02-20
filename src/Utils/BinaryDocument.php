@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Methods for Document Conversions.
  * Interfaces inspired by ezcDocument
@@ -8,8 +9,7 @@
 
 namespace App\Utils;
 
-class BinaryDocument
-extends Document
+class BinaryDocument extends Document
 {
     protected $stream = null;
 
@@ -25,7 +25,7 @@ extends Document
         // chop of charset info to behave like mime_content_type above
         $this->mimeType = preg_replace('/;\s*charset=.*/', '', $finfo->buffer($content));
 
-        $stream = fopen('php://temp','r+');
+        $stream = fopen('php://temp', 'r+');
         fwrite($stream, $content);
         rewind($stream);
 
