@@ -2324,7 +2324,7 @@
             "citation-label": "linse_1983",
             "type": "chapter",
             "title": "Kibbuz Cheruth",
-            "container-title": "Zurück, o Mensch, zur Mutter Erde. Landkommunen in Deutschland 1890 - 1933",
+            "container-title": "Zurück, o Mensch, zur Mutter Erde. Landkommunen in Deutschland 1890–1933",
             "collection-title": "dtv-dokumente",
             "collection-number": "2934",
             "volume": "",
@@ -3100,49 +3100,6 @@
             ]
         },
         {
-            "id": "R4K5FXEN",
-            "citation-label": "schmid_2017",
-            "type": "book",
-            "title": "Ahlem. Die Geschichte einer jüdischen Gartenbauschule",
-            "container-title": null,
-            "collection-title": "AhlemSchriften",
-            "collection-number": "1",
-            "volume": "",
-            "number-of-volumes": "",
-            "edition": "2. ergänzte Auflage",
-            "publisher-place": "Bremen",
-            "publisher": "Edition Temmen",
-            "issued": {
-                "date-parts": [
-                    [
-                        2017
-                    ]
-                ],
-                "literal": "2017"
-            },
-            "page": null,
-            "number-of-pages": "",
-            "DOI": null,
-            "ISBN": "978-3-86108-039-8",
-            "ISSN": null,
-            "URL": "",
-            "accessed": {
-                "date-parts": [
-                    [
-                        ""
-                    ]
-                ],
-                "literal": ""
-            },
-            "language": "",
-            "editor": [
-                {
-                    "given": "Hans-Dieter",
-                    "family": "Schmid"
-                }
-            ]
-        },
-        {
             "id": "IJIXJJ94",
             "citation-label": "schoppmann_2005",
             "type": "chapter",
@@ -3427,7 +3384,7 @@
             "citation-label": "tiusanen_1999",
             "type": "chapter",
             "title": "Die Auslandshachschara in Dänemark",
-            "container-title": "\"Hachschara\". Die Vorbereitung junger Juden auf die Auswanderung nach Palästina",
+            "container-title": "„Hachschara“. Die Vorbereitung junger Juden auf die Auswanderung nach Palästina",
             "collection-title": "",
             "collection-number": "",
             "volume": "",
