@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo; // alias for Gedmo extensions annotations
+use Seboettg\CiteProc\CiteProc;
 use Symfony\Component\Validator\Constraints as Assert;
 
 if (!function_exists('mb_ucfirst') && function_exists('mb_substr')) {
@@ -973,64 +974,14 @@ class Bibitem implements \JsonSerializable /*, JsonLdSerializable, OgSerializabl
         return $this->note;
     }
 
-    public function renderCitationAsHtml($citeProc, $extended = false)
+    public function renderCitationAsHtml(CiteProc $citeProc, $extended = false)
     {
         $data = json_decode(json_encode($this->jsonSerialize()));
         if (property_exists($data, 'issued') && is_null($data->issued->literal)) {
             unset($data->issued);
         }
 
-        $ret = $citeProc->render([ $data ]);
-
-        /* vertical-align: super doesn't render nicely:
-           http://stackoverflow.com/a/1530819/2114681
-        */
-        $ret = preg_replace(
-            '/style="([^"]*)vertical\-align\:\s*super;([^"]*)"/',
-            'style="\1vertical-align: super; font-size: 66%;\2"',
-            $ret
-        );
-
-        if ($extended) {
-            // make links clickable
-            $ret = preg_replace_callback(
-                '/(<span class="citeproc\-URL">&lt;)(.*?)(&gt;)/',
-                function ($matches) {
-                    return $matches[1]
-                        . sprintf(
-                            '<a href="%s" target="_blank">%s</a>',
-                            $matches[2],
-                            $matches[2]
-                        )
-                    . $matches[3];
-                },
-                $ret
-            );
-
-            $append = [];
-
-            if (!empty($this->printer)) {
-                $append[] = 'printed by: ' . $this->printer;
-            }
-
-            if (!empty($this->numberOfPages)) {
-                $append[] = 'nr. of pages: ' . $this->numberOfPages;
-            }
-
-            if (!empty($this->note)) {
-                $append[] = $this->note;
-            }
-
-            if (!empty($append)) {
-                $ret .= htmlspecialchars(mb_ucfirst(join(', ', $append)), ENT_COMPAT, 'utf-8') . '.';
-            }
-        }
-
-        return preg_replace(
-            '~^<div class="csl\-bib\-body"><div style="text\-indent: \-25px; padding\-left: 25px;"><div class="csl-entry">(.*?)</div></div></div>$~',
-            '\1',
-            $ret
-        );
+        return $citeProc->render([ $data ]);
     }
 
     private function parseLocalizedDate($dateStr, $locale = 'de_DE', $pattern = 'dd. MMMM yyyy')

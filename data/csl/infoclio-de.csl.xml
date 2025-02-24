@@ -504,7 +504,7 @@
           <text variable="source"/>
           <group delimiter=":">
             <!--<text value="doi"/>-->
-            <text variable="DOI" prefix="&amp;lt;doi:" suffix="&amp;gt;"/>
+            <text variable="DOI" prefix="&amp;lt;" suffix="&amp;gt;"/>
           </group>
         </group>
     </group>

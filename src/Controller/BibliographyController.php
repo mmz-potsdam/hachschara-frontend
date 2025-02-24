@@ -26,28 +26,7 @@ class BibliographyController extends BaseController
             $dataAsObject = json_decode(file_get_contents($fnameFull));
 
             $citeProc = $this->instantiateCiteProc($request->getLocale());
-            $bibliographyHtml = @$citeProc->render($dataAsObject->data);
-
-            /* vertical-align: super doesn't render nicely:
-               http://stackoverflow.com/a/1530819/2114681
-            */
-            /*
-            $bibliographyHtml = preg_replace('/style="([^"]*)vertical\-align\:\s*super;([^"]*)"/',
-                                'style="\1vertical-align: top; font-size: 66%;\2"', $bibliographyHtml);
-            */
-            /*
-            if ('de' != $request->getLocale()) {
-                // hack for pages
-                $contents = preg_replace('/S\.\s*' . '/', 'pp. ', $contents);
-            }
-            */
-
-            // link doi:
-            $bibliographyHtml = preg_replace(
-                '/(doi:<span class="citeproc\-DOI">)(\S+)(<\/span>)/',
-                '<a href="https://doi.org/\2" target="_blank">\1\2\3</a>',
-                $bibliographyHtml
-            );
+            $bibliographyHtml = $citeProc->render($dataAsObject->data);
 
             $bibliographyBySection[$basename] = $descr + [ 'contentHtml' => $bibliographyHtml ];
         }

@@ -88,6 +88,13 @@ abstract class BaseController extends AbstractController
                     $renderedText
                 );
             },
+            'DOI' => function ($cslItem, $renderedText) {
+                return sprintf(
+                    '<a href="https://doi.org/%s" target="_blank">doi:%s</a>',
+                    $renderedText,
+                    $renderedText
+                );
+            },
         ];
 
         foreach ([
@@ -99,13 +106,12 @@ abstract class BaseController extends AbstractController
             'book-series' => 'book-series',
             'place' => 'place',
             'date' => 'data',
-            'DOI' => 'DOI',
         ] as $key => $class) {
             $additionalMarkup[$key] = function ($cslItem, $renderedText) use ($wrapSpan, $class) {
                 return $wrapSpan($renderedText, $class);
             };
         }
 
-        return new \Seboettg\CiteProc\CiteProc(file_get_contents($cslPath), $cslLocale, $additionalMarkup);
+        return new \App\Utils\CiteProc(file_get_contents($cslPath), $cslLocale, $additionalMarkup);
     }
 }
