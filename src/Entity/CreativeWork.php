@@ -759,7 +759,7 @@ class CreativeWork extends SchemaOrg implements \JsonSerializable
      */
     public function getIssn()
     {
-        if (isset($this->isPartOf) && $this->isPartOf instanceof Periodical) {
+        if (isset($this->isPartOf) && $this->isPartOf instanceof Journal) {
             return $this->isPartOf->getIssn();
         }
     }

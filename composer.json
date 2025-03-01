@@ -38,6 +38,7 @@
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/inflector": "^2.0",
         "doctrine/orm": "^3.0",
+        "fale/isbn": "^3.1",
         "gedmo/doctrine-extensions": "^3.16",
         "hedii/zotero-api": "dev-master#c296090a23e557bd7b38c7f10132ada6bc333631",
         "ifedko/php-doctrine-dbal-pagination": "^3.0",

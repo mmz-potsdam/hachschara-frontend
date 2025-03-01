@@ -99,6 +99,11 @@ class User implements \JsonSerializable /*, JsonLdSerializable, OgSerializable *
     protected $entityfacts;
 
     /**
+    * xORM\Column(type="json", nullable=true)
+     */
+    protected $notes;
+
+    /**
      * @var \DateTime
      */
     #[ORM\Column(name: 'created', type: 'datetime')]
@@ -446,9 +451,9 @@ class User implements \JsonSerializable /*, JsonLdSerializable, OgSerializable *
         return [
             'id' => $this->id,
             'fullname' => $this->getFullname(),
-            'honorificPrefix' => $this->getHonorificPrefix(),
+            // 'honorificPrefix' => $this->getHonorificPrefix(),
             'description' => $this->getDescription(),
-            'gender' => $this->getGender(),
+            // 'gender' => $this->getGender(),
             'gnd' => $this->gnd,
             'slug' => $this->slug,
         ];

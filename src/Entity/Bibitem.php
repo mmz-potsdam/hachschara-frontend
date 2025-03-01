@@ -718,30 +718,6 @@ class Bibitem implements \JsonSerializable /*, JsonLdSerializable, OgSerializabl
     }
 
     /**
-     * Sets printer.
-     *
-     * @param string|null $printer
-     *
-     * @return $this
-     */
-    public function setPrinter($printer = null)
-    {
-        $this->printer = $printer;
-
-        return $this;
-    }
-
-    /**
-     * Gets printer.
-     *
-     * @return string|null
-     */
-    public function getPrinter()
-    {
-        return $this->printer;
-    }
-
-    /**
      * Sets the DOI of the publication.
      *
      * @param string|null $doi
@@ -808,7 +784,7 @@ class Bibitem implements \JsonSerializable /*, JsonLdSerializable, OgSerializabl
      */
     public function setDateModified(?\DateTime $dateModified = null)
     {
-        $this->dateModified = $dateModified;
+        $this->changedAt = $dateModified;
 
         return $this;
     }

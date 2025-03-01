@@ -175,18 +175,9 @@ class Organization extends Agent implements \JsonSerializable /*, JsonLdSerializ
      *
      * @return array
      */
-    public function getAddressesSeparated($filterExhibition = null, $linkPlace = false, $returnStructure = false)
+    public function getAddressesSeparated($linkPlace = false, $returnStructure = false)
     {
-        $addresses = $this->buildAddresses($this->addresses, false, $filterExhibition, $linkPlace, $returnStructure);
-
-        if (!$returnStructure) {
-            // lookup exhibitions
-            for ($i = 0; $i < count($addresses); $i++) {
-                $addresses[$i]['exhibitions'] = !empty($addresses[$i]['id_exhibitions'])
-                    ? $this->getExhibitions(-1, $addresses[$i]['id_exhibitions'])
-                    : [];
-            }
-        }
+        $addresses = $this->buildAddresses($this->addresses, false, $linkPlace, $returnStructure);
 
         return $addresses;
     }
@@ -311,7 +302,7 @@ class Organization extends Agent implements \JsonSerializable /*, JsonLdSerializ
 
         $parts = [];
 
-        $description = $this->getDescriptionLocalized($locale);
+        $description = $this->getDescription($locale);
         if (!empty($description)) {
             $parts[] = $description;
         }

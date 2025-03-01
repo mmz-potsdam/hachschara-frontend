@@ -18,8 +18,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\Entity]
 class Journal extends CreativeWork implements \JsonSerializable, JsonLdSerializable /*, OgSerializable, TwitterSerializable */
 {
-    use InfoTrait;
-
     /**
      * @var int
      *
@@ -43,7 +41,9 @@ class Journal extends CreativeWork implements \JsonSerializable, JsonLdSerializa
      *
      */
     #[ORM\Column(name: 'place', type: 'string', nullable: true)]
+
     protected $publicationLocation; /* map to contentLocation in Schema.org */
+
     /**
      * @var Publisher The publisher.
      *

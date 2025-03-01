@@ -356,11 +356,14 @@ class Site implements JsonLdSerializable
      */
     public function buildStatusLabel()
     {
+        /*
         if (is_null($this->status) || !array_key_exists($this->status, \App\Search\SearchListBuilder::$STATUS_LABELS)) {
             return '';
         }
 
         return \App\Search\SearchListBuilder::$STATUS_LABELS[$this->status];
+        */
+        return '';
     }
 
     /**
@@ -881,7 +884,7 @@ class Site implements JsonLdSerializable
             foreach ([ 'start', 'end'] as $key) {
                 $property = $key . 'date';
                 if (!empty($this->$property)) {
-                    $ret[$property . 'Time'] = \AppBundle\Utils\JsonLd::formatDate8601($this->$property);
+                    $ret[$property . 'Time'] = \App\Utils\JsonLd::formatDate8601($this->$property);
                 }
             }
         }

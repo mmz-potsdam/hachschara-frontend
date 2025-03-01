@@ -577,7 +577,7 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
 
     public function getTypeLabel()
     {
-        return buildTypeLabel($this->type);
+        return self::buildTypeLabel($this->type);
     }
 
     public function getPath($em)
@@ -625,7 +625,7 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'geo' => $this->geo,
+            'geo' => $this->getGeo(),
             'tgn' => $this->tgn,
             'gnd' => $this->gnd,
         ];
