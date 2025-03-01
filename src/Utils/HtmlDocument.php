@@ -15,29 +15,6 @@ class HtmlDocument extends Document
     protected $mimeType = 'text/html';
     protected $dom = null;
 
-    public static function minify($html)
-    {
-        $htmlMin = new \voku\helper\HtmlMin();
-        $htmlMin->doOptimizeViaHtmlDomParser(true);
-        $htmlMin->doRemoveWhitespaceAroundTags(false);
-
-        $crawler = new \Symfony\Component\DomCrawler\Crawler();
-        $crawler->addHtmlContent($htmlMin->minify($html));
-
-        $ret = $crawler->filter('body')->html();
-
-        // remove newlines after tags
-        $ret = preg_replace('/(<[^>]+>\s*)\R+/', '\1', $ret);
-
-        // replace newlines before tags with space
-        $ret = preg_replace('/\s*\R+\s*(<[^>]+>)/', ' \1', $ret);
-
-        $ret = preg_replace('/(<\/p>)(<p>)/', '\1 \2', $ret);
-        $ret = preg_replace('/(<\/p>)(<br>)/', '\1 \2', $ret);
-
-        return $ret;
-    }
-
     /**
      * Construct new document
      */
