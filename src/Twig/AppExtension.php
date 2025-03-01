@@ -73,7 +73,7 @@ class AppExtension extends AbstractExtension
             $datestrUntil = $datestrUntil->format('Y-m-d');
         }
 
-        return \AppBundle\Utils\Formatter::daterangeIncomplete($datestrFrom, $datestrUntil, $locale);
+        return \App\Utils\Formatter::daterangeIncomplete($datestrFrom, $datestrUntil, $locale);
     }
 
     // see https://api.drupal.org/api/drupal/core%21themes%21engines%21twig%21twig.engine/function/twig_without/8.2.x
