@@ -4,12 +4,12 @@
 
 namespace App\Controller;
 
+use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Intl\Countries;
-use Knp\Component\Pager\PaginatorInterface;
-use Symfony\Component\CssSelector\XPath\TranslatorInterface;
 
 /**
  * Common Base
@@ -70,6 +70,40 @@ abstract class BaseController extends AbstractController
             $limit, // limit per page
             $options
         );
+    }
+
+    protected function hydratePlacesByTgns(EntityManagerInterface $entityManager, array $tgns, bool $preserveOrder = false)
+    {
+        // hydrate with doctrine entity
+        $qb = $entityManager
+            ->createQueryBuilder();
+        $hydrationQuery = $qb->select([ 'PL', 'field(PL.tgn, :tgns) as HIDDEN field', 'COALESCE(PL.alternateName, PL.name) HIDDEN nameSort' ])
+            ->from('AppBundle\Entity\Place', 'PL')
+            ->where('PL.tgn IN (:tgns)')
+            ->orderBy($preserveOrder ? 'field' : 'nameSort')
+            ->getQuery();
+            ;
+
+        $hydrationQuery->setParameter('tgns', $tgns);
+
+        return $hydrationQuery->getResult();
+    }
+
+    protected function hydratePlacesByIds(EntityManagerInterface $entityManager, array $ids, bool $preserveOrder = false)
+    {
+        // hydrate with doctrine entity
+        $qb = $entityManager
+            ->createQueryBuilder();
+        $hydrationQuery = $qb->select([ 'PL', 'field(PL.id, :ids) as HIDDEN field', 'COALESCE(PL.alternateName, PL.name) HIDDEN nameSort' ])
+            ->from('AppBundle\Entity\Place', 'PL')
+            ->where('PL.id IN (:ids)')
+            ->orderBy($preserveOrder ? 'field' : 'nameSort')
+            ->getQuery();
+            ;
+
+        $hydrationQuery->setParameter('ids', $ids);
+
+        return $hydrationQuery->getResult();
     }
 
     protected function instantiateCiteProc($cslLocale)

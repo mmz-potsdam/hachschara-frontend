@@ -109,7 +109,7 @@ class PersonController extends BaseController
         return $this->render('Person/detail.html.twig', [
             'pageTitle' => $person->getFullname(true), // TODO: lifespan in brackets
             'person' => $person,
-            'mapMarkers' => $this->buildMapMarkers($person),
+            'mapMarkers' => $this->buildMapMarkers($entityManager, $person),
             'pageMeta' => [
                 'jsonLd' => $person->jsonLdSerialize($locale),
                 // 'og' => $this->buildOg($person, $routeName, $routeParams),
@@ -118,7 +118,7 @@ class PersonController extends BaseController
         ]);
     }
 
-    protected function buildMapMarkers($person)
+    protected function buildMapMarkers(EntityManagerInterface $entityManager, $person)
     {
         $markers = [];
 
@@ -146,8 +146,8 @@ class PersonController extends BaseController
         $tgns = array_filter(array_unique(array_column($addresses, 'place_tgn')));
         $placesByTgn = [];
         if (!empty($tgns)) {
-            foreach ($this->hydratePlaces($tgns, true) as $place) {
-                if (!empty($place->getGeo())) {
+            foreach ($this->hydratePlacesByTgns($entityManager, $tgns, true) as $place) {
+                if (!empty($place->getTgn())) {
                     $placesByTgn[$place->getTgn()] = $place;
                 }
             }
@@ -168,39 +168,6 @@ class PersonController extends BaseController
                 ];
             }
         }
-
-        // TODO: Sites
-        /*
-        foreach ($person->getExhibitions(-1) as $exhibition) {
-            $location = $exhibition->getLocation();
-            if (is_null($location)) {
-                continue;
-            }
-
-            $geo = $location->getGeo(true);
-            if (is_null($geo)) {
-                continue;
-            }
-
-            $info = [
-                'geo' => $geo,
-                'exhibition' => $exhibition,
-            ];
-
-            $place = $location->getPlace();
-            if (is_null($place)) {
-                $info += [ 'name' => $location->getPlaceLabel() ];
-            }
-            else {
-                $info += [ 'name' => $place->getNameLocalized(), 'tgn' => $place->getTgn() ];
-            }
-
-            $places[] = [
-                'info' => $info,
-                'label' => 'Exhibition',
-            ];
-        }
-        */
 
         foreach ($places as $place) {
             $value = $group = null;

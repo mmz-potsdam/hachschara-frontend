@@ -120,7 +120,7 @@ class OrganizationController extends BaseController
         return $this->render('Organization/detail.html.twig', [
             'pageTitle' => $organization->getName(), // TODO: lifespan in brackets
             'organization' => $organization,
-            'mapMarkers' => $this->buildMapMarkers($organization),
+            'mapMarkers' => $this->buildMapMarkers($entityManager, $organization),
             'pageMeta' => [
                 'jsonLd' => $organization->jsonLdSerialize($locale),
                 // 'og' => $this->buildOg($person, $routeName, $routeParams),
@@ -129,7 +129,7 @@ class OrganizationController extends BaseController
         ]);
     }
 
-    protected function buildMapMarkers($entity)
+    protected function buildMapMarkers(EntityManagerInterface $entityManager, $entity)
     {
         $markers = [];
 
@@ -149,17 +149,15 @@ class OrganizationController extends BaseController
         $ids = array_filter(array_unique(array_column($addresses, 'place_id')));
         $placesByIds = [];
         if (!empty($ids)) {
-            foreach ($this->hydratePlaces($ids, true) as $place) {
-                if (!empty($place->getGeo())) {
-                    $placesByIds[$place->getId()] = $place;
-                }
+            foreach ($this->hydratePlacesByIds($entityManager, $ids, true) as $place) {
+                $placesByIds[$place->getId()] = $place;
             }
         }
 
         foreach ($addresses as $address) {
             $id = $address['place_id'];
-            if (!empty($id) && array_key_exists($id, $placesByTgn)) {
-                $place = $placesByTgn[$id];
+            if (!empty($id) && array_key_exists($id, $placesByIds)) {
+                $place = $placesByIds[$id];
                 $places[] = [
                     'info' => [
                         'geo' => $place->getGeo(),
@@ -171,39 +169,6 @@ class OrganizationController extends BaseController
                 ];
             }
         }
-
-        // TODO: Sites
-        /*
-        foreach ($organization->getExhibitions(-1) as $exhibition) {
-            $location = $exhibition->getLocation();
-            if (is_null($location)) {
-                continue;
-            }
-
-            $geo = $location->getGeo(true);
-            if (is_null($geo)) {
-                continue;
-            }
-
-            $info = [
-                'geo' => $geo,
-                'exhibition' => $exhibition,
-            ];
-
-            $place = $location->getPlace();
-            if (is_null($place)) {
-                $info += [ 'name' => $location->getPlaceLabel() ];
-            }
-            else {
-                $info += [ 'name' => $place->getNameLocalized(), 'tgn' => $place->getTgn() ];
-            }
-
-            $places[] = [
-                'info' => $info,
-                'label' => 'Exhibition',
-            ];
-        }
-        */
 
         foreach ($places as $place) {
             $value = $group = null;
@@ -238,26 +203,6 @@ class OrganizationController extends BaseController
                                 'tgn' => $place['info']['tgn'],
                             ])),
                             htmlspecialchars($place['info']['name'], ENT_QUOTES)
-                        ),
-                    ];
-                    break;
-
-                case 'Exhibition':
-                    $group = 'exhibition';
-                    $exhibition = $place['info']['exhibition'];
-                    $value = [
-                        'icon' => 'blueIcon',
-                        'html' =>  sprintf(
-                            '<a href="%s">%s</a> at <a href="%s">%s</a> (%s)',
-                            htmlspecialchars($this->generateUrl('exhibition', [
-                                'id' => $exhibition->getId(),
-                            ])),
-                            htmlspecialchars($exhibition->getTitleListing(), ENT_QUOTES),
-                            htmlspecialchars($this->generateUrl('location', [
-                                'id' => $exhibition->getLocation()->getId(),
-                            ])),
-                            htmlspecialchars($exhibition->getLocation()->getNameListing(), ENT_QUOTES),
-                            $this->buildDisplayDate($exhibition)
                         ),
                     ];
                     break;
