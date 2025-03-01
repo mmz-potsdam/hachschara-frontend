@@ -24,7 +24,7 @@ class CiteProc extends \Seboettg\CiteProc\CiteProc
         $this->lang = $lang;
     }
 
-    public function render($data, $mode = 'bibliography', $citationItems = [], $citationAsArray = false)
+    public function render($data, $mode = 'bibliography', $citationItems = [], $citationAsArray = false): string
     {
         $bibliography = @ parent::render($data, $mode, $citationItems, $citationAsArray);
 
