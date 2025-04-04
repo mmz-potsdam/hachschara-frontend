@@ -82,7 +82,7 @@ abstract class BaseController extends AbstractController
             ->where('PL.tgn IN (:tgns)')
             ->orderBy($preserveOrder ? 'field' : 'nameSort')
             ->getQuery();
-            ;
+        ;
 
         $hydrationQuery->setParameter('tgns', $tgns);
 
@@ -99,7 +99,7 @@ abstract class BaseController extends AbstractController
             ->where('PL.id IN (:ids)')
             ->orderBy($preserveOrder ? 'field' : 'nameSort')
             ->getQuery();
-            ;
+        ;
 
         $hydrationQuery->setParameter('ids', $ids);
 

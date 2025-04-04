@@ -7,7 +7,6 @@ namespace App\Utils;
  */
 class Formatter
 {
-
     /** No instances */
     private function __construct() {}
 
@@ -67,7 +66,7 @@ class Formatter
             if (count($datePartsReduced) > 2) {
                 $ret[] = intval($datePartsReduced[2])  // day
                     . ('year' !== $ommit ? ',' : '')
-                    ;
+                ;
             }
             if ('year' !== $ommit) {
                 $ret[] = $datePartsReduced[0]; // year
@@ -92,13 +91,11 @@ class Formatter
         $fromReduced = self::buildDatePartsReduced($datestrFrom);
         $untilReduced = self::buildDatePartsReduced($datestrUntil);
         if (count($fromReduced) > 1 && count($untilReduced) > 1
-            && $fromReduced[0] == $untilReduced[0])
-        {
+            && $fromReduced[0] == $untilReduced[0]) {
             // year is equal
             $ommit = 'year';
             if (count($fromReduced) > 2 && count($untilReduced) > 2
-                && $fromReduced[1] == $untilReduced[1])
-            {
+                && $fromReduced[1] == $untilReduced[1]) {
                 // year and month are equal
                 $ommit = 'month';
             }
