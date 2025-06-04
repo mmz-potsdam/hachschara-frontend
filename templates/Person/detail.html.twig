@@ -105,7 +105,7 @@
             {% endif %}
             {% if person.description(app.request.locale) is not empty %}
                 <dt class="col-sm-4 col-md-3">{{ 'Description'|trans }}</dt>
-                <dd class="col-sm-8 col-md-9">{{ person.description(app.request.locale)|nl2br }}</dd>
+                <dd class="col-sm-8 col-md-9">{{ person.description(app.request.locale)|converturls|nl2br }}</dd>
             {% endif %}
             {% set siteRefs = person.siteReferences %}
             {% if siteRefs is not empty %}
