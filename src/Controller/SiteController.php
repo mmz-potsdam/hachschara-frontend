@@ -37,7 +37,7 @@ class SiteController extends BaseController
         $nameSort = 'PR.name';
         if ($locale != \App\Entity\Site::$defaultLocale) {
             $nameSort = sprintf(
-                "CONCAT_WS('', JSON_UNQUOTE(JSON_EXTRACT(PR.translations ,'$.%s.name')), %s)",
+                "CONCAT_WS('', JSON_UNQUOTE(JSON_EXTRACT(PR.translations, '$.%s.name')), %s)",
                 $locale,
                 $nameSort
             );

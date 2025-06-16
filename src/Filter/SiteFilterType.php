@@ -14,7 +14,7 @@ class SiteFilterType extends CrudFilterType
     {
         $this->addSearchFilter($builder, [
             'PR.name',
-            "JSON_EXTRACT(PR.translations ,'$.en.name')", // TODO: pass locale
+            "JSON_EXTRACT(PR.translations, '$.en.name')", // TODO: pass locale
             'PR.alternateName',
         ]);
 

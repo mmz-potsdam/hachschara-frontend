@@ -33,7 +33,7 @@ class OrganizationController extends BaseController
         $nameSort = 'O.name';
         if ($locale != \App\Entity\Site::$defaultLocale) {
             $nameSort = sprintf(
-                "CONCAT_WS('', JSON_UNQUOTE(JSON_EXTRACT(O.translations ,'$.%s.name')), %s)",
+                "CONCAT_WS('', JSON_UNQUOTE(JSON_EXTRACT(O.translations, '$.%s.name')), %s)",
                 $locale,
                 $nameSort
             );
