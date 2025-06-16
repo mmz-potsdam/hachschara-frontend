@@ -89,12 +89,6 @@
                 <dt class="col-sm-4 col-md-3">{{ 'Cause of Death'|trans }}</dt>
                 <dd class="col-sm-8 col-md-9">{{ person.deathCause }}</dd>
             {% endif %}
-            {% if person.hasInfo('birth_death') %}
-                <dt class="col-sm-4 col-md-3">{{ 'Sources and Notes'|trans }}</dt>
-                <dd class="col-sm-8 col-md-9">
-                    {{ helper.render_info(person.infoExpanded('birth_death')) }}
-                </dd>
-            {% endif %}
             {% if person.nationality is not empty %}
                 <dt class="col-sm-4 col-md-3">{{ 'Nationality'|trans }}</dt>
                 <dd class="col-sm-8 col-md-9">{{ person.nationality }}</dd>
@@ -116,10 +110,18 @@
                 {% endfor %}
                 </dd>
             {% endif %}
-            {% if person.hasInfo('name') %}
-                <dt class="col-md-4 col-lg-3">{{ 'Additional Sources'|trans }}</dt>
-                <dd class="col-md-8 col-lg-9">
-                    {{ helper.render_info(person.infoExpanded('name')) }}
+            {% if person.hasInfo('name') or person.hasInfo('birth_death') %}
+                <dt class="col-sm-4 col-md-3">{{ 'Sources and Notes'|trans }}</dt>
+                <dd class="col-sm-8 col-md-9">
+                    {% if person.hasInfo('name') %}
+                        {{ helper.render_info(person.infoExpanded('name')) }}
+                    {% endif %}
+                    {% if person.hasInfo('name') and person.hasInfo('birth_death') %}
+                        <br/>
+                    {% endif %}
+                    {% if person.hasInfo('birth_death') %}
+                        {{ helper.render_info(person.infoExpanded('birth_death')) }}
+                    {% endif %}
                 </dd>
             {% endif %}
             </dl>
