@@ -172,6 +172,17 @@ class Builder
                 ],
             ]);
 
+        $menu->addChild('blog', [
+            'label' => $this->translator->trans('News'),
+            'route' => 'blog-index',
+            'attributes' => [
+                'class' => 'nav-item',
+            ],
+            'linkAttributes' => [
+                'class' => 'nav-link',
+            ],
+        ]);
+
         // attempt to set the current item for hierarchical entries
         $currentRoute = $this->requestStack->getCurrentRequest()->get('_route');
 
