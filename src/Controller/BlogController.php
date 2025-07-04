@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Vnn\WpApiClient\WpClient;
 
 /**
@@ -12,7 +13,7 @@ use Vnn\WpApiClient\WpClient;
 class BlogController extends DefaultController
 {
     #[Route(path: '/news', name: 'blog-index')]
-    public function blogIndexAction(Request $request, WpClient $client)
+    public function blogIndexAction(Request $request, UrlGeneratorInterface $urlGenerator, WpClient $client)
     {
         $posts = [];
 
@@ -38,6 +39,15 @@ class BlogController extends DefaultController
                 $media = $client->media()->get($mediaId);
                 $mediaUrl = $media['media_details']['sizes']['onepress-small'];
                 $posts[$key]['media_url'] = $mediaUrl;
+            }
+
+            // make shortened excerpt clickable
+            if (!empty($post['excerpt']['rendered'])) {
+                $posts[$key]['excerpt']['rendered'] = preg_replace(
+                    '#\[&hellip;\]</p>#',
+                    '[<a href="' . htmlspecialchars($urlGenerator->generate('blog', [ 'slug' => $post['slug'] ])) . '">&hellip;</a>]</p>',
+                    $post['excerpt']['rendered']
+                );
             }
         }
 
