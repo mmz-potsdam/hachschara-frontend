@@ -136,7 +136,7 @@
                 <a href="{{ helper.build_media_url(app, img) }}" data-toggle="lightbox">
                     <img src="{{ helper.build_media_url(app, img) }}" />
                 </a>
-                <figcaption class="p-2">{{ img.caption|converturls|nl2br }}</figcaption>
+                <figcaption class="p-2">{{ img.caption(app.request.locale)|converturls|nl2br }}</figcaption>
             </figure>
             {% endfor %}
             {% for img in additionalMedia %}
@@ -144,7 +144,7 @@
                 <a href="{{ helper.build_media_url(app, img) }}" data-toggle="lightbox">
                     <img src="{{ helper.build_media_url(app, img) }}" />
                 </a>
-                <figcaption class="p-2">{{ img.caption|converturls|nl2br }}</figcaption>
+                <figcaption class="p-2">{{ img.caption(app.request.locale)|converturls|nl2br }}</figcaption>
             </figure>
             {% endfor %}
         </div>
@@ -160,7 +160,7 @@
                 <a href="{{ helper.build_media_url(app, img) }}" data-toggle="lightbox">
                     <img src="{{ helper.build_media_url(app, img) }}" />
                 </a>
-                <figcaption>{{ img.caption|converturls|nl2br }}</figcaption>
+                <figcaption>{{ img.caption(app.request.locale)|converturls|nl2br }}</figcaption>
             </figure>
         {% endif %}
         {% if person.gnd is not empty %}

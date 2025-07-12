@@ -148,7 +148,7 @@
                     <a href="{{ helper.build_media_url(app, img) }}" data-toggle="lightbox">
                         <img src="{{ helper.build_media_url(app, img) }}" />
                     </a>
-                    <figcaption class="d-none">{{ img.caption|converturls|nl2br }}</figcaption>
+                    <figcaption class="d-none">{{ img.caption(app.request.locale)|converturls|nl2br }}</figcaption>
                 </figure>
                 {% endfor %}
             </div>

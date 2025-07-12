@@ -504,7 +504,7 @@ footer {
     }
 }
 
-.route-site {
+.route-site, body[class*="route-person"] {
     figure {
         display: table;
 
@@ -526,7 +526,6 @@ footer {
             }
         }
     }
-
 }
 
 .route-blog {

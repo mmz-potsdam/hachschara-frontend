@@ -16,6 +16,8 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\DiscriminatorMap(['0' => 'SiteMedia', '10' => 'PersonMedia'])]
 abstract class Media
 {
+    use HasTranslationsTrait;
+
     static $MEDIA_EXTENSIONS = [
         'image/gif' => '.gif', 'image/jpeg' => '.jpg', 'image/png' => '.png',
         'application/pdf' => '.pdf',
@@ -152,12 +154,14 @@ abstract class Media
         return $this->flags & 0x01;
     }
 
-    public function getCaption()
+    public function getCaption($locale = null)
     {
         $parts = [];
 
-        if (!empty($this->caption)) {
-            $parts[] = $this->caption;
+        $caption = $this->getTranslatedProperty('caption', $locale);
+
+        if (!empty($caption)) {
+            $parts[] = $caption;
         }
 
         if (!empty($this->source) || !empty($this->displaydate)) {
