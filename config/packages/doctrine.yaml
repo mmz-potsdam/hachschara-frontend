@@ -12,7 +12,6 @@ doctrine:
     orm:
         auto_generate_proxy_classes: true
         enable_lazy_ghost_objects: true
-        report_fields_where_declared: true
         controller_resolver:
             auto_mapping: false # see https://symfony.com/doc/current/doctrine.html#fetch-automatically
         validate_xml_mapping: true
