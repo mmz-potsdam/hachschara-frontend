@@ -148,7 +148,7 @@ class SiteController extends BaseController
         $repo = $entityManager
                 ->getRepository('App\Entity\Site');
 
-        $criteria = new \Doctrine\Common\Collections\Criteria();
+        $criteria = \Doctrine\Common\Collections\Criteria::create(true);
         $criteria->where($criteria->expr()->eq('id', $id));
         $criteria->andWhere($criteria->expr()->neq('status', -1));
 

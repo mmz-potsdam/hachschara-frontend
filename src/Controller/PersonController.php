@@ -63,7 +63,7 @@ class PersonController extends BaseController
         $id = null,
         $gnd = null
     ) {
-        $criteria = new \Doctrine\Common\Collections\Criteria();
+        $criteria = \Doctrine\Common\Collections\Criteria::create(true);
 
         if (!empty($id)) {
             $criteria->where($criteria->expr()->eq('id', $id));
