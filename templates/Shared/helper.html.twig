@@ -34,7 +34,7 @@
 
 {% macro pagination_sortable(pagination, title, key, defaultDirection = 'asc') %}
     {% set sortDirection = defaultDirection %}
-    {% if app.request.get('sort') == key and app.request.get('direction') == defaultDirection %}
+    {% if app.request.query('sort') == key and app.request.query('direction') == defaultDirection %}
         {% if defaultDirection == 'desc' %}
             {% set sortDirection = 'asc' %}
         {% else %}
