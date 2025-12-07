@@ -135,7 +135,6 @@ class SitemapSubscriber implements EventSubscriberInterface
                         $query = $qb->getQuery();
                         $entities = $query->getResult();
                         foreach ($entities as $entity) {
-
                             $gnd = method_exists($entity, 'getGnd')
                                 ? $entity->getGnd()
                                 : null;
