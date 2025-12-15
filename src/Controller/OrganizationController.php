@@ -6,7 +6,7 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
@@ -24,7 +24,7 @@ class OrganizationController extends BaseController
         EntityManagerInterface $entityManager,
         PaginatorInterface $paginator,
         TranslatorInterface $translator
-    ) {
+    ): Response {
         $locale = $request->getLocale();
 
         $qb = $entityManager
@@ -73,7 +73,7 @@ class OrganizationController extends BaseController
         EntityManagerInterface $entityManager,
         $id = null,
         $gnd = null
-    ) {
+    ): Response {
         $criteria = \Doctrine\Common\Collections\Criteria::create(true);
 
         if (!empty($id)) {
@@ -230,7 +230,7 @@ class OrganizationController extends BaseController
     }
 
     #[Route(path: '/organization/gnd/beacon', name: 'organization-gnd-beacon')]
-    public function gndBeaconAction(EntityManagerInterface $entityManager, TranslatorInterface $translator, \Twig\Environment $twig)
+    public function gndBeaconAction(EntityManagerInterface $entityManager, TranslatorInterface $translator, \Twig\Environment $twig): Response
     {
         $ret = '#FORMAT: BEACON' . "\n"
              . '#PREFIX: http://d-nb.info/gnd/'

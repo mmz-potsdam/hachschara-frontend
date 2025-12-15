@@ -6,7 +6,8 @@ namespace App\Controller;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Spatie\SchemaOrg\Schema;
 
@@ -16,7 +17,7 @@ use Spatie\SchemaOrg\Schema;
 class DefaultController extends BaseController
 {
     #[Route(path: '/', name: 'home')]
-    public function homeAction(TranslatorInterface $translator)
+    public function homeAction(TranslatorInterface $translator): Response
     {
         $schema = Schema::webSite()
             ->name(/** @Ignore */$translator->trans($this->getGlobal('site_name'), [], 'additional'))
@@ -29,19 +30,19 @@ class DefaultController extends BaseController
     }
 
     #[Route(path: '/about', name: 'about')]
-    public function aboutAction(Request $request)
+    public function aboutAction(Request $request): Response
     {
         return $this->render('Default/about.' . $request->getLocale() . '.html.twig');
     }
 
     #[Route(path: '/about/hakhshara', name: 'about-hakhshara')]
-    public function aboutTermAction(Request $request)
+    public function aboutTermAction(Request $request): Response
     {
         return $this->render('Default/about-hakhshara.' . $request->getLocale() . '.html.twig');
     }
 
     #[Route(path: '/about/network', name: 'about-network')]
-    public function aboutNetworkAction(Request $request, EntityManagerInterface $entityManager)
+    public function aboutNetworkAction(Request $request, EntityManagerInterface $entityManager): Response
     {
         $qb = $entityManager
                 ->createQueryBuilder();
@@ -83,7 +84,7 @@ class DefaultController extends BaseController
     }
 
     #[Route(path: '/imprint', name: 'imprint')]
-    public function imprintAction(Request $request)
+    public function imprintAction(Request $request): Response
     {
         return $this->render('Default/imprint.' . $request->getLocale() . '.html.twig');
     }

@@ -3,7 +3,8 @@
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Vnn\WpApiClient\WpClient;
 
@@ -13,7 +14,7 @@ use Vnn\WpApiClient\WpClient;
 class BlogController extends DefaultController
 {
     #[Route(path: '/news', name: 'blog-index')]
-    public function blogIndexAction(Request $request, UrlGeneratorInterface $urlGenerator, WpClient $client)
+    public function blogIndexAction(Request $request, UrlGeneratorInterface $urlGenerator, WpClient $client): Response
     {
         $posts = [];
 
@@ -57,7 +58,7 @@ class BlogController extends DefaultController
     }
 
     #[Route(path: '/news/{slug}', name: 'blog')]
-    public function blogDetailAction(Request $request, WpClient $client, $slug)
+    public function blogDetailAction(Request $request, WpClient $client, $slug): Response
     {
         $post = null;
 

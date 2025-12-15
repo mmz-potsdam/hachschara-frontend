@@ -6,7 +6,7 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
@@ -27,7 +27,7 @@ class SiteController extends BaseController
         PaginatorInterface $paginator,
         TranslatorInterface $translator,
         FilterBuilderUpdaterInterface $queryBuilderUpdater
-    ) {
+    ): Response {
         $routeName = $request->get('_route');
         $locale = $request->getLocale();
 
@@ -144,7 +144,7 @@ class SiteController extends BaseController
         EntityManagerInterface $entityManager,
         \App\Utils\MpdfConverter $pdfConverter,
         $id
-    ) {
+    ): Response {
         $repo = $entityManager
                 ->getRepository('App\Entity\Site');
 
