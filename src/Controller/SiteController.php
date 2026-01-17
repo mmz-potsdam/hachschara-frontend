@@ -93,6 +93,8 @@ class SiteController extends BaseController
                     }
 
                     $abstractLocalized = null;
+                    $authorLinked = '';
+
                     switch ($result->getStatus()) {
                         case 1:
                             $linked = 1;
@@ -100,13 +102,35 @@ class SiteController extends BaseController
 
                         default:
                             $abstractLocalized = $result->getAbstractLocalized($locale);
+                            if (!empty($abstractLocalized) && $result->hasContributor()) {
+                                $result->buildContributorFull($entityManager);
+                                $authors = $result->getAuthors();
+                                if (!empty($authors)) {
+                                    $parts = [];
+                                    foreach ($authors as $author) {
+                                        $authorName = htmlspecialchars($author->getFullname(true), ENT_COMPAT, 'utf-8');
+                                        $authorName = sprintf(
+                                            '<a href="%s">%s</a>',
+                                            $this->generateUrl('user', [ 'id' => $author->getId() ]),
+                                            $authorName
+                                        );
+                                        $parts[] = $authorName;
+                                    }
+
+                                    $authorLinked = sprintf(
+                                        ' (Text: %s)',
+                                        join(', ', $parts)
+                                    );
+                                }
+                            }
+
                             $linked = !empty($abstractLocalized) ? 0 : -1;
                     }
 
                     $info[] = $linked;
 
                     $info[] = 0 === $linked
-                        ? htmlspecialchars($abstractLocalized, ENT_COMPAT, 'utf-8')
+                        ? htmlspecialchars($abstractLocalized, ENT_COMPAT, 'utf-8') . $authorLinked
                         : null;
 
                     $data[] = $info;
