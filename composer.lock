@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "33c76c52a2b462ce33e0a1b93ce83298",
+    "content-hash": "544763a66c59db903a67b4cdff67cd82",
     "packages": [
         {
             "name": "armin/scssphp-bundle",
@@ -436,16 +436,16 @@
         },
         {
             "name": "doctrine/collections",
-            "version": "2.5.0",
+            "version": "2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "6108e0cd57d7ef125fb84696346a68860403a25d"
+                "reference": "7713da39d8e237f28411d6a616a3dce5e20d5de2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/6108e0cd57d7ef125fb84696346a68860403a25d",
-                "reference": "6108e0cd57d7ef125fb84696346a68860403a25d",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/7713da39d8e237f28411d6a616a3dce5e20d5de2",
+                "reference": "7713da39d8e237f28411d6a616a3dce5e20d5de2",
                 "shasum": ""
             },
             "require": {
@@ -502,7 +502,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/collections/issues",
-                "source": "https://github.com/doctrine/collections/tree/2.5.0"
+                "source": "https://github.com/doctrine/collections/tree/2.6.0"
             },
             "funding": [
                 {
@@ -518,7 +518,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-01-07T17:26:56+00:00"
+            "time": "2026-01-15T10:01:58+00:00"
         },
         {
             "name": "doctrine/dbal",
@@ -2305,16 +2305,16 @@
         },
         {
             "name": "jms/translation-bundle",
-            "version": "2.6.0",
+            "version": "2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/JMSTranslationBundle.git",
-                "reference": "2a51f8a4c17422ad36bc408e0b286aa2d5e5c003"
+                "reference": "826b29282b1d784cba362a7b98236dfb6fe8a9da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/JMSTranslationBundle/zipball/2a51f8a4c17422ad36bc408e0b286aa2d5e5c003",
-                "reference": "2a51f8a4c17422ad36bc408e0b286aa2d5e5c003",
+                "url": "https://api.github.com/repos/schmittjoh/JMSTranslationBundle/zipball/826b29282b1d784cba362a7b98236dfb6fe8a9da",
+                "reference": "826b29282b1d784cba362a7b98236dfb6fe8a9da",
                 "shasum": ""
             },
             "require": {
@@ -2334,6 +2334,7 @@
                 "doctrine/coding-standard": "^9.0",
                 "matthiasnoback/symfony-dependency-injection-test": "^6.0",
                 "nyholm/nsa": "^1.0.1",
+                "phpunit/phpunit": "^11.5",
                 "sensio/framework-extra-bundle": "^6.2.4",
                 "symfony/asset": "^5.4 || ^6.4 || ^7.1",
                 "symfony/browser-kit": "^5.4 || ^6.4 || ^7.1",
@@ -2384,9 +2385,9 @@
             ],
             "support": {
                 "issues": "https://github.com/schmittjoh/JMSTranslationBundle/issues",
-                "source": "https://github.com/schmittjoh/JMSTranslationBundle/tree/2.6.0"
+                "source": "https://github.com/schmittjoh/JMSTranslationBundle/tree/2.x"
             },
-            "time": "2025-02-09T16:27:51+00:00"
+            "time": "2025-12-20T19:44:43+00:00"
         },
         {
             "name": "knplabs/knp-components",
@@ -3494,16 +3495,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "2.3.0",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "1e0cd5370df5dd2e556a36b9c62f62e555870495"
+                "reference": "16dbf9937da8d4528ceb2145c9c7c0bd29e26374"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/1e0cd5370df5dd2e556a36b9c62f62e555870495",
-                "reference": "1e0cd5370df5dd2e556a36b9c62f62e555870495",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/16dbf9937da8d4528ceb2145c9c7c0bd29e26374",
+                "reference": "16dbf9937da8d4528ceb2145c9c7c0bd29e26374",
                 "shasum": ""
             },
             "require": {
@@ -3535,9 +3536,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/2.3.0"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/2.3.1"
             },
-            "time": "2025-08-30T15:50:23+00:00"
+            "time": "2026-01-12T11:33:04+00:00"
         },
         {
             "name": "presta/sitemap-bundle",
@@ -10355,16 +10356,16 @@
         },
         {
             "name": "webmozart/assert",
-            "version": "2.1.1",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozarts/assert.git",
-                "reference": "bdbabc199a7ba9965484e4725d66170e5711323b"
+                "reference": "ce6a2f100c404b2d32a1dd1270f9b59ad4f57649"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozarts/assert/zipball/bdbabc199a7ba9965484e4725d66170e5711323b",
-                "reference": "bdbabc199a7ba9965484e4725d66170e5711323b",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/ce6a2f100c404b2d32a1dd1270f9b59ad4f57649",
+                "reference": "ce6a2f100c404b2d32a1dd1270f9b59ad4f57649",
                 "shasum": ""
             },
             "require": {
@@ -10411,9 +10412,9 @@
             ],
             "support": {
                 "issues": "https://github.com/webmozarts/assert/issues",
-                "source": "https://github.com/webmozarts/assert/tree/2.1.1"
+                "source": "https://github.com/webmozarts/assert/tree/2.1.2"
             },
-            "time": "2026-01-08T11:28:40+00:00"
+            "time": "2026-01-13T14:02:24+00:00"
         }
     ],
     "packages-dev": [
@@ -13743,13 +13744,21 @@
             "time": "2025-11-17T20:03:58+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "jms/translation-bundle",
+            "version": "2.9999999.9999999.9999999-dev",
+            "alias": "2.6",
+            "alias_normalized": "2.6.0.0"
+        }
+    ],
     "minimum-stability": "stable",
     "stability-flags": {
         "armin/scssphp-bundle": 20,
         "beberlei/doctrineextensions": 0,
         "citation-style-language/locales": 20,
         "hedii/zotero-api": 20,
+        "jms/translation-bundle": 20,
         "liip/url-auto-converter-bundle": 20,
         "vnn/wordpress-rest-api-client": 20
     },
