@@ -1582,7 +1582,6 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  * }
  * @psalm-type SpiriitFormFilterConfig = array{
  *     listeners?: array{
- *         doctrine_dbal?: bool|Param, // Deprecated: The child node "doctrine_dbal" at path "spiriit_form_filter.listeners.doctrine_dbal" is deprecated. Use doctrine_orm instead. // Default: false
  *         doctrine_orm?: bool|Param, // Default: true
  *     },
  *     where_method?: scalar|Param|null, // Defined the doctrine query builder method the bundle will use to add the entire filter condition. // Default: "and"

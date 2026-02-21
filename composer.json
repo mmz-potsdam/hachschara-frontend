@@ -49,7 +49,7 @@
         "scienta/doctrine-json-functions": "^6.3",
         "seboettg/citeproc-php": "^2.6",
         "spatie/schema-org": "^3.23",
-        "spiriitlabs/form-filter-bundle": "^11.0",
+        "spiriitlabs/form-filter-bundle": "^12.0",
         "symfony/apache-pack": "^1.0",
         "symfony/asset": "7.4.*",
         "symfony/console": "7.4.*",
