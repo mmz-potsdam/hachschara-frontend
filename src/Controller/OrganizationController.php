@@ -14,11 +14,12 @@ use Knp\Component\Pager\PaginatorInterface;
 /**
  *
  */
+#[Route(path: ['en' => '/organization', 'de' => '/organisation'])]
 class OrganizationController extends BaseController
 {
     protected $pageSize = 500;
 
-    #[Route(path: '/organization', name: 'organization-index')]
+    #[Route(path: '/', name: 'organization-index')]
     public function indexAction(
         Request $request,
         EntityManagerInterface $entityManager,
@@ -64,10 +65,10 @@ class OrganizationController extends BaseController
         ]);
     }
 
-    #[Route(path: '/organization/gnd/{gnd}.jsonld', requirements: ['gnd' => '[0-9xX\-]+'], name: 'organization-by-gnd-jsonld')]
-    #[Route(path: '/organization/gnd/{gnd}', requirements: ['gnd' => '[0-9xX\-]+'], name: 'organization-by-gnd')]
-    #[Route(path: '/organization/{id}.jsonld', name: 'organization-jsonld', requirements: ['id' => '\d+'])]
-    #[Route(path: '/organization/{id}', name: 'organization', requirements: ['id' => '\d+'])]
+    #[Route(path: '/gnd/{gnd}.jsonld', requirements: ['gnd' => '[0-9xX\-]+'], name: 'organization-by-gnd-jsonld')]
+    #[Route(path: '/gnd/{gnd}', requirements: ['gnd' => '[0-9xX\-]+'], name: 'organization-by-gnd')]
+    #[Route(path: '/{id}.jsonld', name: 'organization-jsonld', requirements: ['id' => '\d+'])]
+    #[Route(path: '/{id}', name: 'organization', requirements: ['id' => '\d+'])]
     public function detailAction(
         Request $request,
         EntityManagerInterface $entityManager,

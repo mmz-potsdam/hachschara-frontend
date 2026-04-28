@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a4c2a27f38d30b487989c4af9b918088",
+    "content-hash": "ca398e949499719cc3a4649e92da50e0",
     "packages": [
         {
             "name": "armin/scssphp-bundle",
@@ -1732,65 +1732,6 @@
                 }
             ],
             "time": "2025-12-13T19:37:35+00:00"
-        },
-        {
-            "name": "gjuric/i18n-routing-bundle",
-            "version": "dev-master",
-            "target-dir": "JMS/I18nRoutingBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/burki/JMSI18nRoutingBundle.git",
-                "reference": "92cdd93316d316817638aa086f37c3f47cd17b86"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/burki/JMSI18nRoutingBundle/zipball/92cdd93316d316817638aa086f37c3f47cd17b86",
-                "reference": "92cdd93316d316817638aa086f37c3f47cd17b86",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=8.1",
-                "symfony/framework-bundle": ">=4.4"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^8.0|^9.0",
-                "sensio/framework-extra-bundle": "*",
-                "symfony/symfony": "^4.4|^5.0|^6.0"
-            },
-            "suggest": {
-                "jms/translation-bundle": "If you want to use the RouteTranslation extractor"
-            },
-            "default-branch": true,
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-0": {
-                    "JMS\\I18nRoutingBundle": ""
-                }
-            },
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Johannes M. Schmitt",
-                    "email": "schmittjoh@gmail.com"
-                },
-                {
-                    "name": "Albert Casademont",
-                    "email": "albertcasademont@gmail.com"
-                }
-            ],
-            "description": "This bundle allows you to create i18n routes.",
-            "homepage": "http://jmsyst.com/bundles/JMSI18nRoutingBundle",
-            "keywords": [
-                "multilanguage",
-                "routing",
-                "translation"
-            ],
-            "support": {
-                "source": "https://github.com/burki/JMSI18nRoutingBundle/tree/master"
-            },
-            "time": "2026-02-23T06:30:54+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -13883,7 +13824,6 @@
     "stability-flags": {
         "armin/scssphp-bundle": 20,
         "citation-style-language/locales": 20,
-        "gjuric/i18n-routing-bundle": 20,
         "hedii/zotero-api": 20,
         "jms/translation-bundle": 20,
         "liip/url-auto-converter-bundle": 20,

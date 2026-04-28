@@ -14,7 +14,7 @@
  *
  *  # language-specific layout in 404
  *  App\EventListener\LanguageListener:
- *      arguments: [ '%jms_i18n_routing.default_locale%', '%jms_i18n_routing.locales%', '@jms_i18n_routing.locale_resolver' ]
+ *      arguments: [ '%app.default_locale%', '%app.supported_locales%' ]
  *      tags:
  *         - { name: kernel.event_listener, event: kernel.exception, method: setLocale }
  *
@@ -24,19 +24,16 @@ namespace App\EventListener;
 
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
-use JMS\I18nRoutingBundle\Router\LocaleResolverInterface;
 
 class LanguageListener
 {
     protected $defaultLocale;
     protected $locales;
-    protected $localeResolver;
 
-    public function __construct($defaultLocale, array $locales, LocaleResolverInterface $localeResolver)
+    public function __construct($defaultLocale, array $locales)
     {
         $this->defaultLocale = $defaultLocale;
         $this->locales = $locales;
-        $this->localeResolver = $localeResolver;
     }
 
     public function setLocale(RequestEvent $event)
@@ -47,28 +44,21 @@ class LanguageListener
 
         $request = $event->getRequest();
 
-        $locale = $this->localeResolver->resolveLocale($request, $this->locales) ?: $this->defaultLocale;
+        $locale = $this->defaultLocale;
 
-        // doesn't seem to work - so check if pathInfo starts with '/locale/'
         $pathInfo = $request->getPathInfo();
 
-        if ($locale != $this->defaultLocale) {
-            $needle = '/' . $locale . '/';
-            if (strncmp($pathInfo, $needle, strlen($needle)) !== 0) {
-                $locale = $this->defaultLocale;
+        // the following works with controllers.prefix,
+        // but not with localized domain in conntrollers.host
+        foreach ($this->locales as $localeCandidate) {
+            if ($localeCandidate == $this->defaultLocale) {
+                continue;
             }
-        }
-        else {
-            foreach ($this->locales as $localeCandidate) {
-                if ($localeCandidate == $this->defaultLocale) {
-                    continue;
-                }
 
-                $needle = '/' . $localeCandidate . '/';
-                if (strncmp($pathInfo, $needle, strlen($needle)) === 0) {
-                    $locale = $localeCandidate;
-                    break;
-                }
+            $needle = '/' . $localeCandidate . '/';
+            if (strncmp($pathInfo, $needle, strlen($needle)) === 0) {
+                $locale = $localeCandidate;
+                break;
             }
         }
 

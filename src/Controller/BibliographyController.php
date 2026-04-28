@@ -14,7 +14,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
  */
 class BibliographyController extends BaseController
 {
-    #[Route(path: '/bibliography', name: 'bibliography-index')]
+    #[Route(path: ['en' => '/bibliography', 'de' => '/literatur'], name: 'bibliography-index')]
     public function indexAction(
         Request $request,
         TranslatorInterface $translator,

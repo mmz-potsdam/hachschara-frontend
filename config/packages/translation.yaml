@@ -5,11 +5,6 @@ framework:
         fallbacks:
             - en
 
-jms_i18n_routing:
-    default_locale: '%app.default_locale%'
-    locales: '%app.supported_locales%'
-    strategy: prefix_except_default
-
 jms_translation:
     configs:
         # so you can run ./bin/console jms:translation:extract de --config=app
@@ -17,5 +12,4 @@ jms_translation:
         app:
             dirs: ["%kernel.project_dir%/templates", "%kernel.project_dir%/src"]
             output_dir: "%kernel.project_dir%/translations"
-            extractors: [jms_i18n_routing]
             excluded_names: ["MpdfConverter.php"]

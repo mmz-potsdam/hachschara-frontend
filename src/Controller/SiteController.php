@@ -15,12 +15,13 @@ use Spiriit\Bundle\FormFilterBundle\Filter\FilterBuilderUpdaterInterface;
 /**
  *
  */
+#[Route(path: ['en' => '/site', 'de' => '/ort'])]
 class SiteController extends BaseController
 {
     protected $pageSize = 200;
 
-    #[Route(path: '/site/map', name: 'site-map')]
-    #[Route(path: '/site', name: 'site-index')]
+    #[Route(path: ['en' => '/map', 'de' => '/karte'], name: 'site-map')]
+    #[Route(path: '/', name: 'site-index')]
     public function indexAction(
         Request $request,
         EntityManagerInterface $entityManager,
@@ -160,9 +161,9 @@ class SiteController extends BaseController
         ]);
     }
 
-    #[Route(path: '/site/{id}.jsonld', name: 'site-jsonld', requirements: ['id' => '\d+'])]
-    #[Route(path: '/site/{id}.pdf', name: 'site-pdf', requirements: ['id' => '\d+'])]
-    #[Route(path: '/site/{id}', name: 'site', requirements: ['id' => '\d+'])]
+    #[Route(path: '/{id}.jsonld', name: 'site-jsonld', requirements: ['id' => '\d+'])]
+    #[Route(path: '/{id}.pdf', name: 'site-pdf', requirements: ['id' => '\d+'])]
+    #[Route(path: '/{id}', name: 'site', requirements: ['id' => '\d+'])]
     public function detailAction(
         Request $request,
         EntityManagerInterface $entityManager,

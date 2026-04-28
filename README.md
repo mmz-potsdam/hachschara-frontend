@@ -4,7 +4,7 @@ License
 -------
     Code for the Front-end of hachschara.juedische-geschichte-online.net
 
-    (C) 2023-2025 Moses Mendelssohn Center for European-Jewish Studies (MMZ)
+    (C) 2023-2026 Moses Mendelssohn Center for European-Jewish Studies (MMZ)
         Daniel Burckhardt
 
 
@@ -64,8 +64,7 @@ Development Notes
 - http://localhost:8000
 
 ### Internationalization
-Translate messages and routes according to settings in
-`jms_translation.configs.app`
+Translate messages according to settings in `jms_translation.configs.app`
 
     ./bin/console jms:translation:extract de --config=app
 

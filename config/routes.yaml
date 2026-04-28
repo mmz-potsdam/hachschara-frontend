@@ -9,3 +9,6 @@
 
 controllers:
     resource: routing.controllers
+    prefix:
+        de: '' # don't prefix URLs for German, the default locale
+        en: '/en'

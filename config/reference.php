@@ -1610,26 +1610,6 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         i18n?: "symfony"|"jms"|Param, // Strategy used to create your i18n routes. // Default: "symfony"
  *     },
  * }
- * @psalm-type JmsI18nRoutingConfig = array{
- *     default_locale?: scalar|Param|null,
- *     locales?: string|list<scalar|Param|null>,
- *     catalogue?: scalar|Param|null, // Default: "routes"
- *     strategy?: scalar|Param|null, // Default: "custom"
- *     prefix_with_locale?: bool|Param, // Default: false
- *     omit_prefix_when_default?: bool|Param, // Default: true
- *     hosts?: array<string, scalar|Param|null>,
- *     redirect_to_host?: bool|Param, // Default: true
- *     use_cookie?: bool|Param, // DEPRECATED! Please use: cookie.enabled // Default: true
- *     cookie?: array{
- *         enabled?: bool|Param, // Default: true
- *         name?: scalar|Param|null, // Default: "hl"
- *         lifetime?: scalar|Param|null, // Default: 31536000
- *         path?: scalar|Param|null, // Default: null
- *         domain?: scalar|Param|null, // Default: null
- *         secure?: bool|Param, // Default: false
- *         httponly?: bool|Param, // Default: false
- *     },
- * }
  * @psalm-type ConfigType = array{
  *     imports?: ImportsConfig,
  *     parameters?: ParametersConfig,
@@ -1648,7 +1628,6 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     liip_url_auto_converter?: LiipUrlAutoConverterConfig,
  *     spiriit_form_filter?: SpiriitFormFilterConfig,
  *     presta_sitemap?: PrestaSitemapConfig,
- *     jms_i18n_routing?: JmsI18nRoutingConfig,
  *     "when@dev"?: array{
  *         imports?: ImportsConfig,
  *         parameters?: ParametersConfig,
@@ -1670,7 +1649,6 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         liip_url_auto_converter?: LiipUrlAutoConverterConfig,
  *         spiriit_form_filter?: SpiriitFormFilterConfig,
  *         presta_sitemap?: PrestaSitemapConfig,
- *         jms_i18n_routing?: JmsI18nRoutingConfig,
  *     },
  *     "when@prod"?: array{
  *         imports?: ImportsConfig,
@@ -1690,7 +1668,6 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         liip_url_auto_converter?: LiipUrlAutoConverterConfig,
  *         spiriit_form_filter?: SpiriitFormFilterConfig,
  *         presta_sitemap?: PrestaSitemapConfig,
- *         jms_i18n_routing?: JmsI18nRoutingConfig,
  *     },
  *     "when@test"?: array{
  *         imports?: ImportsConfig,
@@ -1711,7 +1688,6 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         liip_url_auto_converter?: LiipUrlAutoConverterConfig,
  *         spiriit_form_filter?: SpiriitFormFilterConfig,
  *         presta_sitemap?: PrestaSitemapConfig,
- *         jms_i18n_routing?: JmsI18nRoutingConfig,
  *     },
  *     ...<string, ExtensionType|array{ // extra keys must follow the when@%env% pattern or match an extension alias
  *         imports?: ImportsConfig,

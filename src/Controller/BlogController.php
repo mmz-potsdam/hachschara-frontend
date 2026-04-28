@@ -11,10 +11,11 @@ use Vnn\WpApiClient\WpClient;
 /**
  *
  */
+#[Route(path: ['en' => '/news', 'de' => '/kiosk'])]
 class BlogController extends DefaultController
 {
-    #[Route(path: '/news', name: 'blog-index')]
-    public function blogIndexAction(Request $request, UrlGeneratorInterface $urlGenerator, ?WpClient $client): Response
+    #[Route(path: '/', name: 'blog-index')]
+    public function blogIndexAction(Request $request, UrlGeneratorInterface $urlGenerator, WpClient $client): Response
     {
         if (is_null($client)) {
             return $this->redirectToRoute('home');
@@ -59,8 +60,8 @@ class BlogController extends DefaultController
         ]);
     }
 
-    #[Route(path: '/news/{slug}', name: 'blog')]
-    public function blogDetailAction(Request $request, ?WpClient $client, $slug): Response
+    #[Route(path: '/{slug}', name: 'blog')]
+    public function blogDetailAction(Request $request, WpClient $client, $slug): Response
     {
         if (is_null($client)) {
             return $this->redirectToRoute('blog-index');

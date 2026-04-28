@@ -29,19 +29,19 @@ class DefaultController extends BaseController
         ]);
     }
 
-    #[Route(path: '/about', name: 'about')]
+    #[Route(path: ['en' => '/about', 'de' => '/ueber'], name: 'about')]
     public function aboutAction(Request $request): Response
     {
         return $this->render('Default/about.' . $request->getLocale() . '.html.twig');
     }
 
-    #[Route(path: '/about/hakhshara', name: 'about-hakhshara')]
+    #[Route(path: ['en' => '/about/hakhshara', 'de' => '/ueber/hachschara'], name: 'about-hakhshara')]
     public function aboutTermAction(Request $request): Response
     {
         return $this->render('Default/about-hakhshara.' . $request->getLocale() . '.html.twig');
     }
 
-    #[Route(path: '/about/network', name: 'about-network')]
+    #[Route(path: ['en' => '/about/network', 'de' => '/ueber/netzwerk'], name: 'about-network')]
     public function aboutNetworkAction(Request $request, EntityManagerInterface $entityManager): Response
     {
         $qb = $entityManager
@@ -83,7 +83,7 @@ class DefaultController extends BaseController
         ]);
     }
 
-    #[Route(path: '/imprint', name: 'imprint')]
+    #[Route(path: ['en' => '/imprint', 'de' => '/impressum'], name: 'imprint')]
     public function imprintAction(Request $request): Response
     {
         return $this->render('Default/imprint.' . $request->getLocale() . '.html.twig');

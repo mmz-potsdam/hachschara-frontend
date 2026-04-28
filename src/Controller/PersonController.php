@@ -14,11 +14,12 @@ use Knp\Component\Pager\PaginatorInterface;
 /**
  *
  */
+#[Route(path: ['en' => '/person', 'de' => '/person'])]
 class PersonController extends BaseController
 {
     protected $pageSize = 500;
 
-    #[Route(path: '/person', name: 'person-index')]
+    #[Route(path: '/', name: 'person-index')]
     public function indexAction(
         Request $request,
         EntityManagerInterface $entityManager,
@@ -53,10 +54,10 @@ class PersonController extends BaseController
         ]);
     }
 
-    #[Route(path: '/person/gnd/{gnd}.jsonld', requirements: ['gnd' => '[0-9xX]+'], name: 'person-by-gnd-jsonld')]
-    #[Route(path: '/person/gnd/{gnd}', requirements: ['gnd' => '[0-9xX]+'], name: 'person-by-gnd')]
-    #[Route(path: '/person/{id}.jsonld', name: 'person-jsonld', requirements: ['id' => '\d+'])]
-    #[Route(path: '/person/{id}', name: 'person', requirements: ['id' => '\d+'])]
+    #[Route(path: '/gnd/{gnd}.jsonld', requirements: ['gnd' => '[0-9xX]+'], name: 'person-by-gnd-jsonld')]
+    #[Route(path: '/gnd/{gnd}', requirements: ['gnd' => '[0-9xX]+'], name: 'person-by-gnd')]
+    #[Route(path: '/{id}.jsonld', name: 'person-jsonld', requirements: ['id' => '\d+'])]
+    #[Route(path: '/{id}', name: 'person', requirements: ['id' => '\d+'])]
     public function detailAction(
         Request $request,
         EntityManagerInterface $entityManager,

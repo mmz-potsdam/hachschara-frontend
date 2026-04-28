@@ -13,7 +13,6 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Twig\AppExtension;
 use Presta\SitemapBundle\Event\SitemapPopulateEvent;
-use Presta\SitemapBundle\Service\UrlContainerInterface;
 use Presta\SitemapBundle\Sitemap\Url\UrlConcrete;
 
 class SitemapSubscriber implements EventSubscriberInterface
@@ -106,9 +105,9 @@ class SitemapSubscriber implements EventSubscriberInterface
             }
 
             $urlset = 'default';
-            // name is $locale__RG__$routeName
-            $parts = explode('__', $name);
-            $routeName = $parts[count($parts) - 1];
+            // name is $routeName.$locale
+            $parts = explode('.', $name);
+            $routeName = $parts[0];
 
             if (in_array($routeName, [ 'place-inhabited' ])
                 || preg_match('/^search\-select\-/', $routeName)) {
