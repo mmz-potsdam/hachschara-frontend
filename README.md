@@ -28,7 +28,7 @@ Installation
 ------------
 ### Requirements
 
-- PHP >= 8.2 (check with `php -v`)
+- PHP >= 8.4.1 (check with `php -v`)
 - composer (check with `composer -v`; if it is missing, see https://getcomposer.org/)
 
 ### Adjust Local Settings
