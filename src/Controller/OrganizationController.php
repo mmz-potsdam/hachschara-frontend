@@ -101,7 +101,7 @@ class OrganizationController extends BaseController
         // $organization->setDateModified(\App\Search\PersonListBuilder::fetchDateModified($entityManager->getConnection(), $organization->getId()));
 
         $locale = $request->getLocale();
-        if (in_array($request->get('_route'), [ 'organization-jsonld', 'organization-by-gnd-jsonld' ])) {
+        if (in_array($request->attributes->get('_route'), [ 'organization-jsonld', 'organization-by-gnd-jsonld' ])) {
             return new JsonLdResponse($organization->jsonLdSerialize($locale));
         }
 

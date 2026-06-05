@@ -90,7 +90,7 @@ class PersonController extends BaseController
         // $person->setDateModified(\App\Search\PersonListBuilder::fetchDateModified($entityManager->getConnection(), $person->getId()));
 
         $locale = $request->getLocale();
-        if (in_array($request->get('_route'), [ 'person-jsonld', 'person-by-gnd-jsonld' ])) {
+        if (in_array($request->attributes->get('_route'), [ 'person-jsonld', 'person-by-gnd-jsonld' ])) {
             return new JsonLdResponse($person->jsonLdSerialize($locale));
         }
 

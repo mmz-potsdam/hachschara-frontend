@@ -29,7 +29,7 @@ class SiteController extends BaseController
         TranslatorInterface $translator,
         FilterBuilderUpdaterInterface $queryBuilderUpdater
     ): Response {
-        $routeName = $request->get('_route');
+        $routeName = $request->attributes->get('_route');
         $locale = $request->getLocale();
 
         $qb = $entityManager
@@ -187,7 +187,7 @@ class SiteController extends BaseController
 
         $entity = $entities[0];
 
-        $routeName = $request->get('_route');
+        $routeName = $request->attributes->get('_route');
         $routeParams = [ 'id' => $entity->getId() ];
 
         $locale = $request->getLocale();

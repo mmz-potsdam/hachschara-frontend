@@ -50,7 +50,7 @@ class UserController extends BaseController
         // $user->setDateModified(\App\Search\UserListBuilder::fetchDateModified($entityManager->getConnection(), $user->getId()));
 
         $locale = $request->getLocale();
-        if (in_array($request->get('_route'), [ 'user-jsonld', 'user-by-gnd-jsonld' ])) {
+        if (in_array($request->attributes->get('_route'), [ 'user-jsonld', 'user-by-gnd-jsonld' ])) {
             return new JsonLdResponse($user->jsonLdSerialize($locale));
         }
 
