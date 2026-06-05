@@ -14,6 +14,10 @@
         },
         {
             "type": "vcs",
+            "url": "https://github.com/burki/JMSTranslationBundle"
+        },
+        {
+            "type": "vcs",
             "url": "https://github.com/burki/wordpress-rest-api-client"
         }
     ],
@@ -34,10 +38,10 @@
         "fale/isbn": "^3.1",
         "gedmo/doctrine-extensions": "^3.22",
         "hedii/zotero-api": "dev-master#c296090a23e557bd7b38c7f10132ada6bc333631",
-        "jms/translation-bundle": "^2.7",
+        "jms/translation-bundle": "dev-symfony-8",
         "knplabs/knp-menu-bundle": "^3.7",
         "knplabs/knp-paginator-bundle": "^6.10",
-        "liip/url-auto-converter-bundle": "dev-master",
+        "liip/url-auto-converter-bundle": "dev-symfony-8",
         "masterminds/html5": "^2.10",
         "mpdf/mpdf": "^8.3",
         "phpdocumentor/reflection-docblock": "^6.0",
@@ -47,30 +51,30 @@
         "spatie/schema-org": "^4.0",
         "spiriitlabs/form-filter-bundle": "^12.1",
         "symfony/apache-pack": "^1.0",
-        "symfony/asset": "7.4.*",
-        "symfony/console": "7.4.*",
-        "symfony/dotenv": "7.4.*",
-        "symfony/expression-language": "7.4.*",
+        "symfony/asset": "8.1.*",
+        "symfony/console": "8.1.*",
+        "symfony/dotenv": "8.1.*",
+        "symfony/expression-language": "8.1.*",
         "symfony/flex": "^2.0",
-        "symfony/form": "7.4.*",
-        "symfony/framework-bundle": "7.4.*",
-        "symfony/http-client": "7.4.*",
-        "symfony/intl": "7.4.*",
-        "symfony/mailer": "7.4.*",
-        "symfony/monolog-bundle": "^3.1",
-        "symfony/notifier": "7.4.*",
-        "symfony/process": "7.4.*",
-        "symfony/property-access": "7.4.*",
-        "symfony/property-info": "7.4.*",
-        "symfony/runtime": "7.4.*",
-        "symfony/security-bundle": "7.4.*",
-        "symfony/serializer": "7.4.*",
-        "symfony/string": "7.4.*",
-        "symfony/translation": "7.4.*",
-        "symfony/twig-bundle": "7.4.*",
-        "symfony/validator": "7.4.*",
-        "symfony/web-link": "7.4.*",
-        "symfony/yaml": "7.4.*",
+        "symfony/form": "8.1.*",
+        "symfony/framework-bundle": "8.1.*",
+        "symfony/http-client": "8.1.*",
+        "symfony/intl": "8.1.*",
+        "symfony/mailer": "8.1.*",
+        "symfony/monolog-bundle": "^4.0",
+        "symfony/notifier": "8.1.*",
+        "symfony/process": "8.1.*",
+        "symfony/property-access": "8.1.*",
+        "symfony/property-info": "8.1.*",
+        "symfony/runtime": "8.1.*",
+        "symfony/security-bundle": "8.1.*",
+        "symfony/serializer": "8.1.*",
+        "symfony/string": "8.1.*",
+        "symfony/translation": "8.1.*",
+        "symfony/twig-bundle": "8.1.*",
+        "symfony/validator": "8.1.*",
+        "symfony/web-link": "8.1.*",
+        "symfony/yaml": "8.1.*",
         "seblevdev/select2entity-bundle": "^4.0",
         "twig/extra-bundle": "^3.23",
         "twig/intl-extra": "^3.23",
@@ -84,13 +88,13 @@
         "phpstan/phpstan": "^2.2",
         "phpstan/phpstan-doctrine": "^2.0",
         "phpunit/phpunit": "^9.6",
-        "symfony/browser-kit": "7.4.*",
-        "symfony/css-selector": "7.4.*",
-        "symfony/debug-bundle": "7.4.*",
+        "symfony/browser-kit": "8.1.*",
+        "symfony/css-selector": "8.1.*",
+        "symfony/debug-bundle": "8.1.*",
         "symfony/maker-bundle": "^1.0",
-        "symfony/phpunit-bridge": "7.4.*",
-        "symfony/stopwatch": "7.4.*",
-        "symfony/web-profiler-bundle": "7.4.*"
+        "symfony/phpunit-bridge": "8.1.*",
+        "symfony/stopwatch": "8.1.*",
+        "symfony/web-profiler-bundle": "8.1.*"
     },
     "config": {
         "allow-plugins": {
@@ -147,7 +151,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "7.4.*"
+            "require": "8.1.*"
         }
     }
 }
