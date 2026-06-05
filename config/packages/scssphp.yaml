@@ -10,3 +10,8 @@ scssphp:
             # Array of import paths, relative to Symfony's project directory.
             importPaths:
                 # - "assets/scss"                        # main directory
+
+when@prod:
+    scssphp:
+        enabled: true
+        autoUpdate: false
