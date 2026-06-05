@@ -12,7 +12,6 @@ return [
     Symfony\Bundle\MakerBundle\MakerBundle::class => ['dev' => true],
     Knp\Bundle\MenuBundle\KnpMenuBundle::class => ['all' => true],
     Armin\ScssphpBundle\ScssphpBundle::class => ['all' => true],
-    BabDev\PagerfantaBundle\BabDevPagerfantaBundle::class => ['all' => true],
     Knp\Bundle\PaginatorBundle\KnpPaginatorBundle::class => ['all' => true],
     Liip\UrlAutoConverterBundle\LiipUrlAutoConverterBundle::class => ['all' => true],
     Spiriit\Bundle\FormFilterBundle\SpiriitFormFilterBundle::class => ['all' => true],

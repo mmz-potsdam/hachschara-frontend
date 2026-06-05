@@ -1521,14 +1521,6 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         appendTimestamp?: bool|Param, // When enabled, the timestamp of the asset, will be appended as query string. // Default: true
  *     }>,
  * }
- * @psalm-type BabdevPagerfantaConfig = array{
- *     default_view?: scalar|Param|null, // Default: "default"
- *     default_twig_template?: scalar|Param|null, // Default: "@BabDevPagerfanta/default.html.twig"
- *     exceptions_strategy?: array{
- *         out_of_range_page?: "to_http_not_found"|"custom"|Param, // Default: "to_http_not_found"
- *         not_valid_current_page?: "to_http_not_found"|"custom"|Param, // Default: "to_http_not_found"
- *     },
- * }
  * @psalm-type KnpPaginatorConfig = array{
  *     default_options?: array{
  *         sort_field_name?: scalar|Param|null, // Default: "sort"
@@ -1598,7 +1590,6 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     monolog?: MonologConfig,
  *     knp_menu?: KnpMenuConfig,
  *     scssphp?: ScssphpConfig,
- *     babdev_pagerfanta?: BabdevPagerfantaConfig,
  *     knp_paginator?: KnpPaginatorConfig,
  *     liip_url_auto_converter?: LiipUrlAutoConverterConfig,
  *     spiriit_form_filter?: SpiriitFormFilterConfig,
@@ -1618,7 +1609,6 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         maker?: MakerConfig,
  *         knp_menu?: KnpMenuConfig,
  *         scssphp?: ScssphpConfig,
- *         babdev_pagerfanta?: BabdevPagerfantaConfig,
  *         knp_paginator?: KnpPaginatorConfig,
  *         liip_url_auto_converter?: LiipUrlAutoConverterConfig,
  *         spiriit_form_filter?: SpiriitFormFilterConfig,
@@ -1636,7 +1626,6 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         monolog?: MonologConfig,
  *         knp_menu?: KnpMenuConfig,
  *         scssphp?: ScssphpConfig,
- *         babdev_pagerfanta?: BabdevPagerfantaConfig,
  *         knp_paginator?: KnpPaginatorConfig,
  *         liip_url_auto_converter?: LiipUrlAutoConverterConfig,
  *         spiriit_form_filter?: SpiriitFormFilterConfig,
@@ -1655,7 +1644,6 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         monolog?: MonologConfig,
  *         knp_menu?: KnpMenuConfig,
  *         scssphp?: ScssphpConfig,
- *         babdev_pagerfanta?: BabdevPagerfantaConfig,
  *         knp_paginator?: KnpPaginatorConfig,
  *         liip_url_auto_converter?: LiipUrlAutoConverterConfig,
  *         spiriit_form_filter?: SpiriitFormFilterConfig,
