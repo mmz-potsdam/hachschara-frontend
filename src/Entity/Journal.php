@@ -2,25 +2,19 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo; // alias for Gedmo extensions annotations
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Journal
  *
  * @see http://schema.org/CreativeWork and derived documents Documentation on Schema.org
- *
- *
  */
-#[ORM\Table(name: 'Journal')]
 #[ORM\Entity]
-class Journal extends CreativeWork implements \JsonSerializable, JsonLdSerializable /*, OgSerializable, TwitterSerializable */
+#[ORM\Table(name: 'Journal')]
+class Journal extends CreativeWork implements \JsonSerializable, JsonLdSerializable /*, OgSerializable */
 {
     /**
-     * @var int
-     *
      */
     #[ORM\Column(type: 'integer')]
     #[ORM\Id]
@@ -28,32 +22,32 @@ class Journal extends CreativeWork implements \JsonSerializable, JsonLdSerializa
     protected $id;
 
     /**
-     * @var integer
-     *
+     * @var int The status of the item, -1 for deleted
      */
     #[ORM\Column(type: 'integer', nullable: false)]
     protected $status = 0;
 
+    /**
+     * @var string The type of the item, fixed to "journal".
+     */
     protected $itemType = 'journal';
 
     /**
-     * @var string The place(s) of publication
-     *
+     * @var string|null The place(s) of publication.
      */
     #[ORM\Column(name: 'place', type: 'string', nullable: true)]
 
     protected $publicationLocation; /* map to contentLocation in Schema.org */
 
     /**
-     * @var Publisher The publisher.
-     *
+     * @var Publisher|null The publisher.
      */
     #[ORM\ManyToOne(targetEntity: 'App\Entity\Publisher')]
     #[ORM\JoinColumn(name: 'publisher_id', referencedColumnName: 'id')]
     protected $publisher;
 
     /**
-     * @var string The issn of of the Journal
+     * @var string|null The ISSN of of the Journal
      *
      * *ORM\Column(type="string", nullable=true)
      */
@@ -61,7 +55,6 @@ class Journal extends CreativeWork implements \JsonSerializable, JsonLdSerializa
 
     /**
      * @var string The name of the item.
-     *
      */
     #[Assert\Type(type: 'string')]
     #[Assert\NotNull]
@@ -69,8 +62,7 @@ class Journal extends CreativeWork implements \JsonSerializable, JsonLdSerializa
     protected $name;
 
     /**
-     * @var string URL of the item.
-     *
+     * @var string|null URL of the item.
      */
     #[Assert\Url]
     #[ORM\Column(nullable: true)]
@@ -78,16 +70,12 @@ class Journal extends CreativeWork implements \JsonSerializable, JsonLdSerializa
 
     /**
      * @var \DateTime
-     *
-     * @Gedmo\Timestampable(on="create")
      */
     #[ORM\Column(name: 'created', type: 'datetime')]
     protected $createdAt;
 
     /**
      * @var \DateTime
-     *
-     * @Gedmo\Timestampable(on="update")
      */
     #[ORM\Column(name: 'changed', type: 'datetime')]
     protected $changedAt;
@@ -95,7 +83,7 @@ class Journal extends CreativeWork implements \JsonSerializable, JsonLdSerializa
     /**
      * Sets id.
      *
-     * @param int $id
+     * @param string|int $id
      *
      * @return $this
      */
@@ -109,7 +97,7 @@ class Journal extends CreativeWork implements \JsonSerializable, JsonLdSerializa
     /**
      * Gets id.
      *
-     * @return int
+     * @return string|int|null
      */
     public function getId()
     {
@@ -263,7 +251,7 @@ class Journal extends CreativeWork implements \JsonSerializable, JsonLdSerializa
     /**
      * Sets url.
      *
-     * @param string $url
+     * @param string|null $url
      *
      * @return $this
      */
@@ -284,6 +272,9 @@ class Journal extends CreativeWork implements \JsonSerializable, JsonLdSerializa
         return $this->url;
     }
 
+    /**
+     * Renders a citation as html.
+     */
     public function renderCitationAsHtml($citeProc, $extended = false, $mode = null)
     {
         $data = json_decode(json_encode($this->jsonSerialize()));
@@ -338,6 +329,8 @@ class Journal extends CreativeWork implements \JsonSerializable, JsonLdSerializa
     /*
      * We transfer to Citeproc JSON
      * see https://github.com/citation-style-language/schema/blob/master/csl-data.json
+     *
+     * return @array
      */
     public function jsonSerialize($locale = 'de_DE'): array
     {
@@ -368,7 +361,12 @@ class Journal extends CreativeWork implements \JsonSerializable, JsonLdSerializa
         return $data;
     }
 
-    public function jsonLdSerialize($locale, $omitContext = false)
+    /**
+     * Serializes entity according to Schema.org.
+     *
+     * @return array
+     */
+    public function jsonLdSerialize($locale, $omitContext = false): array
     {
         // TODO:
         // for full property,
@@ -413,7 +411,10 @@ class Journal extends CreativeWork implements \JsonSerializable, JsonLdSerializa
         return $ret;
     }
 
-    public function twitterSerialize($locale, $baseUrl, $params = [])
+    /**
+     *
+     */
+    public function twitterSerialize($locale, $baseUrl, $params = []): array
     {
         $ret = [];
 

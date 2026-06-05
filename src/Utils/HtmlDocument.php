@@ -5,7 +5,7 @@
  * Interfaces inspired by ezcDocument
  *  https://github.com/zetacomponents/Document/blob/master/src/interfaces/document.php
  * TODO: Build a separate Component
- * TODO: Switch to http://masterminds.github.io/html5-php/
+ * TODO: Switch to http://masterminds.github.io/html5-php/.
  */
 
 namespace App\Utils;
@@ -33,9 +33,8 @@ class HtmlDocument extends Document
         $html5 = new \Masterminds\HTML5();
         $dom = $html5->loadHTMLFile($fname);
 
-        if (false === $dom) {
-            return false;
-        }
+        // possibly call $html5->hasErrors() since errors do not stop parsing and a DOM will be returned.
+        // depending on $html->getErrors(), false might be a more appropriate return value than $dom
 
         return $dom;
     }
@@ -112,7 +111,7 @@ class HtmlDocument extends Document
             $tidy->parseString($this->saveString(), $configuration, 'utf8');
             $tidy->cleanRepair();
 
-            $this->loadString((string) $tidy);
+            $this->loadString((string) $tidy); // @phpstan-ignore cast.string (cast works even if _toString() is not documented) */
 
             return true;
         }

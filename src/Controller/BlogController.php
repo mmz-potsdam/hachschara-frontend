@@ -14,20 +14,22 @@ use Vnn\WpApiClient\WpClient;
 class BlogController extends DefaultController
 {
     #[Route(path: '/news', name: 'blog-index')]
-    public function blogIndexAction(Request $request, UrlGeneratorInterface $urlGenerator, WpClient $client): Response
+    public function blogIndexAction(Request $request, UrlGeneratorInterface $urlGenerator, ?WpClient $client): Response
     {
+        if (is_null($client)) {
+            return $this->redirectToRoute('home');
+        }
+
         $posts = [];
 
-        if (false !== $client) {
-            try {
-                $posts = $client->posts()->get(null, [
-                    'per_page' => 15,
-                ]);
-            }
-            catch (\Exception $e) {
-                // var_dump($e);
-                ; // ignore
-            }
+        try {
+            $posts = $client->posts()->get(null, [
+                'per_page' => 15,
+            ]);
+        }
+        catch (\Exception $e) {
+            // var_dump($e);
+            ; // ignore
         }
 
         if (empty($posts)) {
@@ -58,25 +60,24 @@ class BlogController extends DefaultController
     }
 
     #[Route(path: '/news/{slug}', name: 'blog')]
-    public function blogDetailAction(Request $request, WpClient $client, $slug): Response
+    public function blogDetailAction(Request $request, ?WpClient $client, $slug): Response
     {
-        $post = null;
-
-        if (false !== $client) {
-            try {
-                $posts = $client->posts()->get(null, [
-                    'slug' => $slug,
-                ]);
-            }
-            catch (\Exception $e) {
-                // var_dump($e);
-                ; // ignore
-            }
-
-            if (!empty($posts)) {
-                $post = $posts[0];
-            }
+        if (is_null($client)) {
+            return $this->redirectToRoute('blog-index');
         }
+
+        $posts = [];
+        try {
+            $posts = $client->posts()->get(null, [
+                'slug' => $slug,
+            ]);
+        }
+        catch (\Exception $e) {
+            // var_dump($e);
+            ; // ignore
+        }
+
+        $post = !empty($posts) ? $posts[0] : null;
 
         if (is_null($post)) {
             return $this->redirectToRoute('blog-index');

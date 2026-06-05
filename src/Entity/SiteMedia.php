@@ -5,26 +5,24 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * PersonMedia
- *
+ * SiteMedia
  */
 #[ORM\Entity]
 class SiteMedia extends Media
 {
     /**
-     * @var integer
+     * @var int
      */
     protected $type = 0; // $GLOBALS['TYPE_PROJECT'] - must match DiscriminatorMap
+
     /**
-     *
-     * @var Person
-     *
+     * @var Site
      */
     #[ORM\ManyToOne(targetEntity: 'Site', inversedBy: 'media', fetch: 'EXTRA_LAZY')]
     #[ORM\JoinColumn(name: 'item_id', referencedColumnName: 'id')]
     protected $site;
 
-    public function getPathPrefix()
+    public function getPathPrefix(): string
     {
         return 'project';
     }

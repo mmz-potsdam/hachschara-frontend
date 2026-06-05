@@ -2,20 +2,18 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Inflector\InflectorFactory;
-use Gedmo\Mapping\Annotation as Gedmo; // alias for Gedmo extensions annotations
 
 /**
  * Entities that have a somewhat fixed, physical extension.
  *
  * @see http://schema.org/Place Documentation on Schema.org
- *
- *
  */
-#[ORM\Table(name: 'Geoname')]
 #[ORM\Entity]
-class Place implements \JsonSerializable /*, JsonLdSerializable */
+#[ORM\Table(name: 'Geoname')]
+class Place implements \JsonSerializable, JsonLdSerializable
 {
     static $zoomLevelByType = [
         'neighborhood' => 12,
@@ -89,40 +87,32 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
     }
 
     /**
-     * @var int
-     *
-     *
+     * @var int|null
      */
     #[ORM\Id]
     #[ORM\Column(type: 'integer')]
     protected $id;
 
     /**
-     * @var integer
-     *
+     * @var int
      */
     #[ORM\Column(type: 'integer', nullable: false)]
     protected $status = 0;
 
     /**
      * @var string
-     *
      */
     #[ORM\Column(type: 'string', nullable: false)]
     protected $type = 'inhabited place';
 
     /**
-     * @var double The latitude of the place.
-     *
-     *
+     * @var double|null The latitude of the place.
      */
     #[ORM\Column(nullable: true)]
     protected $latitude;
 
     /**
      * @var double The longitude of the place.
-     *
-     *
      */
     #[ORM\Column(nullable: true)]
     protected $longitude;
@@ -135,26 +125,27 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
     protected $name;
 
     /**
-     * @var string An alias for the item.
-     *
+     * @var string|null An alternate name for the item.
      */
     #[ORM\Column(name: 'name_alternate', type: 'string', nullable: true)]
     protected $alternateName;
 
 
+    /**
+     * @var string|null The iso 3166-1 alpha-2 country code of the place.
+     */
     #[ORM\Column(name: 'country_code', type: 'string', nullable: true)]
     protected $countryCode;
 
     /**
-     * xvar Country|null
-     *
+     * @var Country|null
      */
     #[ORM\ManyToOne(targetEntity: 'Country', fetch: 'EAGER')]
     #[ORM\JoinColumn(name: 'country_code', referencedColumnName: 'cc', nullable: true)]
     protected $country;
 
     /**
-     * @var Term The role.
+     * @var Term|null The role.
      *
      */
     #[ORM\ManyToOne(targetEntity: 'App\Entity\Term')]
@@ -162,49 +153,52 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
     protected $historicalRegion;
 
     /**
-     * @var string
+     * @var string|null The Getty Thesaurus of Geographic Names Identifier of the place.
      */
     #[ORM\Column(type: 'string', nullable: true)]
     protected $tgn;
 
     /**
-     * @var string
+     * @var string|null The Getty Thesaurus of Geographic Names Identifier of the parent place.
      */
     #[ORM\Column(name: 'tgn_parent', type: 'string', nullable: true)]
     protected $parentTgn;
 
     /**
-     * @var string
+     * @var string|null The GND Identifier of the place.
      */
     #[ORM\Column(type: 'string', nullable: true)]
     protected $gnd;
 
     /**
-     * @var string
+     * @var string The GeoNames Identifier of the place.
      */
     #[ORM\Column(name: 'geonames_id', type: 'string', nullable: true)]
     protected $geonames;
 
+    /**
+     * @ArrayCollection|null The sites located in the place.
+     */
     #[ORM\OneToMany(targetEntity: 'Site', mappedBy: 'location', cascade: ['all'], fetch: 'EXTRA_LAZY')]
     #[ORM\OrderBy(['name' => 'ASC'])]
     protected $sites;
 
     /**
-     * @var \DateTime
+     * @var \DateTime|null The date on which the entity was created.
      *
      */
     #[ORM\Column(name: 'created', type: 'datetime')]
     protected $createdAt;
 
     /**
-     * @var \DateTime
+     * @var \DateTime|null The date on which the entity was last modified.
      *
      */
     #[ORM\Column(name: 'changed', type: 'datetime')]
     protected $changedAt;
 
     /**
-     * @var \DateTime The date on which the Person or one of its related entities were last modified.
+     * @var \DateTime|null
      */
     protected $dateModified;
 
@@ -225,7 +219,7 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Gets id.
      *
-     * @return int
+     * @return int|null
      */
     public function getId()
     {
@@ -283,7 +277,7 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Gets geo.
      *
-     * @return string
+     * @return string|null
      */
     public function getGeo()
     {
@@ -294,6 +288,11 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
         return implode(',', [$this->latitude, $this->longitude]);
     }
 
+    /**
+     * Gets sites.
+     *
+     * @return ArrayCollection|null
+     */
     public function getSites()
     {
         if (is_null($this->sites)) {
@@ -307,9 +306,11 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
         );
     }
 
-    public function showCenterMarker($em)
+    /**
+     * Determines whether a center marker should be shown for the place.
+     */
+    public function showCenterMarker($em): bool
     {
-        $hasPlaceParent = false;
         $ancestorOrSelf = $this;
 
         while (!is_null($ancestorOrSelf)) {
@@ -323,7 +324,12 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
         return false;
     }
 
-    public function getDefaultZoomlevel()
+    /**
+     * Gets default zoom level for the place.
+     *
+     * @return int
+     */
+    public function getDefaultZoomlevel(): int
     {
         if (array_key_exists($this->type, self::$zoomLevelByType)) {
             return self::$zoomLevelByType[$this->type];
@@ -335,7 +341,7 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Sets countryCode.
      *
-     * @param string $countryCode
+     * @param string|null $countryCode
      *
      * @return $this
      */
@@ -349,7 +355,7 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Gets countryCode.
      *
-     * @return string
+     * @return string|null
      */
     public function getCountryCode()
     {
@@ -359,7 +365,7 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Sets name.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return $this
      */
@@ -373,7 +379,7 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Gets name.
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -383,7 +389,7 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Sets alternateName.
      *
-     * @param array|null $alternateName
+     * @param string|null $alternateName
      *
      * @return $this
      */
@@ -417,7 +423,7 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Sets Getty Thesaurus of Geographic Names Identifier.
      *
-     * @param string $tgn
+     * @param string|null $tgn
      *
      * @return $this
      */
@@ -431,7 +437,7 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Gets Getty Thesaurus of Geographic Names.
      *
-     * @return string
+     * @return string|null
      */
     public function getTgn()
     {
@@ -441,7 +447,7 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Sets gnd.
      *
-     * @param string $gnd
+     * @param string|null $gnd
      *
      * @return $this
      */
@@ -455,7 +461,7 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Gets gnd.
      *
-     * @return string
+     * @return string|null
      */
     public function getGnd()
     {
@@ -465,7 +471,7 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Sets geonames.
      *
-     * @param string $geonames
+     * @param string|null $geonames
      *
      * @return $this
      */
@@ -479,13 +485,18 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Gets geonames.
      *
-     * @return string
+     * @return string|null
      */
     public function getGeonames()
     {
         return $this->geonames;
     }
 
+    /**
+      * Gets parent place.
+      *
+      * @return Place|null
+      */
     public function getParent($em)
     {
         if (is_null($this->parentTgn)) {
@@ -496,6 +507,11 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
             ->findOneBy(['tgn' => $this->parentTgn]);
     }
 
+    /**
+     * Gets children places.
+     *
+     * @return Place[]|null
+     */
     public function getChildren($em)
     {
         if (is_null($this->tgn)) {
@@ -517,6 +533,11 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
         return $qb->getQuery()->getResult();
     }
 
+    /**
+     * Gets children places grouped by type.
+     *
+     * @return array|null
+     */
     public function getChildrenByType($em)
     {
         $children = $this->getChildren($em);
@@ -564,7 +585,7 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Gets localized name.
      *
-     * @return string
+     * @return string|null
      */
     public function getNameLocalized($locale = 'en')
     {
@@ -575,11 +596,21 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
         return $this->getName();
     }
 
+    /**
+     * Gets type label.
+     *
+     * @return string
+     */
     public function getTypeLabel()
     {
         return self::buildTypeLabel($this->type);
     }
 
+    /**
+     * Gets path from root to place.
+     *
+     * @return array
+     */
     public function getPath($em)
     {
         $path = [];
@@ -620,6 +651,9 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
         return $this->changedAt;
     }
 
+    /**
+     * @return array
+     */
     public function jsonSerialize(): array
     {
         return [
@@ -631,7 +665,12 @@ class Place implements \JsonSerializable /*, JsonLdSerializable */
         ];
     }
 
-    public function jsonLdSerialize($locale, $omitContext = false, $em = null)
+    /**
+     * Serializes entity according to Schema.org.
+     *
+     * @return array
+     */
+    public function jsonLdSerialize($locale, $omitContext = false, $em = null): array
     {
         $ret = [
             '@context' => 'http://schema.org',

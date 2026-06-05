@@ -4,5 +4,5 @@ namespace App\Entity;
 
 interface JsonLdSerializable
 {
-    public function jsonLdSerialize($locale);
+    public function jsonLdSerialize($locale): array;
 }

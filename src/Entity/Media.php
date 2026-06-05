@@ -6,11 +6,10 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Media
- *
  */
+#[ORM\Entity]
 #[ORM\Table(name: 'Media')]
 #[ORM\Index(name: 'MediaItemName', columns: ['item_id', 'type', 'name'])]
-#[ORM\Entity]
 #[ORM\InheritanceType('SINGLE_TABLE')]
 #[ORM\DiscriminatorColumn(name: 'type', type: 'integer')]
 #[ORM\DiscriminatorMap(['0' => 'SiteMedia', '10' => 'PersonMedia'])]
@@ -24,8 +23,7 @@ abstract class Media
     ];
 
     /**
-     * @var integer
-     *
+     * @var int
      */
     #[ORM\Column(name: 'id', type: 'integer', nullable: false)]
     #[ORM\Id]
@@ -33,127 +31,120 @@ abstract class Media
     private $id;
 
     /**
-     * @var integer
-     *
+     * @var int|null
      */
     #[ORM\Column(name: 'flags', type: 'integer', nullable: true)]
     private $flags;
 
     /**
      * @var string
-     *
      */
     #[ORM\Column(name: 'name', type: 'string', length: 20, nullable: false)]
     private $name;
 
     /**
      * @var string
-     *
      */
     #[ORM\Column(name: 'mimetype', type: 'string', length: 80, nullable: false)]
     private $mimetype;
 
     /**
-     * @var integer
-     *
+     * @var int|null
      */
     #[ORM\Column(name: 'width', type: 'integer', nullable: true)]
     private $width;
 
     /**
-     * @var integer
-     *
+     * @var int|null
      */
     #[ORM\Column(name: 'height', type: 'integer', nullable: true)]
     private $height;
 
     /**
-     * @var integer
-     *
+     * @var int|null
      */
     #[ORM\Column(name: 'duration', type: 'integer', nullable: true)]
     private $duration;
 
     /**
-     * @var integer
-     *
+     * @var int|null
      */
     #[ORM\Column(name: 'ord', type: 'integer', nullable: true)]
     private $ord;
 
     /**
-     * @var string
-     *
+     * @var string|null
      */
     #[ORM\Column(name: 'caption', type: 'string', length: 1023, nullable: true)]
     private $caption;
 
     /**
-     * @var string
-     *
+     * @var string|null
      */
     #[ORM\Column(name: 'descr', type: 'text', nullable: true)]
     private $descr;
 
     /**
-     * @var string
-     *
+     * @var string|null
      */
     #[ORM\Column(name: 'copyright', type: 'string', length: 1023, nullable: true)]
     private $copyright;
 
     /**
-     * @var string
-     *
+     * @var string|null
      */
     #[ORM\Column(name: 'source', type: 'string', length: 1023, nullable: true)]
     private $source;
 
     /**
-     * @var string
-     *
+     * @var string|null
      */
     #[ORM\Column(name: 'displaydate', type: 'string', length: 127, nullable: true)]
     private $displaydate;
 
     /**
-     * @var \DateTime
-     *
+     * @var \DateTime|null
      */
     #[ORM\Column(name: 'created', type: 'datetime', nullable: true)]
     private $created;
 
     /**
-     * @var integer
-     *
+     * @var int
      */
     #[ORM\Column(name: 'created_by', type: 'integer', nullable: true)]
     private $createdBy;
 
     /**
      * @var \DateTime
-     *
      */
     #[ORM\Column(name: 'changed', type: 'datetime', nullable: true)]
     private $changed;
 
     /**
-     * @var integer
-     *
+     * @var int
      */
     #[ORM\Column(name: 'changed_by', type: 'integer', nullable: true)]
     private $changedBy;
 
+    /**
+     * @return string
+     */
     public function getName()
     {
         return $this->name;
     }
 
+    /**
+     * return int
+     */
     public function getStatus()
     {
         return $this->flags & 0x01;
     }
 
+    /**
+     * return string|null
+     */
     public function getCaption($locale = null)
     {
         $parts = [];
@@ -192,12 +183,14 @@ abstract class Media
         if (!empty($parts)) {
             return implode("\n", $parts);
         }
+
+        return null;
     }
 
     abstract public function getReferencedId();
     abstract public function getPathPrefix();
 
-    public function getPath()
+    public function getPath(): string
     {
         $id = $this->getReferencedId();
 
@@ -209,7 +202,7 @@ abstract class Media
         );
     }
 
-    public function getFilename($variant = '')
+    public function getFilename($variant = ''): string
     {
         return sprintf(
             '%s%s',
@@ -218,7 +211,7 @@ abstract class Media
         );
     }
 
-    public function getImgUrl($variant = '')
+    public function getImgUrl($variant = ''): string
     {
         return implode('/', [
             $this->getPath(),
@@ -237,7 +230,7 @@ abstract class Media
     public function __set($name, $value)
     {
         if (property_exists($this, $name)) {
-            return $this->$name = $value;
+            $this->$name = $value;
         }
     }
 }

@@ -16,8 +16,8 @@ class MysqlFulltextSimpleParser
     /**
      * Callback function (or mode / state), called by the Lexer. This one
      * deals with text outside of a variable reference.
-     * @param string the matched text
-     * @param int lexer state (ignored here)
+     * @param string $match the matched text
+     * @param int $state lexer state (ignored here)
      */
     function accept($match, $state)
     {
@@ -148,7 +148,7 @@ class ParallelRegex
      *    Adds a pattern with an optional label.
      *    @param string $pattern      Perl style regex, but ( and )
      *                                lose the usual meaning.
-     *    @param string $label        Label of regex to be returned
+     *    @param string|true $label   Label of regex to be returned
      *                                on a match.
      *    @access public
      */
@@ -195,7 +195,7 @@ class ParallelRegex
      *    regular expression separated with the
      *    "or" operator. Caches the regex.
      *    Will automatically escape (, ) and / tokens.
-     *    @param array $patterns    List of patterns in order.
+     *    @return array     List of patterns in order.
      *    @access private
      */
     function _getCompoundedRegex()
@@ -460,7 +460,7 @@ class SimpleLexer
      *    mode if one is listed.
      *    @param string $unmatched    Unmatched leading portion.
      *    @param string $matched      Actual token match.
-     *    @param string $mode         Mode after match. A boolean
+     *    @param string|false $mode   Mode after match. A boolean
      *                                false mode causes no change.
      *    @return boolean             False if there was any error
      *                                from the parser.
@@ -565,7 +565,7 @@ class SimpleLexer
      *    unparsed data. Empty strings will not be matched.
      *    @param string $raw         The subject to parse. This is the
      *                               content that will be eaten.
-     *    @return array              Three item list of unparsed
+     *    @return array|bool         Three item list of unparsed
      *                               content followed by the
      *                               recognised token and finally the
      *                               action the parser is to take.
@@ -888,7 +888,7 @@ class SimpleSaxListener
     /**
      *    Start of element event.
      *    @param string $name        Element name.
-     *    @param hash $attributes    Name value pairs.
+     *    @param array $attributes    Name value pairs.
      *                               Attributes without content
      *                               are marked as true.
      *    @return boolean            False on parse error.

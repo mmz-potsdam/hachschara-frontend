@@ -47,11 +47,10 @@ trait AddressesTrait
             return [];
         }
 
-        if ($returnStructure) {
-            $keys = array_keys($addresses);
-        }
 
-        $numAddresses = empty($addresses) ? 0 : count($addresses['place']);
+        $keys = $returnStructure ? array_keys($addresses) : [];
+
+        $numAddresses = count($addresses['place']);
         $fields = [];
         for ($i = 0; $i < $numAddresses; $i++) {
             if ($returnStructure) {

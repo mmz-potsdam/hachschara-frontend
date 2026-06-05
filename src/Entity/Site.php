@@ -2,15 +2,15 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Site
- *
  */
-#[ORM\Table(name: 'Project')]
 #[ORM\Entity]
+#[ORM\Table(name: 'Project')]
 class Site implements JsonLdSerializable
 {
     use HasTranslationsTrait;
@@ -54,8 +54,7 @@ class Site implements JsonLdSerializable
     protected $extractFromNotes = [ 'address', 'general', 'publication' ];
 
     /**
-     * @var integer
-     *
+     * @var int
      */
     #[ORM\Column(name: 'id', type: 'integer', nullable: false)]
     #[ORM\Id]
@@ -63,181 +62,164 @@ class Site implements JsonLdSerializable
     private $id;
 
     /**
-     * @var integer
-     *
+     * @var int
      */
     #[ORM\Column(name: 'status', type: 'integer', nullable: false)]
-    private $status = '0';
+    private $status = 0;
 
     /**
-     * @var \DateTime Date of first broadcast/publication.
-     *
+     * @var \DateTime|null Date of first broadcast/publication.
      */
     #[Assert\Date]
     #[ORM\Column(name: 'published', type: 'datetime', nullable: true)]
     private $datePublished;
 
     /**
-     * @var \DateTime The date on which the CreativeWork was most recently modified or when the item's entry was modified .
-     *
+     * @var \DateTime|null The date on which the CreativeWork was most recently modified or when the item's entry was modified .
      */
     #[Assert\Date]
     #[ORM\Column(name: 'modified', type: 'datetime', nullable: true)]
     private $dateModified;
 
     /**
-     * @var string A license document that applies to this content, typically indicated by URL.
-     *
+     * @var string|null A license document that applies to this content, typically indicated by URL.
      */
     #[Assert\Type(type: 'string')]
     #[ORM\Column(name: 'license', nullable: true)]
     protected $license;
 
+    /**
+     * @var array
+     */
     #[ORM\Column(name: 'type', type: 'simple_array', nullable: false)]
     private $types;
 
     /**
-     * @var Place The location of, for example, where an event is happening, where an organization is located, or where an action takes place. .
-     *
+     * @var Place|null The location of, for example, where an event is happening, where an organization is located, or where an action takes place. .
      */
     #[ORM\ManyToOne(targetEntity: 'App\Entity\Place', inversedBy: 'sites')]
     #[ORM\JoinColumn(name: 'locality_id', referencedColumnName: 'id')]
     protected $location;
 
     /**
-     * @var string Name of the location.
+     * @var string|null Name of the location.
      *
      */
     #[ORM\Column(nullable: true, name: 'locality')]
     protected $locationLabel;
 
     /**
-     * @var string Street Address of the location.
+     * @var string|null Street Address of the location.
      *
      */
     #[ORM\Column(nullable: true, name: 'street_address')]
     protected $streetAddress;
 
     /**
-     * @var string Postal Code of the location.
+     * @var string|null Postal Code of the location.
      *
      */
     #[ORM\Column(nullable: true, name: 'postal_code')]
     protected $postalCode;
 
     /**
-     * @var double The latitude of the place.
-     *
-     *
+     * @var double|null The latitude of the site.
      */
     #[ORM\Column(nullable: true)]
     protected $latitude;
 
     /**
-     * @var double The longitude of the place.
-     *
-     *
+     * @var double|null The longitude of the site.
      */
     #[ORM\Column(nullable: true)]
     protected $longitude;
 
     /**
-     * @var string
-     *
+     * @var string|null
      */
     #[ORM\Column(name: 'start_date', type: 'string', nullable: true)]
     private $startDate;
 
     /**
-     * @var string
-     *
+     * @var string|null
      */
     #[ORM\Column(name: 'realized_date', type: 'string', nullable: true)]
     private $realizedDate;
 
     /**
-     * @var string
-     *
+     * @var string|null
      */
     #[ORM\Column(name: 'end_date', type: 'string', nullable: true)]
     private $endDate;
 
     /**
-     * @var string
-     *
+     * @var string|null
      */
     #[ORM\Column(name: 'destruction_date', type: 'string', nullable: true)]
     private $destructionDate;
 
     /**
-     * @var string
-     *
+     * @var string|null
      */
     #[ORM\Column(name: 'name', type: 'string', length: 511, nullable: true)]
     private $name;
 
     /**
-     * @var string
-     *
+     * @var string|null
      */
     #[ORM\Column(name: 'alternate_name', type: 'text', nullable: true)]
     private $alternateName;
 
     /**
-     * @var array
-     *
+     * @var array|null
      */
     #[ORM\Column(name: 'abstract', type: 'json', length: 65535, nullable: true)]
     private $abstract;
 
     /**
-     * @var array
-     *
+     * @var array|null
      */
     #[ORM\Column(name: 'description', type: 'json', length: 65535, nullable: true)]
     private $description;
 
     /**
-     * @var double
-     *
+     * @var double|null
      */
     #[ORM\Column(name: 'operating_area', type: 'decimal', nullable: true)]
     private $operatingArea;
 
     /**
-     * @var array
-     *
+     * @var array|null
      */
     #[ORM\Column(name: 'operating_area_description', type: 'json', length: 65535, nullable: true)]
     private $operatingAreaDescription;
 
+    /**
+     * @var array|null
+     */
     #[ORM\Column(name: 'educations', type: 'simple_array', length: 4096, nullable: true)]
     private $educations;
 
     /**
-     * @var array
-     *
+     * @var mixed|null
      */
     #[ORM\Column(name: 'educations_description', type: 'json', length: 65535, nullable: true)]
     private $educationsDescription;
 
     /**
-     * @var integer
-     *
+     * @var int|null
      */
     #[ORM\Column(name: 'condition', type: 'integer', nullable: true)]
-    private $condition = '0';
+    private $condition = 0;
 
     /**
-     * @var string
-     *
+     * @var string|null
      */
     #[ORM\Column(name: 'project_history', type: 'text', nullable: true)]
     private $projectHistory;
 
     /**
-     * @var string
-     *
+     * @var string|null
      */
     #[ORM\Column(name: 'url', type: 'string', length: 255, nullable: true)]
     private $url;
@@ -248,49 +230,40 @@ class Site implements JsonLdSerializable
 
     /**
      * @var array|null
-     *
      */
     #[ORM\Column(name: 'notes', type: 'json', length: 65535, nullable: true)]
     private $notes;
 
     /**
-     * @var \DateTime
-     *
+     * @var \DateTime|null
      */
     #[ORM\Column(name: 'created', type: 'datetime', nullable: true)]
     private $createdAt;
 
     /**
-     * @var integer
-     *
+     * @var int|null
      */
     #[ORM\Column(name: 'created_by', type: 'integer', nullable: true)]
     private $createdBy;
 
     /**
-     * @var \DateTime
-     *
+     * @var \DateTime|null
      */
     #[ORM\Column(name: 'changed', type: 'datetime', nullable: true)]
     private $changedAt;
 
     /**
-     * @var integer
-     *
+     * @var int|null
      */
     #[ORM\Column(name: 'changed_by', type: 'integer', nullable: true)]
     private $changedBy;
 
     /**
-     * @var integer
-     *
-     * xORM\Column(name="flags", type="integer", nullable=false)
+     * @var int
      */
-    private $flags = '0';
+    private $flags = 0;
 
     /**
-     * xORM\ManyToMany(targetEntity="Person", mappedBy="sites")
-     * xORM\OrderBy({"familyName" = "ASC", "givenName" = "ASC"})
      */
     protected $persons;
 
@@ -322,7 +295,7 @@ class Site implements JsonLdSerializable
     /**
      * Gets name.
      *
-     * @return string
+     * @return string|null
      */
     public function getName($locale = null)
     {
@@ -435,7 +408,7 @@ class Site implements JsonLdSerializable
     /**
      * Gets terms.
      *
-     * @return ArrayCollection<int, Term>
+     * @return array
      */
     private function getTerms($property, $termsIds = null)
     {
@@ -466,7 +439,7 @@ class Site implements JsonLdSerializable
     private function getLocalizedProperty($property, $locale = 'de')
     {
         if (empty($this->$property)) {
-            return;
+            return null;
         }
 
         if (is_array($this->$property)) {
@@ -481,12 +454,14 @@ class Site implements JsonLdSerializable
                 return $this->$property['de'];
             }
         }
+
+        return null;
     }
 
     /**
      * Gets types.
      *
-     * @return ArrayCollection<int, Term>
+     * @return array
      */
     public function getTypes()
     {
@@ -496,7 +471,7 @@ class Site implements JsonLdSerializable
     /**
      * Gets educations.
      *
-     * @return ArrayCollection<int, Term>
+     * @return array
      */
     public function getEducations()
     {
@@ -511,13 +486,13 @@ class Site implements JsonLdSerializable
     public function getCondition()
     {
         if (empty($this->condition)) {
-            return;
+            return null;
         }
 
         $terms = $this->getTerms('condition', [ $this->condition ]);
 
-        if (empty($terms)) {
-            return;
+        if (0 == count($terms)) {
+            return null;
         }
 
         return $terms[0];
@@ -544,20 +519,6 @@ class Site implements JsonLdSerializable
     }
 
     /**
-     * Sets founding location.
-     *
-     * @param Place|null $foundingLocation
-     *
-     * @return $this
-     */
-    public function setFoundingLocation(?Place $foundingLocation = null)
-    {
-        $this->foundingLocation = $foundingLocation;
-
-        return $this;
-    }
-
-    /**
      * Gets location.
      *
      * @return Place|null
@@ -570,7 +531,7 @@ class Site implements JsonLdSerializable
     /**
      * Gets locationLabel.
      *
-     * @return string
+     * @return string|null
      */
     public function getLocationLabel()
     {
@@ -580,6 +541,7 @@ class Site implements JsonLdSerializable
     /**
      * Gets location info.
      *
+     * return array|null
      */
     public function getLocationInfo($locale = 'en')
     {
@@ -592,12 +554,14 @@ class Site implements JsonLdSerializable
                 'name' => $this->locationLabel,
             ];
         }
+
+        return null;
     }
 
     /**
      * Gets street address.
      *
-     * @return string
+     * @return string|null
      */
     public function getStreetAddress()
     {
@@ -607,7 +571,7 @@ class Site implements JsonLdSerializable
     /**
      * Gets postal code.
      *
-     * @return string
+     * @return string|null
      */
     public function getPostalCode()
     {
@@ -617,7 +581,7 @@ class Site implements JsonLdSerializable
     /**
      * Gets geo.
      *
-     * @return string
+     * @return string|null
      */
     public function getGeo()
     {
@@ -635,7 +599,7 @@ class Site implements JsonLdSerializable
     /**
      * Gets start date.
      *
-     * @return string
+     * @return string|null
      */
     public function getStartDate()
     {
@@ -645,7 +609,7 @@ class Site implements JsonLdSerializable
     /**
      * Gets realized date.
      *
-     * @return string
+     * @return string|null
      */
     public function getRealizedDate()
     {
@@ -655,7 +619,7 @@ class Site implements JsonLdSerializable
     /**
      * Gets end date.
      *
-     * @return string
+     * @return string|null
      */
     public function getEndDate()
     {
@@ -665,7 +629,7 @@ class Site implements JsonLdSerializable
     /**
      * Gets start year.
      *
-     * @return string
+     * @return string|null
      */
     public function getStartear()
     {
@@ -675,7 +639,7 @@ class Site implements JsonLdSerializable
     /**
      * Gets operating area.
      *
-     * @return double
+     * @return double|null
      */
     public function getOperatingArea()
     {
@@ -685,7 +649,7 @@ class Site implements JsonLdSerializable
     /**
      * Gets localized operating area description.
      *
-     * @return string
+     * @return string|null
      */
     public function getOperatingAreaDescriptionLocalized($locale = 'de')
     {
@@ -713,19 +677,9 @@ class Site implements JsonLdSerializable
     }
 
     /**
-     * Gets organizations.
-     *
-     * @return ArrayCollection<int, Organization>
-     */
-    public function getOrganizations()
-    {
-        return $this->organizations;
-    }
-
-    /**
      * Sets url.
      *
-     * @param string $url
+     * @param string|null $url
      *
      * @return $this
      */
@@ -739,7 +693,7 @@ class Site implements JsonLdSerializable
     /**
      * Gets url.
      *
-     * @return string
+     * @return string|null
      */
     public function getUrl()
     {
@@ -809,7 +763,7 @@ class Site implements JsonLdSerializable
      *
      * @return array
      */
-    public function jsonLdSerialize($locale, $omitContext = false)
+    public function jsonLdSerialize($locale, $omitContext = false): array
     {
         $ret = [
             '@context' => 'http://schema.org',
@@ -940,7 +894,7 @@ class Site implements JsonLdSerializable
     public function __set($name, $value)
     {
         if (property_exists($this, $name)) {
-            return $this->$name = $value;
+            $this->$name = $value;
         }
     }
 }

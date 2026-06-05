@@ -6,11 +6,10 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * A user.
- *
  */
-#[ORM\Table(name: 'User')]
 #[ORM\Entity]
-class User implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
+#[ORM\Table(name: 'User')]
+class User implements \JsonSerializable, JsonLdSerializable /*, OgSerializable */
 {
     use HasTranslationsTrait;
 
@@ -23,7 +22,7 @@ class User implements \JsonSerializable /*, JsonLdSerializable, OgSerializable *
     protected $id;
 
     /**
-     * @var integer
+     * @var int
      */
     #[ORM\Column(type: 'integer', nullable: false)]
     protected $status = 0;
@@ -192,7 +191,7 @@ class User implements \JsonSerializable /*, JsonLdSerializable, OgSerializable *
     /**
      * Sets description.
      *
-     * @param array|null $description
+     * @param string|null $description
      *
      * @return $this
      */
@@ -459,7 +458,12 @@ class User implements \JsonSerializable /*, JsonLdSerializable, OgSerializable *
         ];
     }
 
-    public function jsonLdSerialize($locale, $omitContext = false)
+    /**
+     * Serializes entity according to Schema.org.
+     *
+     * @return array
+     */
+    public function jsonLdSerialize($locale, $omitContext = false): array
     {
         static $genderMap = [
             'F' => 'http://schema.org/Female',

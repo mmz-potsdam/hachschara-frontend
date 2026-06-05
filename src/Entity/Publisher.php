@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-// use Gedmo\Mapping\Annotation as Gedmo; // alias for Gedmo extensions annotations
-
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -14,11 +12,11 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @see http://schema.org/Organization Documentation on Schema.org
  *
  */
-#[ORM\Table(name: 'Publisher')]
 #[ORM\Entity]
-class Publisher implements \JsonSerializable /*, JsonLdSerializable */
+#[ORM\Table(name: 'Publisher')]
+class Publisher implements \JsonSerializable, JsonLdSerializable
 {
-    static function formatDateIncomplete($dateStr)
+    public static function formatDateIncomplete($dateStr)
     {
         if (preg_match('/^\d{4}$/', $dateStr)) {
             $dateStr .= '-00-00';
@@ -33,7 +31,7 @@ class Publisher implements \JsonSerializable /*, JsonLdSerializable */
         return $dateStr;
     }
 
-    static function stripAt($name)
+    public static function stripAt($name)
     {
         return preg_replace('/(\s+)@/', '\1', $name);
     }
@@ -48,46 +46,38 @@ class Publisher implements \JsonSerializable /*, JsonLdSerializable */
     protected $id;
 
     /**
-     * @var integer
-     *
+     * @var int
      */
     #[ORM\Column(type: 'integer', nullable: false)]
     protected $status = 0;
 
     /**
-     * @var string The name of the item.
-     *
+     * @var string|null The name of the item.
      */
     #[Assert\Type(type: 'string')]
     #[ORM\Column(nullable: true)]
     protected $name;
 
     /**
-     * @var string URL of the item.
-     *
+     * @var string|null URL of the item.
      */
     #[Assert\Url]
     #[ORM\Column(nullable: true)]
     protected $url;
 
     /**
-     * @var string
-     * *ORM\Column(type="string", length=32, nullable=true)
+     * @var string|null The GND identifier of the item.
      */
     protected $gnd;
 
     /**
      * @var \DateTime
-     *
-     * *Gedmo\Timestampable(on="create")
      */
     #[ORM\Column(name: 'created', type: 'datetime')]
     protected $createdAt;
 
     /**
      * @var \DateTime
-     *
-     * *Gedmo\Timestampable(on="update")
      */
     #[ORM\Column(name: 'changed', type: 'datetime')]
     protected $changedAt;
@@ -143,7 +133,7 @@ class Publisher implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Sets name.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return $this
      */
@@ -157,7 +147,7 @@ class Publisher implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Gets name.
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -167,7 +157,7 @@ class Publisher implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Gets localized name.
      *
-     * @return string
+     * @return string|null
      */
     public function getNameLocalized($locale)
     {
@@ -177,7 +167,7 @@ class Publisher implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Sets url.
      *
-     * @param string $url
+     * @param string|null $url
      *
      * @return $this
      */
@@ -191,7 +181,7 @@ class Publisher implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Gets url.
      *
-     * @return string
+     * @return string|null
      */
     public function getUrl()
     {
@@ -201,7 +191,7 @@ class Publisher implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Sets gnd.
      *
-     * @param string $gnd
+     * @param string|null $gnd
      *
      * @return $this
      */
@@ -215,13 +205,16 @@ class Publisher implements \JsonSerializable /*, JsonLdSerializable */
     /**
      * Gets gnd.
      *
-     * @return string
+     * @return string|null
      */
     public function getGnd()
     {
         return $this->gnd;
     }
 
+    /**
+     * @return array
+     */
     public function jsonSerialize(): array
     {
         return [
@@ -231,7 +224,12 @@ class Publisher implements \JsonSerializable /*, JsonLdSerializable */
         ];
     }
 
-    public function jsonLdSerialize($locale, $omitContext = false)
+    /**
+     * Serializes entity according to Schema.org.
+     *
+     * @return array
+     */
+    public function jsonLdSerialize($locale, $omitContext = false): array
     {
         $ret = [
             '@context' => 'http://schema.org',

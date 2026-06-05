@@ -84,6 +84,7 @@ services:
         arguments:
             $options: "%app.zotero.options%"
 
+    # Blog posts from WordPress
     Vnn\WpApiClient\WpClient:
         arguments:
             - !service { class: Vnn\WpApiClient\Http\GuzzleAdapter, arguments: [ !service { class: 'GuzzleHttp\Client' } ] }

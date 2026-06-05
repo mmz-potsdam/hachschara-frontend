@@ -8,11 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
  * A organization.
  *
  * @see https://schema.org/Organization Documentation on Schema.org
- *
- *
  */
 #[ORM\Entity]
-class Organization extends Agent implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
+class Organization extends Agent implements \JsonSerializable, JsonLdSerializable /*, OgSerializable */
 {
     use AddressesTrait;
 
@@ -22,28 +20,28 @@ class Organization extends Agent implements \JsonSerializable /*, JsonLdSerializ
     protected $extractFromNotes = [ 'name', 'birth_death' ];
 
     /**
-     * @var string Date of birth.
+     * @var string|null The date that this organization was founded.
      *
      */
     #[ORM\Column(type: 'string', nullable: true)]
     protected $foundingDate;
 
     /**
-     * @var string Date of death.
+     * @var string The date that this organization was dissolved.
      *
      */
     #[ORM\Column(type: 'string', nullable: true)]
     protected $dissolutionDate;
 
     /**
-     * @var string name.
+     * @var string|null The name of the item.
      *
      */
     #[ORM\Column(name: 'name', nullable: true)]
     protected $name;
 
     /**
-     * @var Place The place where the organization was founded.
+     * @var Place|null The place where the Organization was founded.
      *
      */
     #[ORM\ManyToOne(targetEntity: 'App\Entity\Place')]
@@ -51,16 +49,14 @@ class Organization extends Agent implements \JsonSerializable /*, JsonLdSerializ
     protected $foundingLocation;
 
     /**
-     * @var string Name of the foundingLocation.
+     * @var string|null The name of the foundingLocation.
      *
      */
     #[ORM\Column(nullable: true, name: 'founding_location')]
     protected $foundingLocationLabel;
 
     /**
-     * @var
-     *
-     * xORM\Column(name="actionplace", type="json", nullable=true)
+     * @var array|null The addresses of the organization.
      */
     protected $addresses;
 
@@ -184,7 +180,6 @@ class Organization extends Agent implements \JsonSerializable /*, JsonLdSerializ
 
     /**
      * Gets foundingLocation info
-     *
      */
     public function getFoundingLocationInfo($locale = 'en')
     {
@@ -205,7 +200,9 @@ class Organization extends Agent implements \JsonSerializable /*, JsonLdSerializ
     }
 
     /**
-     * We prefer organization-by-gnd
+     * Build route name and route parameters, preferring organization-by-gnd
+     *
+     * return array
      */
     public function getRouteInfo()
     {
@@ -223,6 +220,9 @@ class Organization extends Agent implements \JsonSerializable /*, JsonLdSerializ
         return [ $route, $routeParams ];
     }
 
+    /**
+     * @return array
+     */
     public function jsonSerialize(): array
     {
         return [
@@ -234,7 +234,12 @@ class Organization extends Agent implements \JsonSerializable /*, JsonLdSerializ
         ];
     }
 
-    public function jsonLdSerialize($locale, $omitContext = false)
+    /**
+     * Serializes entity according to Schema.org.
+     *
+     * @return array
+     */
+    public function jsonLdSerialize($locale, $omitContext = false): array
     {
         $ret = [
             '@context' => 'http://schema.org',
@@ -293,7 +298,7 @@ class Organization extends Agent implements \JsonSerializable /*, JsonLdSerializ
      * See https://developers.facebook.com/docs/reference/opengraph/object-type/profile/
      *
      */
-    public function ogSerialize($locale, $baseUrl)
+    public function ogSerialize($locale, $baseUrl): array
     {
         $ret = [
             'og:type' => 'profile',

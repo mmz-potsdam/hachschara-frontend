@@ -3,28 +3,28 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo; // this will be like an alias for Gedmo extensions annotations
 
 /**
 * The Country
-*
 */
-#[ORM\Table(name: 'Country')]
 #[ORM\Entity]
+#[ORM\Table(name: 'Country')]
 class Country
 {
     /**
-     * @var string
+     * @var string The ISO 3166-1 alpha-2 country code.
      */
     #[ORM\Id]
     #[ORM\Column(name: 'cc', type: 'string', nullable: false)]
     protected $countryCode;
 
+    /**
+     * @var string The name of the country.
+     */
     #[ORM\Column(type: 'string', nullable: false)]
     protected $name;
 
     /**
-    * *ORM\Column(type="string", nullable=true)
     */
     protected $geonames;
 
@@ -42,6 +42,11 @@ class Country
         return $this;
     }
 
+    /**
+     * Gets countryCode (iso2).
+     *
+     * @return string
+     */
     public function getCountryCode()
     {
         return $this->countryCode;

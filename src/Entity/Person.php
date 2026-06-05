@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -12,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  */
 #[ORM\Entity]
-class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, OgSerializable */
+class Person extends Agent implements \JsonSerializable, JsonLdSerializable /*, OgSerializable */
 {
     use AddressesTrait;
 
@@ -101,69 +102,68 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     protected $extractFromNotes = [ 'name', 'birth_death' ];
 
     /**
-     * @var string An additional name for a Person, can be used for a middle name.
-     *
+     * @var string|null An additional name for a Person.
      */
     protected $additionalName;
 
     /**
-     * @var string Denomination.
+     * @var string|null Denomination.
      *
      */
     #[ORM\Column(nullable: true)]
     protected $denomination;
 
     /**
-     * @var string Date of birth.
+     * @var string|null Date of birth.
      *
      */
     #[ORM\Column(type: 'string', nullable: true)]
     protected $birthDate;
 
     /**
-     * @var string Cause of death.
+     * @var string|null Cause of death.
      *
      */
     #[ORM\Column(type: 'string', nullable: true)]
     protected $deathCause;
 
     /**
-     * @var string Date of death.
+     * @var string|null Date of death.
      *
      */
     #[ORM\Column(type: 'string', nullable: true)]
     protected $deathDate;
 
     /**
-     * @var string Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.
+     * @var string|null Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.
      *
      */
     #[ORM\Column(name: 'family_name', nullable: true)]
     protected $familyName;
 
     /**
-     * @var string Gender of the person.
+     * @var string|null Gender of the person.
      *
      */
     #[ORM\Column(name: 'gender', nullable: true)]
     protected $gender;
 
     /**
-     * @var string Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.
+     * @var string|null Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.
      *
      */
     #[ORM\Column(name: 'given_name', nullable: true)]
     protected $givenName;
 
     /**
-     * @var string Nationality of the person.
+     * @var string|null Nationality of the person.
      *
      */
     #[ORM\Column(name: 'nationality', nullable: true)]
     protected $nationality;
 
     /**
-     * @var Place The place where the person was born.
+     * @var Place|null The place where the person was born.
      *
      */
     #[ORM\ManyToOne(targetEntity: 'App\Entity\Place')]
@@ -171,14 +171,14 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     protected $birthPlace;
 
     /**
-     * @var string Name of the birthPlace.
+     * @var string|null Name of the birthPlace.
      *
      */
     #[ORM\Column(nullable: true, name: 'birth_place')]
     protected $birthPlaceLabel;
 
     /**
-     * @var Place The place where the person died.
+     * @var Place|null The place where the person died.
      *
      */
     #[ORM\ManyToOne(targetEntity: 'App\Entity\Place')]
@@ -186,29 +186,26 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     protected $deathPlace;
 
     /**
-     * @var string Name of the deathPlace.
+     * @var string|null Name of the deathPlace.
      *
      */
     #[ORM\Column(nullable: true, name: 'death_place')]
     protected $deathPlaceLabel;
 
     /**
-     * @var
-     *
-     * xORM\Column(name="actionplace", type="json", nullable=true)
+     * @var array|null The addresses of the person.
      */
     protected $addresses;
 
     /**
-     * @var string
+     * @var string|null An honorific prefix preceding a Person's name such as Dr.
      *
      */
     #[ORM\Column(name: 'honorific_prefix', nullable: true)]
     protected $honorificPrefix;
 
     /**
-     * @var string
-     *
+     * @var string|null An honorific suffix following a Person's name such as M.A.
      */
     protected $honorificSuffix;
 
@@ -219,7 +216,7 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     /**
      * Sets additionalName.
      *
-     * @param string $additionalName
+     * @param string|null $additionalName
      *
      * @return $this
      */
@@ -233,7 +230,7 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     /**
      * Gets additionalName.
      *
-     * @return string
+     * @return string|null
      */
     public function getAdditionalName()
     {
@@ -243,7 +240,7 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     /**
      * Sets denomination.
      *
-     * @param string $denomination
+     * @param string|null $denomination
      *
      * @return $this
      */
@@ -257,13 +254,18 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     /**
      * Gets denomination.
      *
-     * @return string
+     * @return string|null
      */
     public function getDenomination()
     {
         return $this->denomination;
     }
 
+    /**
+     * Gets multiple denomination entries as separate lines, with from-until and code expanded.
+     *
+     * @return string
+     */
     public function getDenominationExpanded()
     {
         $lines = [];
@@ -351,7 +353,7 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     /**
      * Gets deathCause.
      *
-     * @return string
+     * @return string|null
      */
     public function getDeathCause()
     {
@@ -361,7 +363,7 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     /**
      * Sets familyName.
      *
-     * @param string $familyName
+     * @param string|null $familyName
      *
      * @return $this
      */
@@ -375,7 +377,7 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     /**
      * Gets familyName.
      *
-     * @return string
+     * @return string|null
      */
     public function getFamilyName()
     {
@@ -385,7 +387,7 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     /**
      * Sets gender.
      *
-     * @param string $gender
+     * @param string|null $gender
      *
      * @return $this
      */
@@ -399,13 +401,18 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     /**
      * Gets gender.
      *
-     * @return string
+     * @return string|null
      */
     public function getGender()
     {
         return $this->gender;
     }
 
+    /**
+     * Gets expanded gender label.
+     *
+     * @return string|null
+     */
     public function getGenderLabel()
     {
         $ret = $this->gender;
@@ -420,7 +427,7 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     /**
      * Sets givenName.
      *
-     * @param string $givenName
+     * @param string|null $givenName
      *
      * @return $this
      */
@@ -434,7 +441,7 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     /**
      * Gets givenName.
      *
-     * @return string
+     * @return string|null
      */
     public function getGivenName()
     {
@@ -444,7 +451,7 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     /**
      * Sets nationality.
      *
-     * @param string $nationality
+     * @param string|null $nationality
      *
      * @return $this
      */
@@ -458,7 +465,7 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     /**
      * Gets nationality.
      *
-     * @return string
+     * @return string|null
      */
     public function getNationality()
     {
@@ -490,9 +497,9 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     }
 
     /**
-     * Gets birthPlace.
+     * Gets name of birthPlace.
      *
-     * @return string
+     * @return string|null
      */
     public function getBirthPlaceLabel()
     {
@@ -512,7 +519,9 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     }
 
     /**
-     * Gets birthPlace info
+     * Gets birthPlace info.
+     *
+     * return array|null
      *
      */
     public function getBirthPlaceInfo($locale = 'en')
@@ -531,6 +540,8 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
                 'name' => $this->birthPlaceLabel,
             ];
         }
+
+        return null;
     }
 
     /**
@@ -558,9 +569,9 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     }
 
     /**
-     * Gets deathPlace.
+     * Gets name of deathPlace.
      *
-     * @return string
+     * @return string|null
      */
     public function getDeathPlaceLabel()
     {
@@ -570,6 +581,7 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     /**
      * Gets deathPlace info
      *
+     * @return array|null
      */
     public function getDeathPlaceInfo($locale = 'en')
     {
@@ -587,12 +599,14 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
                 'name' => $this->deathPlaceLabel,
             ];
         }
+
+        return null;
     }
 
     /**
      * Sets honorificPrefix.
      *
-     * @param string $honorificPrefix
+     * @param string|null $honorificPrefix
      *
      * @return $this
      */
@@ -606,7 +620,7 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     /**
      * Gets honorificPrefix.
      *
-     * @return string
+     * @return string|null
      */
     public function getHonorificPrefix()
     {
@@ -616,7 +630,7 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     /**
      * Sets honorificSuffix.
      *
-     * @param string $honorificSuffix
+     * @param string|null $honorificSuffix
      *
      * @return $this
      */
@@ -630,7 +644,7 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     /**
      * Gets honorificSuffix.
      *
-     * @return string
+     * @return string|null
      */
     public function getHonorificSuffix()
     {
@@ -689,7 +703,9 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     }
 
     /**
-     * We prefer person-by-ulan
+     * Build route name and route parameters, preferring person-by-gnd
+     *
+     * return array
      */
     public function getRouteInfo()
     {
@@ -707,6 +723,9 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
         return [ $route, $routeParams ];
     }
 
+    /**
+     * @return array
+     */
     public function jsonSerialize(): array
     {
         return [
@@ -720,7 +739,12 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
         ];
     }
 
-    public function jsonLdSerialize($locale, $omitContext = false)
+    /**
+     * Serializes entity according to Schema.org.
+     *
+     * @return array
+     */
+    public function jsonLdSerialize($locale, $omitContext = false): array
     {
         static $genderMap = [
             'F' => 'http://schema.org/Female',
@@ -791,8 +815,9 @@ class Person extends Agent implements \JsonSerializable /*, JsonLdSerializable, 
     /**
      * See https://developers.facebook.com/docs/reference/opengraph/object-type/profile/
      *
+     * return array
      */
-    public function ogSerialize($locale, $baseUrl)
+    public function ogSerialize($locale, $baseUrl): array
     {
         $ret = [
             'og:type' => 'profile',

@@ -17,8 +17,8 @@ class JsonLd
     /**
      * Convert
      *
-     * @param  String|DateTime $date  date string
-     * @return String        formatted date string (either YYYY or YYYY-MM-DD)
+     * @param  string|\DateTime $date  date string
+     * @return string|null        formatted date string (either YYYY or YYYY-MM-DD)
      */
     public static function formatDate8601($date)
     {
@@ -41,8 +41,9 @@ class JsonLd
                 );
             }
         }
+
         if (empty($ret)) {
-            return;
+            return null;
         }
 
         return count($ret) < 3 ? $ret[0] : implode('-', $ret);

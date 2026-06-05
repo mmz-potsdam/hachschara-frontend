@@ -4,8 +4,8 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Table(name: 'AgentProject')]
 #[ORM\Entity]
+#[ORM\Table(name: 'AgentProject')]
 class AgentSite
 {
     #[ORM\Column(type: 'integer')]

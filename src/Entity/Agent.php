@@ -8,8 +8,8 @@ use Doctrine\ORM\Mapping as ORM;
  * An agent, such as a person or an organization.
  *
  */
-#[ORM\Table(name: 'Agent')]
 #[ORM\Entity]
+#[ORM\Table(name: 'Agent')]
 #[ORM\InheritanceType('SINGLE_TABLE')]
 #[ORM\DiscriminatorColumn(name: 'type', type: 'string')]
 #[ORM\DiscriminatorMap(['person' => 'Person', 'organization' => 'Organization'])]
@@ -90,23 +90,19 @@ abstract class Agent
     protected $id;
 
     /**
-     * @var integer
-     *
+     * @var int
      */
     #[ORM\Column(type: 'integer', nullable: false)]
     protected $status = 0;
 
     /**
      * @var string Additional name forms.
-     *
      */
     #[ORM\Column(name: 'alternate_name', nullable: true)]
     protected $alternateName;
 
     /**
-     * @var string A short description of the item.
-     *
-     *
+     * @var string|null A short description of the item.
      */
     #[ORM\Column(name: 'description', type: 'string', length: '4096', nullable: true)]
     protected $description;
@@ -152,7 +148,6 @@ abstract class Agent
     protected $siteReferences;
 
     /**
-     * @var
      *
      */
     #[ORM\Column(type: 'json', nullable: true)]
@@ -173,7 +168,7 @@ abstract class Agent
     protected $changedAt;
 
     /**
-     * @var \DateTime The date on which the Person or one of its related entities were last modified.
+     * @var \DateTime|null The date on which the Person or one of its related entities were last modified.
      */
     protected $dateModified;
 
@@ -251,7 +246,7 @@ abstract class Agent
     /**
      * Sets description.
      *
-     * @param array|null $description
+     * @param string|null $description
      *
      * @return $this
      */
@@ -425,7 +420,7 @@ abstract class Agent
     /**
      * Gets entityfacts.
      *
-     * @return array
+     * @return array|null
      */
     public function getEntityfacts($locale = 'en', $forceLocale = false)
     {
@@ -529,12 +524,12 @@ abstract class Agent
     /**
      * Gets references to (published) sites.
      *
-     * @return ArrayCollection<int, AgentSite>
+     * @return null|\Doctrine\Common\Collections\ArrayCollection<int, AgentSite>
      */
     public function getSiteReferences()
     {
         if (is_null($this->siteReferences)) {
-            return $this->siteReferences;
+            return null;
         }
 
         return $this->siteReferences->filter(

@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @see http://schema.org/CreativeWork and derived documents Documentation on Schema.org
  *
  */
-class CreativeWork extends SchemaOrg implements \JsonSerializable
+class CreativeWork extends SchemaOrg implements \JsonSerializable, JsonLdSerializable
 {
     protected static function buildCorresp($zoteroData, $zoteroMeta)
     {
@@ -182,119 +182,118 @@ class CreativeWork extends SchemaOrg implements \JsonSerializable
     protected $itemType;
 
     /**
-     * @var array The author/contributor/editor of this CreativeWork.
+     * @var array|null The author/contributor/editor of this CreativeWork.
      */
     protected $creators;
 
     /**
-     * @var string The series of books the book was published in
+     * @var string|null The series of books the book was published in
      */
     protected $series;
 
     /**
-     * @var string The number within the series of books the book was published in
+     * @var string|null The number within the series of books the book was published in
      */
     protected $seriesNumber;
 
     /**
-     * @var string The volume of a journal or multi-volume book
+     * @var string|null The volume of a journal or multi-volume book
      */
     protected $volume;
 
     /**
-     * @var string The number of volumes of a multi-volume book
+     * @var string|null The number of volumes of a multi-volume book
      */
     protected $numberOfVolumes;
 
     /**
-     * @var string The issue of a journal, magazine, or tech-report, if applicable
+     * @var string|null The issue of a journal, magazine, or tech-report, if applicable
      */
     protected $issue;
 
     /**
-     * @var string The edition of a book
+     * @var string|null The edition of a book
      */
     protected $bookEdition;
 
     /**
-     * @var string The place(s) of publication
+     * @var string|null The place(s) of publication
      */
     protected $publicationLocation; /* map to contentLocation in Schema.org */
 
     /**
-     * @var string The publisher's name
+     * @var string|Publisher|null The publisher
      */
     protected $publisher;
 
     /**
-     * @var string Date of first broadcast/publication.
+     * @var string|null Date of first broadcast/publication.
      */
     protected $datePublished;
 
     /**
-     * @var string The Page numbers, separated either by commas or as range by hyphen
+     * @var string|null The Page numbers, separated either by commas or as range by hyphen
      */
     protected $pagination;
 
     /**
-     * @var string The number of pages of the book
+     * @var string|null The number of pages of the book
      */
     protected $numberOfPages;
 
     /**
-     * @var string The doi of the article
+     * @var string|null The doi of the article
      */
     protected $doi;
 
     /**
-     * @var string The isbn of the book
+     * @var string|null The isbn of the book
      */
     protected $isbn;
 
     /**
-     * @var array
+     * @var array|null
      */
     protected $additional;
 
     /**
-     * @var CreativeWork Indicates a Bibitem that this Bibitem is (in some sense) part of.
+     * @var CreativeWork|null Indicates a CreativeWork that this CreativeWork is (in some sense) part of.
      */
     protected $isPartOf;
 
     /**
-     * @var string The title of the book or journal for bookSection / journalArticle.
+     * @var string|null The title of the book or journal for bookSection / journalArticle.
      */
     protected $containerName;
 
     /**
      * @var string
-     *
      */
     #[Assert\Type(type: 'string')]
     #[Assert\NotNull]
     protected $language;
 
     /**
-     * @var string URL of the item.
+     * @var string|null URL of the item.
      *
      */
     #[Assert\Url]
     protected $url;
 
     /**
-     * @var string Non-Schema.org Date of URL-access.
+     * @var string|null Non-Schema.org Date of URL-access.
      */
     protected $dateAccessed;
 
     /**
-     * @var string
+     * @var string|null
      *
      */
     #[Assert\Type(type: 'string')]
     protected $slug;
 
     /**
-     * @var string
+     * @var string|null
      *
      */
     protected $version;
@@ -558,9 +557,9 @@ class CreativeWork extends SchemaOrg implements \JsonSerializable
      *
      * @return $this
      */
-    public function setPagination($pagionation = null)
+    public function setPagination($pagination = null)
     {
-        $this->pagination = $pagionation;
+        $this->pagination = $pagination;
 
         return $this;
     }
@@ -684,7 +683,7 @@ class CreativeWork extends SchemaOrg implements \JsonSerializable
     /**
      * Sets isPartOf.
      *
-     * @param CreativeWork $isPartOf
+     * @param CreativeWork|null $isPartOf
      *
      * @return $this
      */
@@ -708,11 +707,11 @@ class CreativeWork extends SchemaOrg implements \JsonSerializable
     /**
      * Sets container name.
      *
-     * @param string $containerName
+     * @param string|null $containerName
      *
      * @return $this
      */
-    public function setContainerName($containerName)
+    public function setContainerName($containerName = null)
     {
         $this->containerName = $containerName;
         if (isset($this->isPartOf)) {
@@ -739,11 +738,11 @@ class CreativeWork extends SchemaOrg implements \JsonSerializable
     /**
      * Sets ISSN.
      *
-     * @param string $issn
+     * @param string|null $issn
      *
      * @return $this
      */
-    public function setIssn($issn)
+    public function setIssn($issn = null)
     {
         if (isset($this->isPartOf) && $this->isPartOf instanceof Journal) {
             $this->isPartOf->setIssn($issn);
@@ -762,16 +761,18 @@ class CreativeWork extends SchemaOrg implements \JsonSerializable
         if (isset($this->isPartOf) && $this->isPartOf instanceof Journal) {
             return $this->isPartOf->getIssn();
         }
+
+        return null;
     }
 
     /**
      * Sets language.
      *
-     * @param string $language
+     * @param string|null $language
      *
      * @return $this
      */
-    public function setLanguage($language)
+    public function setLanguage($language = null)
     {
         $this->language = $language;
 
@@ -815,11 +816,11 @@ class CreativeWork extends SchemaOrg implements \JsonSerializable
     /**
      * Sets slug.
      *
-     * @param string $slug
+     * @param string|null $slug
      *
      * @return $this
      */
-    public function setSlug($slug)
+    public function setSlug($slug = null)
     {
         $this->slug = $slug;
 
@@ -839,11 +840,11 @@ class CreativeWork extends SchemaOrg implements \JsonSerializable
     /**
      * Sets version.
      *
-     * @param string $version
+     * @param string|null $version
      *
      * @return $this
      */
-    public function setVersion($version)
+    public function setVersion($version = null)
     {
         $this->version = $version;
 
@@ -1083,8 +1084,8 @@ class CreativeWork extends SchemaOrg implements \JsonSerializable
             'publisher-place' => self::adjustPublisherPlace($this->publicationLocation, $locale),
             'publisher' => $this->publisher,
             'issued' => [
-                "date-parts" => [ $this->buildDateParts($this->datePublished) ],
-                "literal" => $this->datePublished,
+                'date-parts' => [ $this->buildDateParts($this->datePublished) ],
+                'literal' => $this->datePublished,
             ],
             'page' => $this->pagination,
             'number-of-pages' => $this->numberOfPages,
@@ -1093,8 +1094,8 @@ class CreativeWork extends SchemaOrg implements \JsonSerializable
             'ISSN' => $this->getIssn(),
             'URL' => $this->url,
             'accessed' => [
-                "date-parts" => [ $this->buildDateParts($this->dateAccessed) ],
-                "literal" => $this->dateAccessed,
+                'date-parts' => [ $this->buildDateParts($this->dateAccessed) ],
+                'literal' => $this->dateAccessed,
             ],
             'language' => $this->language,
         ];
@@ -1127,7 +1128,12 @@ class CreativeWork extends SchemaOrg implements \JsonSerializable
         return $data;
     }
 
-    public function jsonLdSerialize($locale, $omitContext = false)
+    /**
+     * Serializes entity according to Schema.org.
+     *
+     * @return array
+     */
+    public function jsonLdSerialize($locale, $omitContext = false): array
     {
         // TODO:
         // for full property,
@@ -1301,7 +1307,6 @@ class CreativeWork extends SchemaOrg implements \JsonSerializable
                                 $creatorsParent[] = $creator;
                             }
                         }
-
                         $parent->setCreators($creatorsParent);
                     }
 
