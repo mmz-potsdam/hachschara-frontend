@@ -82,17 +82,6 @@ class SiteController extends BaseController
                     $parts = explode(',', $geo, 2);
                     $info = [ (float) $parts[0], (float) $parts[1] ];
 
-                    if ($result->getStatus() == 1) {
-                        $info[] = sprintf(
-                            '<a href="%s">%s</a>',
-                            $this->generateUrl('site', [ 'id' => $result->getId() ]),
-                            $name
-                        );
-                    }
-                    else {
-                        $info[] = $name;
-                    }
-
                     $abstractLocalized = null;
                     $authorLinked = '';
 
@@ -126,6 +115,17 @@ class SiteController extends BaseController
                             }
 
                             $linked = !empty($abstractLocalized) ? 0 : -1;
+                    }
+
+                    if ($linked >= 0) {
+                        $info[] = sprintf(
+                            '<a href="%s">%s</a>',
+                            $this->generateUrl('site', [ 'id' => $result->getId() ]),
+                            $name
+                        );
+                    }
+                    else {
+                        $info[] = $name;
                     }
 
                     $info[] = $linked;

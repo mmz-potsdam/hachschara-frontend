@@ -116,7 +116,16 @@
                     {{ site.educationsDescriptionLocalized(app.request.locale)|nl2br }}
                 </dd>
             {% endif %}
-            {% if site.descriptionLocalized(app.request.locale) is not empty %}
+            {% if site.status != 1 %}
+                {% if site.abstractLocalized(app.request.locale) is not empty %}
+                    <dt class="col-lg-3">{{ 'Abstract'|trans }}</dt>
+                    <dd class="col-lg-9">
+                        <div id="description">
+                        {{ site.abstractLocalized(app.request.locale)|nl2br }}
+                        </div>
+                    </dd>
+                {% endif %}
+            {% elseif site.descriptionLocalized(app.request.locale) is not empty %}
                 <dt class="col-lg-3">{{ 'Description'|trans }}</dt>
                 <dd class="col-lg-9">
                     <div id="description">

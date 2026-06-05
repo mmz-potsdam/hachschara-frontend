@@ -145,7 +145,8 @@
             }
             else {
                 marker.bindPopup('<strong>' + title + '</strong>'
-                    + (status == 0 ? '<div>' + a[4] + '</div>' : ''), popupOptions);
+                                 /* + (status == 0 ? '<div>' + a[4] + '</div>' : '' ) */,
+                                 popupOptions);
             }
 
             markers.addLayer(marker);
