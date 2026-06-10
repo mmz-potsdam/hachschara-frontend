@@ -25,9 +25,11 @@ doctrine:
                 # https://packagist.org/packages/beberlei/doctrineextensions
                 CONCAT_WS: DoctrineExtensions\Query\Mysql\ConcatWs
                 REGEXP: DoctrineExtensions\Query\Mysql\Regexp
+                IFELSE: DoctrineExtensions\Query\Mysql\IfElse
                 # https://packagist.org/packages/scienta/doctrine-json-functions
                 JSON_EXTRACT: Scienta\DoctrineJsonFunctions\Query\AST\Functions\Mysql\JsonExtract
                 JSON_CONTAINS: Scienta\DoctrineJsonFunctions\Query\AST\Functions\Mysql\JsonContains
+                JSON_LENGTH: Scienta\DoctrineJsonFunctions\Query\AST\Functions\Mysql\JsonLength
                 JSON_UNQUOTE: Scienta\DoctrineJsonFunctions\Query\AST\Functions\Mysql\JsonUnquote
 
 when@test:

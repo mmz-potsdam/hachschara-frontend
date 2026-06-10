@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2026-06-05T13:06:54Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
+  <file date="2026-06-10T10:32:13Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="3.0.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -19,8 +19,13 @@
       </trans-unit>
       <trans-unit id="d79da395b5d7a09c6439a5f2660d8c568186ab7e" resname="Abstract">
         <source>Abstract</source>
-        <target state="new">Kurzbeschreibung</target>
+        <target>Kurzbeschreibung</target>
         <jms:reference-file line="121">\..\..\..\..\..\..\C:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Site\detail.html.twig\</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f567843ccdf869a0fd114813865b0331a54203b5" resname="Abstracts">
+        <source>Abstracts</source>
+        <target state="new">Kurzbeschreibungen</target>
+        <jms:reference-file line="28">\..\..\..\..\..\..\C:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Site\index.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="f0781750abe5ae39846a226560f92c01fbf7047b" resname="Academic Title">
         <source>Academic Title</source>
@@ -255,7 +260,7 @@
       <trans-unit id="d1a2975c6094816406e20ae03709eb68931187f4" resname="No matching sites found">
         <source>No matching sites found</source>
         <target>Es wurde kein entsprechender Ort gefunden</target>
-        <jms:reference-file line="39">\..\..\..\..\..\..\C:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Site\index.html.twig\</jms:reference-file>
+        <jms:reference-file line="48">\..\..\..\..\..\..\C:/Daten/projects/juedische-geschichte/hachschara/frontend/templates\Site\index.html.twig\</jms:reference-file>
       </trans-unit>
       <trans-unit id="c4f1f5b1d49f90d5437402166829d6b471bf1593" resname="Opened">
         <source>Opened</source>

@@ -46,18 +46,19 @@ class SiteController extends BaseController
 
         $statusCondition = 'site-map' == $routeName
             ? 'PR.status <> -1'
-            : 'PR.status IN (1)'
+            : 'PR.status IN (1) OR (PR.status <> -1 AND JSON_LENGTH(PR.abstract) > 0)'
         ;
 
         $qb->select([
             'PR',
+            'IFELSE(PR.status = 1, 1, 2) HIDDEN statusSort',
             $nameSort . ' HIDDEN nameSort',
         ])
             ->from('App\Entity\Site', 'PR')
             ->leftJoin('PR.location', 'P')
             ->leftJoin('P.country', 'C')
             ->where($statusCondition)
-            ->orderBy('nameSort')
+            ->orderBy('statusSort, nameSort')
         ;
 
         $form = $this->createForm(\App\Filter\SiteFilterType::class, [
