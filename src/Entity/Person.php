@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use SortDirection;
 
 /**
  * A person (alive, dead, undead, or fictional).
@@ -210,7 +211,7 @@ class Person extends Agent implements \JsonSerializable, JsonLdSerializable /*, 
     protected $honorificSuffix;
 
     #[ORM\OneToMany(targetEntity: 'PersonMedia', mappedBy: 'person', fetch: 'EAGER')]
-    #[ORM\OrderBy(['name' => 'ASC', 'ord' => 'ASC'])]
+    #[ORM\OrderBy(['name' => SortDirection::Ascending, 'ord' => SortDirection::Ascending])]
     protected $media;
 
     /**

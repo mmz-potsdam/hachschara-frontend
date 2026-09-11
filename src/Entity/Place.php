@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Inflector\InflectorFactory;
+use SortDirection;
 
 /**
  * Entities that have a somewhat fixed, physical extension.
@@ -180,7 +181,7 @@ class Place implements \JsonSerializable, JsonLdSerializable
      * @ArrayCollection|null The sites located in the place.
      */
     #[ORM\OneToMany(targetEntity: 'Site', mappedBy: 'location', cascade: ['all'], fetch: 'EXTRA_LAZY')]
-    #[ORM\OrderBy(['name' => 'ASC'])]
+    #[ORM\OrderBy(['name' => SortDirection::Ascending])]
     protected $sites;
 
     /**

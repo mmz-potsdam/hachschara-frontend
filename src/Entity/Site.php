@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use SortDirection;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -225,7 +226,7 @@ class Site implements JsonLdSerializable
     private $url;
 
     #[ORM\OneToMany(targetEntity: 'AgentSite', mappedBy: 'site', cascade: ['persist', 'remove'], orphanRemoval: true)]
-    #[ORM\OrderBy(['ord' => 'ASC'])]
+    #[ORM\OrderBy(['ord' => SortDirection::Ascending])]
     private $agentReferences;
 
     /**
@@ -268,7 +269,7 @@ class Site implements JsonLdSerializable
     protected $persons;
 
     #[ORM\OneToMany(targetEntity: 'SiteMedia', mappedBy: 'site', fetch: 'EAGER')]
-    #[ORM\OrderBy(['name' => 'ASC', 'ord' => 'ASC'])]
+    #[ORM\OrderBy(['name' => SortDirection::Ascending, 'ord' => SortDirection::Ascending])]
     protected $media;
 
     public static function extractYear($datetime)

@@ -1476,6 +1476,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         filter_value_name?: scalar|Param|null, // Default: "filterValue"
  *         page_name?: scalar|Param|null, // Default: "page"
  *         distinct?: bool|Param, // Default: true
+ *         wrap_queries?: bool|Param, // Default: false
  *         page_out_of_range?: scalar|Param|null, // Default: "ignore"
  *         default_limit?: scalar|Param|null, // Default: 10
  *     },
@@ -1503,6 +1504,9 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     condition_pattern?: scalar|Param|null, // Default condition pattern for TextFilterType // Default: "text.starts"
  *     force_case_insensitivity?: bool|Param, // Whether to do case insensitive LIKE comparisons. // Default: false
  *     encoding?: scalar|Param|null, // Encoding for case insensitive LIKE comparisons. // Default: null
+ *     persistence?: array{
+ *         reset_parameter?: scalar|Param|null, // Query parameter that clears the stored state of the forms using the "filter_persistence" option. // Default: "_reset"
+ *     },
  * }
  * @psalm-type PrestaSitemapConfig = array{
  *     generator?: scalar|Param|null, // Default: "presta_sitemap.generator_default"
