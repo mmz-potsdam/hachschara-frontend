@@ -1,3 +1,17 @@
 # config/routes/presta_sitemap.yaml
-presta_sitemap:
-    resource: "@PrestaSitemapBundle/config/routing.yml"
+#presta_sitemap:
+#    resource: "@PrestaSitemapBundle/config/routing.yml"
+
+## multilingual sitemap, adjusted from "@PrestaSitemapBundle/config/routing.yml"
+PrestaSitemapBundle_index:
+    path:     "/{_locale}/%presta_sitemap.sitemap_file_prefix%.{_format}"
+    defaults: { _controller: Presta\SitemapBundle\Controller\SitemapController::indexAction }
+    requirements:
+        _format: xml
+        _locale: 'de|en'
+PrestaSitemapBundle_section:
+    path:     "/{_locale}/%presta_sitemap.sitemap_file_prefix%.{name}.{_format}"
+    defaults: { _controller: Presta\SitemapBundle\Controller\SitemapController::sectionAction }
+    requirements:
+        _format: xml
+        _locale: 'de|en'
