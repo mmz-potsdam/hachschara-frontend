@@ -233,7 +233,7 @@ class PersonController extends BaseController
         return $markers;
     }
 
-    #[Route(path: '/person/gnd/beacon', name: 'person-gnd-beacon')]
+    #[Route(path: '/gnd/beacon', name: 'person-gnd-beacon')]
     public function gndBeaconAction(EntityManagerInterface $entityManager, TranslatorInterface $translator, \Twig\Environment $twig)
     {
         $ret = '#FORMAT: BEACON' . "\n"

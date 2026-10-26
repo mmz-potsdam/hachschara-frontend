@@ -230,7 +230,7 @@ class OrganizationController extends BaseController
         return $markers;
     }
 
-    #[Route(path: '/organization/gnd/beacon', name: 'organization-gnd-beacon')]
+    #[Route(path: '/gnd/beacon', name: 'organization-gnd-beacon')]
     public function gndBeaconAction(EntityManagerInterface $entityManager, TranslatorInterface $translator, \Twig\Environment $twig): Response
     {
         $ret = '#FORMAT: BEACON' . "\n"
