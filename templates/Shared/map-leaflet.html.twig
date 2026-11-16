@@ -53,7 +53,7 @@
     });
 {% endmacro %}
 
-{% macro addTileLayer(maxZoom) %}
+{% macro addTileLayer(maxZoom = null) %}
     {% if true %}
     // for styles, see https://docs.mapbox.com/api/maps/#styles
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
