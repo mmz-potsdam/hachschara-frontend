@@ -5,7 +5,6 @@
 namespace App\Twig;
 
 use Symfony\Component\Intl\Countries;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
@@ -15,16 +14,13 @@ use App\Service\DateFormatter;
 class AppExtension extends AbstractExtension
 {
     private $translator;
-    private $urlGenerator;
     private $dateFormatter;
 
     public function __construct(
         TranslatorInterface $translator,
-        UrlGeneratorInterface $urlGenerator,
         DateFormatter $dateFormatter
     ) {
         $this->translator = $translator;
-        $this->urlGenerator = $urlGenerator;
         $this->dateFormatter = $dateFormatter;
     }
 

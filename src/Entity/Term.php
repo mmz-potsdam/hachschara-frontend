@@ -38,7 +38,7 @@ class Term
     private $idParent;
 
     /**
-     * @var int|null
+     * @var int
      */
     #[ORM\Column(name: 'ord', type: 'integer', nullable: false)]
     private $ord;
@@ -62,25 +62,25 @@ class Term
     protected $description;
 
     /**
-     * @var \DateTime
+     * @var \DateTime|null
      */
     #[ORM\Column(name: 'created', type: 'datetime', nullable: true)]
     private $created;
 
     /**
-     * @var int
+     * @var int|null
      */
     #[ORM\Column(name: 'created_by', type: 'integer', nullable: true)]
     private $createdBy;
 
     /**
-     * @var \DateTime
+     * @var \DateTime|null
      */
     #[ORM\Column(name: 'changed', type: 'datetime', nullable: true)]
     private $changed;
 
     /**
-     * @var int
+     * @var int|null
      */
     #[ORM\Column(name: 'changed_by', type: 'integer', nullable: true)]
     private $changedBy;

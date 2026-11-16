@@ -1222,9 +1222,8 @@ class CreativeWork extends SchemaOrg implements \JsonSerializable, JsonLdSeriali
                     if (!empty($creator['firstName'])) {
                         // we have a person
                         $person = new Person();
-                        if (!empty($creator['firstName'])) {
-                            $person->setGivenName($creator['firstName']);
-                        }
+
+                        $person->setGivenName($creator['firstName']);
 
                         if (!empty($creator['lastName'])) {
                             $person->setFamilyName($creator['lastName']);

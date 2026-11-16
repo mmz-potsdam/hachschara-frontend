@@ -11,7 +11,6 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Doctrine\ORM\EntityManagerInterface;
-use App\Twig\AppExtension;
 use Presta\SitemapBundle\Event\SitemapPopulateEvent;
 use Presta\SitemapBundle\Sitemap\Url\UrlConcrete;
 
@@ -21,11 +20,6 @@ class SitemapSubscriber implements EventSubscriberInterface
      * @var EntityManagerInterface
      */
     private $entityManager;
-
-    /**
-     * @var AppExtension
-     */
-    private $twigAppExtension;
 
     /**
      * @var RouterInterface
@@ -41,12 +35,10 @@ class SitemapSubscriber implements EventSubscriberInterface
      */
     public function __construct(
         EntityManagerInterface $entityManager,
-        AppExtension $twigAppExtension,
         RouterInterface $router,
         TranslatorInterface $translator
     ) {
         $this->entityManager = $entityManager;
-        $this->twigAppExtension = $twigAppExtension;
         $this->router = $router;
         $this->translator = $translator;
     }
